@@ -5,8 +5,7 @@ Database linked to FishGlob: Fish biodiversity under global change – a worldwi
 
 Repository to load, clean, homogenize public trawl datasets collected during fishglob.
 
-Main contributors to repository: Juliano Palacios Abrantes, Aurore Maureaud, Zoë Kitchel
-Other contributors: Romain Frelat, Dan Forrest, Malin L. Pinsky, Bastien Merigot, Laura Mannocci
+Main contributors to repository and related manuscript: Aurore A. Maureaud, Juliano Palacios-Abrantes, Zoë Kitchel, Laura Mannocci, Malin L. Pinsky, Alexa Fredston, Esther Beukhof, Daniel L. Forrest, Romain Frelat, Maria L.D. Palomares, Laurene Pecuchet, James T. Thorson, P. Daniël van Denderen, Bastien Mérigot
 
 ### Structure of the repository
 
