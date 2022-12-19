@@ -1,8 +1,7 @@
 # integrated_fishglob_surveys
 Database related to the manuscript "An integrated database of fish biodiversity sampled with scientific bottom trawl surveys"
 
-# Fishglob
-Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/
+Database linked to FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/
 
 Repository to load, clean, homogenize public trawl datasets collected during fishglob.
 
