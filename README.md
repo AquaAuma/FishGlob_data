@@ -35,7 +35,7 @@ Folder **functions** contains useful functions used in other scripts
 - write_clean_data.R: writes the file with the clean data in the google drive, so that we don't store private data in the github repo
 - get_length_weight_coeffs.R: extract length-weights relationship coefficients for a taxa in a specific ecosystem from fishbase
 
-Folder **length.weight** contains the length-weight relationships extracted for surveys where weights have to be calculated from abundance at length data: NOR-BTS, GRL-DE, DATRAS
+Folder **length.weight** contains the length-weight relationships extracted for surveys where weights have to be calculated from abundance at length data: NOR-BTS, DATRAS
 
 Folder **metadata_docs** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. Please add to it.
 
@@ -84,7 +84,7 @@ Folder **summary** will contain the quality check plots for all surveys, list of
 *Contributors to code*
 
 - **Cleaning tanonomy**: Juliano 
-- **Cleaning surveys**: Juliano, Aurore, Zoë, Dan for North America
+- **Cleaning surveys**: Juliano, Aurore, Zoë, Dan
 - **Summary of surveys**: Juliano, Aurore, Zoë, Laura
 - **Merge surveys**: Aurore
 - **Standardize surveys**: Laura, Malin, Aurore, Zoë, Alexa
