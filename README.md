@@ -7,6 +7,8 @@ Repository to load, clean, homogenize public trawl datasets collected during fis
 
 Main contributors to repository and related manuscript: Aurore A. Maureaud, Juliano Palacios-Abrantes, Zoë Kitchel, Laura Mannocci, Malin L. Pinsky, Alexa Fredston, Esther Beukhof, Daniel L. Forrest, Romain Frelat, Maria L.D. Palomares, Laurene Pecuchet, James T. Thorson, P. Daniël van Denderen, Bastien Mérigot
 
+Main contact: Aurore A. Maureaud aurore.aqua@gmail.com
+
 ### Structure of the repository
 
 *The repository doesn't hold any dataset or any analysis, additional repository will be created for each project.*
