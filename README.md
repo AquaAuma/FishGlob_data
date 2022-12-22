@@ -3,7 +3,7 @@ Database related to the manuscript "An integrated database of fish biodiversity 
 
 Database linked to FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/
 
-<img src ="https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/fishglob_logo.png"" width ="50"")
+<img src ="https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/fishglob_logo.png" width ="50">
 
 
 Repository to load, clean, homogenize public trawl datasets collected during fishglob.
