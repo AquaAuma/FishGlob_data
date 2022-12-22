@@ -3,6 +3,9 @@ Database related to the manuscript "An integrated database of fish biodiversity 
 
 Database linked to FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/
 
+![alt text](https://github.com/[AquaAuma]/[integrated_fishglob_surveys]/fishglob_logo.png?raw=true)
+
+
 Repository to load, clean, homogenize public trawl datasets collected during fishglob.
 
 Main contributors to repository and related manuscript: Aurore A. Maureaud, Juliano Palacios-Abrantes, Zoë Kitchel, Laura Mannocci, Malin L. Pinsky, Alexa Fredston, Esther Beukhof, Daniel L. Forrest, Romain Frelat, Maria L.D. Palomares, Laurene Pecuchet, James T. Thorson, P. Daniël van Denderen, Bastien Mérigot
