@@ -83,7 +83,7 @@ Main contact: Aurore A. Maureaud aurore.aqua@gmail.com
 
 *Contributors to code*
 
-- **Cleaning tanonomy**: Juliano 
+- **Cleaning taxonomy**: Juliano 
 - **Cleaning surveys**: Juliano, Aurore, Zoë, Dan
 - **Summary of surveys**: Juliano, Aurore, Zoë, Laura
 - **Merge surveys**: Aurore
