@@ -44,10 +44,6 @@ source(here::here("standardization_steps", "functions.R"))
 # function from Laura M.
 dat <- read_clean_data()
 
-# local path
-dat <- read.csv("/Users/auroremaureaud/Documents/FISHGLOB/data/Compiled_data/public & private/FISHGLOB_v1.7_clean.csv") %>% 
-  dplyr::filter(!is.na(latitude))
-
 
 
 #########   Apply taxonomic flagging per region

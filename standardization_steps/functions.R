@@ -10,8 +10,9 @@
 #' @export
 #'
 read_clean_data <- function(){
-
-  dat <- readr::read_csv(here::here("standardization_steps", "data", "FISHGLOB_v1.7_clean.csv"))
+  
+  load("outputs/Compiled_data/FishGlob_v1.7_clean.RData"))
+  dat <- data
 
   dat %>%
     tidyr::drop_na(longitude) %>%

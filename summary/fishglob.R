@@ -23,12 +23,14 @@ library(leaflet)
 
 
 ### Survey data
-x <- drive_find(pattern = "FISHGLOB_v1.7_clean.csv")
+# x <- drive_find(pattern = "FISHGLOB_v1.7_clean.csv")
+# 
+# drive_download(file = x[1,],
+#                overwrite = TRUE)
 
-drive_download(file = x[1,],
-               overwrite = TRUE)
-
-survey <- read.csv("~/Documents/FISHGLOB/data/Compiled_data/public & private/FISHGLOB_v1.7_clean.csv")
+load("outputs/Compiled_data/FishGlob_public_v1.7_clean.RData")
+survey <- data
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'small', returnclass = c("sf")) %>%
@@ -231,51 +233,3 @@ print(survey %>%
         facet_wrap(~survey, scales = "free") +
         theme_bw()+ theme(legend.position = "none"))
 dev.off()
-
-
-### Num against depth
-# png(filename = "summary/fishglob_summary/num_per_area_swept.png",
-#     width = 12*200, height = 10*200, res = 200)
-# print(survey %>%
-#         group_by(survey, year, haul_id, area_swept) %>%
-#         summarize(num = sum(num, na.rm=T)) %>%
-#         filter(!is.na(area_swept)) %>%
-#         ggplot(aes(x = area_swept,y = num, color = survey)) +
-#         geom_point()  +
-#         ylab("")  + xlab("Area Swept") +
-#         stat_smooth(method = "loess", formula = y ~ x) +
-#         facet_wrap(~survey, scales = "free") +
-#         theme_bw()+ theme(legend.position = "none"))
-# dev.off()
-
-
-### Wgt against depth
-# png(filename = "summary/fishglob_summary/wgt_per_depth.png",
-#     width = 12*200, height = 10*200, res = 200)
-# print(survey %>%
-#         group_by(survey, year, haul_id, depth) %>%
-#         summarize(wgt_cpue = sum(wgt_cpue, na.rm=T)) %>%
-#         filter(!is.na(depth)) %>%
-#         ggplot(aes(x = depth,y = wgt_cpue, color = survey)) +
-#         geom_point()  +
-#         ylab("")  + xlab("Depth") +
-#         stat_smooth(method = "loess", formula = y ~ x) +
-#         facet_wrap(~survey, scales = "free") +
-#         theme_bw()+ theme(legend.position = "none"))
-# dev.off()
-# 
-# 
-# ### Wgt against depth
-# png(filename = "summary/fishglob_summary/wgt_per_area_swept.png",
-#     width = 12*200, height = 10*200, res = 200)
-# print(survey %>%
-#         group_by(survey, year, haul_id, area_swept) %>%
-#         summarize(wgt = sum(wgt, na.rm=T)) %>%
-#         filter(!is.na(area_swept)) %>%
-#         ggplot(aes(x = area_swept,y = wgt, color = survey)) +
-#         geom_point()  +
-#         ylab("")  + xlab("Area Swept") +
-#         stat_smooth(method = "loess", formula = y ~ x) +
-#         facet_wrap(~survey, scales = "free") +
-#         theme_bw()+ theme(legend.position = "none"))
-# dev.off()
