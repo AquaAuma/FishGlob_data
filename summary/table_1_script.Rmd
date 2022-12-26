@@ -1,0 +1,162 @@
+---
+title: "Table 1"
+author: "Juliano Palacios Abrantes"
+output: html_document
+date: "2022-08-22"
+---
+
+```{r setup, include=FALSE}
+
+
+# Function that loads multiple packages
+# NOTE; It will install those you do not have
+load_all <- function (pkg_list){
+  new.pkg <- pkg_list[!(pkg_list %in% installed.packages()[, 
+                                                           "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE, repos = "http://cran.us.r-project.org")
+  sapply(pkg_list, require, character.only = TRUE)
+}
+
+
+
+# Load packages
+load_all(
+  c(
+    "googledrive",
+    "tidyverse",
+    "here"
+  )
+)
+
+
+
+```
+
+# Create function for table one
+
+```{r table one function, eval = R}
+
+table_one_fun <- function(region, datras){
+  
+  # Get data from google drive
+  
+  # Deal with DATRAS dataset containing all surveys
+  if(region %in% datras){
+    
+    file_name <- "DATRAS_v2_clean.csv"
+    
+    drive_download(file = file_name,
+                   overwrite = TRUE)
+    
+    df <- read.csv(here("./summary/",file_name)) %>% 
+      filter(survey == region)
+    
+  }else{
+    # If not a DATRAS survey
+    file_name <- paste0(region,"_clean.csv")
+    
+    drive_download(file = file_name,
+                   overwrite = TRUE)
+    
+    df <- read.csv(here("./summary/",file_name))
+    
+  }
+  
+  # Attach df for ease typing
+  suppressMessages(
+    attach(df)
+  )
+  # Create df
+  clean_df <- tibble(
+    # survey
+    survey = unique(region),
+    # year
+    year = paste(min(year),max(year),sep = "-"),
+    # months
+    months = paste(sort(unique(month)),collapse = " "),
+    # number of hauls
+    `number of hauls` = length(unique(haul_id)),
+    # gear_type
+    # you can just write "multiple gears" unless there's like 2 or 3 max
+    `gear type` = ifelse(
+      length(unique(gear)) > 3,
+      "multiple gears",
+      paste(unique(gear),collapse =", ")
+    )
+  )
+  
+  # Detach df
+  detach(df)
+  
+  # remove df from computer
+  file.remove(here("./summary/",file_name))
+  
+  # Return function
+  return(clean_df)
+}
+
+```
+
+## Test function
+
+```{r fun_test}
+
+# Single survey
+# table_one_fun("EVHOE", c("EVHOE")) #OK! *tested with AI, NZ, ZAF and EVHOE
+
+# Binding rows
+# bind_rows(c(table_one_fun("AI"),table_one("AI"))) #OK!
+
+# In lapply mode
+# bind_rows(lapply(c("AI","AI"), table_one_fun)) # OK!
+
+```
+
+## Run function
+
+```{r}
+
+# List of surveys for Table 1
+surveys <- c(
+  # Datras surveys
+  "BITS", "EVHOE","FR-CGFS", "IE-IGFS", "NIGFS","NS-IBTS", 'PT-IBTS', 'ROCKALL',"SWC-IBTS",
+  # Rest of surveys
+  "AI",
+  "HS",
+  "QCS",
+  "SOG",
+  "WCHG",
+  'WCVI',
+  "EBS",
+  "GMEX",
+  "GOA",
+  "GSL-N",
+  "GSL-S",
+  "NEUS",
+  "NorBTS", # NorBTS
+  'SEUS',
+  'SCS',
+  "WCANN",
+  "WCTRI"
+)
+
+# DATRAS surveys need to be identified because they are all joined in one single dataset datras_v2_clean.csv
+datras <- c("BITS", "EVHOE","FR-CGFS", "IE-IGFS", "NIGFS","NS-IBTS", 'PT-IBTS', 'ROCKALL',"SWC-IBTS")
+
+
+# Routine
+suppressMessages(
+  table_one <-
+    bind_rows(
+      lapply(datras,
+             table_one_fun,
+             datras = datras)
+    )
+)
+
+
+```
+
+
+
