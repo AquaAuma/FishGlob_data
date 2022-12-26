@@ -36,7 +36,9 @@ library(magrittr)
 source(here::here("standardization_steps", "functions.R"))
 
 # read survey data
-dat <- read.csv("/Users/auroremaureaud/Documents/FISHGLOB/data/Compiled_data/public/FISHGLOB_public_v1.7_clean.csv")
+load("outputs/Compiled_data/FishGlob_public_v1.7_clean.RData")
+dat <- data
+rm(data)
 
 dat <- dat %>% 
   dplyr::select(survey, survey_unit) %>% 
