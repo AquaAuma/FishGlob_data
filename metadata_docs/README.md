@@ -33,31 +33,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 - Gear: BITS has samples with a LOT of gears, some have already been removed, but there are still a few in the fishglob data. If one wants to only use one gear, maybe take the "small" gear
 
 
-## Black Sea - BS
 
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.black.sea.R) 
-
-- No specific processes to report
-
-### Related issues
-
-- No related issues
-
-## Chile - CHL
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.chile.R)
-
-- During the survey about 50 species are recorded but they report the most common species over the years
-- Most stations have 17 years, but there are 64 of them that have less than 17 years (i.e., 22 have 16 and 18 have only 1)
-- We kept only hauls of over 20 minute and removed those less than 20 or over 1 hour (See issue #25)
-
-### Related issues
-
-- [#25 Very short haul durations; Miss-recorded?](https://github.com/AquaAuma/fishglob/issues/25)
-
-## Colombia - COL
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.col.R) 
 
 ## Canada Hecate Strait - DFO-hs
 
@@ -86,20 +62,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 - See [here](https://publications.gc.ca/collections/collection_2012/mpo-dfo/Fs97-6-2505-eng.pdf) for helpful guidance on correction for gear and vessel changes in 1985 and 1992
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/GSLsouth)
 - -Requires corrections. CHECK if these have been included
-
-
-## Canada Newfoundland - DFO-NF
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.dfo-nf.R) 
-
-- The analyses were conducted using fish and shrimp biomass data (kg/tow; standardized for tow length).
-- A Campelen 1800 shrimp trawl was used to conduct surveys beginning in 1995 (McCallum and Walsh, 1997).
-- The Campelen gear has a mesh size ranging from 80 mm in the wings, to 60 mm in the square and first bellies, and 40 mm in the remaining bellies and cod end. The trawl is towed at 3.0 knots for 15 minutes.
-
-
-### Related issues
-
-- No reported issues
 
 ## Canada Queen Charlotte Sound - QCS
 
@@ -168,18 +130,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 - No reported issues
 
-## Guinea - GIN
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.gin.R)
-
-- The year of 2019 has half the rows than the others because the ship broke down
-- Hauls shorter than 20 min and longer than 1 hour were removed (see issue #13 below).
-- Some vessels are missing trawl speed, duration or/and opening. In these cases we used average values from all other vessels (See issue #11 below)
-
-### Related issues
-
-- [#13 Guinea Swept time](https://github.com/AquaAuma/fishglob/issues/13)
-- [#11 GUI matching names](https://github.com/AquaAuma/fishglob/issues/11)
 
 ## Gulf of Alaska - GOA
 
@@ -212,35 +162,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 - [#X Name of Issue](link to the github issue)
 - [#Y Name of Issue](link to the github issue)
 
-## Greenland - GRLDE
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.grlde.R)
-
-- Weight (*W*) was estimated from length following $W=a*(L)^b$
-
-### Related Issues
-
-- [#22 ](https://github.com/AquaAuma/fishglob/issues/22)
-
-## Iceland - ICE
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.ice.R)
-
-- No specific comments
-
-### Related issues
-
-- No specific issues
-
-
-## MEDITS
-- Survey area: there are many sub_area following the geopolitical areas in the Med, but they can be considered as one area because they follow the same survey protocol
-
-## New Zealand surveys [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.nz.R)
-
-### Data cleaning process
-
-- Survey area: Each sub_area needs to be considered as a separate survey
 
 
 ## North Sea - NS-IBTS
@@ -299,29 +220,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 ## Scottish Sea - SWC-IBTS
 - Season: Data are collected from two different quarters: quarter 1 and 4
 - Gear: there have been some gear/design changes for that survey in the recent years (after after 2010), but it's minor enough we don't need to correct, unless we observe an important change 2010+
-
-
-## South Africa - ZAF [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.nz.R)
-
-### Data cleaning process
-
-- Survey area: There are two surveys (divided in the sub_area column), don't know if it should be considered separately or not
-
-
-## South Georgia - georgia (Aurore double check)
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.georgia.R) 
-
-- The data covers the period from 1990 until 2019, with surveys roughly every two years. 
-- Most surveys were focussed on demersal fish on the South Georgia shelf (< 350 m)
-- Surveys in 2003, 2010 and 2019 had some deeper trawls.
-- Swept area was inferred
-- Average swept area = 0.2676km2
-
-### Related issues
-
-- No reported issues
-
 
 ## West Coast Triennial - WCTRI
 
