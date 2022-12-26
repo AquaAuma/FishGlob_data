@@ -11,7 +11,7 @@
 #'
 read_clean_data <- function(){
   
-  load("outputs/Compiled_data/FishGlob_v1.7_clean.RData"))
+  load("outputs/Compiled_data/FishGlob_v1.7_clean.RData")
   dat <- data
 
   dat %>%
