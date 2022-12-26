@@ -1,4 +1,7 @@
 # integrated_fishglob_surveys
+
+[![DOI](https://zenodo.org/badge/580133169.svg)](https://zenodo.org/badge/latestdoi/580133169)
+
 Database and processing methods to load, clean, and process public bottom trawl surveys related to the manuscript "An integrated database of fish biodiversity sampled with scientific bottom trawl surveys"
 
 Project linked to FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/
