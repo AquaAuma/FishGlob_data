@@ -51,6 +51,7 @@ Main contact: Aurore A. Maureaud aurore.aqua@gmail.com
 9. taxonomic flagging method results 
 10. spatio-temporal flagging method results
 
+**/data_descriptor_figures/** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
 
 ### Survey data cleaning steps
 
