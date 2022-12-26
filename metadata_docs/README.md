@@ -120,16 +120,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 - There was a big change in 2015 when they switched to a new vessel, with subsequent changes in catchability
 
-## Falklands Islands (Islas Malvinas) - falk (Aurore double check)
-
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.falk.R) 
-
-- No specific steps to report
-
-### Related issues
-
-- No reported issues
-
 
 ## Gulf of Alaska - GOA
 
