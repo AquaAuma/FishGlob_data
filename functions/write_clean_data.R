@@ -4,10 +4,15 @@
 # -------------------------------------------------------------- #
 
 write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "NA",
-                             csv = FALSE, ggdrive = FALSE, rdata = TRUE){
+                             csv = FALSE, ggdrive = FALSE, rdata = TRUE,
+                             compiled = FALSE){
   
-  if(rdata == TRUE){
+  if(rdata == TRUE & compiled = FALSE){
     save(data, file = paste0("outputs/Cleaned_data/",survey,"_clean.RData"))
+  }
+  
+  if(rdata == TRUE & compiled == TRUE){
+    save(data, file = paste0("outputs/Compiled_data/",survey,"_clean.RData"))
   }
   
   if(csv == TRUE){
