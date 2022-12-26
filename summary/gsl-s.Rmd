@@ -64,10 +64,14 @@ This document presents the cleaning code and summary of the Gulf of St. Lawrence
 ```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
 
 ### Survey data
-drive_download(file = "GSL-S_v2_clean.csv",
-  overwrite = TRUE)
+# drive_download(file = "GSL-S_v2_clean.csv",
+#   overwrite = TRUE)
+# 
+# survey <- read.csv(here("./summary/GSL-S_v2_clean.csv"))
 
-survey <- read.csv(here("./summary/GSL-S_v2_clean.csv"))
+load(here("outputs/Cleaned_data/GSL-S_v2_clean.RData"))
+survey <- data
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%

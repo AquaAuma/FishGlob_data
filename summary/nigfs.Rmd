@@ -63,13 +63,18 @@ This document presents the cleaning code and summary of the Irish Sea bottom tra
 ```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
 
 ### Survey data
-x <- drive_find(pattern = "DATRAS_v3_clean.csv")
+# x <- drive_find(pattern = "DATRAS_v3_clean.csv")
+# 
+# drive_download(file = x[1,],
+#   overwrite = TRUE)
+# 
+# survey <- read.csv(here("./summary/DATRAS_v3_clean.csv")) %>% 
+#   filter(survey == "NIGFS")
 
-drive_download(file = x[1,],
-  overwrite = TRUE)
-
-survey <- read.csv(here("./summary/DATRAS_v3_clean.csv")) %>% 
+load(here("outputs/Cleaned_data/DATRAS_v3_clean.RData"))
+survey <- data %>% 
   filter(survey == "NIGFS")
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%
@@ -527,9 +532,3 @@ knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]),
                 position = "float_left")
 ```
 
-
-```{r end, echo=FALSE, eval =F, results='hide', include=FALSE}
-#THIS CODE REMOVES THE ORIGINAL SURVEY FROM YOUR COMPUTER.
-# IT WILL NOT PRINT IN THE FINAL DOCUMENT
-file.remove(here("./summary/DATRAS_v3_clean.csv")) # changed for multiple users
-```

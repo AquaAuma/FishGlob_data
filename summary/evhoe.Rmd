@@ -63,13 +63,18 @@ This document presents the cleaning code and summary of the Bay of Biscay bottom
 ```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
 
 ### Survey data
-x <- drive_find(pattern = "DATRAS_v3_clean.csv")
+# x <- drive_find(pattern = "DATRAS_v3_clean.csv")
+# 
+# drive_download(file = x[1,],
+#   overwrite = TRUE)
+# 
+# survey <- read.csv(here("./summary/DATRAS_v3_clean.csv")) %>% 
+#   filter(survey == "EVHOE")
 
-drive_download(file = x[1,],
-  overwrite = TRUE)
-
-survey <- read.csv(here("./summary/DATRAS_v3_clean.csv")) %>% 
+load(here("outputs/Cleaned_data/DATRAS_v3_clean.RData"))
+survey <- data %>% 
   filter(survey == "EVHOE")
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%

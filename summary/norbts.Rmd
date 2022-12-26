@@ -62,12 +62,16 @@ This document presents the cleaning code and summary of the Norwegian bottom tra
 ```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
 
 ### Survey data
-x <- drive_find(pattern = "NOR-BTS_v3_clean.csv")
+# x <- drive_find(pattern = "NOR-BTS_v3_clean.csv")
+# 
+# drive_download(file = x[1,],
+#   overwrite = TRUE)
+# 
+# survey <- read.csv(here("./summary/NOR-BTS_v3_clean.csv"))
 
-drive_download(file = x[1,],
-  overwrite = TRUE)
-
-survey <- read.csv(here("./summary/NOR-BTS_v3_clean.csv"))
+load(here("outputs/Cleaned_data/NOR-BTS_v3_clean.RData"))
+survey <- data
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%
@@ -521,7 +525,3 @@ knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]),
                 position = "float_left")
 ```
 
-
-```{r end, echo=FALSE, results='hide', include=FALSE}
-file.remove(here("./summary/NOR-BTS_v3_clean.csv"))
-```

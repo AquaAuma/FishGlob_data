@@ -64,10 +64,14 @@ This document presents the cleaning code and summary of the Gulf of St. Lawrence
 ```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
 
 ### Survey data
-drive_download("GSL-N_v2_clean.csv",
-  overwrite = TRUE)
+# drive_download("GSL-N_v2_clean.csv",
+#   overwrite = TRUE)
+# 
+# survey <- read.csv(here("./summary/GSL-N_v2_clean.csv"))
 
-survey <- read.csv(here("./summary/GSL-N_v2_clean.csv"))
+load(here("outputs/Cleaned_data/GSL-N_v2_clean.RData"))
+survey <- data
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%
@@ -524,10 +528,4 @@ knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]),
                 position = "float_left")
 ```
 
-
-```{r end, echo=FALSE, eval =F, results='hide', include=FALSE}
-#THIS CODE REMOVES THE ORIGINAL SURVEY FROM YOUR COMPUTER.
-# IT WILL NOT PRINT IN THE FINAL DOCUMENT
-file.remove(here("./summary/GSL-N_v2_clean.csv")) # changed for multiple users
-```
 

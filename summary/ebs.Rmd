@@ -67,10 +67,14 @@ This document presents the summary of the Eastern Bering Sea bottom trawl survey
 
 ### Survey data
 
-drive_download(file = "EBS_v2_clean.csv",
-  overwrite = TRUE)
+# drive_download(file = "EBS_v2_clean.csv",
+#   overwrite = TRUE)
 
 # survey <- read.csv(here("./summary/EBS_v2.csv"))
+
+load(here("outputs/Cleaned_data/EBS_v2_clean.RData"))
+survey <- data
+rm(data)
 
 ### Map data
 World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%
@@ -532,12 +536,5 @@ knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]),
                            "method 2 (biotime)")) %>% 
   kable_styling(latex_options = "scale_down",
                 position = "float_left")
-```
-
-
-```{r end, echo=FALSE, eval =F, results='hide', include=FALSE}
-#THIS CODE REMOVES THE ORIGINAL SURVEY FROM YOUR COMPUTER.
-# IT WILL NOT PRINT IN THE FINAL DOCUMENT
-file.remove(here("./summary/EBS_v2_clean.csv")) # changed for multiple users
 ```
 

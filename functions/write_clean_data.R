@@ -7,7 +7,7 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
                              csv = FALSE, ggdrive = FALSE, rdata = TRUE,
                              compiled = FALSE){
   
-  if(rdata == TRUE & compiled = FALSE){
+  if(rdata == TRUE & compiled == FALSE){
     save(data, file = paste0("outputs/Cleaned_data/",survey,"_clean.RData"))
   }
   
