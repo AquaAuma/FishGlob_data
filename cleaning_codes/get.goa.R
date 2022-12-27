@@ -210,7 +210,7 @@ goa <- goa %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(goa$taxa2), input_survey = goa_survey_code,
-                         save = F, output=NA) # takes 7.5 min
+                         save = F, output=NA, fishbase=T) # takes 7.5 min
 
 #Check those with no match from clean_taxa()
 #Cheiraster dawsoni                                   no match                                 

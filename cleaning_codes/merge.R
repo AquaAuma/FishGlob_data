@@ -25,17 +25,25 @@ columns <- as.data.frame(read_excel(here("standard_formats/fishglob_data_columns
 #-------------------------------------------------------------------------------------------#
 # Load cleaned surveys
 surveys <- c("AI",
-             "DATRAS_v3",
+             "BITS",
              "EBS_v2",
+             "EVHOE",
+             "FR-CGFS",
              "GMEX",
              "GOA",
              "GSL-N_v2",
              "GSL-S_v2",
              "HS",
+             "IE-IGFS",
              "NEUS",
+             "NIGFS",
              "NOR-BTS_v3",
+             "NS-IBTS",
+             "PT-IBTS",
              "QCS",
+             "ROCKALL",
              "SCS",
+             "SWC-IBTS",
              "SOG",
              "SEUS",
              "WCANN",
@@ -168,7 +176,7 @@ for(i in 1:length(survey_units)){
 
 
 # Just run this routine should be good for all
-write_clean_data(data = fishglob_std, survey = "FishGlob_std_public_v1.7_std",
+write_clean_data(data = fishglob_std, survey = "FishGlob_public_v1.7_std",
                  overwrite = T, compiled = TRUE)
 
 

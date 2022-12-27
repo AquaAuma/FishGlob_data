@@ -257,7 +257,7 @@ SOG <- SOG %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(SOG$taxa2), input_survey = sog_survey_code,
-                         save = F, output=NA)
+                         save = F, output=NA, fishbase=T)
 
 #This fails to ID 0 species
                                           

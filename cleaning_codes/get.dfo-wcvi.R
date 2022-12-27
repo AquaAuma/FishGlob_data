@@ -225,7 +225,7 @@ WCVI <- WCVI %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(WCVI$taxa2), input_survey = wcvi_survey_code, save = F,
-                         output=NA)
+                         output=NA, fishbase=T)
 
 #This leaves out the following species, which are all inverts
 #Cheiraster dawsoni                                 

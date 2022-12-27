@@ -197,8 +197,9 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     # Select only marine species (NOTE: These are not exclusively marine species)
     dplyr::filter(isMarine == 1) %>% 
     # remove non-fish species (a.k.a. invertebrates, mammals...)
-    dplyr::filter(class %in% c("Elasmobranchii","Actinopterygii","Holocephali","Myxini",
-                               "Petromyzonti", "Actinopteri")) %>% 
+    dplyr::filter(class %in% c("Elasmobranchii","Actinopterygiiworms_d","Holocephali","Myxini",
+                               "Petromyzonti", "Actinopteri", "Teleostei", "Holostei",
+                               "Chondrostei")) %>% 
     dplyr::select(-isMarine) # we don't really need this information
   
   # Feedback message

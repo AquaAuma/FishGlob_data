@@ -20,6 +20,7 @@ library(magrittr) # for names wrangling
 library(readr)
 library(dplyr)
 library(PBSmapping)
+library(readxl)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
@@ -146,7 +147,8 @@ GSLsouth <- GSLsouth %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(GSLsouth$taxa2),
-                         input_survey = GSLsouth_survey_code, save = F, output=NA)
+                         input_survey = GSLsouth_survey_code, save = F, 
+                         output=NA, fishbase=T)
 #takes 1.8 minutes
 
 #This leaves out the following species, all of which are inverts or 

@@ -420,7 +420,7 @@ gmex <- gmex %>%
 # Get clean taxa
 clean_auto <- clean_taxa(unique(gmex$taxa2),
                          input_survey = gmex_survey_code,
-                         save = F, output=NA) # takes 10 mins
+                         save = F, output=NA, fishbase=T) # takes 10 mins
 
 #Portunus spinimanus                                  no match                                 
 #Trachypeneus                                         no match                                 

@@ -173,7 +173,7 @@ ebs_taxa <- ebs %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(ebs_taxa, input_survey = ebs_survey_code, save = F,
-                         output=NA) # takes 4.1 mins!
+                         output=NA, fishbase=T) # takes 4.1 mins!
 
 #check those with no match from clean_taxa()
 #Beringius beringii                                   no match                                 

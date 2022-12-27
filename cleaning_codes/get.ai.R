@@ -245,7 +245,7 @@ ai_taxa <- ai %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(ai_taxa, input_survey = ai_survey_code,
-                         save = F, output=NA) # takes 9 mins
+                         save = F, output=NA, fishbase=TRUE) # takes 9 mins
 
 #Check those with no match from clean_taxa()
 #Beringius beringii                                   no match                                 

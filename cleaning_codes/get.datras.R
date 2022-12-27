@@ -5,7 +5,7 @@
 #######################################################
 rm(list=ls())
 
-date <- "14DEC2022"
+date <- "27DEC2022"
 
 ##########################################################################################
 #### LOAD LIBRARIES & options to decide in the code
@@ -331,7 +331,7 @@ survey <- survey %>%
 #### GET THE SWEPT AREA in km2
 ##########################################################################################
 
-source('cleaning.codes/source_DATRAS_wing_doorspread.R')
+source('cleaning_codes/source_DATRAS_wing_doorspread.R')
 
 
 ##########################################################################################
@@ -949,6 +949,12 @@ survey4 <- survey3 %>%
 ##########################################################################################
 
 # Just run this routine should be good for all
-write_clean_data(data = survey4, survey = "DATRAS_v3", overwrite = T)
+surveys <- sort(unique(survey4$survey))
+for(i in 1:length(surveys)){
+  xx <- survey4 %>% 
+    filter(survey == surveys[i])
+  write_clean_data(data = xx, survey = surveys[i], overwrite = T,
+                   rdata = TRUE)
+}
 
 

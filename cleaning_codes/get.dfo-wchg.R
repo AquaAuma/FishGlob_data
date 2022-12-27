@@ -255,7 +255,8 @@ WCHG <- WCHG %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(WCHG$taxa2), 
-                         input_survey = wchg_survey_code, save = F, output=NA)
+                         input_survey = wchg_survey_code, save = F, output=NA,
+                         fishbase=T)
 #takes  2.5 minutes
 
 #This leaves out the following species, which are all inverts

@@ -19,6 +19,7 @@ library(magrittr) # for names wrangling
 library(readr)
 library(dplyr)
 library(PBSmapping)
+library(readxl)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
@@ -190,7 +191,8 @@ GSLnor <- GSLnor %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(GSLnor$taxa2),
-                         input_survey = GSLnor_survey_code, save = F, output=NA)
+                         input_survey = GSLnor_survey_code, save = F, output=NA,
+                         fishbase=T)
 
 #This leaves out the following species, all of which are inverts
 #Eualus gaimardii belcheri (invert)

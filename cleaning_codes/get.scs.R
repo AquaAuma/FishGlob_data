@@ -21,9 +21,11 @@ library(magrittr) # for names wrangling
 library(readr)
 library(dplyr)
 library(PBSmapping)
+library(readxl)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
+fishglob_data_columns <- read_excel("standard_formats/fishglob_data_columns.xlsx")
 
 #"CPUE generally represents catch (numbers or weight) per standard tow length or per
 #unit area. In the NAFO area, the primary sampling unit is the area swept by the trawl 
@@ -250,7 +252,7 @@ scs <- mar %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(scs$taxa2), input_survey = scs_survey_code,
-                         save = F, output=NA)
+                         save = F, output=NA, fishbase=T)
 #takes 3.9 minutes
 
 #This leaves out the following species, of which 2 are fish that need to be added back

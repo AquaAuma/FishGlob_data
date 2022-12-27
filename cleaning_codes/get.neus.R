@@ -45,11 +45,12 @@ library(googledrive)
 library(taxize) # for getting correct species names
 library(magrittr) # for names wrangling
 library(data.table)
-
+library(readxl)
 
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
+fishglob_data_columns <- read_excel("standard_formats/fishglob_data_columns.xlsx")
 
 #Data for the NEUS can be best accessed using the Pinsky Lab Ocean Adapt 
 #Public Git Hub Repository.
@@ -550,7 +551,7 @@ neus <- neus %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(neus$taxa2), input_survey = neus_survey_code,
-                         save = F, output=NA) 
+                         save = F, output=NA, fishbase=T) 
 
 #This leaves out the following species, of which 1 is a fish that needs to be added back
 #Geryon quinquedens                                   no match                                 

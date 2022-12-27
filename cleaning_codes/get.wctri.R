@@ -18,10 +18,11 @@ library(lubridate)
 library(googledrive)
 library(taxize) # for getting correct species names
 library(magrittr) # for names wrangling
-
+library(readxl)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
+fishglob_data_columns <- read_excel("standard_formats/fishglob_data_columns.xlsx")
 
 #Data for the West Coast US can be best accessed using the public Pinsky
 #Lab Ocean Adapt Git Hub Repository.
@@ -240,7 +241,8 @@ wctri <- wctri %>%
     taxa2 = str_to_sentence(str_to_lower(taxa2)))
 
 # Get clean taxa (setting save = T means we will get an output of missing taxa)
-clean_auto <- clean_taxa(unique(wctri$taxa2), input_survey = wctri_survey_code)
+clean_auto <- clean_taxa(unique(wctri$taxa2), input_survey = wctri_survey_code,
+                         fishbase=T)
 # takes 20 mins!
 
 #This cuts out the following species which are all inverts
