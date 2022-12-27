@@ -224,7 +224,7 @@ HS <- HS %>%
 
 # Get clean taxa
 clean_auto <- clean_taxa(unique(HS$taxa2), input_survey = hs_survey_code,
-                         save = F, output=NA)
+                         save = F, output=NA, fishbase=T)
 
 #This leaves out the following species, which are all inverts
 #Cancer branneri                                                                       
