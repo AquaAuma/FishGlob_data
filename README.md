@@ -14,8 +14,6 @@ Main contact: Aurore A. Maureaud aurore.aqua@gmail.com
 
 ### Structure of the repository
 
-*The repository doesn't hold any dataset or any analysis, additional repository will be created for each project.*
-
 **/standard_formats/** includes:
 - the fishglob data format, with column names, descriptions and units file *fishglob_data_columns.xlsx*
 - the survey standard ids provided by the data owners or us file *Surveys_ID.xlsx*
