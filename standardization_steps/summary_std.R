@@ -73,7 +73,7 @@ std_taxa_all$number <- as.vector(as.numeric(std_taxa_all$number))
 
 # plot of the summary per survey
 library(ggplot2)
-png("standardization_steps/outputs/taxa_per_survey_number_public.png", width = 8*500, height = 5*500, res=500)
+png("sdata_descriptor_figures/outputs/taxa_per_survey_number_public.png", width = 8*500, height = 5*500, res=500)
 std_taxa_all %>% 
   ggplot() + geom_point(aes(x = survey, y = number)) +
   theme_bw() +
@@ -83,7 +83,7 @@ std_taxa_all %>%
 dev.off()
 
 # plot of the summary per survey
-png("standardization_steps/outputs/taxa_per_survey_percentage_public.png", width = 8*500, height = 5*500, res=500)
+png("data_descriptor_figures/taxa_per_survey_percentage_public.png", width = 8*500, height = 5*500, res=500)
 std_taxa_all %>% 
   ggplot() + geom_point(aes(x = survey, y = percentage)) +
   theme_bw() +
@@ -95,7 +95,7 @@ std_taxa_all %>%
 dev.off()
 
 # plot of the summary per survey
-png("standardization_steps/outputs/number_versus_percentage_public.png", width = 5*500, height = 5*500, res=500)
+png("data_descriptor_figures/number_versus_percentage_public.png", width = 5*500, height = 5*500, res=500)
 std_taxa_all %>% 
   ggplot() + geom_point(aes(x = number, y = percentage)) +
   theme_bw() +
@@ -135,7 +135,7 @@ for(i in 1:nrow(dat)){
 
 # plot of the summary per survey
 library(ggplot2)
-png("standardization_steps/outputs/summary_per_survey_public.png", width = 8*500, height = 5*500, res=500)
+png("data_descriptor_figures/summary_per_survey_public.png", width = 8*500, height = 5*500, res=500)
 std_dat %>% 
   tidyr::pivot_longer(cols = 1:5, names_to = "std_method", values_to = "percentage") %>% 
   dplyr::filter(!is.na(percentage)) %>% 
@@ -146,7 +146,7 @@ std_dat %>%
         axis.title = element_text(size=16))
 dev.off()
 
-png("standardization_steps/outputs/summary_per_method_public.png", width = 8*500, height = 5*500, res=500)
+png("data_descriptor_figures/summary_per_method_public.png", width = 8*500, height = 5*500, res=500)
 std_dat %>% 
   tidyr::pivot_longer(cols = 1:5, names_to = "std_method", values_to = "percentage") %>% 
   dplyr::filter(!is.na(percentage)) %>% 
