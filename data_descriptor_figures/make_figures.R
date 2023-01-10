@@ -5,9 +5,6 @@
 #######################################################
 rm(list = ls())
 
-# set date
-date <- '14DEC2022'
-
 # load libraries
 library(tidyverse)
 library(ggplot2)
