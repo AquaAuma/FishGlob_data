@@ -24,7 +24,10 @@ library(readxl)
 # load relevant functions
 source("functions/write_clean_data.r")
 source("functions/clean_taxa.R")
-source("functions/get_length_weight_coeffs.R")
+source("functions/write_clean_data.R")
+source("functions/apply_trimming_method1.R")
+source("functions/apply_trimming_method2.R")
+source("functions/flag_spp.R")
 fishglob_data_columns <- read_excel("standard_formats/fishglob_data_columns.xlsx")
 
 # should the last version of DATRAS be downloaded?
@@ -628,19 +631,19 @@ if(need_get_lw_rel == TRUE){
     rename(survey = Survey) %>% 
     distinct()
   
-  write.csv(data.frame(list.taxa), file="length.weight/taxa.DATRAS.FB.tofill.csv", 
+  write.csv(data.frame(list.taxa), file="length_weight/taxa.DATRAS.FB.tofill.csv", 
             row.names=FALSE)
-  save.image("length.weight/DATRAS_before_lw_4AUG2021.RData")
+  save.image("length_weight/DATRAS_before_lw_4AUG2021.RData")
   
   ### run length-weight relationships open R 32bit
-  list.taxa <- read.csv("length.weight/taxa.DATRAS.FB.tofill.csv")
+  list.taxa <- read.csv("length_weight/taxa.DATRAS.FB.tofill.csv")
   get_coeffs(list.taxa, survey="DATRAS", save=TRUE)
 }
 
 
 # 4. re-calculate weights with length-weight relationships
 #load("length.weight/DATRAS_before_lw_4AUG2021.RData")
-datalw <- read.csv('length.weight/length.weight_DATRAS.csv') %>% 
+datalw <- read.csv('length_weight/length.weight_DATRAS.csv') %>% 
   rename(Survey = survey) %>% 
   select(-X) %>% 
   mutate(lme = as.character(lme))
@@ -931,14 +934,18 @@ survey4 <- survey3 %>%
                              survey=="FR-CGFS" ~ "france",
                              survey %in% c("NS-IBTS","BITS") ~ "multi-countries"),
          num = numlencpue*area_swept,
-         num_h = numlenh,
-         num_cpue = numlencpue,
+         num_cpue = numlenh,
+         num_cpua = numlencpue,
          wgt = wgtlencpue*area_swept,
-         wgt_h = wgtlenh,
-         wgt_cpue = wgtlencpue,
+         wgt_cpue = wgtlenh,
+         wgt_cpua = wgtlencpue,
          haul_dur = haul_dur/60,
          source = "DATRAS ICES",
-         timestamp = "2021-07") %>% 
+         timestamp = "2021-07",
+         survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
+                              paste0(survey,"-",quarter),survey),
+         survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
+                              paste0(survey,"-",season),survey_unit)) %>% 
   # Final format
   select(fishglob_data_columns$`Column name fishglob`)
 
@@ -958,3 +965,139 @@ for(i in 1:length(surveys)){
 }
 
 
+
+# -------------------------------------------------------------------------------------#
+#### FAGS ####
+# -------------------------------------------------------------------------------------#
+#install required packages that are not already installed
+required_packages <- c("data.table",
+                       "devtools",
+                       "dggridR",
+                       "dplyr",
+                       "fields",
+                       "forcats",
+                       "ggplot2",
+                       "here",
+                       "magrittr",
+                       "maps",
+                       "maptools",
+                       "raster",
+                       "rcompendium",
+                       "readr",
+                       "remotes",
+                       "rrtools",
+                       "sf",
+                       "sp",
+                       "tidyr",
+                       "usethis")
+
+not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
+if(length(not_installed)) install.packages(not_installed)
+
+
+#load pipe operator
+library(magrittr)
+
+######### Apply taxonomic flagging per region
+#get vector of regions (here the survey column)
+regions <- levels(as.factor(survey4$survey))
+
+#run flag_spp function in a loop
+for (r in regions) {
+  flag_spp(survey4, r)
+}
+
+######### Apply trimming per survey_unit method 1
+#apply trimming for hex size 7
+dat_new_method1_hex7 <- apply_trimming_per_survey_unit_method1(survey4, 7)
+
+#apply trimming for hex size 8
+dat_new_method1_hex8 <- apply_trimming_per_survey_unit_method1(survey4, 8)
+
+######### Apply trimming per survey_unit method 2
+dat_new_method2 <- apply_trimming_per_survey_unit_method2(survey4)
+
+
+#-------------------------------------------------------------------------------------------#
+#### ADD STRANDARDIZATION FLAGS ####
+#-------------------------------------------------------------------------------------------#
+surveys <- sort(unique(survey4$survey))
+survey_units <- sort(unique(survey4$survey_unit))
+survey_std <- survey4 %>% 
+  mutate(flag_taxa = NA_character_,
+         flag_trimming_hex7_0 = NA_character_,
+         flag_trimming_hex7_2 = NA_character_,
+         flag_trimming_hex8_0 = NA_character_,
+         flag_trimming_hex8_2 = NA_character_,
+         flag_trimming_2 = NA_character_)
+
+# integrate taxonomic flags
+for(i in 1:length(surveys)){
+  if(!surveys[i] %in% c("FALK","GSL-N","MRT","NZ-CHAT","SCS", "SWC-IBTS")){
+    xx <- data.frame(read_delim(paste0("outputs/Flags/taxonomic_flagging/",
+                                       surveys[i],"_flagspp.txt"),
+                                delim=";", escape_double = FALSE, col_names = FALSE,
+                                trim_ws = TRUE))
+    xx <- as.vector(unlist(xx[1,]))
+    
+    survey_std <- survey_std %>% 
+      mutate(flag_taxa = ifelse(survey == surveys[i] & accepted_name %in% xx,
+                                "TRUE",flag_taxa))
+    
+    rm(xx)
+  }
+}
+
+# integrate spatio-temporal flags
+for(i in 1:length(survey_units)){
+  
+  if(!survey_units[i] %in% c("DFO-SOG","IS-TAU","SCS-FALL","WBLS")){
+    
+    hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
+                                  survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
+                           sep = ";")
+    hex_res7_0 <- as.vector(hex_res7_0[,1])
+    
+    hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
+                                  survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
+                           sep = ";")
+    hex_res7_2 <- as.vector(hex_res7_2[,1])
+    
+    hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
+                                  survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
+                           sep= ";")
+    hex_res8_0 <- as.vector(hex_res8_0[,1])
+    
+    hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
+                                  survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
+                           sep = ";")
+    hex_res8_2 <- as.vector(hex_res8_2[,1])
+    
+    trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
+                              survey_units[i],"_hauls_removed.csv"))
+    trim_2 <- as.vector(trim_2[,1])
+    
+    survey_std <- survey_std %>% 
+      mutate(flag_trimming_hex7_0 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res7_0,
+                                           "TRUE",flag_trimming_hex7_0),
+             flag_trimming_hex7_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res7_2,
+                                           "TRUE",flag_trimming_hex7_2),
+             flag_trimming_hex8_0 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res8_0,
+                                           "TRUE",flag_trimming_hex8_0),
+             flag_trimming_hex8_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res8_2,
+                                           "TRUE",flag_trimming_hex8_2),
+             flag_trimming_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% trim_2,
+                                      "TRUE", flag_trimming_2)
+      )
+    rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2, trim_2)
+  }
+}
+
+
+# Just run this routine should be good for all
+for(i in 1:length(surveys)){
+  xx <- survey4 %>% 
+    filter(survey == surveys[i])
+  write_clean_data(data = xx, survey = paste0(surveys[i],"_std"), overwrite = T,
+                   rdata = TRUE)
+}

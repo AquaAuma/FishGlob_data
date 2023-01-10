@@ -425,8 +425,8 @@ apply_trimming_per_survey_unit_method1 <- function(data, hex_res){
     cell_years_removed0 <- filtered_ordered_data_df[filtered_ordered_data_df["is_retained_trimming_0"] == FALSE,][, c("cell", "year")]
     cell_years_removed02 <- filtered_ordered_data_df[filtered_ordered_data_df["is_retained_trimming_02"] == FALSE,][, c("cell", "year")]
     
-    write.csv(cell_years_removed0, row.names = FALSE, file = here::here("standardization_steps", "outputs", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_trimming_0_cell_year_removed.csv")))
-    write.csv(cell_years_removed02, row.names = FALSE, file = here::here("standardization_steps", "outputs", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_trimming_02_cell_year_removed.csv")))  
+    write.csv(cell_years_removed0, row.names = FALSE, file = here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_trimming_0_cell_year_removed.csv")))
+    write.csv(cell_years_removed02, row.names = FALSE, file = here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_trimming_02_cell_year_removed.csv")))  
     
     
     # Append results to raw data
