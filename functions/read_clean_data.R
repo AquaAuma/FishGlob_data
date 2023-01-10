@@ -3,9 +3,9 @@
 #' @return
 #' @export
 #'
-read_clean_data <- function(survey){
+read_clean_data <- function(){
   
-  load(paste0("outputs/Cleaned_data/",survey,"_clean.RData"))
+  load("outputs/Cleaned_data/FishGlob_v1.7_clean.RData")
   dat <- data
   
   dat %>%

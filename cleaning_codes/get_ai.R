@@ -28,7 +28,9 @@ library(magrittr) # for names wrangling
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
-
+source("functions/apply_trimming_method1.R")
+source("functions/apply_trimming_method2.R")
+source("functions/flag_spp.R")
 #Data for the Aleutian Islands can be accessed using the public Pinsky
 #Lab OceanAdapt Git Hub Repository. 
 #Files obtained from data providers Mar 1, 2021  (timestamp)
@@ -46,12 +48,12 @@ aiURL <- "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/ai2014_201
 temp <- readLines(aiURL)
 # replace the string that causes the problem
 temp_fixed  <- gsub(pattern = "Stone et al., 2011", replace = "Stone et al. 2011", x = temp)
-writeLines(temp_fixed, "cleaning.codes/ai2014_2018.txt") #save as text file
+writeLines(temp_fixed, "cleaning_codes/ai2014_2018.txt") #save as text file
 # read the result in as a csv
-temp_csv <- read_csv(file = "cleaning.codes/ai2014_2018.txt", col_names = T)
+temp_csv <- read_csv(file = "cleaning_codes/ai2014_2018.txt", col_names = T)
 
 #delete this file we temporarily made
-file.remove("cleaning.codes/ai2014_2018.txt")
+file.remove("cleaning_codes/ai2014_2018.txt")
 ## End special fix
 
 ai83_00 <- "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/ai1983_2000.csv"
@@ -274,7 +276,11 @@ clean_ai <- left_join(ai, clean_taxa, by=c("verbatim_name"="query")) %>%
   #non marine or non fish
   rename(accepted_name = taxa,
          aphia_id = worms_id) %>% 
-  mutate(verbatim_aphia_id = NA) %>% 
+  mutate(verbatim_aphia_id = NA,
+         survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
+                             paste0(survey,"-",quarter),survey),
+         survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
+                              paste0(survey,"-",season),survey_unit)) %>% 
   select(survey, source, timestamp, haul_id, country, sub_area, continent, stat_rec, station, stratum,
          year, month, day, quarter, season, latitude, longitude,
          haul_dur, area_swept, gear, depth, sbt, sst, num, num_h, num_cpue, wgt,
