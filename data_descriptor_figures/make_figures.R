@@ -28,19 +28,19 @@ library(sf)
 library(ggrepel)
 
 
-#### Load files
-survey <- read.csv("~/Documents/FISHGLOB/data/Compiled_data/public/FISHGLOB_public_v1.6_clean.csv")
+
+################################################################################
+#### Map of survey hauls
+################################################################################
+#### Load metadata
+# file downloaded here:https://github.com/AquaAuma/TrawlSurveyMetadata/blob/master/data/metadata/Metadata_18062020.shp"
 meta_survey <- read_sf("/Volumes/Elements/Last save DTU AQUA DEC2020/PhD DTU Aqua/(vii) BTS paper/TrawlSurveyMetadata/data/metadata/Metadata_18062020.shp") %>% 
-  filter(Survey %in% c("AI","BAS","BITS","CGFS","DFO-HS","DFO-QCS","DFO-WCHG","DFO-WCVI",
+    filter(Survey %in% c("AI","BAS","BITS","CGFS","DFO-HS","DFO-QCS","DFO-WCHG","DFO-WCVI",
                        "EBS","EVHOE","GOA","GSL-N","GSL-S","Gulf of Mexico",
                        "IE-IGFS","NIGFS","NOR-BTS","Northeast US",
                        "NS-IBTS","PT-IBTS","ROCKALL","Scotian Shelf","Southeast US",
                        "SWC-IBTS","WCANN"))
 
-
-################################################################################
-#### Map of survey hauls
-################################################################################
 png("data_descriptor_figures/public_meta_map.png", width = 12*400, height = 10*400, res = 400)
 print(ggplot(world)+
         geom_sf(fill = "antiquewhite3", color = NA)+
