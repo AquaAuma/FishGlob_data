@@ -44,7 +44,7 @@ meta_survey <- read_sf("/Volumes/Elements/Last save DTU AQUA DEC2020/PhD DTU Aqu
 ################################################################################
 #### Map of survey hauls
 ################################################################################
-png("explore.metadata/public_data_exploration/public_meta_map.png", width = 12*400, height = 10*400, res = 400)
+png("data_descriptor_figures/public_meta_map.png", width = 12*400, height = 10*400, res = 400)
 print(ggplot(world)+
         geom_sf(fill = "antiquewhite3", color = NA)+
         geom_sf(data = meta_survey, fill="#41B6C4", color = "black", 
@@ -70,7 +70,7 @@ xx_l <- data.frame(xx) %>%
   filter(year == first(year))
 
 # make tile plot
-png("explore.metadata/public_data_exploration/tile_for_map.png",
+png("data_descriptor_figures/tile_for_map.png",
     width = 10*200, height = 5*200, res =200)
 ggplot(xx_c, aes(y = survey, x = year, fill = nbr_haul)) +
   geom_tile(colour = "white", linewidth = 0.25) +
@@ -99,62 +99,49 @@ evhoe <- read.csv("~/Documents/FISHGLOB/data/Compiled_data/public/FISHGLOB_publi
   select(haul_id, year, longitude, latitude, flag_trimming_hex7_0,
          flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2,
          flag_trimming_2) %>% 
+  mutate(flag_trimming_hex7 = ifelse(flag_trimming_hex7_0==TRUE & flag_trimming_hex7_2==TRUE,"both", NA),
+         flag_trimming_hex7 = ifelse(flag_trimming_hex7_0==TRUE & is.na(flag_trimming_hex7_2),"0", flag_trimming_hex7),
+         flag_trimming_hex7 = ifelse(is.na(flag_trimming_hex7_0) & flag_trimming_hex7_2==TRUE,"2", flag_trimming_hex7),
+         flag_trimming_hex8 = ifelse(flag_trimming_hex8_0==TRUE & flag_trimming_hex8_2==TRUE,"both", NA),
+         flag_trimming_hex8 = ifelse(flag_trimming_hex8_0==TRUE & is.na(flag_trimming_hex8_2),"0", flag_trimming_hex8),
+         flag_trimming_hex8 = ifelse(is.na(flag_trimming_hex8_0) & flag_trimming_hex8_2==TRUE,"2", flag_trimming_hex8)) %>% 
   distinct() %>% 
   st_as_sf(coords = c("longitude","latitude"), crs = st_crs(world))
 
-png("explore.metadata/public_data_exploration/evhoe_hex7_0.png", 
+png("data_descriptor_figures/evhoe_hex8.png", 
     width = 10*200, height = 12*200, res = 200)
 ggplot(world) + geom_sf(color = NA, fill = "antiquewhite3") +
-  geom_sf(data = evhoe, size=5, alpha = 0.3, aes(color = flag_trimming_hex7_0)) +
-  scale_color_manual(values = c("blue"), na.value = "grey90") +
+  geom_sf(data = evhoe[is.na(evhoe$flag_trimming_hex8),], size = 5, shape = 21, col = "black") +
+  geom_sf(data = evhoe[!is.na(evhoe$flag_trimming_hex8),], size = 5, alpha = 0.3, aes(color = flag_trimming_hex8)) +
+  scale_color_manual(values = c("blue","aquamarine3"), na.value = "white") +
   coord_sf(xlim = c(-12,0),ylim=c(43,53)) +
-  theme_minimal() + 
+  theme_minimal() +
   theme(legend.position = "none",
         axis.text = element_text(size = 25))
 dev.off()
 
-png("explore.metadata/public_data_exploration/evhoe_hex8_0.png", 
+png("data_descriptor_figures/evhoe_hex7.png", 
     width = 10*200, height = 12*200, res = 200)
 ggplot(world) + geom_sf(color = NA, fill = "antiquewhite3") +
-  geom_sf(data = evhoe, size=5, alpha = 0.3, aes(color = flag_trimming_hex8_0)) +
-  scale_color_manual(values = c("blue"), na.value = "grey90") +
+  geom_sf(data = evhoe[is.na(evhoe$flag_trimming_hex7),], size = 5, shape = 21, col = "black") +
+  geom_sf(data = evhoe[!is.na(evhoe$flag_trimming_hex7),], size = 5, alpha = 0.3, aes(color = flag_trimming_hex7)) +
+  scale_color_manual(values = c("blue","aquamarine3"), na.value = "white") +
   coord_sf(xlim = c(-12,0),ylim=c(43,53)) +
-  theme_minimal() + 
+  theme_minimal() +
   theme(legend.position = "none",
         axis.text = element_text(size = 25))
 dev.off()
 
-png("explore.metadata/public_data_exploration/evhoe_hex7_2.png", 
+png("data_descriptor_figures/evhoe_biotime.png", 
     width = 10*200, height = 12*200, res = 200)
 ggplot(world) + geom_sf(color = NA, fill = "antiquewhite3") +
-  geom_sf(data = evhoe, size=5, alpha = 0.3, aes(color = flag_trimming_hex7_2)) +
-  scale_color_manual(values = c("aquamarine3"), na.value = "grey90") +
-  coord_sf(xlim = c(-12,0),ylim=c(43,53)) +
-  theme_minimal() + 
-  theme(legend.position = "none",
-        axis.text = element_text(size = 25))
-dev.off()
-
-png("explore.metadata/public_data_exploration/evhoe_hex8_2.png", 
-    width = 10*200, height = 12*200, res = 200)
-ggplot(world) + geom_sf(color = NA, fill = "antiquewhite3") +
-  geom_sf(data = evhoe, size=5, alpha = 0.3, aes(color = flag_trimming_hex8_2)) +
-  scale_color_manual(values = c("aquamarine3"), na.value = "grey90") +
-  coord_sf(xlim = c(-12,0),ylim=c(43,53)) +
-  theme_minimal() + 
-  theme(legend.position = "none",
-        axis.text = element_text(size = 25))
-dev.off()
-
-png("explore.metadata/public_data_exploration/evhoe_biotime.png", 
-    width = 10*200, height = 12*200, res = 200)
-ggplot(world) + geom_sf(color = NA, fill = "antiquewhite3") +
-  geom_sf(data = evhoe, size=5, alpha = 0.3, aes(color = flag_trimming_2)) +
+  geom_sf(data = evhoe[!is.na(evhoe$flag_trimming_2),], size=5, alpha = 0.3, aes(color = flag_trimming_2)) +
   scale_color_manual(values = c("orange"), na.value = "grey90") +
+  geom_sf(data = evhoe[is.na(evhoe$flag_trimming_2),], size = 5, shape = 21, col = "black") +
   coord_sf(xlim = c(-12,0),ylim=c(43,53)) +
   theme_minimal() + 
   theme(legend.position = "none",
-        axis.text = element_text(size = 20))
+        axis.text = element_text(size = 25))
 dev.off()
 
 
@@ -526,7 +513,7 @@ dat %>%
                                    labels = c( "2%", "0%"), 
                                    name = "Trimming")
     
-png(paste0("explore.metadata/public_data_exploration/tile_for_flags_no_lines_",hex_res,".png"),
+png(paste0("data_descriptor_figures/tile_for_flags_no_lines_",hex_res,".png"),
     width = 10*200, height = 10*200, res =200)
 print(plot_list)
 dev.off()
@@ -820,7 +807,7 @@ plot_list[[surveyid]] <- ggplot2::ggplot(bt_4loc_10yr_c) +
 
 
 
-png(paste0("explore.metadata/public_data_exploration/tile_for_flags_method2.png"),
+png(paste0("data_descriptor_figures/tile_for_flags_method2.png"),
     width = 9.5*200, height = 10*200, res =200)
 print(plot_list)
 dev.off()
