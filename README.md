@@ -8,7 +8,7 @@ This database is a product of the CESAB working group, [FishGlob: Fish biodivers
 
 <img src ="https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/fishglob_logo.png" width ="200">
 
-Main contact: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com)
+Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com) & Juliano Palacios-Abrantes [j.palacios@oceans.ubc.ca ](mailto:j.palacios@oceans.ubc.ca)
 
 ### Structure of the repository
 
@@ -17,11 +17,7 @@ Main contact: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmai
 * **functions** contains useful functions used in other scripts
 * **length_weight** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
 * **metadata_docs** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
-* **outputs/Cleaned_data** contains all process survey data files per survey *XX_clean.RData*, with corresponding version with standardization steps *XX_std_clean.RData*
-* **outputs/Compiled_data** contains the compiled dataset, but not stored onto GitHub because too big of a file
-* **outputs/Flags/taxonomic_flagging** contains the outputs from the flagging methods for each survey: *XX_flagspp.txt* with the list of flagged taxa, *XX_stats.csv* with the proportion of flagged taxa compared to the total number of taxa in the survey, *XX_taxonomic_flagging.png* with a figure summarizing the occurrence of flagged taxa per year
-* **outputs/Flags/trimming_method1** contains the outputs from the flagging spatio-temporal method (i) per survey at grid cell resolutions 7 and 8: summarizing files with survey- and method-specific maps, plots, list of hauls removed, and statistics
-* **outputs/Flags/trimming_method2** contains the outputs from the flagging spatio-temporal method (ii) per survey: summarizing files with survey- and method-specific maps, plots, list of hauls removed, and statistics
+* **outputs/** contains all survey data processed .RData files and flagging outputs
 * **standard_formats** includes definitions of file formats in the FishGlob database, including survey ID codes.
 * **standardization_steps** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
 * **summary** contains the quality check plots for each survey
