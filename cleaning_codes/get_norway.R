@@ -34,6 +34,7 @@ wrm <- gnr_datasources() %>%
   pull(id)
 
 source("functions/clean_taxa.R")
+source("functions/cleanspl.R")
 source("functions/write_clean_data.R")
 source("functions/apply_trimming_method1.R")
 source("functions/apply_trimming_method2.R")
@@ -330,7 +331,7 @@ norw_dat <- norw_dat %>%
 ##########################################################################################
 
 # Set Survey code
-survey_code <- "NOR-BTS_v3"
+survey_code <- "NOR-BTS"
 
 norw_dat <- norw_dat %>% 
   mutate(
