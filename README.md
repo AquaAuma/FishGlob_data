@@ -12,12 +12,12 @@ Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gma
 
 ### Structure of the repository
 
-* **cleaning._odes** includes all scripts to process and perform quality control on the trawl surveys.
+* **cleaning_codes** includes all scripts to process and perform quality control on the trawl surveys.
 * **data_descriptor_figures** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
 * **functions** contains useful functions used in other scripts
 * **length_weight** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
 * **metadata_docs** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
-* **outputs/** contains all survey data processed .RData files and flagging outputs
+* **outputs** contains all survey data processed .RData files and flagging outputs
 * **standard_formats** includes definitions of file formats in the FishGlob database, including survey ID codes.
 * **standardization_steps** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
 * **summary** contains the quality check plots for each survey
@@ -45,7 +45,7 @@ Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gma
 ### Author contributions
 *Contributors to code*
 - **Cleaning taxonomy**: Juliano 
-- **Cleaning surveys**: Juliano, Aurore, Zoë, Dan
+- **Cleaning surveys**: Juliano, Aurore, Zoë, Dan, Daniel
 - **Summary of surveys**: Juliano, Aurore, Zoë, Laura
 - **Merge surveys**: Aurore
 - **Standardize surveys**: Laura, Malin, Aurore, Zoë, Alexa
