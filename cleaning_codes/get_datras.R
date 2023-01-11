@@ -570,7 +570,7 @@ list.taxa <- survey %>%
 
 # get LME
 library(rgdal)
-shape1 <- readOGR(dsn = "length.weight/LME66",layer="LMEs66")
+shape1 <- readOGR(dsn = "length_weight/LME66",layer="LMEs66")
 coords <- list.taxa %>%
   dplyr::select(ShootLat, ShootLong, Survey) %>%
   distinct()
