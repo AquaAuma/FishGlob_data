@@ -1,6 +1,6 @@
 ## **outputs**
 
-The list of columns, units, and their descriptions are available in [standard_formats] (https://github.com/AquaAuma/integrated_fishglob_surveys/tree/main/standard_formats)
+The list of columns, units, and their descriptions are available in [standard_formats](https://github.com/AquaAuma/integrated_fishglob_surveys/tree/main/standard_formats)
 
 * **Cleaned_data** contains all process survey data files per survey *XX_clean.RData*, with corresponding version with standardization steps *XX_std_clean.RData*
 * **Compiled_data** contains the compiled dataset, but not stored onto GitHub because too big of a file
