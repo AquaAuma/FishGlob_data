@@ -42,13 +42,18 @@ Please add notes and descriptions about the surveys, with links to documentation
 - We group the data by haul_id, stratum, stratumarea, year, lat, lon, depth, and spp and then sum up all of the wtcpue values for each group and reassign that as the wtcpue.
 - We only keep rows with the season value “SUMMER”
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/mar)
+
+
+
 ## Canada Gulf of St Lawrence North - GSL-N
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_gsl-n.R) 
 -See [here](https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/359839.pdf) for helpful guidance on correction for gear and vessel change 
 -Requires corrections. CHECK if these have been included
 
 
 
 ## Canada Gulf of St Lawrence South - GSL-S
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_gsl-s.R) 
 - See [here](https://publications.gc.ca/collections/collection_2012/mpo-dfo/Fs97-6-2505-eng.pdf) for helpful guidance on correction for gear and vessel changes in 1985 and 1992
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/GSLsouth)
 - Requires corrections. CHECK if these have been included
@@ -56,7 +61,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 
 ## Canada Queen Charlotte Sound - DFO-QCS
-### Data cleaning process [script]https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_dfo-qcs.R) 
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_dfo-qcs.R) 
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/cpac)
 ### Related issues
 - No reported issues
