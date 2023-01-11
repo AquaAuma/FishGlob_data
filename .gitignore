@@ -4,4 +4,3 @@
 .Ruserdata
 .DS_Store
 **/.DS_Store
-outputs/Compiled_data/*.RData
