@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  22 DEC 2022 21:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,278 +666,286 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [8]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 [9]
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
 
-Underfull \vbox (badness 10000) detected at line 645
+Underfull \vbox (badness 10000) detected at line 791
  []
 
-[10] [11]
-Overfull \hbox (85.91089pt too wide) in paragraph at lines 655--666
+[10]
+Underfull \vbox (badness 10000) detected at line 791
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 791
+ []
+
+[11]
+Underfull \vbox (badness 10000) detected at line 791
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 791
+ []
+
+[12] [13]
+Overfull \hbox (25.68903pt too wide) in paragraph at lines 846--857
  [][] 
  []
 
-
-Overfull \hbox (34.27277pt too wide) in paragraph at lines 715--726
- [][] 
- []
-
-[12
+[14
 
 ]
-<norbts_files/figure-latex/hauls_per_year-1.pdf, id=99, 351.3125pt x 313.17pt>
+<norbts_files/figure-latex/hauls_per_year-1.pdf, id=108, 351.3125pt x 313.17pt>
+
 File: norbts_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use norbts_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/hauls_per_year-1.pdf  used o
-n input line 752.
+n input line 898.
 (pdftex.def)             Requested size: 351.32234pt x 313.17877pt.
-[13
+[15
 
  <./norbts_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
-66.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
+12.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<norbts_files/figure-latex/summary_tech_vars-1.pdf, id=114, 700.6175pt x 421.57
+<norbts_files/figure-latex/summary_tech_vars-1.pdf, id=122, 700.6175pt x 421.57
 5pt>
 File: norbts_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 
 <use norbts_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/summary_tech_vars-1.pdf  use
-d on input line 777.
+d on input line 923.
 (pdftex.def)             Requested size: 469.76407pt x 282.66605pt.
-[14
+[16
 
  <./norbts_files/figure-latex/summary_tech_vars-1.pdf>]
-<norbts_files/figure-latex/summary_var_plot-1.pdf, id=131, 446.66875pt x 313.17
+<norbts_files/figure-latex/summary_var_plot-1.pdf, id=139, 446.66875pt x 313.17
 pt>
 File: norbts_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use norbts_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/summary_var_plot-1.pdf  used
- on input line 806.
+ on input line 952.
 (pdftex.def)             Requested size: 446.67445pt x 313.174pt.
-[15
+[17
 
  <./norbts_files/figure-latex/summary_var_plot-1.pdf>]
-<norbts_files/figure-latex/extreme_biomass-1.pdf, id=146, 449.68pt x 313.17pt>
+<norbts_files/figure-latex/extreme_biomass-1.pdf, id=154, 449.68pt x 313.17pt>
 File: norbts_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use norbts_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/extreme_biomass-1.pdf  used 
-on input line 826.
+on input line 971.
 (pdftex.def)             Requested size: 449.69261pt x 313.17877pt.
-[16
+[18
 
  <./norbts_files/figure-latex/extreme_biomass-1.pdf>]
-<norbts_files/figure-latex/summary_var_swept-1.pdf, id=160, 446.66875pt x 315.1
+<norbts_files/figure-latex/summary_var_swept-1.pdf, id=168, 446.66875pt x 315.1
 775pt>
 File: norbts_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 
 <use norbts_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/summary_var_swept-1.pdf  use
-d on input line 848.
+d on input line 994.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[17
+[19
 
  <./norbts_files/figure-latex/summary_var_swept-1.pdf>]
-<norbts_files/figure-latex/abundant_spp-1.pdf, id=173, 459.7175pt x 313.17pt>
+<norbts_files/figure-latex/abundant_spp-1.pdf, id=182, 459.7175pt x 313.17pt>
 File: norbts_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use norbts_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/abundant_spp-1.pdf  used on 
-input line 856.
+input line 1002.
 (pdftex.def)             Requested size: 459.7304pt x 313.17877pt.
-[18
+[20
 
  <./norbts_files/figure-latex/abundant_spp-1.pdf>]
-<norbts_files/figure-latex/fixed_point_map-1.pdf, id=186, 319.1925pt x 351.3125
+<norbts_files/figure-latex/fixed_point_map-1.pdf, id=195, 319.1925pt x 351.3125
 pt>
 File: norbts_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use norbts_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: norbts_files/figure-latex/fixed_point_map-1.pdf  used 
-on input line 866.
+on input line 1012.
 (pdftex.def)             Requested size: 319.19171pt x 351.31163pt.
-<../standardization_steps/outputs/taxonomic_flagging/Nor-BTS_taxonomic_flagging
-.png, id=188, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/Nor-BTS_taxonomic_fla
-gging.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/Nor-BTS_taxonomic_flag
-ging.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/No
-r-BTS_taxonomic_flagging.png  used on input line 876.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[19
+[21
 
  <./norbts_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res_7_p
-lot.png, id=210, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_re
-s_7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res
-_7_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/Nor-BTS_hex_res_7_plot.png  used on input line 902.
+<../outputs/Flags/taxonomic_flagging/Nor-BTS_taxonomic_flagging.png, id=214, 90
+2.1705pt x 337.0191pt>
+File: ../outputs/Flags/taxonomic_flagging/Nor-BTS_taxonomic_flagging.png Graphi
+c file (type png)
+<use ../outputs/Flags/taxonomic_flagging/Nor-BTS_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/Nor-BTS_taxonomic_
+flagging.png  used on input line 1024.
+(pdftex.def)             Requested size: 375.79791pt x 140.38486pt.
+[22
+
+ <../outputs/Flags/taxonomic_flagging/Nor-BTS_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_plot.png, id=222,
+ 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_plot.png Gra
+phic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex
+_res_7_plot.png  used on input line 1052.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[20 <../standardization_steps/outputs/taxonomic_flagging/Nor-BTS_taxonomic_flag
-ging.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res_8_p
-lot.png, id=218, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_re
-s_8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/Nor-BTS_hex_res_8_plot.png  used on input line 904.
+<../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_plot.png, id=223,
+ 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_plot.png Gra
+phic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex
+_res_8_plot.png  used on input line 1054.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[21 <../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res
-_7_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res_7_m
-ap_per_haul.png, id=223, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_re
-s_7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res
-_7_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/Nor-BTS_hex_res_7_map_per_haul.png  used on input line 908.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res_8_m
-ap_per_haul.png, id=224, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_re
-s_8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/Nor-BTS_hex_res_8_map_per_haul.png  used on input line 910.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[22 <../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BT
-S_hex_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res_7_m
-ap_per_grid_nyears.png, id=229, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_re
-s_7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/Nor-BTS_hex_res
-_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/Nor-BTS_hex_res_7_map_per_grid_nyears.png  used on input line 915.
+[23
+
+ <../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_haul.png,
+ id=231, 902.1705pt x 337.0191pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_haul
+.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_haul.
+png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex
+_res_7_map_per_haul.png  used on input line 1058.
+(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+<../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_haul.png,
+ id=232, 902.1705pt x 337.0191pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_haul
+.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_haul.
+png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex
+_res_8_map_per_haul.png  used on input line 1060.
+(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+[24 <../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_plot.png> <..
+/outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_grid_nyea
+rs.png, id=237, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_grid
+_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_grid_
+nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex
+_res_7_map_per_grid_nyears.png  used on input line 1065.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res_8_m
-ap_per_grid_nyears.png, id=230, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_re
-s_8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/Nor-BTS_hex_res_8_map_per_grid_nyears.png  used on input line 917.
+<../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_grid_nyea
+rs.png, id=238, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_grid
+_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_grid_
+nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex
+_res_8_map_per_grid_nyears.png  used on input line 1067.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[23 <../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_res
-7/Nor-BTS_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/Nor-BTS_map_per_haul.png, id
-=236, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/Nor-BTS_map_per_haul.pn
-g Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/Nor-BTS_map_per_haul.png
->
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/Nor-
-BTS_map_per_haul.png  used on input line 928.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[24 <../standardization_steps/outputs/trimming_method1/hex_res8/Nor-BTS_hex_res
-_8_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2/
-Nor-BTS_map_per_haul.png>] (./norbts.aux) ) 
+[25 <../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_per_haul.
+png> <../outputs/Flags/trimming_method1/hex_res7/Nor-BTS_hex_res_7_map_per_grid
+_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/Nor-BTS_hex_res_8_map_
+per_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/Nor-BTS_map_per_haul.png, id=246, 902.1705pt
+ x 337.0191pt>
+File: ../outputs/Flags/trimming_method2/Nor-BTS_map_per_haul.png Graphic file (
+type png)
+<use ../outputs/Flags/trimming_method2/Nor-BTS_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/Nor-BTS_map_per_haul
+.png  used on input line 1078.
+(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+[26 <../outputs/Flags/trimming_method2/Nor-BTS_map_per_haul.png>] (./norbts.aux
+) ) 
 Here is how much of TeX's memory you used:
- 15703 strings out of 478268
- 258676 string characters out of 5846346
- 692669 words of memory out of 5000000
+ 15705 strings out of 478268
+ 257346 string characters out of 5846346
+ 722116 words of memory out of 5000000
  33472 multiletter control sequences out of 15000+600000
  524266 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1003b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/
-fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvip
-s/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec
-.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texliv
-e/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/tex
-mf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
-ublic/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
-r12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/f
-onts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/l
-m/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.
-pfb>
-Output written on norbts.pdf (24 pages, 11247048 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local
+/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2
+022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist
+/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
+lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/loca
+l/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on norbts.pdf (26 pages, 11319443 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
  30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 
