@@ -1,8 +1,8 @@
-# integrated_fishglob_surveys
+# FishGlob_data
 
 [![DOI](https://zenodo.org/badge/580133169.svg)](https://zenodo.org/badge/latestdoi/580133169)
 
-This repository contains the FishGlob s database, including the methods to load, clean, and process the public bottom trawl surveys in it. The database is described in the manuscript, "An integrated database of fish biodiversity sampled with scientific bottom trawl surveys" by Aurore A. Maureaud, Juliano Palacios-Abrantes, Zoë Kitchel, Laura Mannocci, Malin L. Pinsky, Alexa Fredston, Esther Beukhof, Daniel L. Forrest, Romain Frelat, Maria L.D. Palomares, Laurene Pecuchet, James T. Thorson, P. Daniël van Denderen, and Bastien Mérigot.
+This repository contains the FishGlob database, including the methods to load, clean, and process the public bottom trawl surveys in it. The database is described in the manuscript, "An integrated database of fish biodiversity sampled with scientific bottom trawl surveys" by Aurore A. Maureaud, Juliano Palacios-Abrantes, Zoë Kitchel, Laura Mannocci, Malin L. Pinsky, Alexa Fredston, Esther Beukhof, Daniel L. Forrest, Romain Frelat, Maria L.D. Palomares, Laurene Pecuchet, James T. Thorson, P. Daniël van Denderen, and Bastien Mérigot.
 
 This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/).
 
@@ -49,8 +49,8 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 
 ### Author contributions
 *Contributors to code*
-- **Cleaning taxonomy**: Juliano 
-- **Cleaning surveys**: Juliano, Aurore, Zoë, Dan, Daniel
-- **Summary of surveys**: Juliano, Aurore, Zoë, Laura
-- **Merge surveys**: Aurore
-- **Standardize surveys**: Laura, Malin, Aurore, Zoë, Alexa
+- **Cleaning taxonomy**: Juliano Palacios-Abrantes 
+- **Cleaning surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Dan Forrest, Daniel van Denderen
+- **Summary of surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Laura Mannocci
+- **Merge surveys**: Aurore Maureaud
+- **Standardize surveys**: Laura Mannocci, Malin Pinsky, Aurore Maureaud, Zoë Kitchel, Alexa Fredston
