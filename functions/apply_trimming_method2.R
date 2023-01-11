@@ -200,8 +200,7 @@ apply_trimming_per_survey_unit_method2 <- function(data){
   # full dataset with added column is_retained_biotime
   data_new <- data %>%
     dplyr::full_join(bt_4loc_10yr %>%
-                       dplyr::select(-c(location, cell)), by = c("survey_unit", "year", "latitude", "longitude",
-                                                                 "haul_id")) %>%
+                       dplyr::select(-c(location, cell)), by = c("survey_unit", "year", "latitude", "longitude")) %>%
     dplyr::mutate(is_retained_biotime = ifelse(is.na(is_retained_biotime), FALSE, is_retained_biotime))
   
   
