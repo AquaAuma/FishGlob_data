@@ -1,6 +1,6 @@
 ## **outputs/Compiled_data**
 
-By using the **cleaning_codes/merge.R** R script, the function *read_clean_data()* and *write_clean_data()* will store compiled versions of the database in this folder
+By using the **cleaning_codes/merge.R** R script, the function *read_clean_data()* and *write_clean_data()* will store compiled versions of the database in this folder. The generated files include a data file and a readme file inclding the columns names, units, and their descriptions.
 
 Three versions of the compiled datasets are created:
 * the metadata, unique combination of survey, latitude, longitude, survey_unit, year
