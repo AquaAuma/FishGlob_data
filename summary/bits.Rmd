@@ -61,7 +61,7 @@ This document presents the cleaning code and summary of the Baltic Sea bottom tr
 ## Data cleaning in R
 
 
-```{r cleaning_code, code = readLines(here("./cleaning.codes/get.datras.R")), eval=FALSE}
+```{r cleaning_code, code = readLines(here("./cleaning_codes/get_datras.R")), eval=FALSE}
 ```
 
 
@@ -78,9 +78,8 @@ This document presents the cleaning code and summary of the Baltic Sea bottom tr
 # survey <- read.csv(here("/Users/auroremaureaud/Documents/FISHGLOB/data/Cleaned_data_DEC_2022_1/DATRAS_v3_clean.csv")) %>% 
 #   filter(survey == "BITS")
 
-load(here("outputs/Cleaned_data/DATRAS_v3_clean.RData"))
-survey <- data %>% 
-  filter(survey == "BITS")
+load(here("outputs/Cleaned_data/BITS_clean.RData"))
+survey <- data
 rm(data)
 
 ### Map data
@@ -102,24 +101,23 @@ World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")
 ## 1. Overview of the survey data table
 
 ```{r head_survey, eval = T, echo = F}
-kable(survey[1:5,1:8], format = "latex", booktabs = T) %>%
+kable(survey[1:5,1:6], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
 
-kable(survey[1:5,9:15], format = "latex", booktabs = T) %>%
+kable(survey[1:5,7:15], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
 
-kable(survey[1:5,16:21], format = "latex", booktabs = T) %>%
+kable(survey[1:5,16:23], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
 
-kable(survey[1:5,22:27], format = "latex", booktabs = T) %>%
+kable(survey[1:5,24:30], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
 
-kable(survey[1:5,28:32], format = "latex", booktabs = T) %>%
+kable(survey[1:5,31:35], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
 
-kable(survey[1:5,33:39], format = "latex", booktabs = T) %>%
+kable(survey[1:5,36:42], format = "latex", booktabs = T) %>%
 kable_styling(latex_options = c("striped","HOLD_position"))
-
 
 ```
 
@@ -196,18 +194,18 @@ var_plot
 
 Here we display the yearly total and average across hauls of the following variables recorded in the data:
 
-- *num_cpue*, number of individuals (abundance) in $\frac{individuals}{km^2}$
-- *num_h*, number of individuals (abundance) in $\frac{individuals}{h}$
+- *num_cpua*, number of individuals (abundance) in $\frac{individuals}{km^2}$
+- *num_cpue*, number of individuals (abundance) in $\frac{individuals}{h}$
 - *num*, number of individuals (abundance)
-- *wgt_cpue*, weight in $\frac{kg}{km^2}$
-- *wgt_h*, weight in $\frac{kg}{h}$
+- *wgt_cpua*, weight in $\frac{kg}{km^2}$
+- *wgt_cpue*, weight in $\frac{kg}{h}$
 - *wgt*, weight in ${kg}$
 
 ```{r summary_var_plot, eval = T, echo = F, message =  F,warning =  F}
 
 var_plot <-  survey %>%
   group_by(year) %>% 
-  summarise_at(vars(num:wgt_cpue),
+  summarise_at(vars(num:wgt_cpua),
                funs(sum,mean),na.rm=T) %>% 
   # head()
   gather("var","val",2:13) %>% 
@@ -236,7 +234,6 @@ var_plot <-  survey %>%
   
 
 var_plot
-
 ```
 
 
@@ -251,10 +248,10 @@ Here we show a yearly total distribution of the biomass data to visualize outlie
 
 ```{r extreme_biomass, eval = T, echo = F, message =  F,warning =  F}
 
-if(!is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Weight = sum(wgt_cpue), Abundance = sum(num_cpue)) %>% 
+  summarize(Weight = sum(wgt_cpua), Abundance = sum(num_cpua)) %>% 
   gather("var","val",3:4) %>% 
   ggplot() +
   geom_boxplot(
@@ -271,10 +268,10 @@ if(!is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T
   theme(axis.text.x = element_text(angle = 90))
 }
 
-if(!is.na(mean(survey$num_cpue, na.rm=T)) & is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & is.na(mean(survey$wgt_cpua, na.rm=T))){
 var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Abundance = sum(num_cpue)) %>% 
+  summarize(Abundance = sum(num_cpua)) %>% 
   # head()
   ggplot() +
   geom_boxplot(
@@ -290,10 +287,10 @@ var_plot <-  survey %>%
   theme(axis.text.x = element_text(angle = 90))
 } 
 
-if(is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
 var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Weight = sum(wgt_cpue)) %>% 
+  summarize(Weight = sum(wgt_cpua)) %>% 
   # head()
   ggplot() +
   geom_boxplot(
@@ -320,17 +317,17 @@ var_plot
 Here we show the total abundance and number of taxa relationships with the area swept:
 
 - *nbr_taxa*, number of marine fish taxa after taxonomic data cleaning
-- *num_cpue*, number of individuals (abundance) in $\frac{individuals}{km^2}$
-- *wgt_cpue*, weight in $\frac{kg}{km^2}$
+- *num_cpua*, number of individuals (abundance) in $\frac{individuals}{km^2}$
+- *wgt_cpua*, weight in $\frac{kg}{km^2}$
 
 
 
 ```{r summary_var_swept, eval = T, echo = F, message =  F,warning =  F}
 
-if(!is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
-  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpue),Weight = sum(wgt_cpue)) %>% 
+  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpua),Weight = sum(wgt_cpua)) %>% 
   gather("var","val",4:6) %>% 
   # head()
   ggplot() +
@@ -340,7 +337,7 @@ if(!is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T
   theme_bw()
 }
 
-if(!is.na(mean(survey$num_cpue, na.rm=T)) & is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(!is.na(mean(survey$num_cpue, na.rm=T)) & mean(survey$wgt_cpue, na.rm=T)){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
   summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpue)) %>% 
@@ -353,10 +350,10 @@ if(!is.na(mean(survey$num_cpue, na.rm=T)) & is.na(mean(survey$wgt_cpue, na.rm=T)
   theme_bw()
 }
 
-if(is.na(mean(survey$num_cpue, na.rm=T)) & !is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
-  summarize(Number_Taxa = length(accepted_name), Weight = sum(wgt_cpue)) %>% 
+  summarize(Number_Taxa = length(accepted_name), Weight = sum(wgt_cpua)) %>% 
   gather("var","val",4:5) %>% 
   # head()
   ggplot() +
@@ -375,10 +372,10 @@ var_plot
 
 ```{r abundant_spp, eval=T, echo=F, message=F, warning=F}
 
-if(!is.na(mean(survey$num_cpue, na.rm=T))){
+if(!is.na(mean(survey$num_cpua, na.rm=T))){
 spp <- survey %>% 
   group_by(year, accepted_name) %>% 
-  summarize(wgt = sum(wgt_cpue), nbr_years = length(year)) %>% 
+  summarize(wgt = sum(wgt_cpua), nbr_years = length(year)) %>% 
   filter(nbr_years>10) %>% 
   group_by(accepted_name) %>% 
   summarize(wgt = median(wgt)) %>% 
@@ -389,7 +386,7 @@ spp <- survey %>%
 spp_plot <- survey %>% 
   filter(accepted_name %in% spp) %>% 
   group_by(year, accepted_name) %>%
-  summarize(wgt = sum(wgt_cpue, na.rm=T)) %>% 
+  summarize(wgt = sum(wgt_cpua, na.rm=T)) %>% 
   ggplot() +
   geom_point( aes(x = year, y = wgt), size=0.5 ) +
   geom_line(aes(x = year,y = wgt), size=0.5) +
@@ -398,10 +395,10 @@ spp_plot <- survey %>%
   ylab("Species Weight (kg)") + xlab("Year")
 }
 
-if(is.na(mean(survey$wgt_cpue, na.rm=T))){
+if(is.na(mean(survey$wgt_cpua, na.rm=T))){
   spp <- survey %>% 
   group_by(year, accepted_name) %>% 
-  summarize(num = sum(num_cpue), nbr_years = length(year)) %>% 
+  summarize(num = sum(num_cpua), nbr_years = length(year)) %>% 
   filter(nbr_years>10) %>% 
   group_by(accepted_name) %>% 
   summarize(num = median(num)) %>% 
@@ -412,7 +409,7 @@ if(is.na(mean(survey$wgt_cpue, na.rm=T))){
 spp_plot <- survey %>% 
   filter(accepted_name %in% spp) %>% 
   group_by(year, accepted_name) %>%
-  summarize(num = sum(num_cpue, na.rm=T)) %>% 
+  summarize(num = sum(num_cpua, na.rm=T)) %>% 
   ggplot() +
   geom_point( aes(x = year, y = num), size=0.5 ) +
   geom_line(aes(x = year,y = num), size=0.5) +
@@ -425,6 +422,7 @@ spp_plot
 ```
 
 \clearpage
+
 
 ## 8. Distribution mapping
 
@@ -460,13 +458,13 @@ This species flagging method was adapted from https://github.com/pinskylab/Ocean
 Visualization of flagged taxa
 
 ```{r, echo=FALSE, out.width = '80%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "taxonomic_flagging", paste0(survey$survey[1],"_taxonomic_flagging.png")))
+knitr::include_graphics(here::here("outputs", "Flags", "taxonomic_flagging", paste0(survey$survey[1],"_taxonomic_flagging.png")))
 ```
 
 Statistics related to the taxonomic flagging outputs
 
 ```{r, echo=FALSE}
-df <- read.csv(here::here("standardization_steps", "outputs", "taxonomic_flagging", paste0(survey$survey[1],'_stats.csv')))
+df <- read.csv(here::here("outputs", "Flags", "taxonomic_flagging", paste0(survey$survey[1],'_stats.csv')))
 knitr::kable(df, col.names = NULL)
 ```
 
@@ -483,32 +481,32 @@ It was run for hex resolution 7 and 8.
 Plot of number of cells x years with overlaid flagging options
 
 ```{r, echo=FALSE, out.width = '80%'} 
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7", "BITS-1_hex_res_7_plot.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7", "BITS-1_hex_res_7_plot.png"))
 ```
 ```{r, echo=FALSE, out.width = '80%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-1_hex_res_8_plot.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8","BITS-1_hex_res_8_plot.png"))
 ```
 
 Map of hauls retained and removed per flagging method and threshold
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7","BITS-1_hex_res_7_map_per_haul.png"))
+knitr::include_graphics(here::here("outputs", "Flags", "trimming_method1", "hex_res7","BITS-1_hex_res_7_map_per_haul.png"))
 ```
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-1_hex_res_8_map_per_haul.png"))
+knitr::include_graphics(here::here("outputs", "Flags", "trimming_method1", "hex_res8","BITS-1_hex_res_8_map_per_haul.png"))
 ```
 
 
 Map of numbers of years removed per grid cell and flagging method/threshold
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7","BITS-1_hex_res_7_map_per_grid_nyears.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7","BITS-1_hex_res_7_map_per_grid_nyears.png"))
 ```
 
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-1_hex_res_8_map_per_grid_nyears.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8","BITS-1_hex_res_8_map_per_grid_nyears.png"))
 ```
 
 
@@ -519,7 +517,7 @@ This standardization method was adapted from BioTIME code from https://github.co
 Map of hauls retained and removed
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method2", 
+knitr::include_graphics(here::here("outputs", "Flags", "trimming_method2", 
                                    "BITS-1_map_per_haul.png"))
 ```
 
@@ -528,9 +526,9 @@ knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming
 Statistics of hauls removed for each standardization method
 
 ```{r, echo=FALSE}
-met1_7 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7", "BITS-1_hex_res_7_stats_hauls.csv"))
-met1_8 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8", "BITS-1_hex_res_8_stats_hauls.csv"))
-met2 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method2", 
+met1_7 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res7", "BITS-1_hex_res_7_stats_hauls.csv"))
+met1_8 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res8", "BITS-1_hex_res_8_stats_hauls.csv"))
+met2 <- read.csv(here::here("outputs", "Flags","trimming_method2", 
                             "BITS-1_stats_hauls.csv"))
 knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]), 
              col.names = c("summary", "grid cell 7, 0% threshold", "grid cell 7, 2% threshold", 
@@ -552,32 +550,32 @@ It was run for hex resolution 7 and 8.
 Plot of number of cells x years with overlaid flagging options
 
 ```{r, echo=FALSE, out.width = '80%'} 
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7", "BITS-4_hex_res_7_plot.png"))
+knitr::include_graphics(here::here("outputs", "Flags", "trimming_method1", "hex_res7", "BITS-4_hex_res_7_plot.png"))
 ```
 ```{r, echo=FALSE, out.width = '80%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-4_hex_res_8_plot.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8","BITS-4_hex_res_8_plot.png"))
 ```
 
 Map of hauls retained and removed per flagging method and threshold
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7","BITS-4_hex_res_7_map_per_haul.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7","BITS-4_hex_res_7_map_per_haul.png"))
 ```
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-4_hex_res_8_map_per_haul.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8","BITS-4_hex_res_8_map_per_haul.png"))
 ```
 
 
 Map of numbers of years removed per grid cell and flagging method/threshold
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7","BITS-4_hex_res_7_map_per_grid_nyears.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7","BITS-4_hex_res_7_map_per_grid_nyears.png"))
 ```
 
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8","BITS-4_hex_res_8_map_per_grid_nyears.png"))
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8","BITS-4_hex_res_8_map_per_grid_nyears.png"))
 ```
 
 
@@ -588,7 +586,7 @@ This standardization method was adapted from BioTIME code from https://github.co
 Map of hauls retained and removed
 
 ```{r, echo=FALSE, out.width = '100%'}
-knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming_method2", 
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method2", 
                                    "BITS-4_map_per_haul.png"))
 ```
 
@@ -597,9 +595,9 @@ knitr::include_graphics(here::here("standardization_steps", "outputs", "trimming
 Statistics of hauls removed for each standardization method
 
 ```{r, echo=FALSE}
-met1_7 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res7", "BITS-4_hex_res_7_stats_hauls.csv"))
-met1_8 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1", "hex_res8", "BITS-4_hex_res_8_stats_hauls.csv"))
-met2 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method2", 
+met1_7 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res7", "BITS-4_hex_res_7_stats_hauls.csv"))
+met1_8 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res8", "BITS-4_hex_res_8_stats_hauls.csv"))
+met2 <- read.csv(here::here("outputs", "Flags","trimming_method2", 
                             "BITS-4_stats_hauls.csv"))
 knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]), 
              col.names = c("summary", "grid cell 7, 0% threshold", "grid cell 7, 2% threshold", 

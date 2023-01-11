@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  22 DEC 2022 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,244 +665,255 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 146.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-209.
+213.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
 
-Underfull \vbox (badness 10000) detected at line 454
+Underfull \vbox (badness 10000) detected at line 595
  []
 
-[6] [7]
-Overfull \hbox (13.94002pt too wide) in paragraph at lines 464--475
- [][] 
+[6]
+Underfull \vbox (badness 10000) detected at line 595
  []
 
-[8
+
+Underfull \vbox (badness 10000) detected at line 595
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 595
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 595
+ []
+
+[8]
+Underfull \vbox (badness 10000) detected at line 595
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 595
+ []
+
+[9] [10] [11
 
 ]
-<ai_files/figure-latex/hauls_per_year-1.pdf, id=83, 351.3125pt x 313.17pt>
+<ai_files/figure-latex/hauls_per_year-1.pdf, id=96, 351.3125pt x 313.17pt>
 File: ai_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/hauls_per_year-1.pdf  used on in
-put line 561.
+put line 702.
 (pdftex.def)             Requested size: 351.32234pt x 313.17877pt.
-[9
+[12
 
  <./ai_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-75.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
+16.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<ai_files/figure-latex/summary_tech_vars-1.pdf, id=97, 699.61375pt x 421.575pt>
-
+<ai_files/figure-latex/summary_tech_vars-1.pdf, id=110, 699.61375pt x 421.575pt
+>
 File: ai_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/summary_tech_vars-1.pdf  used on
- input line 586.
+ input line 727.
 (pdftex.def)             Requested size: 469.76361pt x 283.07132pt.
-[10
+[13
 
  <./ai_files/figure-latex/summary_tech_vars-1.pdf>]
-<ai_files/figure-latex/summary_var_plot-1.pdf, id=114, 446.66875pt x 313.17pt>
+<ai_files/figure-latex/summary_var_plot-1.pdf, id=128, 446.66875pt x 313.17pt>
 File: ai_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/summary_var_plot-1.pdf  used on 
-input line 615.
+input line 756.
 (pdftex.def)             Requested size: 446.67445pt x 313.174pt.
-[11
+[14
 
  <./ai_files/figure-latex/summary_var_plot-1.pdf>]
-<ai_files/figure-latex/extreme_biomass-1.pdf, id=129, 446.66875pt x 313.17pt>
+<ai_files/figure-latex/extreme_biomass-1.pdf, id=143, 446.66875pt x 313.17pt>
 File: ai_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/extreme_biomass-1.pdf  used on i
-nput line 634.
+nput line 775.
 (pdftex.def)             Requested size: 446.67445pt x 313.174pt.
-[12
+[15
 
  <./ai_files/figure-latex/extreme_biomass-1.pdf>]
-<ai_files/figure-latex/summary_var_swept-1.pdf, id=142, 446.66875pt x 315.1775p
+<ai_files/figure-latex/summary_var_swept-1.pdf, id=156, 446.66875pt x 315.1775p
 t>
 File: ai_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/summary_var_swept-1.pdf  used on
- input line 657.
+ input line 798.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[13
+[16
 
  <./ai_files/figure-latex/summary_var_swept-1.pdf>]
-<ai_files/figure-latex/abundant_spp-1.pdf, id=157, 459.7175pt x 313.17pt>
+<ai_files/figure-latex/abundant_spp-1.pdf, id=170, 459.7175pt x 313.17pt>
 File: ai_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/abundant_spp-1.pdf  used on inpu
-t line 665.
+t line 806.
 (pdftex.def)             Requested size: 459.7304pt x 313.17877pt.
-[14
+[17
 
  <./ai_files/figure-latex/abundant_spp-1.pdf>]
-<ai_files/figure-latex/fixed_point_map-1.pdf, id=170, 712.6625pt x 321.2pt>
+<ai_files/figure-latex/fixed_point_map-1.pdf, id=183, 712.6625pt x 321.2pt>
 File: ai_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use ai_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: ai_files/figure-latex/fixed_point_map-1.pdf  used on i
-nput line 675.
+nput line 816.
 (pdftex.def)             Requested size: 469.74974pt x 211.71819pt.
-[15
+[18
 
  <./ai_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/taxonomic_flagging/AI_taxonomic_flagging.png,
- id=188, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/AI_taxonomic_flagging
-.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/AI_taxonomic_flagging.
-png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/AI
-_taxonomic_flagging.png  used on input line 687.
+<../outputs/Flags/taxonomic_flagging/AI_taxonomic_flagging.png, id=201, 505.89p
+t x 505.89pt>
+File: ../outputs/Flags/taxonomic_flagging/AI_taxonomic_flagging.png Graphic fil
+e (type png)
+<use ../outputs/Flags/taxonomic_flagging/AI_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/AI_taxonomic_flagg
+ing.png  used on input line 828.
 (pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[16
+[19
 
- <../standardization_steps/outputs/taxonomic_flagging/AI_taxonomic_flagging.png
->]
-<../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_plot.p
-ng, id=196, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_p
-lot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_pl
-ot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/AI_hex_res_7_plot.png  used on input line 715.
+ <../outputs/Flags/taxonomic_flagging/AI_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_plot.png, id=210, 722.
+7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_plot.png Graphic 
+file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_
+7_plot.png  used on input line 856.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_plot.p
-ng, id=197, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_p
-lot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_pl
-ot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/AI_hex_res_8_plot.png  used on input line 717.
+<../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_plot.png, id=211, 722.
+7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_plot.png Graphic 
+file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_
+8_plot.png  used on input line 858.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[17
+[20
 
- <../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_plot.
-png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_map_pe
-r_haul.png, id=206, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_m
-ap_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_ma
-p_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/AI_hex_res_7_map_per_haul.png  used on input line 721.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_map_pe
-r_haul.png, id=207, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_m
-ap_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_ma
-p_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/AI_hex_res_8_map_per_haul.png  used on input line 723.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[18 <../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_pl
-ot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_
-7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_map_pe
-r_grid_nyears.png, id=212, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_m
-ap_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/AI_hex_res_7_ma
-p_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/AI_hex_res_7_map_per_grid_nyears.png  used on input line 728.
+ <../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_haul.png, id=2
+20, 902.1705pt x 496.7358pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_haul.png 
+Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_
+7_map_per_haul.png  used on input line 862.
+(pdftex.def)             Requested size: 469.75084pt x 258.64517pt.
+[21 <../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_haul.png, id=2
+25, 902.1705pt x 496.7358pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_haul.png 
+Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_
+8_map_per_haul.png  used on input line 864.
+(pdftex.def)             Requested size: 469.75084pt x 258.64517pt.
+<../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_grid_nyears.pn
+g, id=226, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_grid_nyea
+rs.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_grid_nyear
+s.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_
+7_map_per_grid_nyears.png  used on input line 869.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_map_pe
-r_grid_nyears.png, id=213, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_m
-ap_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_ma
-p_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/AI_hex_res_8_map_per_grid_nyears.png  used on input line 730.
+[22 <../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_haul.png> 
+<../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_grid_nyears.pn
+g, id=231, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_grid_nyea
+rs.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_grid_nyear
+s.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_
+8_map_per_grid_nyears.png  used on input line 871.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[19 <../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_ma
-p_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_res7/AI_
-hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/AI_map_per_haul.png, id=220,
- 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/AI_map_per_haul.png Gra
-phic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/AI_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/AI_m
-ap_per_haul.png  used on input line 741.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[20 <../standardization_steps/outputs/trimming_method1/hex_res8/AI_hex_res_8_ma
-p_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2/AI_ma
-p_per_haul.png>] (./ai.aux) ) 
+<../outputs/Flags/trimming_method2/AI_map_per_haul.png, id=233, 902.1705pt x 49
+6.7358pt>
+File: ../outputs/Flags/trimming_method2/AI_map_per_haul.png Graphic file (type 
+png)
+<use ../outputs/Flags/trimming_method2/AI_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/AI_map_per_haul.png 
+ used on input line 882.
+(pdftex.def)             Requested size: 469.75084pt x 258.64517pt.
+[23 <../outputs/Flags/trimming_method1/hex_res7/AI_hex_res_7_map_per_grid_nyear
+s.png> <../outputs/Flags/trimming_method1/hex_res8/AI_hex_res_8_map_per_grid_ny
+ears.png>] [24 <../outputs/Flags/trimming_method2/AI_map_per_haul.png>] (./ai.a
+ux) ) 
 Here is how much of TeX's memory you used:
- 15698 strings out of 478268
- 257959 string characters out of 5846346
- 635894 words of memory out of 5000000
- 33471 multiletter control sequences out of 15000+600000
+ 15703 strings out of 478268
+ 256660 string characters out of 5846346
+ 664735 words of memory out of 5000000
+ 33472 multiletter control sequences out of 15000+600000
  524266 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,999b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvip
-s/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/loc
-al/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/
-type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
-ic/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
-tt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on ai.pdf (20 pages, 3227869 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/loc
+al/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/202
+2/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-di
+st/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type
+1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf
+-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on ai.pdf (24 pages, 3699298 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
  30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 

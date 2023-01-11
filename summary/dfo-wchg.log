@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  22 DEC 2022 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,252 +665,273 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 148.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-281.
+286.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
 
-Underfull \vbox (badness 10000) detected at line 465
+Underfull \vbox (badness 10000) detected at line 607
  []
 
-[6] [7]
-Overfull \hbox (3.68794pt too wide) in paragraph at lines 535--546
+[6]
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+[8]
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 607
+ []
+
+[9] [10]
+Overfull \hbox (14.17389pt too wide) in paragraph at lines 692--703
  [][] 
  []
 
-[8
+[11
 
 ]
-<dfo-wchg_files/figure-latex/hauls_per_year-1.pdf, id=83, 351.3125pt x 313.17pt
+<dfo-wchg_files/figure-latex/hauls_per_year-1.pdf, id=96, 351.3125pt x 313.17pt
 >
 File: dfo-wchg_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use dfo-wchg_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/hauls_per_year-1.pdf  used
- on input line 572.
+ on input line 714.
 (pdftex.def)             Requested size: 351.32234pt x 313.17877pt.
-[9
+[12
 
  <./dfo-wchg_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-86.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
+28.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf, id=97, 699.61375pt x 421.
-575pt>
+<dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf, id=110, 699.61375pt x 421
+.575pt>
 File: dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pd
 f)
 <use dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf  u
-sed on input line 597.
+sed on input line 739.
 (pdftex.def)             Requested size: 469.76361pt x 283.07132pt.
-[10
+[13
 
  <./dfo-wchg_files/figure-latex/summary_tech_vars-1.pdf>]
-<dfo-wchg_files/figure-latex/summary_var_plot-1.pdf, id=114, 446.66875pt x 313.
+<dfo-wchg_files/figure-latex/summary_var_plot-1.pdf, id=128, 446.66875pt x 313.
 17pt>
 File: dfo-wchg_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf
 )
 <use dfo-wchg_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/summary_var_plot-1.pdf  us
-ed on input line 626.
+ed on input line 768.
 (pdftex.def)             Requested size: 446.67445pt x 313.174pt.
-[11
+[14
 
  <./dfo-wchg_files/figure-latex/summary_var_plot-1.pdf>]
-<dfo-wchg_files/figure-latex/extreme_biomass-1.pdf, id=129, 446.66875pt x 313.1
+<dfo-wchg_files/figure-latex/extreme_biomass-1.pdf, id=143, 446.66875pt x 313.1
 7pt>
 File: dfo-wchg_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 
 <use dfo-wchg_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/extreme_biomass-1.pdf  use
-d on input line 646.
+d on input line 787.
 (pdftex.def)             Requested size: 446.67445pt x 313.174pt.
-[12
+[15
 
  <./dfo-wchg_files/figure-latex/extreme_biomass-1.pdf>]
-<dfo-wchg_files/figure-latex/summary_var_swept-1.pdf, id=142, 446.66875pt x 315
+<dfo-wchg_files/figure-latex/summary_var_swept-1.pdf, id=156, 446.66875pt x 315
 .1775pt>
 File: dfo-wchg_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pd
 f)
 <use dfo-wchg_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/summary_var_swept-1.pdf  u
-sed on input line 668.
+sed on input line 810.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[13
+[16
 
  <./dfo-wchg_files/figure-latex/summary_var_swept-1.pdf>]
-<dfo-wchg_files/figure-latex/abundant_spp-1.pdf, id=157, 459.7175pt x 313.17pt>
+<dfo-wchg_files/figure-latex/abundant_spp-1.pdf, id=170, 459.7175pt x 313.17pt>
 
 File: dfo-wchg_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use dfo-wchg_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/abundant_spp-1.pdf  used o
-n input line 676.
+n input line 818.
 (pdftex.def)             Requested size: 459.7304pt x 313.17877pt.
-[14
+[17
 
  <./dfo-wchg_files/figure-latex/abundant_spp-1.pdf>]
-<dfo-wchg_files/figure-latex/fixed_point_map-1.pdf, id=170, 228.855pt x 351.312
+<dfo-wchg_files/figure-latex/fixed_point_map-1.pdf, id=183, 228.855pt x 351.312
 5pt>
 File: dfo-wchg_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 
 <use dfo-wchg_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: dfo-wchg_files/figure-latex/fixed_point_map-1.pdf  use
-d on input line 686.
+d on input line 828.
 (pdftex.def)             Requested size: 228.8649pt x 351.3277pt.
-<../standardization_steps/outputs/taxonomic_flagging/DFO-WCHG_taxonomic_flaggin
-g.png, id=172, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/DFO-WCHG_taxonomic_fl
-agging.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/DFO-WCHG_taxonomic_fla
-gging.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/DF
-O-WCHG_taxonomic_flagging.png  used on input line 696.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[15
+[18
 
  <./dfo-wchg_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_
-plot.png, id=193, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_r
-es_7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_re
-s_7_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/DFO-WCHG_hex_res_7_plot.png  used on input line 722.
+<../outputs/Flags/taxonomic_flagging/DFO-WCHG_taxonomic_flagging.png, id=202, 9
+02.1705pt x 347.1369pt>
+File: ../outputs/Flags/taxonomic_flagging/DFO-WCHG_taxonomic_flagging.png Graph
+ic file (type png)
+<use ../outputs/Flags/taxonomic_flagging/DFO-WCHG_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/DFO-WCHG_taxonomic
+_flagging.png  used on input line 840.
+(pdftex.def)             Requested size: 375.79791pt x 144.5994pt.
+[19
+
+ <../outputs/Flags/taxonomic_flagging/DFO-WCHG_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_plot.png, id=211
+, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_plot.png Gr
+aphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_he
+x_res_7_plot.png  used on input line 868.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[16 <../standardization_steps/outputs/taxonomic_flagging/DFO-WCHG_taxonomic_fla
-gging.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_
-plot.png, id=202, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_r
-es_8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/DFO-WCHG_hex_res_8_plot.png  used on input line 724.
+<../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_plot.png, id=212
+, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_plot.png Gr
+aphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_he
+x_res_8_plot.png  used on input line 870.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[17 <../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_re
-s_7_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_
-map_per_haul.png, id=207, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_r
-es_7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_re
-s_7_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/DFO-WCHG_hex_res_7_map_per_haul.png  used on input line 728.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_
-map_per_haul.png, id=208, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_r
-es_8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/DFO-WCHG_hex_res_8_map_per_haul.png  used on input line 730.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[18 <../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/DFO-W
-CHG_hex_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_
-map_per_grid_nyears.png, id=213, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_r
-es_7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/DFO-WCHG_hex_re
-s_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/DFO-WCHG_hex_res_7_map_per_grid_nyears.png  used on input line 735.
+[20
+
+ <../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_haul.png
+, id=221, 902.1705pt x 347.1369pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_hau
+l.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_haul
+.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_he
+x_res_7_map_per_haul.png  used on input line 874.
+(pdftex.def)             Requested size: 469.75084pt x 180.75058pt.
+<../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_haul.png
+, id=222, 902.1705pt x 347.1369pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_hau
+l.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_haul
+.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_he
+x_res_8_map_per_haul.png  used on input line 876.
+(pdftex.def)             Requested size: 469.75084pt x 180.75058pt.
+[21 <../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_plot.png> <.
+./outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_grid_nye
+ars.png, id=227, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_gri
+d_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_grid
+_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_he
+x_res_7_map_per_grid_nyears.png  used on input line 881.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_
-map_per_grid_nyears.png, id=214, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_r
-es_8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/DFO-WCHG_hex_res_8_map_per_grid_nyears.png  used on input line 737.
+<../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_grid_nye
+ars.png, id=228, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_gri
+d_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_grid
+_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_he
+x_res_8_map_per_grid_nyears.png  used on input line 883.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[19 <../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_re
-s7/DFO-WCHG_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/DFO-WCHG_map_per_haul.png, i
-d=221, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/DFO-WCHG_map_per_haul.p
-ng Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/DFO-WCHG_map_per_haul.pn
-g>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/DFO-
-WCHG_map_per_haul.png  used on input line 748.
+[22 <../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_haul
+.png> <../outputs/Flags/trimming_method1/hex_res7/DFO-WCHG_hex_res_7_map_per_gr
+id_nyears.png>]
+<../outputs/Flags/trimming_method2/DFO-WCHG_map_per_haul.png, id=234, 747.7536p
+t x 317.988pt>
+File: ../outputs/Flags/trimming_method2/DFO-WCHG_map_per_haul.png Graphic file 
+(type png)
+<use ../outputs/Flags/trimming_method2/DFO-WCHG_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/DFO-WCHG_map_per_hau
+l.png  used on input line 894.
 (pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[20 <../standardization_steps/outputs/trimming_method1/hex_res8/DFO-WCHG_hex_re
-s_8_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2
-/DFO-WCHG_map_per_haul.png>] (./dfo-wchg.aux) ) 
+[23 <../outputs/Flags/trimming_method1/hex_res8/DFO-WCHG_hex_res_8_map_per_grid
+_nyears.png> <../outputs/Flags/trimming_method2/DFO-WCHG_map_per_haul.png>] (./
+dfo-wchg.aux) ) 
 Here is how much of TeX's memory you used:
- 15700 strings out of 478268
- 258855 string characters out of 5846346
- 637351 words of memory out of 5000000
- 33471 multiletter control sequences out of 15000+600000
+ 15704 strings out of 478268
+ 257549 string characters out of 5846346
+ 666689 words of memory out of 5000000
+ 33472 multiletter control sequences out of 15000+600000
  524371 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1005b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-d
-ist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/
-dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ma
-thit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dis
-t/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
-e1/public/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/l
-m/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/
-type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
-ic/lm/lmtti10.pfb>
-Output written on dfo-wchg.pdf (20 pages, 2817538 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/t
+exlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/202
+2/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
+1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/l
+m/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on dfo-wchg.pdf (23 pages, 3469486 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 
