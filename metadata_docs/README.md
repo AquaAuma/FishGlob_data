@@ -7,11 +7,11 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ## ICES - DATRAS surveys
 
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.datras.R) 
+### Data cleaning process [script](https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/cleaning_codes/get_datras.R) 
 
 - Swept area: re-estimated partly from linear model for EVHOE, NS-IBTS, NIGFS, IE-IGFS, EVHOE, SWC-IBTS, BITS, IE-IGFS, FR-CGFS, NIGFS, ROCKALL, PT-IBTS
 - Taxa: fixing temporal wrong identification with expert knowledge & grouping at genus level some species impossible to identify at the species level
-- Weight data are re-estimated from abundance at length data, and checked against the reported weight (when reported). Length-weight relationships come from fishbase
+- Weight data are re-estimated from abundance at length data, and checked against the reported weight (when reported). Length-weight relationships come from FishBase
 - Only kept hauls where there is the length composition from the length database (10,178 hauls without length data). 
 - Hauls where not all species are recorded were removed
 - See specific surveys for details
@@ -19,7 +19,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ## Aleutian Islands - AI
 
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.ai.R)
+### Data cleaning process [script](https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/cleaning_codes/get_ai.R)
 
 - No specific processes to report
 
@@ -33,11 +33,9 @@ Please add notes and descriptions about the surveys, with links to documentation
 - Gear: BITS has samples with a LOT of gears, some have already been removed, but there are still a few in the fishglob data. If one wants to only use one gear, maybe take the "small" gear
 
 
-
-
 ## Canada Hecate Strait - DFO-hs
 
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.dfo-hs.R) 
+### Data cleaning process [script](https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/cleaning_codes/get_dfo-hs.R) 
 
 - No comments on survey
 
@@ -47,7 +45,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ## Canada Maritimes - DFO-SCS
 
-### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.scs.R) 
+### Data cleaning process [script](https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/cleaning_codes/get_scs.R) 
 
 - We create a haul_id by combining the mission, stratum, and depth, separated by "_".
 - We group the data by haul_id, stratum, stratumarea, year, lat, lon, depth, and spp and then sum up all of the wtcpue values for each group and reassign that as the wtcpue.
