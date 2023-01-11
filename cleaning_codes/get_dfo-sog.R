@@ -281,8 +281,7 @@ clean_sog <- left_join(SOG, correct_taxa, by=c("taxa2"="query")) %>%
   #non marine or non fish
   rename(accepted_name = taxa,
          aphia_id = worms_id) %>% 
-  mutate(verbatim_aphia_id = NA) %>% 
-  select(survey, haul_id, source,
+  mutate(verbatim_aphia_id = NA,
          num_cpua = num_cpue,
          num_cpue = num_h,
          wgt_cpua = wgt_cpue,

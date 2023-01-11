@@ -285,13 +285,16 @@ clean_wchg <- left_join(WCHG, correct_taxa, by=c("taxa2"="query")) %>%
   #non marine or non fish
   rename(accepted_name = taxa,
          aphia_id = worms_id) %>% 
-  mutate(verbatim_aphia_id = NA) %>% 
-  select(survey, haul_id, source, timestamp, country, sub_area, continent, stat_rec, station, stratum,
-         year, month, day, quarter, season, latitude, longitude,
-         haul_dur, area_swept, gear, depth, sbt, sst, num, num_h, num_cpue,
-         wgt, wgt_h, wgt_cpue,
-         verbatim_name, verbatim_aphia_id, accepted_name, aphia_id, SpecCode,
-         kingdom, phylum, class, order, family, genus, rank)
+  mutate(verbatim_aphia_id = NA,
+         num_cpua = num_cpue,
+         num_cpue = num_h,
+         wgt_cpua = wgt_cpue,
+         wgt_cpue = wgt_h,
+         survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
+                              paste0(survey,"-",quarter),survey),
+         survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
+                              paste0(survey,"-",season),survey_unit)) %>% 
+  select(fishglob_data_columns$`Column name fishglob`)
 
 #check for duplicates
 count_clean_wchg <- clean_wchg %>%
@@ -321,3 +324,135 @@ unique_name_match
 # Just run this routine should be good for all
 write_clean_data(data = clean_wchg, survey = "WCHG", overwrite = T)
 
+
+
+# -------------------------------------------------------------------------------------#
+#### FAGS ####
+# -------------------------------------------------------------------------------------#
+#install required packages that are not already installed
+required_packages <- c("data.table",
+                       "devtools",
+                       "dggridR",
+                       "dplyr",
+                       "fields",
+                       "forcats",
+                       "ggplot2",
+                       "here",
+                       "magrittr",
+                       "maps",
+                       "maptools",
+                       "raster",
+                       "rcompendium",
+                       "readr",
+                       "remotes",
+                       "rrtools",
+                       "sf",
+                       "sp",
+                       "tidyr",
+                       "usethis")
+
+not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
+if(length(not_installed)) install.packages(not_installed)
+
+
+#load pipe operator
+library(magrittr)
+
+######### Apply taxonomic flagging per region
+#get vector of regions (here the survey column)
+regions <- levels(as.factor(clean_wchg$survey))
+
+#run flag_spp function in a loop
+for (r in regions) {
+  flag_spp(clean_wchg, r)
+}
+
+######### Apply trimming per survey_unit method 1
+#apply trimming for hex size 7
+dat_new_method1_hex7 <- apply_trimming_per_survey_unit_method1(clean_wchg, 7)
+
+#apply trimming for hex size 8
+dat_new_method1_hex8 <- apply_trimming_per_survey_unit_method1(clean_wchg, 8)
+
+######### Apply trimming per survey_unit method 2
+dat_new_method2 <- apply_trimming_per_survey_unit_method2(clean_wchg)
+
+
+#-------------------------------------------------------------------------------------------#
+#### ADD STRANDARDIZATION FLAGS ####
+#-------------------------------------------------------------------------------------------#
+surveys <- sort(unique(clean_wchg$survey))
+survey_units <- sort(unique(clean_wchg$survey_unit))
+survey_std <- clean_wchg %>% 
+  mutate(flag_taxa = NA_character_,
+         flag_trimming_hex7_0 = NA_character_,
+         flag_trimming_hex7_2 = NA_character_,
+         flag_trimming_hex8_0 = NA_character_,
+         flag_trimming_hex8_2 = NA_character_,
+         flag_trimming_2 = NA_character_)
+
+# integrate taxonomic flags
+for(i in 1:length(surveys)){
+  if(!surveys[i] %in% c("FALK","GSL-N","MRT","NZ-CHAT","SCS", "SWC-IBTS")){
+    xx <- data.frame(read_delim(paste0("outputs/Flags/taxonomic_flagging/",
+                                       surveys[i],"_flagspp.txt"),
+                                delim=";", escape_double = FALSE, col_names = FALSE,
+                                trim_ws = TRUE))
+    xx <- as.vector(unlist(xx[1,]))
+    
+    survey_std <- survey_std %>% 
+      mutate(flag_taxa = ifelse(survey == surveys[i] & accepted_name %in% xx,
+                                "TRUE",flag_taxa))
+    
+    rm(xx)
+  }
+}
+
+# integrate spatio-temporal flags
+for(i in 1:length(survey_units)){
+  
+  if(!survey_units[i] %in% c("DFO-SOG","IS-TAU","SCS-FALL","WBLS")){
+    
+    hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
+                                  survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
+                           sep = ";")
+    hex_res7_0 <- as.vector(hex_res7_0[,1])
+    
+    hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
+                                  survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
+                           sep = ";")
+    hex_res7_2 <- as.vector(hex_res7_2[,1])
+    
+    hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
+                                  survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
+                           sep= ";")
+    hex_res8_0 <- as.vector(hex_res8_0[,1])
+    
+    hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
+                                  survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
+                           sep = ";")
+    hex_res8_2 <- as.vector(hex_res8_2[,1])
+    
+    # trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
+    #                           survey_units[i],"_hauls_removed.csv"))
+    # trim_2 <- as.vector(trim_2[,1])
+    
+    survey_std <- survey_std %>% 
+      mutate(flag_trimming_hex7_0 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res7_0,
+                                           "TRUE",flag_trimming_hex7_0),
+             flag_trimming_hex7_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res7_2,
+                                           "TRUE",flag_trimming_hex7_2),
+             flag_trimming_hex8_0 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res8_0,
+                                           "TRUE",flag_trimming_hex8_0),
+             flag_trimming_hex8_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res8_2,
+                                           "TRUE",flag_trimming_hex8_2),
+             flag_trimming_2 = NA_character_)
+    
+    rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2)
+  }
+}
+
+
+# Just run this routine should be good for all
+write_clean_data(data = survey_std, survey = "SOG_std",
+                 overwrite = T, rdata=TRUE)
