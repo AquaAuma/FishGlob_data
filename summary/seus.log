@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  23 DEC 2022 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,432 +665,439 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 148.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-193.
+197.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
 
-Underfull \vbox (badness 10000) detected at line 565
+Underfull \vbox (badness 10000) detected at line 706
  []
 
-[8] [9]
-Overfull \hbox (42.60541pt too wide) in paragraph at lines 605--616
+[8]
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+[9]
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+[10]
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+[11] [12]
+Overfull \hbox (105.49425pt too wide) in paragraph at lines 746--757
  [][] 
  []
 
 
-Overfull \hbox (57.57785pt too wide) in paragraph at lines 635--646
+Overfull \hbox (26.7431pt too wide) in paragraph at lines 761--772
  [][] 
  []
 
 
-Overfull \hbox (21.9381pt too wide) in paragraph at lines 650--661
+Overfull \hbox (45.63333pt too wide) in paragraph at lines 791--802
  [][] 
  []
 
-[10
+[13
 
 ]
-<seus_files/figure-latex/hauls_per_year-1.pdf, id=108, 356.33125pt x 313.17pt>
+<seus_files/figure-latex/hauls_per_year-1.pdf, id=122, 356.33125pt x 313.17pt>
 File: seus_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/hauls_per_year-1.pdf  used on 
-input line 672.
+input line 813.
 (pdftex.def)             Requested size: 356.34123pt x 313.17877pt.
-[11
+[14
 
  <./seus_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-86.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
+27.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<seus_files/figure-latex/summary_tech_vars-1.pdf, id=122, 699.61375pt x 421.575
+<seus_files/figure-latex/summary_tech_vars-1.pdf, id=136, 699.61375pt x 421.575
 pt>
 File: seus_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/summary_tech_vars-1.pdf  used 
-on input line 697.
+on input line 838.
 (pdftex.def)             Requested size: 469.76361pt x 283.07132pt.
-[12
+[15
 
  <./seus_files/figure-latex/summary_tech_vars-1.pdf>]
-<seus_files/figure-latex/summary_var_plot-1.pdf, id=139, 451.6875pt x 313.17pt>
+<seus_files/figure-latex/summary_var_plot-1.pdf, id=153, 451.6875pt x 313.17pt>
 
 File: seus_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/summary_var_plot-1.pdf  used o
-n input line 726.
+n input line 867.
 (pdftex.def)             Requested size: 451.70016pt x 313.17877pt.
-[13
+[16
 
  <./seus_files/figure-latex/summary_var_plot-1.pdf>]
-<seus_files/figure-latex/extreme_biomass-1.pdf, id=155, 449.68pt x 313.17pt>
+<seus_files/figure-latex/extreme_biomass-1.pdf, id=169, 449.68pt x 313.17pt>
 File: seus_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/extreme_biomass-1.pdf  used on
- input line 743.
-(pdftex.def)             Requested size: 444.77287pt x 309.75253pt.
-
-Overfull \hbox (267.3201pt too wide) in paragraph at lines 742--744
-[]\T1/lmr/m/it/10 (-20) num\T1/lmr/m/n/10 (-20) , to-tal num-ber of in-di-vid-u
--als, if avail-able in the sur-vey data [] 
- []
-
-[14
+ input line 886.
+(pdftex.def)             Requested size: 449.69261pt x 313.17877pt.
+[17
 
  <./seus_files/figure-latex/extreme_biomass-1.pdf>]
-<seus_files/figure-latex/summary_var_swept-1.pdf, id=169, 446.66875pt x 315.177
+<seus_files/figure-latex/summary_var_swept-1.pdf, id=182, 446.66875pt x 315.177
 5pt>
 File: seus_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/summary_var_swept-1.pdf  used 
-on input line 767.
+on input line 909.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[15
+[18
 
  <./seus_files/figure-latex/summary_var_swept-1.pdf>]
-<seus_files/figure-latex/abundant_spp-1.pdf, id=182, 464.73625pt x 313.17pt>
+<seus_files/figure-latex/abundant_spp-1.pdf, id=195, 464.73625pt x 313.17pt>
 File: seus_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/abundant_spp-1.pdf  used on in
-put line 775.
+put line 917.
 (pdftex.def)             Requested size: 464.74928pt x 313.17877pt.
-[16
+[19
 
  <./seus_files/figure-latex/abundant_spp-1.pdf>]
-<seus_files/figure-latex/fixed_point_map-1.pdf, id=195, 287.0725pt x 351.3125pt
+<seus_files/figure-latex/fixed_point_map-1.pdf, id=209, 287.0725pt x 351.3125pt
 >
 File: seus_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use seus_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: seus_files/figure-latex/fixed_point_map-1.pdf  used on
- input line 785.
+ input line 927.
 (pdftex.def)             Requested size: 287.08055pt x 351.32234pt.
-[17
+[20
 
  <./seus_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/taxonomic_flagging/SEUS_taxonomic_flagging.pn
-g, id=214, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/SEUS_taxonomic_flaggi
-ng.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/SEUS_taxonomic_flaggin
-g.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/SE
-US_taxonomic_flagging.png  used on input line 797.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[18
+<../outputs/Flags/taxonomic_flagging/SEUS_taxonomic_flagging.png, id=228, 902.1
+705pt x 431.4519pt>
+File: ../outputs/Flags/taxonomic_flagging/SEUS_taxonomic_flagging.png Graphic f
+ile (type png)
+<use ../outputs/Flags/taxonomic_flagging/SEUS_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/SEUS_taxonomic_fla
+gging.png  used on input line 939.
+(pdftex.def)             Requested size: 375.79791pt x 179.7207pt.
+[21
 
- <../standardization_steps/outputs/taxonomic_flagging/SEUS_taxonomic_flagging.p
-ng>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex_res
-_7_plot.png, id=222, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_he
-x_res_7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex
-_res_7_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-summer_hex_res_7_plot.png  used on input line 825.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex_res
-_8_plot.png, id=223, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_he
-x_res_8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-summer_hex_res_8_plot.png  used on input line 827.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[19
+ <../outputs/Flags/taxonomic_flagging/SEUS_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_plot.png, id=
+236, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_plot.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_plot.png>
 
- <../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex_re
-s_7_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex_res
-_7_map_per_haul.png, id=233, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_he
-x_res_7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex
-_res_7_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-summer_hex_res_7_map_per_haul.png  used on input line 831.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex_res
-_8_map_per_haul.png, id=234, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_he
-x_res_8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-summer_hex_res_8_map_per_haul.png  used on input line 833.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[20 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/SE
-US-summer_hex_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex_res
-_7_map_per_grid_nyears.png, id=239, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_he
-x_res_7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-summer_hex
-_res_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-summer_hex_res_7_map_per_grid_nyears.png  used on input line 838.
-(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex_res
-_8_map_per_grid_nyears.png, id=240, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_he
-x_res_8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-summer_hex_res_8_map_per_grid_nyears.png  used on input line 840.
-(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[21 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex
-_res7/SEUS-summer_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/SEUS-summer_map_per_haul.png
-, id=246, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/SEUS-summer_map_per_hau
-l.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/SEUS-summer_map_per_haul
-.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/SEUS
--summer_map_per_haul.png  used on input line 851.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[22 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-summer_hex
-_res_8_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_meth
-od2/SEUS-summer_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_res_7
-_plot.png, id=255, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_
-res_7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_r
-es_7_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-fall_hex_res_7_plot.png  used on input line 887.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer
+_hex_res_7_plot.png  used on input line 967.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_res_8
-_plot.png, id=256, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_
-res_8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-fall_hex_res_8_plot.png  used on input line 889.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[23
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_plot.png, id=
+237, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_plot.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_plot.png>
 
- <../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_res_
-7_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_res_7
-_map_per_haul.png, id=264, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_
-res_7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_r
-es_7_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-fall_hex_res_7_map_per_haul.png  used on input line 893.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_res_8
-_map_per_haul.png, id=265, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_
-res_8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-fall_hex_res_8_map_per_haul.png  used on input line 895.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[24 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/SEUS
--fall_hex_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_res_7
-_map_per_grid_nyears.png, id=270, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_
-res_7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-fall_hex_r
-es_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-fall_hex_res_7_map_per_grid_nyears.png  used on input line 900.
-(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_res_8
-_map_per_grid_nyears.png, id=271, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_
-res_8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-fall_hex_res_8_map_per_grid_nyears.png  used on input line 902.
-(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[25 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_r
-es7/SEUS-fall_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/SEUS-fall_map_per_haul.png, 
-id=278, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/SEUS-fall_map_per_haul.
-png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/SEUS-fall_map_per_haul.p
-ng>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/SEUS
--fall_map_per_haul.png  used on input line 913.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[26 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-fall_hex_r
-es_8_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method
-2/SEUS-fall_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex_res
-_7_plot.png, id=287, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_he
-x_res_7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex
-_res_7_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-spring_hex_res_7_plot.png  used on input line 949.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer
+_hex_res_8_plot.png  used on input line 969.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex_res
-_8_plot.png, id=288, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_he
-x_res_8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-spring_hex_res_8_plot.png  used on input line 951.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[27
+[22
 
- <../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex_re
-s_7_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex_res
-_7_map_per_haul.png, id=297, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_he
-x_res_7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex
-_res_7_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-spring_hex_res_7_map_per_haul.png  used on input line 955.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex_res
-_8_map_per_haul.png, id=298, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_he
-x_res_8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-spring_hex_res_8_map_per_haul.png  used on input line 957.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[28 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/SE
-US-spring_hex_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex_res
-_7_map_per_grid_nyears.png, id=303, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_he
-x_res_7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/SEUS-spring_hex
-_res_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/SEUS-spring_hex_res_7_map_per_grid_nyears.png  used on input line 962.
+ <../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_haul.
+png, id=246, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_
+haul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_h
+aul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer
+_hex_res_7_map_per_haul.png  used on input line 973.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_haul.
+png, id=247, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_
+haul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_h
+aul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer
+_hex_res_8_map_per_haul.png  used on input line 975.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[23 <../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_plot.png>
+ <../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_haul
+.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_grid_
+nyears.png, id=252, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_
+grid_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_per_g
+rid_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-summer
+_hex_res_7_map_per_grid_nyears.png  used on input line 980.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex_res
-_8_map_per_grid_nyears.png, id=304, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_he
-x_res_8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/SEUS-spring_hex_res_8_map_per_grid_nyears.png  used on input line 964.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_grid_
+nyears.png, id=253, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_
+grid_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_g
+rid_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-summer
+_hex_res_8_map_per_grid_nyears.png  used on input line 982.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[29 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex
-_res7/SEUS-spring_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/SEUS-spring_map_per_haul.png
-, id=310, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/SEUS-spring_map_per_hau
-l.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/SEUS-spring_map_per_haul
-.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/SEUS
--spring_map_per_haul.png  used on input line 975.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[30 <../standardization_steps/outputs/trimming_method1/hex_res8/SEUS-spring_hex
-_res_8_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_meth
-od2/SEUS-spring_map_per_haul.png>] (./seus.aux) ) 
+[24 <../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_h
+aul.png> <../outputs/Flags/trimming_method1/hex_res7/SEUS-summer_hex_res_7_map_
+per_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/SEUS-summer_map_per_haul.png, id=259, 902.17
+05pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method2/SEUS-summer_map_per_haul.png Graphic fi
+le (type png)
+<use ../outputs/Flags/trimming_method2/SEUS-summer_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/SEUS-summer_map_per_
+haul.png  used on input line 993.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[25 <../outputs/Flags/trimming_method1/hex_res8/SEUS-summer_hex_res_8_map_per_g
+rid_nyears.png> <../outputs/Flags/trimming_method2/SEUS-summer_map_per_haul.png
+>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_plot.png, id=26
+9, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_plot.png G
+raphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_h
+ex_res_7_plot.png  used on input line 1029.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_plot.png, id=27
+0, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_plot.png G
+raphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_h
+ex_res_8_plot.png  used on input line 1031.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+[26
+
+ <../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_haul.pn
+g, id=278, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_ha
+ul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_hau
+l.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_h
+ex_res_7_map_per_haul.png  used on input line 1035.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_haul.pn
+g, id=279, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_ha
+ul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_hau
+l.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_h
+ex_res_8_map_per_haul.png  used on input line 1037.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[27 <../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_plot.png> <
+../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_haul.png
+>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_grid_ny
+ears.png, id=284, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_gr
+id_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_gri
+d_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_h
+ex_res_7_map_per_grid_nyears.png  used on input line 1042.
+(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_grid_ny
+ears.png, id=285, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_gr
+id_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_gri
+d_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_h
+ex_res_8_map_per_grid_nyears.png  used on input line 1044.
+(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
+[28 <../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_hau
+l.png> <../outputs/Flags/trimming_method1/hex_res7/SEUS-fall_hex_res_7_map_per_
+grid_nyears.png>]
+<../outputs/Flags/trimming_method2/SEUS-fall_map_per_haul.png, id=291, 902.1705
+pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method2/SEUS-fall_map_per_haul.png Graphic file
+ (type png)
+<use ../outputs/Flags/trimming_method2/SEUS-fall_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/SEUS-fall_map_per_ha
+ul.png  used on input line 1055.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[29 <../outputs/Flags/trimming_method1/hex_res8/SEUS-fall_hex_res_8_map_per_gri
+d_nyears.png> <../outputs/Flags/trimming_method2/SEUS-fall_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_plot.png, id=
+301, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_plot.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_plot.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring
+_hex_res_7_plot.png  used on input line 1091.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_plot.png, id=
+302, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_plot.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_plot.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring
+_hex_res_8_plot.png  used on input line 1093.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+[30
+
+ <../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_haul.
+png, id=310, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_
+haul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_h
+aul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring
+_hex_res_7_map_per_haul.png  used on input line 1097.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_haul.
+png, id=311, 902.1705pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_
+haul.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_h
+aul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring
+_hex_res_8_map_per_haul.png  used on input line 1099.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[31 <../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_plot.png>
+ <../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_haul
+.png>]
+<../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_grid_
+nyears.png, id=317, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_
+grid_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_per_g
+rid_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SEUS-spring
+_hex_res_7_map_per_grid_nyears.png  used on input line 1104.
+(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
+<../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_grid_
+nyears.png, id=318, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_
+grid_nyears.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_g
+rid_nyears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SEUS-spring
+_hex_res_8_map_per_grid_nyears.png  used on input line 1106.
+(pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
+[32 <../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_h
+aul.png> <../outputs/Flags/trimming_method1/hex_res7/SEUS-spring_hex_res_7_map_
+per_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/SEUS-spring_map_per_haul.png, id=324, 902.17
+05pt x 431.4519pt>
+File: ../outputs/Flags/trimming_method2/SEUS-spring_map_per_haul.png Graphic fi
+le (type png)
+<use ../outputs/Flags/trimming_method2/SEUS-spring_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/SEUS-spring_map_per_
+haul.png  used on input line 1117.
+(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
+[33 <../outputs/Flags/trimming_method1/hex_res8/SEUS-spring_hex_res_8_map_per_g
+rid_nyears.png> <../outputs/Flags/trimming_method2/SEUS-spring_map_per_haul.png
+>] (./seus.aux) ) 
 Here is how much of TeX's memory you used:
- 15898 strings out of 478268
- 273762 string characters out of 5846346
- 657641 words of memory out of 5000000
- 33627 multiletter control sequences out of 15000+600000
+ 15902 strings out of 478268
+ 270216 string characters out of 5846346
+ 687363 words of memory out of 5000000
+ 33628 multiletter control sequences out of 15000+600000
  524432 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1001b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf
--dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-
-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/font
-s/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pu
-blic/lm/lmtti10.pfb>
-Output written on seus.pdf (30 pages, 8370973 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.e
+nc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local
+/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2
+022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dis
+t/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
+pe1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk1
+0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on seus.pdf (33 pages, 9528556 bytes).
 PDF statistics:
- 472 PDF objects out of 1000 (max. 8388607)
- 364 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
  31050 words of extra memory for PDF output out of 35830 (max. 10000000)
 
