@@ -42,6 +42,11 @@ Data standardization and flags are done on a per survey basis and per survey_uni
 2. Apply methods to identify a standard spatial footprint through time for each survey-season/quarter (the survey_unit column). Use the functions apply_trimming_per_survey_unit_method1() and apply_trimming_per_survey_unit_method2() 
 3. Display and integrate results in the summary files
 
+### Final data products
+
+**Options**
+Users can either use the single survey data products in **outputs/Cleaned_data/** and work with survey .RData files including flags or not (inclusion of flags is specified by XX_std_clean.RData), or generate their own compiled version of the data by running the *cleaning_codes/merge.R* which will write local versions of the database in **outputs/Compiled_data/**
+
 ### Author contributions
 *Contributors to code*
 - **Cleaning taxonomy**: Juliano 
