@@ -22,22 +22,22 @@ Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gma
 * **standardization_steps** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
 * **summary** contains the quality check plots for each survey
 
-### Survey data cleaning steps
-*add an overall description here*
+### Survey data processing steps
+
+Data processing and cleaning is done on a per survey basis unless formats are similar across a group of surveys. The current repository can process 26 scientific bottom-trawl surveys, according to the following steps.
 
 **Steps** 
 1. Merge the data files for one survey
 2. Clean & homogenize column names following the format described in *standard_formats/fishglob_data_columns.xlsx*
 3. Create missing columns and standardize units using the standard format *standard_formats/fishglob_data_columns.xlsx*
-4. Integrate the cleaned taxonomy by merging old names with new clean name created in *taxa_data_routine.Rmd*
+4. Integrate the cleaned taxonomy by applying the function *clean_taxa()* and apply expert knowledge on taxonomic treatments
 5. Perform quality checks, including the output in the *summary* folder
-6. Merge across surveys with the merge.R code
 
 ### Survey data standardization and flags
-*add an overall description here*
+
+Data standardization and flags are done on a per survey basis and per survey_unit basis (integrating seasons and quarters). Flags are performed both on the temporal occurrence of taxa and the spatio-temporal sampling footprint according to the following steps.
 
 **Steps**
-
 1. Taxonomic quality control: run flag_spp() for each survey region
 2. Apply methods to identify a standard spatial footprint through time for each survey-season/quarter (the survey_unit column). Use the functions apply_trimming_per_survey_unit_method1() and apply_trimming_per_survey_unit_method2() 
 3. Display and integrate results in the summary files
