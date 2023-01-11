@@ -1096,7 +1096,7 @@ for(i in 1:length(survey_units)){
 
 # Just run this routine should be good for all
 for(i in 1:length(surveys)){
-  xx <- survey4 %>% 
+  xx <- survey_std %>% 
     filter(survey == surveys[i])
   write_clean_data(data = xx, survey = paste0(surveys[i],"_std"), overwrite = T,
                    rdata = TRUE)

@@ -454,5 +454,5 @@ for(i in 1:length(survey_units)){
 
 
 # Just run this routine should be good for all
-write_clean_data(data = survey_std, survey = "SOG_std",
+write_clean_data(data = survey_std, survey = "WCHG_std",
                  overwrite = T, rdata=TRUE)
