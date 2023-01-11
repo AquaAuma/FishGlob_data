@@ -6,7 +6,7 @@ This repository contains the FishGlob s database, including the methods to load,
 
 This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/).
 
-<img src ="https://github.com/AquaAuma/integrated_fishglob_surveys/blob/main/fishglob_logo.png" width ="200">
+<img src ="https://github.com/AquaAuma/FishGlob_data/blob/main/fishglob_logo.png" width ="200">
 
 Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com) & Juliano Palacios-Abrantes [j.palacios@oceans.ubc.ca ](mailto:j.palacios@oceans.ubc.ca)
 
