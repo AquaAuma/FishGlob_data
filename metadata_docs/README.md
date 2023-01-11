@@ -81,7 +81,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 - No reported issues
 
-## Canada DFO West Coast Haida Gwaii Survey - DFO-wchg
+## Canada DFO West Coast Haida Gwaii Survey - DFO-WCHG
 
 ### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.dfo-wchg.R) 
 
@@ -92,7 +92,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 - No reported issues
 
-## Canada DFO West Coast Vancouver Island Survey - DFO-wcvi
+## Canada DFO West Coast Vancouver Island Survey - DFO-WCVI
 
 ### Data cleaning process [script](https://github.com/AquaAuma/fishglob/blob/main/cleaning.codes/get.dfo-wcvi.R) 
 
@@ -147,11 +147,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ### Related issues
 
-- [#X Name of Issue](link to the github issue)
-- [#Y Name of Issue](link to the github issue)
-
-
-
 ## North Sea - NS-IBTS
 - Community sampling was standardized in 1983. Before that, surveys are not reliable for community related questions.
 - Time-series: Community sampling was standardized in 1983. Before that, surveys are not reliable for community related questions.
@@ -172,21 +167,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 - We separate the trawls into Fall and Spring seasons.
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/neus)
 
-### Data cleaning process [script](link to survey's cleaning code)
-
-- Description A
-- Description B
-- Description C
-.
-.
-.
-- Description N
-
-### Related issues
-
-- [#X Name of Issue](link to the github issue)
-- [#Y Name of Issue](link to the github issue)
-
 
 ## Norway NOR-BTS
 - Gear: many inappropriate gears were removed based on expertise from IMR colleagues. Kept only the "shrimp trawl gears" (3236: Campelen 1800 shrimp trawl with 35 mm mesh Reketrål. Campelen 1800 ma 35 mm m/40 m. sveiper, Rockhopper gear (Standard sampling-trål); 3270: Campelen 1800 shrimp trawl with 22mm mesh size. Reketrål. Campelen 1800 ma 20 mm m/40 m sveiper. Rockhopper gear. ; 3271: like 3270 with strapping Reketrål. Campelen 1800 ma 20 mm m/40 m sveiper. Rockhopper gear, strapping.)
@@ -201,7 +181,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 - there is no sampling in 2012, 2018, 2019
 - PT-IBTS is surveyed annually, but missing 2012 data, and there is one year of data (2002) before the annual survey starts in 2005.
 
-## Rockall - ROCK
+## Rockall - ROCKALL
 - Gear: there have been some gear/design changes for that survey in the recent years (after after 2010), but it's minor enough we don't need to correct, unless we observe an important change 2010+
 
 
@@ -213,9 +193,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 - Time-series: The annual West Coast survey started in 2003, but the triennial survey was repeated in 2004, so there are two West Coast surveys in 2004 with different spatial footprints and methodologies. 
 
-### Data cleaning process [script](link to survey's cleaning code)
-
--[NOAA Northwest Fisheries Science Center US West Coast Groundfish Bottom Trawl Survey](https://www.nwfsc.noaa.gov/data/api/v1/source)
+### Data cleaning process [NOAA Northwest Fisheries Science Center US West Coast Groundfish Bottom Trawl Survey](https://www.nwfsc.noaa.gov/data/api/v1/source)
 - Munro, P. T. 1998. A decision rule based on the mean square error for correcting relative fishing power differences in trawl survey data. Fish. Bull. 96:538-546.
 - Helser, Thomas, André Punt, and Richard Methot. 2004. “A Generalized Linear Mixed Model Analysis of a Multi-Vessel Fishery Resource Survey.” Fisheries Research 70 (December): 251–64
 - Cooper, Andrew B., Andrew A. Rosenberg, Gunnar Stefánsson, and Marc Mangel. 2004. “Examining the Importance of Consistency in Multi-Vessel Trawl Survey Design Based on the U.S. West Coast Groundfish Bottom Trawl Survey.” Fisheries Research, Models in Fisheries Research: GLMs, GAMS and GLMMs, 70 (2): 239–50.
@@ -224,8 +202,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ### Related issues
 
-- [#X Name of Issue](link to the github issue)
-- [#Y Name of Issue](link to the github issue)
 
 ## West Coast Annual - WCANN
 
@@ -242,8 +218,6 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ### Related issues
 
-- [#X Name of Issue](link to the github issue)
-- [#Y Name of Issue](link to the github issue)
 
 ----------
 
