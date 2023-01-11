@@ -1,4 +1,4 @@
-*standard_formats
+## **standard_formats**
 
 includes definitions of file formats in the FishGlob database, including survey ID codes.
 * *survey_units.xlsx* details all surveys that need to be separated by seasons or quarter because sampling occurs more than once a year
