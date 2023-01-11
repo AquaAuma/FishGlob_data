@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  23 DEC 2022 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,233 +665,255 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 146.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-214.
+218.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
 
-Underfull \vbox (badness 10000) detected at line 428
+Underfull \vbox (badness 10000) detected at line 570
  []
 
-[5] [6]
-Overfull \hbox (13.94002pt too wide) in paragraph at lines 438--449
+[5]
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+[6]
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 570
+ []
+
+[8] [9]
+Overfull \hbox (18.23071pt too wide) in paragraph at lines 655--666
  [][] 
  []
 
-[7
+[10
 
 ]
-<goa_files/figure-latex/hauls_per_year-1.pdf, id=79, 354.32375pt x 313.17pt>
+<goa_files/figure-latex/hauls_per_year-1.pdf, id=92, 354.32375pt x 313.17pt>
 File: goa_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/hauls_per_year-1.pdf  used on i
-nput line 535.
+nput line 677.
 (pdftex.def)             Requested size: 354.32828pt x 313.174pt.
-[8
+[11
 
  <./goa_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-49.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+91.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<goa_files/figure-latex/summary_tech_vars-1.pdf, id=93, 699.61375pt x 421.575pt
->
+<goa_files/figure-latex/summary_tech_vars-1.pdf, id=106, 699.61375pt x 421.575p
+t>
 File: goa_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/summary_tech_vars-1.pdf  used o
-n input line 560.
+n input line 702.
 (pdftex.def)             Requested size: 469.76361pt x 283.07132pt.
-[9
+[12
 
  <./goa_files/figure-latex/summary_tech_vars-1.pdf>]
-<goa_files/figure-latex/summary_var_plot-1.pdf, id=110, 451.6875pt x 313.17pt>
+<goa_files/figure-latex/summary_var_plot-1.pdf, id=123, 451.6875pt x 313.17pt>
 File: goa_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/summary_var_plot-1.pdf  used on
- input line 589.
+ input line 731.
 (pdftex.def)             Requested size: 451.70016pt x 313.17877pt.
-[10
+[13
 
  <./goa_files/figure-latex/summary_var_plot-1.pdf>]
-<goa_files/figure-latex/extreme_biomass-1.pdf, id=125, 445.665pt x 313.17pt>
+<goa_files/figure-latex/extreme_biomass-1.pdf, id=139, 445.665pt x 313.17pt>
 File: goa_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/extreme_biomass-1.pdf  used on 
-input line 608.
+input line 750.
 (pdftex.def)             Requested size: 445.6707pt x 313.174pt.
-[11
+[14
 
  <./goa_files/figure-latex/extreme_biomass-1.pdf>]
-<goa_files/figure-latex/summary_var_swept-1.pdf, id=138, 446.66875pt x 315.1775
-pt>
+<goa_files/figure-latex/summary_var_swept-1.pdf, id=152, 445.665pt x 315.1775pt
+>
 File: goa_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/summary_var_swept-1.pdf  used o
-n input line 630.
-(pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[12
+n input line 773.
+(pdftex.def)             Requested size: 445.6707pt x 315.18153pt.
+[15
 
  <./goa_files/figure-latex/summary_var_swept-1.pdf>]
-<goa_files/figure-latex/abundant_spp-1.pdf, id=151, 464.73625pt x 313.17pt>
+<goa_files/figure-latex/abundant_spp-1.pdf, id=166, 464.73625pt x 313.17pt>
 File: goa_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/abundant_spp-1.pdf  used on inp
-ut line 638.
+ut line 781.
 (pdftex.def)             Requested size: 464.74928pt x 313.17877pt.
-[13
+[16
 
  <./goa_files/figure-latex/abundant_spp-1.pdf>]
-<goa_files/figure-latex/fixed_point_map-1.pdf, id=166, 712.6625pt x 285.065pt>
+<goa_files/figure-latex/fixed_point_map-1.pdf, id=179, 712.6625pt x 285.065pt>
 File: goa_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use goa_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: goa_files/figure-latex/fixed_point_map-1.pdf  used on 
-input line 648.
+input line 791.
 (pdftex.def)             Requested size: 469.74974pt x 187.89989pt.
-<../standardization_steps/outputs/taxonomic_flagging/GOA_taxonomic_flagging.png
-, id=168, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/GOA_taxonomic_flaggin
-g.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/GOA_taxonomic_flagging
-.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/GO
-A_taxonomic_flagging.png  used on input line 658.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[14
+[17
 
  <./goa_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_plot.
-png, id=189, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_
-plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_p
-lot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GOA_hex_res_7_plot.png  used on input line 684.
+<../outputs/Flags/taxonomic_flagging/GOA_taxonomic_flagging.png, id=198, 902.17
+05pt x 424.4658pt>
+File: ../outputs/Flags/taxonomic_flagging/GOA_taxonomic_flagging.png Graphic fi
+le (type png)
+<use ../outputs/Flags/taxonomic_flagging/GOA_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/GOA_taxonomic_flag
+ging.png  used on input line 803.
+(pdftex.def)             Requested size: 375.79791pt x 176.81065pt.
+[18
+
+ <../outputs/Flags/taxonomic_flagging/GOA_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_plot.png, id=206, 722
+.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_plot.png Graphic
+ file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res
+_7_plot.png  used on input line 831.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[15 <../standardization_steps/outputs/taxonomic_flagging/GOA_taxonomic_flagging
-.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_plot.
-png, id=198, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_
-plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_p
-lot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GOA_hex_res_8_plot.png  used on input line 686.
+<../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_plot.png, id=207, 722
+.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_plot.png Graphic
+ file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res
+_8_plot.png  used on input line 833.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[16 <../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_p
-lot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_map_p
-er_haul.png, id=203, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_
-map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_m
-ap_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GOA_hex_res_7_map_per_haul.png  used on input line 690.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_map_p
-er_haul.png, id=204, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_
-map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_m
-ap_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GOA_hex_res_8_map_per_haul.png  used on input line 692.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[17 <../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_p
-lot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_re
-s_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_map_p
-er_grid_nyears.png, id=209, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_
-map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GOA_hex_res_7_m
-ap_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GOA_hex_res_7_map_per_grid_nyears.png  used on input line 697.
+[19
+
+ <../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_haul.png, id=
+217, 902.1705pt x 424.4658pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_haul.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_haul.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res
+_7_map_per_haul.png  used on input line 837.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+<../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_haul.png, id=
+218, 902.1705pt x 424.4658pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_haul.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_haul.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res
+_8_map_per_haul.png  used on input line 839.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+[20 <../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_plot.png> <../out
+puts/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_grid_nyears.p
+ng, id=223, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_grid_nye
+ars.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_grid_nyea
+rs.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res
+_7_map_per_grid_nyears.png  used on input line 844.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_map_p
-er_grid_nyears.png, id=210, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_
-map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_m
-ap_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GOA_hex_res_8_map_per_grid_nyears.png  used on input line 699.
+<../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_grid_nyears.p
+ng, id=224, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_grid_nye
+ars.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_grid_nyea
+rs.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res
+_8_map_per_grid_nyears.png  used on input line 846.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[18 <../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_m
-ap_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_res7/GO
-A_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/GOA_map_per_haul.png, id=216
-, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/GOA_map_per_haul.png Gr
-aphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/GOA_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/GOA_
-map_per_haul.png  used on input line 710.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[19 <../standardization_steps/outputs/trimming_method1/hex_res8/GOA_hex_res_8_m
-ap_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2/GOA_
-map_per_haul.png>] (./goa.aux) ) 
+[21 <../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_haul.png>
+ <../outputs/Flags/trimming_method1/hex_res7/GOA_hex_res_7_map_per_grid_nyears.
+png>]
+<../outputs/Flags/trimming_method2/GOA_map_per_haul.png, id=230, 902.1705pt x 4
+24.4658pt>
+File: ../outputs/Flags/trimming_method2/GOA_map_per_haul.png Graphic file (type
+ png)
+<use ../outputs/Flags/trimming_method2/GOA_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/GOA_map_per_haul.png
+  used on input line 857.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+[22 <../outputs/Flags/trimming_method1/hex_res8/GOA_hex_res_8_map_per_grid_nyea
+rs.png> <../outputs/Flags/trimming_method2/GOA_map_per_haul.png>] (./goa.aux) )
+ 
 Here is how much of TeX's memory you used:
- 15699 strings out of 478268
- 258118 string characters out of 5846346
- 630042 words of memory out of 5000000
- 33471 multiletter control sequences out of 15000+600000
+ 15703 strings out of 478268
+ 256812 string characters out of 5846346
+ 658716 words of memory out of 5000000
+ 33472 multiletter control sequences out of 15000+600000
  524349 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1000b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.
-enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/
-local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
-ublic/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
-r10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm
-/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.p
-fb>
-Output written on goa.pdf (19 pages, 5157822 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/te
+xlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/tex
+mf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fo
+nts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmb
+x12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist
+/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
+1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
+lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf
+-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on goa.pdf (22 pages, 6746889 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 

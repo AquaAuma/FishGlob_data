@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  23 DEC 2022 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,232 +665,254 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 147.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-253.
+257.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
 
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
 
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
 
-Underfull \vbox (badness 10000) detected at line 341
+Underfull \vbox (badness 10000) detected at line 489
  []
 
-[4] [5]
-Overfull \hbox (73.06364pt too wide) in paragraph at lines 351--362
+[4]
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+[5]
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+[6]
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 489
+ []
+
+[7] [8]
+Overfull \hbox (10.75839pt too wide) in paragraph at lines 499--510
  [][] 
  []
 
 
-Overfull \hbox (68.5216pt too wide) in paragraph at lines 411--422
+Overfull \hbox (68.82661pt too wide) in paragraph at lines 544--555
  [][] 
  []
 
-[6
+[9
 
 ]
-<gsl-s_files/figure-latex/hauls_per_year-1.pdf, id=73, 352.31625pt x 313.17pt>
+<gsl-s_files/figure-latex/hauls_per_year-1.pdf, id=87, 352.31625pt x 313.17pt>
 File: gsl-s_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/hauls_per_year-1.pdf  used on
- input line 448.
+ input line 596.
 (pdftex.def)             Requested size: 352.31538pt x 313.16922pt.
-[7
+[10
 
  <./gsl-s_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-62.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+10.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<gsl-s_files/figure-latex/summary_tech_vars-1.pdf, id=88, 702.625pt x 421.575pt
->
+<gsl-s_files/figure-latex/summary_tech_vars-1.pdf, id=101, 702.625pt x 421.575p
+t>
 File: gsl-s_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/summary_tech_vars-1.pdf  used
- on input line 473.
+ on input line 621.
 (pdftex.def)             Requested size: 469.76996pt x 281.86197pt.
-[8
+[11
 
  <./gsl-s_files/figure-latex/summary_tech_vars-1.pdf>]
-<gsl-s_files/figure-latex/summary_var_plot-1.pdf, id=105, 449.68pt x 313.17pt>
+<gsl-s_files/figure-latex/summary_var_plot-1.pdf, id=118, 449.68pt x 313.17pt>
 File: gsl-s_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/summary_var_plot-1.pdf  used 
-on input line 502.
+on input line 650.
 (pdftex.def)             Requested size: 449.69261pt x 313.17877pt.
-[9
+[12
 
  <./gsl-s_files/figure-latex/summary_var_plot-1.pdf>]
-<gsl-s_files/figure-latex/extreme_biomass-1.pdf, id=120, 451.6875pt x 313.17pt>
+<gsl-s_files/figure-latex/extreme_biomass-1.pdf, id=133, 451.6875pt x 313.17pt>
 
 File: gsl-s_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/extreme_biomass-1.pdf  used o
-n input line 522.
+n input line 669.
 (pdftex.def)             Requested size: 451.70016pt x 313.17877pt.
-[10
+[13
 
  <./gsl-s_files/figure-latex/extreme_biomass-1.pdf>]
-<gsl-s_files/figure-latex/summary_var_swept-1.pdf, id=133, 446.66875pt x 315.17
+<gsl-s_files/figure-latex/summary_var_swept-1.pdf, id=147, 446.66875pt x 315.17
 75pt>
 File: gsl-s_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/summary_var_swept-1.pdf  used
- on input line 544.
+ on input line 692.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
-[11
+[14
 
  <./gsl-s_files/figure-latex/summary_var_swept-1.pdf>]
-<gsl-s_files/figure-latex/abundant_spp-1.pdf, id=146, 464.73625pt x 313.17pt>
+<gsl-s_files/figure-latex/abundant_spp-1.pdf, id=161, 464.73625pt x 313.17pt>
 File: gsl-s_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/abundant_spp-1.pdf  used on i
-nput line 552.
+nput line 700.
 (pdftex.def)             Requested size: 464.74928pt x 313.17877pt.
-[12
+[15
 
  <./gsl-s_files/figure-latex/abundant_spp-1.pdf>]
-<gsl-s_files/figure-latex/fixed_point_map-1.pdf, id=160, 415.5525pt x 351.3125p
+<gsl-s_files/figure-latex/fixed_point_map-1.pdf, id=174, 415.5525pt x 351.3125p
 t>
 File: gsl-s_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use gsl-s_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: gsl-s_files/figure-latex/fixed_point_map-1.pdf  used o
-n input line 562.
+n input line 710.
 (pdftex.def)             Requested size: 415.5705pt x 351.3277pt.
-<../standardization_steps/outputs/taxonomic_flagging/GSL-S_taxonomic_flagging.p
-ng, id=162, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/GSL-S_taxonomic_flagg
-ing.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/GSL-S_taxonomic_flaggi
-ng.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/GS
-L-S_taxonomic_flagging.png  used on input line 572.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[13
+[16
 
  <./gsl-s_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7_plo
-t.png, id=184, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_
-7_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7
-_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GSL-S_hex_res_7_plot.png  used on input line 598.
+<../outputs/Flags/taxonomic_flagging/GSL-S_taxonomic_flagging.png, id=193, 902.
+1705pt x 424.4658pt>
+File: ../outputs/Flags/taxonomic_flagging/GSL-S_taxonomic_flagging.png Graphic 
+file (type png)
+<use ../outputs/Flags/taxonomic_flagging/GSL-S_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/GSL-S_taxonomic_fl
+agging.png  used on input line 722.
+(pdftex.def)             Requested size: 375.79791pt x 176.81065pt.
+[17
+
+ <../outputs/Flags/taxonomic_flagging/GSL-S_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_plot.png, id=201, 7
+22.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_plot.png Graph
+ic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_r
+es_7_plot.png  used on input line 750.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[14 <../standardization_steps/outputs/taxonomic_flagging/GSL-S_taxonomic_flaggi
-ng.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8_plo
-t.png, id=193, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_
-8_plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_plot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GSL-S_hex_res_8_plot.png  used on input line 600.
+<../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_plot.png, id=202, 7
+22.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_plot.png Graph
+ic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_r
+es_8_plot.png  used on input line 752.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[15 <../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7
-_plot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7_map
-_per_haul.png, id=198, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_
-7_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7
-_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GSL-S_hex_res_7_map_per_haul.png  used on input line 604.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8_map
-_per_haul.png, id=199, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_
-8_map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GSL-S_hex_res_8_map_per_haul.png  used on input line 606.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[16 <../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_plot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_he
-x_res_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7_map
-_per_grid_nyears.png, id=204, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_
-7_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/GSL-S_hex_res_7
-_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/GSL-S_hex_res_7_map_per_grid_nyears.png  used on input line 611.
+[18
+
+ <../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_haul.png, i
+d=211, 902.1705pt x 424.4658pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_haul.p
+ng Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_haul.pn
+g>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_r
+es_7_map_per_haul.png  used on input line 756.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+<../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_haul.png, i
+d=212, 902.1705pt x 424.4658pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_haul.p
+ng Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_haul.pn
+g>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_r
+es_8_map_per_haul.png  used on input line 758.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+[19 <../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_plot.png> <../o
+utputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_grid_nyears
+.png, id=218, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_grid_n
+years.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_grid_ny
+ears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_r
+es_7_map_per_grid_nyears.png  used on input line 763.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8_map
-_per_grid_nyears.png, id=205, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_
-8_map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_map_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/GSL-S_hex_res_8_map_per_grid_nyears.png  used on input line 613.
+<../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_grid_nyears
+.png, id=219, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_grid_n
+years.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_grid_ny
+ears.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_r
+es_8_map_per_grid_nyears.png  used on input line 765.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[17 <../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_map_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_res7/
-GSL-S_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/GSL-S_map_per_haul.png, id=2
-11, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/GSL-S_map_per_haul.png 
-Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/GSL-S_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/GSL-
-S_map_per_haul.png  used on input line 624.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[18 <../standardization_steps/outputs/trimming_method1/hex_res8/GSL-S_hex_res_8
-_map_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2/GS
-L-S_map_per_haul.png>] (./gsl-s.aux) ) 
+[20 <../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_haul.pn
+g> <../outputs/Flags/trimming_method1/hex_res7/GSL-S_hex_res_7_map_per_grid_nye
+ars.png>]
+<../outputs/Flags/trimming_method2/GSL-S_map_per_haul.png, id=225, 902.1705pt x
+ 424.4658pt>
+File: ../outputs/Flags/trimming_method2/GSL-S_map_per_haul.png Graphic file (ty
+pe png)
+<use ../outputs/Flags/trimming_method2/GSL-S_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/GSL-S_map_per_haul.p
+ng  used on input line 776.
+(pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
+[21 <../outputs/Flags/trimming_method1/hex_res8/GSL-S_hex_res_8_map_per_grid_ny
+ears.png> <../outputs/Flags/trimming_method2/GSL-S_map_per_haul.png>] (./gsl-s.
+aux) ) 
 Here is how much of TeX's memory you used:
- 15701 strings out of 478268
- 258444 string characters out of 5846346
- 613280 words of memory out of 5000000
+ 15704 strings out of 478268
+ 257121 string characters out of 5846346
+ 642987 words of memory out of 5000000
  33472 multiletter control sequences out of 15000+600000
  524454 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1002b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts
-/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/
-lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/
-type1/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmt
-ti10.pfb>
-Output written on gsl-s.pdf (18 pages, 5543869 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/lo
+cal/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+22/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-d
+ist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
+ic/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on gsl-s.pdf (21 pages, 8727554 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
  30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 

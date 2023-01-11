@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  22 DEC 2022 20:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  11 JAN 2023 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,214 +665,244 @@ LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 146.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-200.
+204.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
 
-Underfull \vbox (badness 10000) detected at line 363
+Underfull \vbox (badness 10000) detected at line 510
  []
 
-[4] [5] [6
+[4]
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+[5]
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+[6]
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 510
+ []
+
+[7] [8] [9
 
 ]
-<ebs_files/figure-latex/hauls_per_year-1.pdf, id=75, 354.32375pt x 313.17pt>
+<ebs_files/figure-latex/hauls_per_year-1.pdf, id=89, 354.32375pt x 313.17pt>
 File: ebs_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/hauls_per_year-1.pdf  used on i
-nput line 470.
+nput line 617.
 (pdftex.def)             Requested size: 354.32828pt x 313.174pt.
-[7
+[10
 
  <./ebs_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-84.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+31.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<ebs_files/figure-latex/summary_tech_vars-1.pdf, id=90, 700.6175pt x 421.575pt>
-
+<ebs_files/figure-latex/summary_tech_vars-1.pdf, id=103, 700.6175pt x 421.575pt
+>
 File: ebs_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/summary_tech_vars-1.pdf  used o
-n input line 495.
+n input line 642.
 (pdftex.def)             Requested size: 469.76407pt x 282.66605pt.
-[8
+[11
 
  <./ebs_files/figure-latex/summary_tech_vars-1.pdf>]
-<ebs_files/figure-latex/summary_var_plot-1.pdf, id=107, 450.68375pt x 313.17pt>
+<ebs_files/figure-latex/summary_var_plot-1.pdf, id=120, 450.68375pt x 313.17pt>
 
 File: ebs_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/summary_var_plot-1.pdf  used on
- input line 524.
+ input line 671.
 (pdftex.def)             Requested size: 450.69638pt x 313.17877pt.
-[9
+[12
 
  <./ebs_files/figure-latex/summary_var_plot-1.pdf>]
-<ebs_files/figure-latex/extreme_biomass-1.pdf, id=122, 450.68375pt x 313.17pt>
+<ebs_files/figure-latex/extreme_biomass-1.pdf, id=135, 450.68375pt x 313.17pt>
 File: ebs_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/extreme_biomass-1.pdf  used on 
-input line 543.
+input line 690.
 (pdftex.def)             Requested size: 450.69638pt x 313.17877pt.
-[10
+[13
 
- <./ebs_files/figure-latex/extreme_biomass-1.pdf>] [11
+ <./ebs_files/figure-latex/extreme_biomass-1.pdf>]
+<ebs_files/figure-latex/summary_var_swept-1.pdf, id=149, 446.66875pt x 315.1775
+pt>
+File: ebs_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
+<use ebs_files/figure-latex/summary_var_swept-1.pdf>
+Package pdftex.def Info: ebs_files/figure-latex/summary_var_swept-1.pdf  used o
+n input line 713.
+(pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
+[14
 
-]
-<ebs_files/figure-latex/abundant_spp-1.pdf, id=140, 464.73625pt x 313.17pt>
+ <./ebs_files/figure-latex/summary_var_swept-1.pdf>]
+<ebs_files/figure-latex/abundant_spp-1.pdf, id=163, 464.73625pt x 313.17pt>
 File: ebs_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/abundant_spp-1.pdf  used on inp
-ut line 571.
+ut line 721.
 (pdftex.def)             Requested size: 464.74928pt x 313.17877pt.
-[12
+[15
 
  <./ebs_files/figure-latex/abundant_spp-1.pdf>]
-<ebs_files/figure-latex/fixed_point_map-1.pdf, id=154, 499.8675pt x 351.3125pt>
+<ebs_files/figure-latex/fixed_point_map-1.pdf, id=176, 499.8675pt x 351.3125pt>
 
 File: ebs_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use ebs_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: ebs_files/figure-latex/fixed_point_map-1.pdf  used on 
-input line 581.
+input line 731.
 (pdftex.def)             Requested size: 469.76872pt x 330.15874pt.
-<../standardization_steps/outputs/taxonomic_flagging/EBS_taxonomic_flagging.png
-, id=156, 505.89pt x 505.89pt>
-File: ../standardization_steps/outputs/taxonomic_flagging/EBS_taxonomic_flaggin
-g.png Graphic file (type png)
-<use ../standardization_steps/outputs/taxonomic_flagging/EBS_taxonomic_flagging
-.png>
-Package pdftex.def Info: ../standardization_steps/outputs/taxonomic_flagging/EB
-S_taxonomic_flagging.png  used on input line 591.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
-[13
+[16
 
  <./ebs_files/figure-latex/fixed_point_map-1.pdf>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_plot.
-png, id=178, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_
-plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_p
-lot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/EBS_hex_res_7_plot.png  used on input line 617.
+<../outputs/Flags/taxonomic_flagging/EBS_taxonomic_flagging.png, id=195, 902.17
+05pt x 317.0244pt>
+File: ../outputs/Flags/taxonomic_flagging/EBS_taxonomic_flagging.png Graphic fi
+le (type png)
+<use ../outputs/Flags/taxonomic_flagging/EBS_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/EBS_taxonomic_flag
+ging.png  used on input line 743.
+(pdftex.def)             Requested size: 375.79791pt x 132.05608pt.
+[17
+
+ <../outputs/Flags/taxonomic_flagging/EBS_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_plot.png, id=203, 722
+.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_plot.png Graphic
+ file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res
+_7_plot.png  used on input line 771.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[14 <../standardization_steps/outputs/taxonomic_flagging/EBS_taxonomic_flagging
-.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_plot.
-png, id=187, 722.7pt x 722.7pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_
-plot.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_p
-lot.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/EBS_hex_res_8_plot.png  used on input line 619.
+<../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_plot.png, id=204, 722
+.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_plot.png Graphic
+ file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res
+_8_plot.png  used on input line 773.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[15 <../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_p
-lot.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_map_p
-er_haul.png, id=192, 747.7536pt x 220.6644pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_
-map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_m
-ap_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/EBS_hex_res_7_map_per_haul.png  used on input line 623.
-(pdftex.def)             Requested size: 469.75232pt x 138.62535pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_map_p
-er_haul.png, id=193, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_
-map_per_haul.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_m
-ap_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/EBS_hex_res_8_map_per_haul.png  used on input line 625.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[16 <../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_p
-lot.png> <../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_re
-s_7_map_per_haul.png>]
-<../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_map_p
-er_grid_nyears.png, id=198, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_
-map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res7/EBS_hex_res_7_m
-ap_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res7/EBS_hex_res_7_map_per_grid_nyears.png  used on input line 630.
+[18
+
+ <../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_plot.png>]
+<../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_haul.png, id=
+213, 902.1705pt x 317.0244pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_haul.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_haul.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res
+_7_map_per_haul.png  used on input line 777.
+(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+<../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_haul.png, id=
+214, 902.1705pt x 317.0244pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_haul.png
+ Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_haul.png>
+
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res
+_8_map_per_haul.png  used on input line 779.
+(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+[19 <../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_plot.png> <../out
+puts/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_grid_nyears.p
+ng, id=220, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_grid_nye
+ars.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_grid_nyea
+rs.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res
+_7_map_per_grid_nyears.png  used on input line 784.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_map_p
-er_grid_nyears.png, id=199, 1084.05pt x 505.89pt>
-File: ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_
-map_per_grid_nyears.png Graphic file (type png)
-<use ../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_m
-ap_per_grid_nyears.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method1/hex_
-res8/EBS_hex_res_8_map_per_grid_nyears.png  used on input line 632.
+<../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_grid_nyears.p
+ng, id=221, 1084.05pt x 505.89pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_grid_nye
+ars.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_grid_nyea
+rs.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res
+_8_map_per_grid_nyears.png  used on input line 786.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[17 <../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_m
-ap_per_haul.png> <../standardization_steps/outputs/trimming_method1/hex_res7/EB
-S_hex_res_7_map_per_grid_nyears.png>]
-<../standardization_steps/outputs/trimming_method2/EBS_map_per_haul.png, id=205
-, 747.7536pt x 317.988pt>
-File: ../standardization_steps/outputs/trimming_method2/EBS_map_per_haul.png Gr
-aphic file (type png)
-<use ../standardization_steps/outputs/trimming_method2/EBS_map_per_haul.png>
-Package pdftex.def Info: ../standardization_steps/outputs/trimming_method2/EBS_
-map_per_haul.png  used on input line 643.
-(pdftex.def)             Requested size: 469.75232pt x 199.7658pt.
-[18 <../standardization_steps/outputs/trimming_method1/hex_res8/EBS_hex_res_8_m
-ap_per_grid_nyears.png> <../standardization_steps/outputs/trimming_method2/EBS_
-map_per_haul.png>] (./ebs.aux) ) 
+[20 <../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_haul.png>
+ <../outputs/Flags/trimming_method1/hex_res7/EBS_hex_res_7_map_per_grid_nyears.
+png> <../outputs/Flags/trimming_method1/hex_res8/EBS_hex_res_8_map_per_grid_nye
+ars.png>]
+<../outputs/Flags/trimming_method2/EBS_map_per_haul.png, id=228, 902.1705pt x 3
+17.0244pt>
+File: ../outputs/Flags/trimming_method2/EBS_map_per_haul.png Graphic file (type
+ png)
+<use ../outputs/Flags/trimming_method2/EBS_map_per_haul.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/EBS_map_per_haul.png
+  used on input line 797.
+(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+[21 <../outputs/Flags/trimming_method2/EBS_map_per_haul.png>] (./ebs.aux) ) 
 Here is how much of TeX's memory you used:
- 15690 strings out of 478268
- 257754 string characters out of 5846346
- 618468 words of memory out of 5000000
- 33466 multiletter control sequences out of 15000+600000
+ 15700 strings out of 478268
+ 256785 string characters out of 5846346
+ 648083 words of memory out of 5000000
+ 33472 multiletter control sequences out of 15000+600000
  524266 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1000b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.
-enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/
-local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
-ublic/lm/lmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
-r10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/t
-exmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fo
-nts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm
-/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.p
-fb>
-Output written on ebs.pdf (18 pages, 6907066 bytes).
+{/us
+r/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texliv
+e/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/
+enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pu
+blic/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dis
+t/fonts/type1/public/lm/lmtti10.pfb>
+Output written on ebs.pdf (21 pages, 8395318 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 30911 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 30916 words of extra memory for PDF output out of 35830 (max. 10000000)
 

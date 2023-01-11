@@ -28,7 +28,7 @@ library(leaflet)
 # drive_download(file = x[1,],
 #                overwrite = TRUE)
 
-load("outputs/Compiled_data/FishGlob_public_v1.7_clean.RData")
+load("outputs/Compiled_data/FishGlob_public_clean.RData")
 survey <- data
 rm(data)
 
