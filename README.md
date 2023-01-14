@@ -8,7 +8,7 @@ This database is a product of the CESAB working group, [FishGlob: Fish biodivers
 
 <img src ="https://github.com/AquaAuma/FishGlob_data/blob/main/fishglob_logo.png" width ="200">
 
-Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com) & Juliano Palacios-Abrantes [j.palacios@oceans.ubc.ca ](mailto:j.palacios@oceans.ubc.ca)
+Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com),  Juliano Palacios-Abrantes [j.palacios@oceans.ubc.ca ](mailto:j.palacios@oceans.ubc.ca), and Malin L. Pinsky [malin.pinsky@rutgers.edu](mailto:malin.pinsky@rutgers.edu)
 
 ### Structure of the repository
 
