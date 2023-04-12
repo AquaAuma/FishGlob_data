@@ -454,16 +454,31 @@ pt_data <- aphia_datras %>% filter(survey=="PT-IBTS")
 clean_pt <- clean_taxa(pt_data$worms_id_datras, input_survey = "PT-IBTS", 
                        save=F, fishbase=TRUE)
 
+# Clean taxa for Spanish Cantabrian Sea
+spnorth_data <- aphia_datras %>% filter(survey=="SP-NORTH")
+clean_spnorth <- clean_taxa(spnorth_data$worms_id_datras, input_survey = "SP-NORTH", 
+                       save=F, fishbase=TRUE)
+
+# Clean taxa for Spanish Porcupine
+porc_data <- aphia_datras %>% filter(survey=="SP-PORC")
+clean_porc <- clean_taxa(porc_data$worms_id_datras, input_survey = "SP-PORC", 
+                       save=F, fishbase=TRUE)
+
+# Clean taxa for Spanish Gulf of Cadiz
+arsa_data <- aphia_datras %>% filter(survey=="SP-ARSA")
+clean_arsa <- clean_taxa(arsa_data$worms_id_datras, input_survey = "SP-ARSA", 
+                       save=F, fishbase=TRUE)
+
 clean_datras_taxa <- rbind(clean_bits, clean_cgfs, clean_evhoe, clean_ir, clean_nigfs,
-                    clean_pt, clean_rock, clean_swc, clean_ns) %>% 
+                    clean_pt, clean_rock, clean_swc, clean_ns,clean_spnorth, clean_porc, clean_arsa) %>% 
   mutate(query = as.numeric(as.vector(query))) %>% 
   distinct()
   
-recoded_taxa <- c("Dipturus","Liparis","Chelon","Mustelus","Alosa","Argentina",
+recoded_taxa <- c("Dipturus","Liparis","Chelon","Mustelus","Alosa","Argentina", # Might need to be updated
                   "Callionymus","Ciliata","Gaidropsarus","Sebastes","Syngnatus",
                   "Pomatoschistus","Gobius")
 
-spp_to_recode <-c("Dipturus batis","Dipturus flossada","Dipturus batis-complex",
+spp_to_recode <-c("Dipturus batis","Dipturus flossada","Dipturus batis-complex", 
                   "Dipturus intermedia","Liparis montagui","Liparis liparis",
                   "Liparis liparis liparis","Chelon aurata","Chelon ramada",
                   "Mustelus mustelus/asterias","Mustelus mustelus","Mustelus asterias",

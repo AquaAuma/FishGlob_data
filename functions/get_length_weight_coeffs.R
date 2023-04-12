@@ -18,7 +18,7 @@ get_coeffs <- function(taxon_list, survey, save=F){
     mutate(species = str_split(taxa, " ", simplify=T, n=2)[,2],
            fao = ifelse(survey %in% c("GRL-DE","NOR-BTS","NS-IBTS","NIGFS",
                                       "BITS","SWC-IBTS","ROCKALL","PT-IBTS",
-                                      "EVHOE","IE-IGFS","FR-CGFS"),27,NA),
+                                      "EVHOE","IE-IGFS","FR-CGFS","SP-PORC","SP-NORTH","SP-ARSA"),27,NA),
            lme = ifelse(survey=="NOR-BTS",20,lme),
            lme = ifelse(survey=="GRL-DE",19,lme),
            level = case_when(level=="Family" ~ "family",
