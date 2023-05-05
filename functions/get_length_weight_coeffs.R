@@ -6,11 +6,14 @@ get_coeffs <- function(taxon_list, survey, save=F){
   library(RODBC)
   library(car)
   library(readr)
+  library(Hmisc)
   
   s_time <- Sys.time()
   
   ### CONNECT
-  fb <- odbcConnect('Fbapp')
+  path = file.path("~/Downloads/Fbapp.mdb")
+  mdb.get("~/Downloads/Fbapp.mdb")
+  fb <- RODBC::odbcConnect(path)
   
   ### Load Data
   datalw <- taxon_list %>%
