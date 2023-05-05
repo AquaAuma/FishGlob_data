@@ -23,6 +23,11 @@ always_allow_html: true
 ---
 
 ```{r setup, include=FALSE, results='hide'}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
 
 library(readxl) # To load extra datasets
 library(tidyverse) # for data wrangling
