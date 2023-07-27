@@ -50,7 +50,7 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 ## General info
 
-This document presents the cleaning code and summary of the North Sea bottom trawl survey provided by DATRAS, ICES. It contains data from **1967** and up to **2020**.
+This document presents the cleaning code and summary of the North Sea bottom trawl survey provided by DATRAS, ICES. It contains data from **1967** and up to **2020**. We discourage users from using the NS-IBTS data for community analyses before 1983 because of sampling inconsistencies. However, the survey data prior to 1983 may be useful for species-specific studies, so we did not filter out the data of the earlier years.
 
 
 ## Data cleaning in R
