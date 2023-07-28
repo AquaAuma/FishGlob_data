@@ -617,6 +617,8 @@ unique_name_match
 # Just run this routine should be good for all
 write_clean_data(data = clean_neus, survey = "NEUS", overwrite = T)
 
+write_clean_data(data = clean_neus, survey = "NEUS", overwrite = T,
+                 csv = T, rdata= F)
 
 
 # -------------------------------------------------------------------------------------#
