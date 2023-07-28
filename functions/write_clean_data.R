@@ -26,8 +26,8 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
   }
   
   if(csv == TRUE){
-    save_path_name <- paste0(survey,"_clean.csv")
-    save_name <- paste0(survey,"_clean.csv")
+    save_path_name <- paste0("outputs/Cleaned_data/",survey,"_clean.csv")
+    save_name <- paste0("outputs/Clean_data/",survey,"_clean.csv")
     
     # Writes data in local computer
     write_csv(data,save_path_name)
