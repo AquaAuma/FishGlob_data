@@ -1,5 +1,5 @@
 #######################################################
-#### Coding: Aurore Maureaud, December 2022
+#### Coding: Aurore Maureaud, July 2023
 #### Public survey metadata
 #### Figures for data paper
 #######################################################
@@ -39,9 +39,9 @@ meta_survey <- read_sf("/Volumes/Elements/Last save DTU AQUA DEC2020/PhD DTU Aqu
                        "EBS","EVHOE","GOA","GSL-N","GSL-S","Gulf of Mexico",
                        "IE-IGFS","NIGFS","NOR-BTS","Northeast US",
                        "NS-IBTS","PT-IBTS","ROCKALL","Scotian Shelf","Southeast US",
-                       "SWC-IBTS","WCANN"))
+                       "SWC-IBTS","WCANN","SP-ARSA","SP-PORC","SP-NORTH"))
 
-png("data_descriptor_figures/public_meta_map.png", width = 12*400, height = 10*400, res = 400)
+png("data_descriptor_figures/public_meta_map_with_spanish_surveys.png", width = 12*400, height = 10*400, res = 400)
 print(ggplot(world)+
         geom_sf(fill = "antiquewhite3", color = NA)+
         geom_sf(data = meta_survey, fill="#41B6C4", color = "black", 
