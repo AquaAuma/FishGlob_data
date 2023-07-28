@@ -4,3 +4,6 @@
 .Ruserdata
 .DS_Store
 **/.DS_Store
+
+outputs/Cleaned_data/*.csv
+outputs/Compiled_data/*.csv
