@@ -2,10 +2,11 @@
 #### R code to download and clean DATRAS data from ICES
 #### URL: https://datras.ices.dk/
 #### Coding: Aurore Maureaud + Juliano Palacios + Daniel van Denderen, December 2022
+#### Coding: + Laurene Pecuchet 2023
 #######################################################
 rm(list=ls())
 
-date <- "21Mar2023"
+date <- "3August2023"
 
 ##########################################################################################
 #### LOAD LIBRARIES & options to decide in the code
@@ -20,6 +21,7 @@ library(here) # for easy work around on multiple computers
 library(taxize) # for getting correct species names
 library(googledrive)
 library(readxl)
+library(here)
 
 # load relevant functions
 source("functions/write_clean_data.r")
@@ -80,33 +82,33 @@ if(download_last_version == TRUE){
   hh.arsa <- getDATRAS(record='HH', survey='SP-ARSA', years=c(2002:last.year), 
                            quarters=c(4))
   
-  write.csv(hh.ns, file = "Publicly available/DATRAS/hh.ns.csv", 
-            row.names = F)
-  write.csv(hh.baltic, file = "Publicly available/DATRAS/hh.baltic.csv", 
-            row.names = F)
-  write.csv(hh.evhoe, file = "Publicly available/DATRAS/hh.evhoe.csv", 
-            row.names = F)
-  write.csv(hh.cgfs, file = "Publicly available/DATRAS/hh.cgfs.csv", 
-            row.names = F)
-  write.csv(hh.igfs, file = "Publicly available/DATRAS/hh.igfs.csv", 
-            row.names = F)
-  write.csv(hh.nigfs, file = "Publicly available/DATRAS/hh.nigfs.csv", 
-            row.names = F)
-  write.csv(hh.pt, file = "Publicly available/DATRAS/hh.pt.csv", 
-            row.names = F)
-  write.csv(hh.rock, file = "Publicly available/DATRAS/hh.rock.csv", 
-            row.names = F)
-  write.csv(hh.scorock, file = "Publicly available/DATRAS/hh.scorock.csv", 
-            row.names = F)
-  write.csv(hh.swc, file = "Publicly available/DATRAS/hh.swc.csv", 
-            row.names = F)
-  write.csv(hh.scowcgfs, file = "Publicly available/DATRAS/hh.scowcgfs.csv",
-            row.names = F)
-  write.csv(hh.porc, file = "Publicly available/DATRAS/hh.porc.csv", 
-            row.names = F)
-  write.csv(hh.spnorth, file = "Publicly available/DATRAS/hh.spnorth.csv", 
-            row.names = F)
-  write.csv(hh.arsa, file = "Publicly available/DATRAS/hh.arsa.csv", row.names = F)
+  # write.csv(hh.ns, file = "Publicly available/DATRAS/hh.ns.csv", 
+  #           row.names = F)
+  # write.csv(hh.baltic, file = "Publicly available/DATRAS/hh.baltic.csv", 
+  #           row.names = F)
+  # write.csv(hh.evhoe, file = "Publicly available/DATRAS/hh.evhoe.csv", 
+  #           row.names = F)
+  # write.csv(hh.cgfs, file = "Publicly available/DATRAS/hh.cgfs.csv", 
+  #           row.names = F)
+  # write.csv(hh.igfs, file = "Publicly available/DATRAS/hh.igfs.csv", 
+  #           row.names = F)
+  # write.csv(hh.nigfs, file = "Publicly available/DATRAS/hh.nigfs.csv", 
+  #           row.names = F)
+  # write.csv(hh.pt, file = "Publicly available/DATRAS/hh.pt.csv", 
+  #           row.names = F)
+  # write.csv(hh.rock, file = "Publicly available/DATRAS/hh.rock.csv", 
+  #           row.names = F)
+  # write.csv(hh.scorock, file = "Publicly available/DATRAS/hh.scorock.csv", 
+  #           row.names = F)
+  # write.csv(hh.swc, file = "Publicly available/DATRAS/hh.swc.csv", 
+  #           row.names = F)
+  # write.csv(hh.scowcgfs, file = "Publicly available/DATRAS/hh.scowcgfs.csv",
+  #           row.names = F)
+  # write.csv(hh.porc, file = "Publicly available/DATRAS/hh.porc.csv", 
+  #           row.names = F)
+  # write.csv(hh.spnorth, file = "Publicly available/DATRAS/hh.spnorth.csv", 
+  #           row.names = F)
+  # write.csv(hh.arsa, file = "Publicly available/DATRAS/hh.arsa.csv", row.names = F)
   
   # Length info from DATRAS
   hl.ns <- getDATRAS(record='HL', survey='NS-IBTS', years=c(1967:last.year), 
@@ -139,80 +141,80 @@ if(download_last_version == TRUE){
                            quarters=c(4))
   
   #E:/fishglob data/
-  
-  write.csv(hl.ns, file = "Publicly available/DATRAS/hl.ns.csv", 
-            row.names = F)
-  write.csv(hl.baltic, file = "Publicly available/DATRAS/hl.baltic.csv", 
-            row.names = F)
-  write.csv(hl.evhoe, file = "Publicly available/DATRAS/hl.evhoe.csv", 
-            row.names = F)
-  write.csv(hl.cgfs, file = "Publicly available/DATRAS/hl.cgfs.csv", 
-            row.names = F)
-  write.csv(hl.igfs, file = "Publicly available/DATRAS/hl.igfs.csv", 
-            row.names = F)
-  write.csv(hl.nigfs, file = "Publicly available/DATRAS/hl.nigfs.csv", 
-            row.names = F)
-  write.csv(hl.pt, file = "Publicly available/DATRAS/hl.pt.csv", row.names = F)
-  write.csv(hl.rock, file = "Publicly available/DATRAS/hl.rock.csv", 
-            row.names = F)
-  write.csv(hl.scorock, file = "Publicly available/DATRAS/hl.scorock.csv", 
-            row.names = F)
-  #write.csv(hl.swc, file = "E:/fishglob data/Publicly available/DATRAS/hl.swc.csv", 
-  #row.names = F)
-  write.csv(hl.scowcgfs, file = "Publicly available/DATRAS/hl.scowcgfs.csv", 
-            row.names = F)
-  write.csv(hl.porc, file = "Publicly available/DATRAS/hl.porc.csv", 
-            row.names = F)
-  write.csv(hl.spnorth, file = "Publicly available/DATRAS/hl.spnorth.csv", 
-            row.names = F)
-  write.csv(hl.arsa, file = "Publicly available/DATRAS/hl.arsa.csv", 
-            row.names = F)
+  # 
+  # write.csv(hl.ns, file = "Publicly available/DATRAS/hl.ns.csv", 
+  #           row.names = F)
+  # write.csv(hl.baltic, file = "Publicly available/DATRAS/hl.baltic.csv", 
+  #           row.names = F)
+  # write.csv(hl.evhoe, file = "Publicly available/DATRAS/hl.evhoe.csv", 
+  #           row.names = F)
+  # write.csv(hl.cgfs, file = "Publicly available/DATRAS/hl.cgfs.csv", 
+  #           row.names = F)
+  # write.csv(hl.igfs, file = "Publicly available/DATRAS/hl.igfs.csv", 
+  #           row.names = F)
+  # write.csv(hl.nigfs, file = "Publicly available/DATRAS/hl.nigfs.csv", 
+  #           row.names = F)
+  # write.csv(hl.pt, file = "Publicly available/DATRAS/hl.pt.csv", row.names = F)
+  # write.csv(hl.rock, file = "Publicly available/DATRAS/hl.rock.csv", 
+  #           row.names = F)
+  # write.csv(hl.scorock, file = "Publicly available/DATRAS/hl.scorock.csv", 
+  #           row.names = F)
+  # #write.csv(hl.swc, file = "E:/fishglob data/Publicly available/DATRAS/hl.swc.csv", 
+  # #row.names = F)
+  # write.csv(hl.scowcgfs, file = "Publicly available/DATRAS/hl.scowcgfs.csv", 
+  #           row.names = F)
+  # write.csv(hl.porc, file = "Publicly available/DATRAS/hl.porc.csv", 
+  #           row.names = F)
+  # write.csv(hl.spnorth, file = "Publicly available/DATRAS/hl.spnorth.csv", 
+  #           row.names = F)
+  # write.csv(hl.arsa, file = "Publicly available/DATRAS/hl.arsa.csv", 
+  #           row.names = F)
 
 }
 
 if(load_stored_datras == TRUE){
 
-  hh.ns <- read.csv("Publicly available/DATRAS/hl.ns.csv")
-  hh.baltic <- read.csv("Publicly available/DATRAS/hl.baltic.csv")
-  hh.evhoe <- read.csv("Publicly available/DATRAS/hl.evhoe.csv")
-  hh.cgfs <- read.csv("Publicly available/DATRAS/hl.cgfs.csv")
-  hh.igfs <- read.csv("Publicly available/DATRAS/hl.igfs.csv")
-  hh.nigfs <- read.csv("Publicly available/DATRAS/hl.nigfs.csv")
-  hh.pt <- read.csv("Publicly available/DATRAS/hl.pt.csv")
-  hh.rock <- read.csv("Publicly available/DATRAS/hl.rock.csv")
-  hh.scorock <- read.csv("Publicly available/DATRAS/hl.scorock.csv")
-  hh.swc <- read.csv("Publicly available/DATRAS/hl.swc.csv")
-  hh.scowcgfs <- read.csv("Publicly available/DATRAS/hl.scowcgfs.csv")
-  hh.porc <- read.csv("Publicly available/DATRAS/hl.porc.csv")
-  hh.spnorth <- read.csv("Publicly available/DATRAS/hl.spnorth.csv")
-  hh.arsa <- read.csv("Publicly available/DATRAS/hl.arsa.csv")
+  hh.ns <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.ns.csv")
+  hh.baltic <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.baltic.csv")
+  hh.evhoe <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.evhoe.csv")
+  hh.cgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.cgfs.csv")
+  hh.igfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.igfs.csv")
+  hh.nigfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.nigfs.csv")
+  hh.pt <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.pt.csv")
+  hh.rock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.rock.csv")
+  hh.scorock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.scorock.csv")
+  hh.swc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.swc.csv")
+  hh.scowcgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.scowcgfs.csv")
+  hh.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.porc.csv")
+  hh.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.spnorth.csv")
+  hh.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.arsa.csv")
   
-  hl.ns <- read.csv("Publicly available/DATRAS/hl.ns.csv")
-  hl.baltic <- read.csv("Publicly available/DATRAS/hl.baltic.csv")
-  hl.evhoe <- read.csv("Publicly available/DATRAS/hl.evhoe.csv")
-  hl.cgfs <- read.csv("Publicly available/DATRAS/hl.cgfs.csv")
-  hl.igfs <- read.csv("Publicly available/DATRAS/hl.igfs.csv")
-  hl.nigfs <- read.csv("Publicly available/DATRAS/hl.nigfs.csv")
-  hl.pt <- read.csv("Publicly available/DATRAS/hl.pt.csv") %>% 
+  hl.ns <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.ns.csv")
+  hl.baltic <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.baltic.csv")
+  hl.evhoe <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.evhoe.csv")
+  hl.cgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.cgfs.csv")
+  hl.igfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.igfs.csv")
+  hl.nigfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.nigfs.csv")
+  hl.pt <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.pt.csv") %>% 
     dplyr::rename(Valid_Aphia = ValidAphiaID) %>% 
     select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
            DoorType, StNo, HaulNo, Year, SpecCodeType, SpecCode, SpecVal, Sex,
            TotalNo, CatIdentifier, NoMeas, SubFactor, SubWgt, CatCatchWgt, LngtCode,
            LngtClass, HLNoAtLngt, DevStage, LenMeasType, DateofCalculation,
            Valid_Aphia)
-  hl.rock <- read.csv("Publicly available/DATRAS/hl.rock.csv")
-  hl.scorock <- read.csv("Publicly available/DATRAS/hl.scorock.csv")
-  hl.swc <- read.csv("Publicly available/DATRAS/hl.swc.csv")%>% 
+  hl.rock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.rock.csv")
+  hl.scorock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.scorock.csv")
+  hl.swc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.swc.csv")%>% 
     dplyr::rename(Valid_Aphia = ValidAphiaID) %>% 
     select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
            DoorType, StNo, HaulNo, Year, SpecCodeType, SpecCode, SpecVal, Sex,
            TotalNo, CatIdentifier, NoMeas, SubFactor, SubWgt, CatCatchWgt, LngtCode,
            LngtClass, HLNoAtLngt, DevStage, LenMeasType, DateofCalculation,
            Valid_Aphia)
-  hl.scowcgfs <- read.csv("Publicly available/DATRAS/hl.scowcgfs.csv")
-  hl.porc <- read.csv("Publicly available/DATRAS/hl.porc.csv")
-  hl.spnorth <- read.csv("Publicly available/DATRAS/hl.spnorth.csv")
-  hl.arsa <- read.csv("Publicly available/DATRAS/hl.arsa.csv")
+  hl.scowcgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.scowcgfs.csv")
+  hl.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.porc.csv")
+  hl.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.spnorth.csv")
+  hl.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.arsa.csv")
   
   hh <- rbind(hh.ns, hh.baltic, hh.evhoe, hh.cgfs, hh.igfs, hh.nigfs, hh.pt, hh.rock, 
               hh.scorock, hh.swc, hh.scowcgfs, hh.porc, hh.spnorth, hh.arsa)
@@ -230,8 +232,8 @@ if(load_stored_datras == TRUE){
 }
 
 if(save_hh_and_hl == TRUE){
-  save(hh, file = paste0("Publicly available/DATRAS/hh.",date,".RData"))
-  save(hl, file = paste0("Publicly available/DATRAS/hl.",date,".RData"))
+  save(hh, file = here(paste0("data/Publicly available/hh.",date,".RData")))
+  save(hl, file = here(paste0("data/Publicly available/hl.",date,".RData")))
   
 }
 
@@ -246,8 +248,8 @@ hh <- fread("/Volumes/Enterprise/Data/FishGlob/Data/Raw/ices_hh.csv")
 unique(hh$Survey)
 
 # Aurore
-load("Publicly available/DATRAS/hl.21Mar2023.RData") #/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.29JUL2021.RData
-load("Publicly available/DATRAS/hh.21Mar2023.RData")
+load(here("data/Publicly available/DATRAS/hl.29JUL2021.RData"))
+load(here("data/Publicly available/DATRAS/hh.29JUL2021.RData"))
 
 
 ##########################################################################################
@@ -370,6 +372,9 @@ source('cleaning_codes/source_DATRAS_wing_doorspread.R')
 #### GET CPUEs AND RIGHT COLUMNS NAMES
 ##########################################################################################
 
+# Check whether there are records of taxa with -9 abundance reported that are 
+
+
 # Remove data without length composition or negative values
 xx <- subset(survey, HLNoAtLngt<0 | is.na(LngtClass))
 no_length_hauls <- sort(unique(xx$HaulID)) # 10,178 hauls without length data
@@ -394,7 +399,7 @@ survey <- survey %>%
   dplyr::rename(Length = LngtClass) %>% 
   select(Survey, HaulID, StatRec, Year, Month, Quarter, Season, ShootLat, ShootLong, 
          HaulDur, Area.swept, Gear, Depth, SBT, SST, AphiaID, CatIdentifier, numcpue, 
-         wtcpue, numh, wgth, num, wgt, Length, numlencpue, numlenh)
+         wtcpue, numh, wgth, num, wgt, Length, LenMeasType, numlencpue, numlenh)
 survey <- data.frame(survey)
 
 
