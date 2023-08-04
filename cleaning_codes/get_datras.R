@@ -76,11 +76,11 @@ if(download_last_version == TRUE){
   hh.scowcgfs <- getDATRAS(record='HH', survey='SCOWCGFS', years=c(2011:last.year), 
                            quarters=c(1:4))
   hh.porc <- getDATRAS(record='HH', survey='SP-PORC', years=c(2001:last.year), 
-                           quarters=c(3))
+                           quarters=c(3,4))
   hh.spnorth <- getDATRAS(record='HH', survey='SP-NORTH', years=c(1990:last.year), 
-                           quarters=c(4))
+                           quarters=c(3,4))
   hh.arsa <- getDATRAS(record='HH', survey='SP-ARSA', years=c(2002:last.year), 
-                           quarters=c(4))
+                           quarters=c(1,4))
   
   # write.csv(hh.ns, file = "Publicly available/DATRAS/hh.ns.csv", 
   #           row.names = F)
@@ -134,11 +134,11 @@ if(download_last_version == TRUE){
   hl.scowcgfs <- getDATRAS(record='HL', survey='SCOWCGFS', years=c(2011:last.year), 
                            quarters=c(1:4))
   hl.porc <- getDATRAS(record='HL', survey='SP-PORC', years=c(2001:last.year), 
-                          quarters=3)
+                          quarters=c(3,4))
   hl.spnorth <- getDATRAS(record='HL', survey='SP-NORTH', years=c(1990:last.year), 
-                      quarters=c(4))
+                      quarters=c(3,4))
   hl.arsa <- getDATRAS(record='HL', survey='SP-ARSA', years=c(2002:last.year), 
-                           quarters=c(4))
+                           quarters=c(1,4))
   
   #E:/fishglob data/
   # 
@@ -185,9 +185,9 @@ if(load_stored_datras == TRUE){
   hh.scorock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.scorock.csv")
   hh.swc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.swc.csv")
   hh.scowcgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.scowcgfs.csv")
-  hh.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.porc.csv")
-  hh.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.spnorth.csv")
-  hh.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.arsa.csv")
+  # hh.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.porc.csv")
+  # hh.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.spnorth.csv")
+  # hh.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hh.arsa.csv")
   
   hl.ns <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.ns.csv")
   hl.baltic <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.baltic.csv")
@@ -212,9 +212,9 @@ if(load_stored_datras == TRUE){
            LngtClass, HLNoAtLngt, DevStage, LenMeasType, DateofCalculation,
            Valid_Aphia)
   hl.scowcgfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.scowcgfs.csv")
-  hl.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.porc.csv")
-  hl.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.spnorth.csv")
-  hl.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.arsa.csv")
+  # hl.porc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.porc.csv")
+  # hl.spnorth <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.spnorth.csv")
+  # hl.arsa <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.arsa.csv")
   
   hh <- rbind(hh.ns, hh.baltic, hh.evhoe, hh.cgfs, hh.igfs, hh.nigfs, hh.pt, hh.rock, 
               hh.scorock, hh.swc, hh.scowcgfs, hh.porc, hh.spnorth, hh.arsa)
@@ -242,14 +242,14 @@ if(save_hh_and_hl == TRUE){
 ####-------- ###
 
 # Juliano
-hl <- fread("/Volumes/Enterprise/Data/FishGlob/Data/Raw/ices_hl.csv")
-unique(hl$Survey)
-hh <- fread("/Volumes/Enterprise/Data/FishGlob/Data/Raw/ices_hh.csv")
-unique(hh$Survey)
+# hl <- fread("/Volumes/Enterprise/Data/FishGlob/Data/Raw/ices_hl.csv")
+# unique(hl$Survey)
+# hh <- fread("/Volumes/Enterprise/Data/FishGlob/Data/Raw/ices_hh.csv")
+# unique(hh$Survey)
 
 # Aurore
-load(here("data/Publicly available/DATRAS/hl.29JUL2021.RData"))
-load(here("data/Publicly available/DATRAS/hh.29JUL2021.RData"))
+load(here("data/Publicly available/hl.3August2023.RData"))
+load(here("data/Publicly available/hh.3August2023.RData"))
 
 
 ##########################################################################################
@@ -278,7 +278,7 @@ hl <- hl %>%
   filter(HaulID!=pb)
 
 # Only keep hauls where there is the length composition. 
-# 70273 hauls in hh and 70273 in hl
+# 69665 hauls in hh and hl
 hh <- subset(hh, hh$HaulID %in% hl$HaulID)
 hl <- subset(hl, hl$HaulID %in% hh$HaulID)
 
@@ -319,7 +319,7 @@ survey <- survey %>%
 ### Check if the HaulID is unique
 ### Not the case for the baltic sea, a lot of duplicates!!!
 #ids <- unique(hh$HaulID)
-#pb <- vector()
+# pb <- vector()
 # for(i in 1:length(ids)){
 #   x <- which(hh$HaulID==ids[i])
 #   if(length(x)>1){pb[length(pb)+1] <- ids[i]}
@@ -333,7 +333,7 @@ survey <- survey %>%
 survey <- survey %>% 
   filter(HaulVal %in% 'V', #Remove invalid hauls
          !is.na(AphiaID), # Remove invalid species records
-         SpecVal %in% c(1,10,4,7),
+         SpecVal %in% c(1,10,4,5,6,7,8),
          DataType %in% c('S','R','C'))
 
 
@@ -377,7 +377,7 @@ source('cleaning_codes/source_DATRAS_wing_doorspread.R')
 
 # Remove data without length composition or negative values
 xx <- subset(survey, HLNoAtLngt<0 | is.na(LngtClass))
-no_length_hauls <- sort(unique(xx$HaulID)) # 10,178 hauls without length data
+no_length_hauls <- sort(unique(xx$HaulID)) # 11,113 hauls without length data
 
 # Only keep abundances/weight
 survey <- survey %>%
@@ -394,6 +394,7 @@ survey <- survey %>%
          Depth = replace(Depth, Depth<0, NA),
          SBT = replace(SBT, SBT<0, NA),
          SST = replace(SST, SST<0, NA),
+         LngtClass = ifelse(LngtClass == -9, NA, LngtClass), #replace -9 values by NAs
          LngtClass = ifelse(LngtCode %in% c('.','0'), LngtClass*0.1, LngtClass)) %>% 
   # fix unit of length class
   dplyr::rename(Length = LngtClass) %>% 
@@ -475,11 +476,12 @@ clean_arsa <- clean_taxa(arsa_data$worms_id_datras, input_survey = "SP-ARSA",
                        save=F, fishbase=TRUE)
 
 clean_datras_taxa <- rbind(clean_bits, clean_cgfs, clean_evhoe, clean_ir, clean_nigfs,
-                    clean_pt, clean_rock, clean_swc, clean_ns,clean_spnorth, clean_porc, clean_arsa) %>% 
+                    clean_pt, clean_rock, clean_swc, clean_ns, clean_spnorth, 
+                    clean_porc, clean_arsa) %>% 
   mutate(query = as.numeric(as.vector(query))) %>% 
   distinct()
   
-recoded_taxa <- c("Dipturus","Liparis","Chelon","Mustelus","Alosa","Argentina", # Might need to be updated
+recoded_taxa <- c("Dipturus","Liparis","Chelon","Mustelus","Alosa","Argentina",
                   "Callionymus","Ciliata","Gaidropsarus","Sebastes","Syngnatus",
                   "Pomatoschistus","Gobius")
 
@@ -584,7 +586,7 @@ clean_datras_taxa <- clean_datras_taxa %>%
 
 # add taxonomy to data
 survey <- left_join(survey, clean_datras_taxa, by=c("AphiaID" = "query")) %>% 
-  filter(!is.na(AphiaID))
+  filter(!is.na(worms_id)) # there are 622 unique inverts taxa in the surveys
 
 
 ##########################################################################################
@@ -600,77 +602,90 @@ gears <- data.frame(survey) %>%
   summarise(hauls = length(unique(HaulID)), years = length(unique(Year))) %>% 
   select(Survey, Gear, hauls, years)
 
-# 2. only select certain gears per survey (GOV and/or most dominant in cases without GOV)
-survey <- survey %>% 
-  filter(!(Survey=="NS-IBTS" & Gear %in% c('ABD', 'BOT', 'DHT', 'FOT', 'GRT', 
-                                           'H18', 'HOB', 'HT', 'KAB', 'VIN')),
-         !(Survey=="BITS" & Gear %in% c('CAM', 'CHP', 'DT', 'EGY', 'ESB', 'EXP', 
-                                        'FOT', 'GRT', 'H20', 'HAK', 'LBT','SON')),
-         !(Survey=="PT-IBTS" & Gear=='CAR'),
-         !(Survey=="Can-Mar" & Gear=='Y36'))
-
-
-# 3. associate an LME to each haul and make final list of species
+# 2. associate an LME to each haul and make final list of species
 ### Prepare list for estimating length-weight parameters
-list.taxa <- survey %>% 
-  mutate(species = str_split(taxa, pattern = " ", simplify = TRUE)[,2]) %>% 
-  select(HaulID, Survey, ShootLat, ShootLong, family, genus, species) %>% 
-  distinct()
+# list.taxa <- survey %>% 
+#   mutate(species = str_split(taxa, pattern = " ", simplify = TRUE)[,2]) %>% 
+#   select(HaulID, Survey, ShootLat, ShootLong, family, genus, species) %>% 
+#   distinct()
 
 # get LME
-library(rgdal)
-shape1 <- readOGR(dsn = "length_weight/LME66",layer="LMEs66")
-coords <- list.taxa %>%
-  dplyr::select(ShootLat, ShootLong, Survey) %>%
-  distinct()
-str(coords)
+# library(rgdal)
+# shape1 <- readOGR(dsn = "length_weight/LME66",layer="LMEs66")
+# coords <- list.taxa %>%
+#   dplyr::select(ShootLat, ShootLong, Survey) %>%
+#   distinct()
+# str(coords)
+# 
+# coordinates(coords) <- ~ ShootLong + ShootLat
+# proj4string(coords) <- proj4string(shape1)
+# lme <- over(coords, shape1)
+# 
+# coords <- list.taxa %>%
+#   dplyr::select(ShootLat, ShootLong, Survey) %>%
+#   distinct()
+# coords <- cbind(coords, lme$LME_NUMBER)
+# setnames(coords, old='lme$LME_NUMBER', new='lme')
+# 
+# coords$lme <- as.factor(coords$lme)
+# #Select from each LME 50 long and lat
+# ind <- c()
+# for (i in 1:nlevels(coords$lme)){
+#   ind <- c(ind, sample(which(coords$lme==levels(coords$lme)[i]), 50, 
+#                        replace = FALSE))
+# }
+# long50 <- coords$ShootLong[ind]
+# lat50 <- coords$ShootLat[ind]
+# lme50 <- rep(levels(coords$lme), each=50)
+# #For each haul without LME find a close LME that has an LME number already
+# nlme <- subset(coords, is.na(lme)) # many hauls without LME 710
+# nlme$ShootLat <- as.numeric(as.vector(nlme$ShootLat))
+# nlme$ShootLong <- as.numeric(as.vector(nlme$ShootLong))
+# long50 <- as.numeric(as.vector(long50))
+# lat50 <- as.numeric(as.vector(lat50))
+# dilme <- c()
+# for (i in 1:length(lme50)){
+#   dilme <- cbind(dilme, (nlme$ShootLat-lat50[i])**2 + (nlme$ShootLong-long50[i])**2)
+# }
+# mindi <- apply(dilme, 1, which.min) 
+# coords$lme[is.na(coords$lme)] <- lme50[mindi] 
+# # assign the closest LME number to each haul without LME
+# 
+# 
+# #Check
+# coords$ShootLat <- as.numeric(as.vector(coords$ShootLat))
+# coords$ShootLong <- as.numeric(as.vector(coords$ShootLong))
+# 
+# # rockall not assigned to Faroe plateau but to celtic sea LME
+# coords$lme <- as.character(coords$lme)
+# coords <- coords %>%
+#   mutate(lme = replace(lme, Survey  =='ROCKALL', '60')) %>%
+#   as.data.frame()
+# 
+# survey <- left_join(survey, coords, by=c('ShootLat', 'ShootLong','Survey')) 
 
-coordinates(coords) <- ~ ShootLong + ShootLat
-proj4string(coords) <- proj4string(shape1)
-lme <- over(coords, shape1)
+# 3. Check length measurement types
+xx <- survey %>% 
+  filter(!is.na(LenMeasType),
+         !LenMeasType %in% c(-9, 1, 12)) %>% 
+  group_by(Survey, taxa, LenMeasType) %>% 
+  summarize(n_obs = length(taxa),
+            n_taxa = length(unique(taxa)))
 
-coords <- list.taxa %>%
-  dplyr::select(ShootLat, ShootLong, Survey) %>%
-  distinct()
-coords <- cbind(coords, lme$LME_NUMBER)
-setnames(coords, old='lme$LME_NUMBER', new='lme')
+xx_concern <- survey %>% 
+  filter(taxa %in% c("Coelorinchus caelorhincus","Malacocephalus laevis",
+                     "Macrourus berglax","Coryphaenoides rupestris",
+                     "Coelorinchus labiatus", "Hymenocephalus italicus",
+                     "Nezumia aequalis", "Nezumia bairdii", "Trachyrincus murrayi",
+                     "Trachyrincus scabrus","Xenodermichthys copei",
+                     "Chimaeridae","Hydrolagus mirabilis")) %>% 
+  group_by(Survey, taxa, LenMeasType) %>% 
+  summarize(n_obs = length(taxa),
+            n_taxa = length(unique(taxa)))
 
-coords$lme <- as.factor(coords$lme)
-#Select from each LME 50 long and lat
-ind <- c()
-for (i in 1:nlevels(coords$lme)){
-  ind <- c(ind, sample(which(coords$lme==levels(coords$lme)[i]), 50, 
-                       replace = FALSE))
-}
-long50 <- coords$ShootLong[ind]
-lat50 <- coords$ShootLat[ind]
-lme50 <- rep(levels(coords$lme), each=50)
-#For each haul without LME find a close LME that has an LME number already
-nlme <- subset(coords, is.na(lme)) # many hauls without LME 710
-nlme$ShootLat <- as.numeric(as.vector(nlme$ShootLat))
-nlme$ShootLong <- as.numeric(as.vector(nlme$ShootLong))
-long50 <- as.numeric(as.vector(long50))
-lat50 <- as.numeric(as.vector(lat50))
-dilme <- c()
-for (i in 1:length(lme50)){
-  dilme <- cbind(dilme, (nlme$ShootLat-lat50[i])**2 + (nlme$ShootLong-long50[i])**2)
-}
-mindi <- apply(dilme, 1, which.min) 
-coords$lme[is.na(coords$lme)] <- lme50[mindi] 
-# assign the closest LME number to each haul without LME
+write.csv(xx, file = "QAQC/DATRAS/lengthtypes.csv", row.names = F)
+write.csv(xx_concern, file = "QAQC/DATRAS/lengthtypes_taxa_concern.csv", row.names = F)
 
-
-#Check
-coords$ShootLat <- as.numeric(as.vector(coords$ShootLat))
-coords$ShootLong <- as.numeric(as.vector(coords$ShootLong))
-
-# rockall not assigned to Faroe plateau but to celtic sea LME
-coords$lme <- as.character(coords$lme)
-coords <- coords %>%
-  mutate(lme = replace(lme, Survey  =='ROCKALL', '60')) %>%
-  as.data.frame()
-
-survey <- left_join(survey, coords, by=c('ShootLat', 'ShootLong','Survey')) 
 
 if(need_get_lw_rel == TRUE){
   list.taxa <- survey %>% 
