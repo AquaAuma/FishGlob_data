@@ -21,8 +21,7 @@ gears <- data.frame(survey) %>%
 survey <- survey %>% 
   filter(!(Survey=="NS-IBTS" & Gear %in% c('ABD', 'BOT', 'DHT', 'FOT', 'GRT', 'H18', 'HOB', 'HT', 'KAB', 'VIN')),
          !(Survey=="BITS" & Gear %in% c('CAM', 'CHP', 'DT', 'EGY', 'ESB', 'EXP', 'FOT', 'GRT', 'H20', 'HAK', 'LBT','SON')),
-         !(Survey=="PT-IBTS" & Gear=='CAR'),
-         !(Survey=="Can-Mar" & Gear=='Y36'))
+         !(Survey=="PT-IBTS" & Gear=='CAR'))
 
 #################################################################
 # Re-estimate the wing/doorspread from linear model per survey
@@ -324,21 +323,97 @@ pt <- pt %>%
 area2 <- rbind(pt, area2)
 
 
-### Can-mar ###
-cmar <- survey %>%
-  filter(Survey=='Can-Mar') %>%
+### SP-NORTH ###
+spn <- survey %>%
+  filter(Survey=='SP-NORTH') %>%
   select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
-# doorspread, wingspread information fixed, no changes
+# doorspread
+lm0 <- lm(DoorSpread ~ log(Depth), data=spn)
+pred0 <- predict.lm (object=lm0, newdata=spn, interval='confidence', level=0.95)
+spn$door_fit <- pred0[,1]
+
+# wingspread
+lm0 <- lm(WingSpread ~ DoorSpread , data=spn) 
+spn[is.na(spn$DoorSpread),]$DoorSpread <- spn[is.na(spn$DoorSpread),]$door_fit
+pred0 <- predict.lm (object=lm0, newdata=spn, interval='confidence', level=0.95)
+spn$wing_fit <- pred0[,1]
+spn[is.na(spn$WingSpread),]$WingSpread <- spn[is.na(spn$WingSpread),]$wing_fit
 
 # combine
-cmar <- cmar %>%
+spn <- spn %>%
   select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
-area2 <- rbind(cmar, area2)
+area2 <- rbind(spn, area2)
 
-rm(bits, cgfs, ie, nsibts, pt, nigfs, pred0, lm0, lm1, evhoe, swc, rock, cmar,
+
+### SP-ARSA ###
+spa <- survey %>%
+  filter(Survey=='SP-ARSA') %>%
+  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  distinct()
+
+# doorspread
+lm0 <- lm(DoorSpread ~ log(Depth) , data=spa)
+pred0 <- predict.lm (object=lm0, newdata=spa, interval='confidence', level=0.95)
+spa$door_fit <- pred0[,1]
+
+# wingspread
+lm0 <- lm(WingSpread ~ DoorSpread , data=spa) 
+spa[is.na(spa$DoorSpread),]$DoorSpread <- spa[is.na(spa$DoorSpread),]$door_fit
+pred0 <- predict.lm (object=lm0, newdata=spa, interval='confidence', level=0.95)
+spa$wing_fit <- pred0[,1]
+spa[is.na(spa$WingSpread),]$WingSpread <- spa[is.na(spa$WingSpread),]$wing_fit
+
+# combine
+spa <- spa %>%
+  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
+area2 <- rbind(spa, area2)
+
+
+### SP-PORC ###
+spp <- survey %>%
+  filter(Survey=='SP-PORC') %>%
+  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  distinct()
+
+# doorspread
+lm0 <- lm(DoorSpread ~ log(Depth), data=spp)
+pred0 <- predict.lm (object=lm0, newdata=spp, interval='confidence', level=0.95)
+spp$door_fit <- pred0[,1]
+
+# wingspread
+lm0 <- lm(WingSpread ~ DoorSpread , data=spp) 
+spp[is.na(spp$DoorSpread),]$DoorSpread <- spp[is.na(spp$DoorSpread),]$door_fit
+pred0 <- predict.lm (object=lm0, newdata=spp, interval='confidence', level=0.95)
+spp$wing_fit <- pred0[,1]
+spp[is.na(spp$WingSpread),]$WingSpread <- spp[is.na(spp$WingSpread),]$wing_fit
+
+# combine
+spp <- spp %>%
+  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
+area2 <- rbind(spp, area2)
+
+
+### Can-mar ###
+# cmar <- survey %>%
+#   filter(Survey=='Can-Mar') %>%
+#   select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+#   distinct()
+# 
+# # doorspread, wingspread information fixed, no changes
+# 
+# # combine
+# cmar <- cmar %>%
+#   select(HaulID, DoorSpread, WingSpread) %>%
+#   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
+# area2 <- rbind(cmar, area2)
+
+rm(bits, cgfs, ie, nsibts, pt, nigfs, pred0, lm0, lm1, evhoe, swc, rock, spa,
+   spp, spn,
    addship,noship, addcountry ,nocountry)
 
 # Paste new estimates to survey data frame
