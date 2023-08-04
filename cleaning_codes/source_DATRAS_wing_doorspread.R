@@ -23,6 +23,7 @@ survey <- survey %>%
          !(Survey=="BITS" & Gear %in% c('CAM', 'CHP', 'DT', 'EGY', 'ESB', 'EXP', 'FOT', 'GRT', 'H20', 'HAK', 'LBT','SON')),
          !(Survey=="PT-IBTS" & Gear=='CAR'))
 
+
 #################################################################
 # Re-estimate the wing/doorspread from linear model per survey
 #################################################################
@@ -415,6 +416,11 @@ area2 <- rbind(spp, area2)
 rm(bits, cgfs, ie, nsibts, pt, nigfs, pred0, lm0, lm1, evhoe, swc, rock, spa,
    spp, spn,
    addship,noship, addcountry ,nocountry)
+
+
+#################################################################
+# Re-estimate the swept areas across surveys
+#################################################################
 
 # Paste new estimates to survey data frame
 area2 <- area2 %>% distinct()
