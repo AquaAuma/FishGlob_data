@@ -226,9 +226,8 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
   ##---------------##
   
   # Final clean output data frame
-  output_df <- worms_db_fish %>% 
-    dplyr::left_join(fishbase_id,
-                     by = "taxa") %>% 
+  fishbase_id <- unique(fishbase_id)
+  output_df <- dplyr::left_join(worms_db_fish, fishbase_id, by = "taxa") %>% 
     # rest of selection
     dplyr::distinct() %>% 
     dplyr::select(
