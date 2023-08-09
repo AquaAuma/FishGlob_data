@@ -30,6 +30,7 @@ source("functions/write_clean_data.R")
 source("functions/apply_trimming_method1.R")
 source("functions/apply_trimming_method2.R")
 source("functions/flag_spp.R")
+source("functions/get_length_weight_coeffs_rfishbase.R")
 fishglob_data_columns <- read_excel("standard_formats/fishglob_data_columns.xlsx")
 
 # should the last version of DATRAS be downloaded?
@@ -43,6 +44,9 @@ save_hh_and_hl <- FALSE
 
 # should we get the length-weight relationships from fishbase?
 need_get_lw_rel <- FALSE
+
+# check length types for conversion to TL?
+check_TL_conversion <- FALSE
 
 
 ##########################################################################################
@@ -271,6 +275,8 @@ for (i in 1:length(hhn)){
  if(length(j)>1){pb <- hhn[i]}
 }
 
+rm(hhn)
+
 # problem with one haul in NS-IBTS
 hh <- hh %>% 
   filter(HaulID!=pb)
@@ -336,6 +342,8 @@ survey <- survey %>%
          SpecVal %in% c(1,10,4,5,6,7,8),
          DataType %in% c('S','R','C'))
 
+print(length(unique(survey$HaulID)))
+
 
 ##########################################################################################
 #### RESCALE DATA INTO ABUNDANCE FOR THE HAUL DURATION AND ABUNDANCE AT LENGTH
@@ -346,7 +354,13 @@ survey <- survey %>%
 survey$CatCatchWgt = as.numeric(survey$CatCatchWgt)
 
 survey <- survey %>% 
-  mutate(HLNoAtLngt = case_when(DataType=='C' ~ HLNoAtLngt*SubFactor*HaulDur/60,
+  mutate(# replace -9 by NAs
+         HLNoAtLngt = ifelse(HLNoAtLngt == (-9), NA, HLNoAtLngt),
+         TotalNo = ifelse(TotalNo == -9, NA, TotalNo),
+         CatCatchWgt = ifelse(CatCatchWgt == -9, NA, CatCatchWgt),
+         CatCatchWgt = ifelse(CatCatchWgt<0, NA, CatCatchWgt),
+         # standardize by haul duration and rescale with subfactor
+         HLNoAtLngt = case_when(DataType=='C' ~ HLNoAtLngt*SubFactor*HaulDur/60,
                                 DataType %in% c('S','R') ~ HLNoAtLngt*SubFactor),
          TotalNo = case_when(DataType=='C' ~ TotalNo*HaulDur/60, 
                              DataType %in% c('S','R') ~ TotalNo),
@@ -359,6 +373,7 @@ survey <- survey %>%
          # remove hauls where not all species are recorded
          !(Survey=="BITS" & BySpecRecCode==0))
 
+length(unique(survey$HaulID))
 
 
 ##########################################################################################
@@ -372,12 +387,11 @@ source('cleaning_codes/source_DATRAS_wing_doorspread.R')
 #### GET CPUEs AND RIGHT COLUMNS NAMES
 ##########################################################################################
 
-# Check whether there are records of taxa with -9 abundance reported that are 
-
-
-# Remove data without length composition or negative values
-xx <- subset(survey, HLNoAtLngt<0 | is.na(LngtClass))
-no_length_hauls <- sort(unique(xx$HaulID)) # 11,113 hauls without length data
+# Assess size of data without length composition or negative values
+xx <- subset(survey, is.na(HLNoAtLngt) | is.na(LngtClass))
+no_length_hauls <- sort(unique(xx$HaulID)) # 11,113 hauls with missing length data
+print(length(no_length_hauls))
+rm(no_length_hauls)
 
 # Only keep abundances/weight
 survey <- survey %>%
@@ -391,10 +405,10 @@ survey <- survey %>%
          numlencpue = HLNoAtLngt/Area.swept, #abundance/km2 per length class
          numlenh = HLNoAtLngt*60/HaulDur, #abundance/h per length class
          Season = 'NA',
-         Depth = replace(Depth, Depth<0, NA),
-         SBT = replace(SBT, SBT<0, NA),
-         SST = replace(SST, SST<0, NA),
+         SBT = replace(SBT, SBT== -9, NA),
+         SST = replace(SST, SST== -9, NA),
          LngtClass = ifelse(LngtClass == -9, NA, LngtClass), #replace -9 values by NAs
+         LngtCode = ifelse(LngtCode == -9, NA, LngtCode), #replace -9 by NAs
          LngtClass = ifelse(LngtCode %in% c('.','0'), LngtClass*0.1, LngtClass)) %>% 
   # fix unit of length class
   dplyr::rename(Length = LngtClass) %>% 
@@ -595,129 +609,80 @@ survey <- left_join(survey, clean_datras_taxa, by=c("AphiaID" = "query")) %>%
 detach(package:worms)
 detach(package:plyr)
 
-# select only certain gears 
-# 1. summary of gears per survey
-gears <- data.frame(survey) %>% 
-  group_by(Survey, Gear) %>% 
-  summarise(hauls = length(unique(HaulID)), years = length(unique(Year))) %>% 
-  select(Survey, Gear, hauls, years)
-
-# 2. associate an LME to each haul and make final list of species
-### Prepare list for estimating length-weight parameters
-# list.taxa <- survey %>% 
-#   mutate(species = str_split(taxa, pattern = " ", simplify = TRUE)[,2]) %>% 
-#   select(HaulID, Survey, ShootLat, ShootLong, family, genus, species) %>% 
-#   distinct()
-
-# get LME
-# library(rgdal)
-# shape1 <- readOGR(dsn = "length_weight/LME66",layer="LMEs66")
-# coords <- list.taxa %>%
-#   dplyr::select(ShootLat, ShootLong, Survey) %>%
-#   distinct()
-# str(coords)
-# 
-# coordinates(coords) <- ~ ShootLong + ShootLat
-# proj4string(coords) <- proj4string(shape1)
-# lme <- over(coords, shape1)
-# 
-# coords <- list.taxa %>%
-#   dplyr::select(ShootLat, ShootLong, Survey) %>%
-#   distinct()
-# coords <- cbind(coords, lme$LME_NUMBER)
-# setnames(coords, old='lme$LME_NUMBER', new='lme')
-# 
-# coords$lme <- as.factor(coords$lme)
-# #Select from each LME 50 long and lat
-# ind <- c()
-# for (i in 1:nlevels(coords$lme)){
-#   ind <- c(ind, sample(which(coords$lme==levels(coords$lme)[i]), 50, 
-#                        replace = FALSE))
-# }
-# long50 <- coords$ShootLong[ind]
-# lat50 <- coords$ShootLat[ind]
-# lme50 <- rep(levels(coords$lme), each=50)
-# #For each haul without LME find a close LME that has an LME number already
-# nlme <- subset(coords, is.na(lme)) # many hauls without LME 710
-# nlme$ShootLat <- as.numeric(as.vector(nlme$ShootLat))
-# nlme$ShootLong <- as.numeric(as.vector(nlme$ShootLong))
-# long50 <- as.numeric(as.vector(long50))
-# lat50 <- as.numeric(as.vector(lat50))
-# dilme <- c()
-# for (i in 1:length(lme50)){
-#   dilme <- cbind(dilme, (nlme$ShootLat-lat50[i])**2 + (nlme$ShootLong-long50[i])**2)
-# }
-# mindi <- apply(dilme, 1, which.min) 
-# coords$lme[is.na(coords$lme)] <- lme50[mindi] 
-# # assign the closest LME number to each haul without LME
-# 
-# 
-# #Check
-# coords$ShootLat <- as.numeric(as.vector(coords$ShootLat))
-# coords$ShootLong <- as.numeric(as.vector(coords$ShootLong))
-# 
-# # rockall not assigned to Faroe plateau but to celtic sea LME
-# coords$lme <- as.character(coords$lme)
-# coords <- coords %>%
-#   mutate(lme = replace(lme, Survey  =='ROCKALL', '60')) %>%
-#   as.data.frame()
-# 
-# survey <- left_join(survey, coords, by=c('ShootLat', 'ShootLong','Survey')) 
-
-# 3. Check length measurement types
-xx <- survey %>% 
-  filter(!is.na(LenMeasType),
-         !LenMeasType %in% c(-9, 1, 12)) %>% 
-  group_by(Survey, taxa, LenMeasType) %>% 
-  summarize(n_obs = length(taxa),
-            n_taxa = length(unique(taxa)))
-
-xx_concern <- survey %>% 
-  filter(taxa %in% c("Coelorinchus caelorhincus","Malacocephalus laevis",
-                     "Macrourus berglax","Coryphaenoides rupestris",
-                     "Coelorinchus labiatus", "Hymenocephalus italicus",
-                     "Nezumia aequalis", "Nezumia bairdii", "Trachyrincus murrayi",
-                     "Trachyrincus scabrus","Xenodermichthys copei",
-                     "Chimaeridae","Hydrolagus mirabilis")) %>% 
-  group_by(Survey, taxa, LenMeasType) %>% 
-  summarize(n_obs = length(taxa),
-            n_taxa = length(unique(taxa)))
-
-write.csv(xx, file = "QAQC/DATRAS/lengthtypes.csv", row.names = F)
-write.csv(xx_concern, file = "QAQC/DATRAS/lengthtypes_taxa_concern.csv", row.names = F)
+# 1. Check length measurement types
+if(check_TL_conversion == TRUE){
+  xx <- survey %>% 
+    filter(!is.na(LenMeasType),
+           !LenMeasType %in% c(-9, 1, 12)) %>% 
+    group_by(Survey, taxa, LenMeasType) %>% 
+    summarize(n_obs = length(taxa),
+              n_taxa = length(unique(taxa)))
+  
+  xx_concern <- survey %>% 
+    filter(taxa %in% c("Coelorinchus caelorhincus","Malacocephalus laevis",
+                       "Macrourus berglax","Coryphaenoides rupestris",
+                       "Coelorinchus labiatus", "Hymenocephalus italicus",
+                       "Nezumia aequalis", "Nezumia bairdii", "Trachyrincus murrayi",
+                       "Trachyrincus scabrus","Xenodermichthys copei",
+                       "Chimaeridae","Hydrolagus mirabilis")) %>% 
+    group_by(Survey, taxa, LenMeasType) %>% 
+    summarize(n_obs = length(taxa),
+              n_taxa = length(unique(taxa)))
+  
+  write.csv(xx, file = "QAQC/DATRAS/lengthtypes.csv", row.names = F)
+  write.csv(xx_concern, file = "QAQC/DATRAS/lengthtypes_taxa_concern.csv", row.names = F)
+  
+  # according to ICES manuals
+  family_concern <- survey %>% 
+    filter(family %in% c("Alepocephalidae","Platytroctidae","Macrouridae","Chimaeridae")) %>% 
+    mutate(LenMeasType = ifelse(LenMeasType == -9, NA, LenMeasType)) %>% 
+    group_by(Survey, taxa, family, LenMeasType) %>% 
+    summarize(n_obs = length(taxa),
+              n_taxa = length(unique(taxa)))
+  
+  write.csv(family_concern, file = "QAQC/DATRAS/lengthtypes_family_concern.csv", row.names = F)
+  
+  taxa_not_TL <- survey %>% 
+    filter(family %in% c("Alepocephalidae","Platytroctidae","Macrouridae","Chimaeridae")) %>% 
+    mutate(LenMeasType = ifelse(LenMeasType == -9, NA, LenMeasType)) %>% 
+    group_by(worms_id, SpecCode, taxa, family, LenMeasType) %>% 
+    summarize(n_obs = length(taxa))
+  write.csv(taxa_not_TL, file = "length_weight/DATRAS_taxa_not_TL.csv", row.names = F)
+  
+}
 
 
-if(need_get_lw_rel == TRUE){
+# 2. apply length conversion factors when necessary
+conversion_to_TL <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
+  filter(is.na(LenMeasType)) %>% 
+  select(taxa, conversion_to_TL)
+
+survey <- left_join(survey, conversion_to_TL, by = "taxa") %>% 
+  mutate(Length = ifelse(!is.na(conversion_to_TL), Length*conversion_to_TL, Length))
+
+
+# 3. List of taxa for length-weight conversion coefficients
+if(need_get_lw_rel == FALSE){
   list.taxa <- survey %>% 
-    select(taxa, family, genus, taxa, lme, rank, Survey) %>% 
-    filter(!is.na(taxa),
-           rank!="Suborder") %>% 
-    rename(survey = Survey) %>% 
+    select(taxa, family, genus, rank) %>% 
+    filter(!is.na(family)) %>% 
     distinct()
   
-  write.csv(data.frame(list.taxa), file="length_weight/taxa.DATRAS.FB.tofill.csv", 
+  write.csv(data.frame(list.taxa), file=paste0("length_weight/taxa_DATRAS_FB_tofill_",date,".csv"), 
             row.names=FALSE)
-  save.image("length_weight/DATRAS_before_lw_4AUG2021.RData")
   
-  ### run length-weight relationships open R 32bit
-  list.taxa <- read.csv("length_weight/taxa.DATRAS.FB.tofill.csv")
-  get_coeffs(list.taxa, survey="DATRAS", save=TRUE)
+  # length-weight relationships using rfishbase
+  get_coeffs(list.taxa, survey="DATRAS", date=date, save=TRUE)
 }
 
 
 # 4. re-calculate weights with length-weight relationships
-#load("length.weight/DATRAS_before_lw_4AUG2021.RData")
-datalw <- read.csv('length_weight/length.weight_DATRAS.csv') %>% 
-  rename(Survey = survey) %>% 
-  select(-X) %>% 
-  mutate(lme = as.character(lme))
+datalw <- read.csv('length_weight/length.weight_DATRAS_3August2023.csv') %>% 
+  select(-X)
 
-survey <- survey %>% 
-  filter(rank!="Suborder")
 
 # summarize abundance/weight at the haul level
-survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","lme",
-                                             "rank","Survey")) %>% 
+survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>% 
   select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
          HaulDur,Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,
          SpecCode,kingdom, class, order,phylum,rank,
@@ -729,8 +694,7 @@ survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","lme",
   summarize_at(.vars=c('numcpue', 'numh', 'num'), .funs = function(x) sum(x)) %>% 
   ungroup()
 
-survey.wgt <- left_join(survey, datalw, by=c("taxa","family","genus","lme",
-                                             "rank","Survey")) %>% 
+survey.wgt <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>% 
   select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,HaulDur,
          Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,SpecCode,
          kingdom, class, order,phylum,rank,
@@ -750,8 +714,7 @@ survey1 <- full_join(survey.num, survey.wgt,
                           'kingdom', 'phylum','class', 'order', 'rank'))
 
 # summarize abundance/weight from length data
-survey2 <- left_join(survey, datalw, by=c("taxa","family","genus","lme",
-                                          "rank","Survey")) %>% 
+survey2 <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>% 
   mutate(wgtlencpue = numlencpue*a*Length^b/1000, # divide by 1000 to get kg/km2
          wgtlenh = numlenh*a*Length^b/1000) %>% # divide by 1000 to get kg/h
   group_by(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,HaulDur,
@@ -770,58 +733,69 @@ survey3 <- full_join(survey1, survey2, by=c('Survey','HaulID','StatRec','Year','
                                             'AphiaID','worms_id','SpecCode',
                                             'kingdom', 'phylum','class', 'order', 'rank'))
 
-library(ggplot2)
-
-# correlation between abundances to check calculations are right
-cor(x = survey3$numh, y = survey3$numlenh, method = 'pearson')
-xx <- subset(survey3, !is.na(numcpue))
-cor(x = xx$numcpue, y = xx$numlencpue, method = 'pearson')
-
-# check weights
-xx <- subset(survey3, wtcpue   >0 & wgtlencpue>0)
-cor(x = xx$wtcpue , y = xx$wgtlencpue, method = 'pearson')
-
-xx <- subset(survey3, wgth>0 & wgtlenh>0)
-cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson')
-
-### cor = 0.92 and 0.90 so something does not work.
 
 ##########################################################################################
 # CHECK PER SURVEY
 ##########################################################################################
 
+# correlation between abundances to check calculations are right
+cor(x = survey3$numh, y = survey3$numlenh, method = 'pearson', use = "complete.obs")
+xx <- subset(survey3, !is.na(numcpue))
+cor(x = xx$numcpue, y = xx$numlencpue, method = 'pearson', use = "complete.obs")
+
+# check weights
+xx <- subset(survey3, wtcpue>0 & wgtlencpue>0)
+cor(x = xx$wtcpue, y = xx$wgtlencpue, method = 'pearson', use = "complete.obs")
+
+xx <- subset(survey3, wgth>0 & wgtlenh>0)
+cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
+
+
+library(ggplot2)
 # no zeros
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
 
 # rockall looks OK
+png("QAQC/DATRAS/ROCKALL.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='ROCKALL'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # IE-IGFS looks OK
+png("QAQC/DATRAS/IE-IGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='IE-IGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # NIGFS looks OK
+png("QAQC/DATRAS/NIGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='NIGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # PT-IBTS looks OK
+png("QAQC/DATRAS/PT-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='PT-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # FR-CGFS looks OK
+png("QAQC/DATRAS/FR-CGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='FR-CGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # SWC-IBTS issue
+png("QAQC/DATRAS/SWC-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='SWC-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
+dev.off()
 
 comp <- subset(xx, Survey=='SWC-IBTS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -847,9 +821,11 @@ survey3 <- survey3 %>%
          wgt = if_else(HaulID %in% resc , wgt*100,wgt))
 
 # BITS issue
+png("QAQC/DATRAS/BITS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='BITS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 comp <- subset(xx, Survey=='BITS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -875,9 +851,11 @@ survey3 <- survey3 %>%
          wgt = if_else(HaulID %in% resc , wgt*100,wgt))
 
 # EVHOE may have an issue, no changes as not very clear
+png("QAQC/DATRAS/EVHOE.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='EVHOE'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
+dev.off()
 
 comp <- subset(xx, Survey=='EVHOE') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -895,9 +873,11 @@ comp$factor <-   comp$wgtlenh / comp$wgth
 plot(comp$factor)
 
 # NS - IBTS issue
+png("QAQC/DATRAS/NS-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='NS-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 comp <- subset(xx, Survey=='NS-IBTS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -921,6 +901,28 @@ points(comp$factor[comp$factor > 8 & comp$factor <20]~
 # two issues - one estimate 100 times higher based on length, the other 10 times
 resc <- comp$HaulID[comp$factor > 20] 
 resc2 <- comp$HaulID[comp$factor > 8 & comp$factor <20]
+
+# SP-NORTH
+png("QAQC/DATRAS/SP-NORTH.png", width = 16*200, height = 10*200, res = 200)
+ggplot(subset(xx, Survey=='SP-NORTH'), aes(x=wgth, y=wgtlenh)) + geom_point() +
+  geom_abline(intercept = 0, slope = 1, color="red", 
+              linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
+
+
+# SP-ARSA
+png("QAQC/DATRAS/SP-ARSA.png", width = 16*200, height = 10*200, res = 200)
+ggplot(subset(xx, Survey=='SP-ARSA'), aes(x=wgth, y=wgtlenh)) + geom_point() +
+  geom_abline(intercept = 0, slope = 1, color="red", 
+              linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
+
+# SP-PORC
+png("QAQC/DATRAS/SP-PORC.png", width = 16*200, height = 10*200, res = 200)
+ggplot(subset(xx, Survey=='SP-PORC'), aes(x=wgth, y=wgtlenh)) + geom_point() +
+  geom_abline(intercept = 0, slope = 1, color="red", 
+              linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
+dev.off()
 
 # after check with original haul length data (HL) for some resc haulid, weight 
 # is clearly wrong factor 100 

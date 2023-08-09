@@ -1,0 +1,533 @@
+,taxa,family,genus,rank,Type,source,level_inferred,b,a
+61,Mustelus,Triakidae,Mustelus,Genus,TL,fb-21.04,gen,3.1518,0.00297
+237,Malacocephalus laevis,Macrouridae,Malacocephalus,Species,TL,fb-21.04,spe,2.9715,0.341375
+18,Cyclopterus lumpus,Cyclopteridae,Cyclopterus,Species,TL,fb-21.04,spe,2.7979,0.221
+475,Electrona risso,Myctophidae,Electrona,Species,TL,fb-21.04,gen,1.96,0.204
+87,Cyclopteridae,Cyclopteridae,NA,Family,TL,fb-21.04,fam,2.820685714,0.18596
+257,Caranx rhonchus,Carangidae,Caranx,Species,TL,fb-21.04,spe,2.4255,0.0775
+506,Antigonia capros,Caproidae,Antigonia,Species,TL,fb-21.04,spe,2.819166667,0.061075
+57,Hippoglossus hippoglossus,Pleuronectidae,Hippoglossus,Species,TL,fb-21.04,spe,2.86624,0.059532
+230,Lamna nasus,Lamnidae,Lamna,Species,TL,fb-21.04,spe,2.717666667,0.0586
+273,Balistes capriscus,Balistidae,Balistes,Species,TL,fb-21.04,spe,2.795333333,0.0580925
+398,Hoplostethus atlanticus,Trachichthyidae,Hoplostethus,Species,TL,fb-21.04,spe,2.8506,0.0549
+319,Mola mola,Molidae,Mola,Species,TL,fb-21.04,spe,3.015,0.05245
+363,Balistes,Balistidae,Balistes,Genus,TL,fb-21.04,gen,2.802980952,0.05151
+64,Stichaeidae,Stichaeidae,NA,Family,TL,fb-21.04,fam,2.91644,0.050478
+138,Leptoclinus maculatus,Stichaeidae,Leptoclinus,Species,TL,fb-21.04,fam,2.91644,0.050478
+387,Dentex maroccanus,Sparidae,Dentex,Species,TL,fb-21.04,spe,2.966,0.043233333
+264,Torpedo marmorata,Torpedinidae,Torpedo,Species,TL,fb-21.04,spe,2.795533333,0.041166667
+202,Ophidion barbatum,Ophidiidae,Ophidion,Species,TL,fb-21.04,spe,2.632,0.03945
+397,Sphoeroides pachygaster,Tetraodontidae,Sphoeroides,Species,TL,fb-21.04,spe,2.8645,0.0392
+516,Pomadasys incisus,Haemulidae,Pomadasys,Species,TL,fb-21.04,spe,2.74136,0.03802
+19,Amblyraja radiata,Rajidae,Amblyraja,Species,TL,fb-21.04,spe,2.90124,0.03662
+139,Capros aper,Caproidae,Capros,Species,TL,fb-21.04,spe,2.746458333,0.035064167
+154,Caproidae,Caproidae,NA,Family,TL,fb-21.04,fam,2.746458333,0.035064167
+2,Callionymus lyra,Callionymidae,Callionymus,Species,TL,fb-21.04,spe,2.588764286,0.034102857
+275,Tetronarce nobiliana,Torpedinidae,Tetronarce,Species,TL,fb-21.04,spe,2.8805,0.03289
+517,Zenion hololepis,Zeniontidae,Zenion,Species,TL,fb-21.04,spe,2.6645,0.03216
+167,Dasyatis pastinaca,Dasyatidae,Dasyatis,Species,TL,fb-21.04,spe,2.73214,0.03208
+333,Naucrates ductor,Carangidae,Naucrates,Species,TL,fb-21.04,fam,2.867747385,0.030336369
+420,Torpedo torpedo,Torpedinidae,Torpedo,Species,TL,fb-21.04,spe,2.8695,0.0297
+495,Umbrina cirrosa,Sciaenidae,Umbrina,Species,TL,fb-21.04,spe,2.965333333,0.028933333
+348,Macrouridae,Macrouridae,NA,Family,TL,fb-21.04,fam,3.081802778,0.028096944
+335,Dasyatis tortonesei,Dasyatidae,Dasyatis,Species,TL,fb-21.04,gen,2.776783333,0.027918333
+185,Mugil cephalus,Mugilidae,Mugil,Species,TL,fb-21.04,spe,2.870473455,0.027544
+83,Brosme brosme,Lotidae,Brosme,Species,TL,fb-21.04,spe,2.92198,0.027318
+62,Zeus faber,Zeidae,Zeus,Species,TL,fb-21.04,spe,2.885369565,0.027116087
+65,Myctophidae,Myctophidae,NA,Family,TL,fb-21.04,fam,2.826756522,0.026357391
+269,Notoscopelus kroyeri,Myctophidae,Notoscopelus,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+317,Ceratoscopelus maderensis,Myctophidae,Ceratoscopelus,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+329,Benthosema glaciale,Myctophidae,Benthosema,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+419,Hygophum benoiti,Myctophidae,Hygophum,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+439,Lampadena,Myctophidae,Lampadena,Genus,TL,fb-21.04,fam,2.826756522,0.026357391
+457,Lampadena atlantica,Myctophidae,Lampadena,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+458,Notoscopelus,Myctophidae,Notoscopelus,Genus,TL,fb-21.04,fam,2.826756522,0.026357391
+471,Lobianchia gemellarii,Myctophidae,Lobianchia,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+496,Benthosema,Myctophidae,Benthosema,Genus,TL,fb-21.04,fam,2.826756522,0.026357391
+498,Protomyctophum arcticum,Myctophidae,Protomyctophum,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+509,Lobianchia dofleini,Myctophidae,Lobianchia,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+526,Lobianchia,Myctophidae,Lobianchia,Genus,TL,fb-21.04,fam,2.826756522,0.026357391
+528,Notoscopelus bolini,Myctophidae,Notoscopelus,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+530,Notoscopelus elongatus,Myctophidae,Notoscopelus,Species,TL,fb-21.04,fam,2.826756522,0.026357391
+260,Cepola macrophthalma,Cepolidae,Cepola,Species,TL,fb-21.04,spe,1.930064706,0.026230588
+191,Zeidae,Zeidae,NA,Family,TL,fb-21.04,fam,2.882816667,0.025450667
+482,Neoscopelus macrolepidotus,Neoscopelidae,Neoscopelus,Species,TL,fb-21.04,spe,2.52,0.02457
+385,Callanthias ruber,Callanthiidae,Callanthias,Species,TL,fb-21.04,spe,2.477,0.0243
+376,Anthias anthias,Serranidae,Anthias,Species,TL,fb-21.04,spe,2.611,0.0242
+487,Isurus oxyrinchus,Lamnidae,Isurus,Species,TL,fb-21.04,fam,2.9623,0.024018
+347,Alopias vulpinus,Alopiidae,Alopias,Species,TL,fb-21.04,gen,2.675,0.02375
+279,Serranus hepatus,Serranidae,Serranus,Species,TL,fb-21.04,spe,2.967864,0.023482
+183,Sparus aurata,Sparidae,Sparus,Species,TL,fb-21.04,spe,3.000306667,0.023329333
+225,Coelorinchus caelorhincus,Macrouridae,Coelorinchus,Species,TL,fb-21.04,spe,2.938722222,0.023265556
+179,Thunnus thynnus,Scombridae,Thunnus,Species,TL,fb-21.04,spe,2.927,0.0232
+152,Lepadogaster,Gobiesocidae,Lepadogaster,Genus,TL,fb-21.04,gen,3,0.02307
+232,Lepadogaster lepadogaster,Gobiesocidae,Lepadogaster,Species,TL,fb-21.04,spe,3,0.02307
+157,Lophius budegassa,Lophiidae,Lophius,Species,TL,fb-21.04,spe,2.942435294,0.022892941
+370,Synchiropus phaeton,Callionymidae,Synchiropus,Species,TL,fb-21.04,spe,2.409333333,0.02233
+383,Diplodus puntazzo,Sparidae,Diplodus,Species,TL,fb-21.04,spe,2.94898,0.02218
+47,Alosa,Alosidae,Alosa,Genus,TL,fb-21.04,gen,2.98065443,0.021603671
+169,Lesueurigobius friesii,Gobiidae,Lesueurigobius,Species,TL,fb-21.04,spe,2.65682,0.021416
+235,Polyprion americanus,Polyprionidae,Polyprion,Species,TL,fb-21.04,spe,2.92225,0.020965
+337,Symphodus roissali,Labridae,Symphodus,Species,TL,fb-21.04,spe,3.028,0.02095
+40,Lophiidae,Lophiidae,NA,Family,TL,fb-21.04,fam,2.961168889,0.020583333
+382,Zenopsis conchifer,Zeidae,Zenopsis,Species,TL,fb-21.04,spe,2.8535,0.020575
+49,Lophius piscatorius,Lophiidae,Lophius,Species,TL,fb-21.04,spe,2.9267,0.02046625
+163,Blennius,Blenniidae,Blennius,Genus,TL,fb-21.04,gen,2.884955556,0.02043
+218,Blennius ocellaris,Blenniidae,Blennius,Species,TL,fb-21.04,spe,2.884955556,0.02043
+476,Lophius,Lophiidae,Lophius,Genus,TL,fb-21.04,gen,2.95174,0.02038875
+41,Scophthalmus maximus,Scophthalmidae,Scophthalmus,Species,TL,fb-21.04,spe,3.071526087,0.020344348
+519,Halobatrachus didactylus,Batrachoididae,Halobatrachus,Species,TL,fb-21.04,spe,3.02375,0.020215
+203,Cottunculus microps,Psychrolutidae,Cottunculus,Species,TL,fb-21.04,fam,3.00725,0.0202
+515,Pomatomus saltatrix,Pomatomidae,Pomatomus,Species,TL,fb-21.04,spe,2.885046154,0.020176154
+77,Callionymus,Callionymidae,Callionymus,Genus,TL,fb-21.04,gen,2.667930435,0.020155435
+46,Callionymidae,Callionymidae,NA,Family,TL,fb-21.04,fam,2.657956,0.0200628
+303,Scorpaena porcus,Scorpaenidae,Scorpaena,Species,TL,fb-21.04,spe,3.006135714,0.020007857
+284,Serranus cabrilla,Serranidae,Serranus,Species,TL,fb-21.04,spe,2.894736364,0.020002424
+134,Coryphaenoides rupestris,Macrouridae,Coryphaenoides,Species,TL,fb-21.04,gen,2.4867,0.019685
+323,Myctophum,Myctophidae,Myctophum,Genus,TL,fb-21.04,gen,2.526,0.01962
+349,Scorpaenidae,Scorpaenidae,NA,Family,TL,fb-21.04,fam,3.023209346,0.019604967
+148,Scorpaena scrofa,Scorpaenidae,Scorpaena,Species,TL,fb-21.04,spe,2.994141667,0.019575
+374,Scorpaena,Scorpaenidae,Scorpaena,Genus,TL,fb-21.04,gen,3.012813208,0.019550189
+265,Argyrosomus regius,Sciaenidae,Argyrosomus,Species,TL,fb-21.04,spe,2.849,0.01949
+478,Anoplogaster cornuta,Anoplogastridae,Anoplogaster,Species,TL,fb-21.04,spe,3,0.019385
+520,Stromateus fiatola,Stromateidae,Stromateus,Species,TL,fb-21.04,gen,3.0435,0.019265
+403,Pagrus auriga,Sparidae,Pagrus,Species,TL,fb-21.04,spe,3,0.01905
+315,Scorpaena notata,Scorpaenidae,Scorpaena,Species,TL,fb-21.04,spe,3.033383871,0.018950645
+377,Dentex dentex,Sparidae,Dentex,Species,TL,fb-21.04,spe,3.026863636,0.01884
+250,Argyropelecus olfersii,Sternoptychidae,Argyropelecus,Species,TL,fb-21.04,spe,3,0.01879
+263,Pagrus pagrus,Sparidae,Pagrus,Species,TL,fb-21.04,spe,2.965995,0.0187445
+246,Labridae,Labridae,NA,Family,TL,fb-21.04,fam,3.023447739,0.018267588
+429,Serranidae,Serranidae,NA,Family,TL,fb-21.04,fam,3.014734036,0.018190783
+523,Aetomylaeus bovinus,Myliobatidae,Aetomylaeus,Species,TL,fb-21.04,fam,3.085,0.01813
+63,Pagellus erythrinus,Sparidae,Pagellus,Species,TL,fb-21.04,spe,2.921093333,0.018089667
+78,Sparidae,Sparidae,NA,Family,TL,fb-21.04,fam,3.028205194,0.017825305
+219,Icelus bicornis,Cottidae,Icelus,Species,TL,fb-21.04,gen,3.0489,0.01775
+362,Coelorinchus labiatus,Macrouridae,Coelorinchus,Species,TL,fb-21.04,gen,2.940038462,0.017641538
+151,Mugilidae,Mugilidae,NA,Family,TL,fb-21.04,fam,2.923282573,0.017632184
+502,Microchirus theophila,Soleidae,Microchirus,Species,TL,fb-21.04,spe,2.896666667,0.017566667
+165,Lesueurigobius,Gobiidae,Lesueurigobius,Genus,TL,fb-21.04,gen,2.7373875,0.01736
+294,Beryx decadactylus,Berycidae,Beryx,Species,TL,fb-21.04,spe,2.95,0.01732
+301,Diplodus sargus,Sparidae,Diplodus,Subspecies,TL,fb-21.04,spe,3.041072,0.0172836
+336,Diplodus sargus,Sparidae,Diplodus,Species,TL,fb-21.04,spe,3.041072,0.0172836
+24,Sebastes,Sebastidae,Sebastes,Genus,TL,fb-21.04,gen,3.03613375,0.01720575
+445,Hoplostethus cadenati,Trachichthyidae,Hoplostethus,Species,TL,fb-21.04,gen,3.084927273,0.017156364
+67,Cottidae,Cottidae,NA,Family,TL,fb-21.04,fam,3.049993103,0.016891897
+170,Artediellus atlanticus,Cottidae,Artediellus,Species,TL,fb-21.04,fam,3.049993103,0.016891897
+174,Micrenophrys lilljeborgii,Cottidae,Micrenophrys,Species,TL,fb-21.04,fam,3.049993103,0.016891897
+252,Gobius,Gobiidae,Neogobius,Genus,TL,fb-21.04,gen,3.068986957,0.016772609
+255,Neogobius,Gobiidae,Neogobius,Genus,TL,fb-21.04,gen,3.068986957,0.016772609
+386,Ephippion guttifer,Tetraodontidae,Ephippion,Species,TL,fb-21.04,spe,3,0.0164
+312,Diplodus vulgaris,Sparidae,Diplodus,Species,TL,fb-21.04,spe,3.079715625,0.016315938
+411,Uranoscopus scaber,Uranoscopidae,Uranoscopus,Species,TL,fb-21.04,spe,3.045355556,0.016276111
+216,Pterycombus brama,Bramidae,Pterycombus,Species,TL,fb-21.04,fam,3.20756,0.01625
+31,Merluccius merluccius,Merlucciidae,Merluccius,Species,TL,fb-21.04,spe,3.119484615,0.016085824
+414,Argyropelecus aculeatus,Sternoptychidae,Argyropelecus,Species,TL,fb-21.04,spe,3,0.016
+422,Dentex gibbosus,Sparidae,Dentex,Species,TL,fb-21.04,spe,3.008,0.015545
+324,Scomber colias,Scombridae,Scomber,Species,TL,fb-21.04,spe,2.9255,0.01545
+93,Taurulus bubalis,Cottidae,Taurulus,Species,TL,fb-21.04,spe,3,0.0154
+424,Dentex canariensis,Sparidae,Dentex,Species,TL,fb-21.04,spe,2.98,0.0154
+460,Diretmus argenteus,Diretmidae,Diretmus,Species,TL,fb-21.04,fam,3.0453,0.0153
+141,Spondyliosoma cantharus,Sparidae,Spondyliosoma,Species,TL,fb-21.04,spe,3.074977778,0.015163333
+469,Oxynotus paradoxus,Oxynotidae,Oxynotus,Species,TL,fb-21.04,gen,3,0.0151
+281,Pagellus,Sparidae,Pagellus,Genus,TL,fb-21.04,gen,3.013055263,0.015021447
+45,Scophthalmus rhombus,Scophthalmidae,Scophthalmus,Species,TL,fb-21.04,spe,3.012583333,0.014838889
+421,Symphodus,Labridae,Symphodus,Genus,TL,fb-21.04,gen,3.107163265,0.014826735
+242,Liparidae,Liparidae,NA,Family,TL,fb-21.04,fam,3.143652941,0.014826471
+436,Paraliparis membranaceus,Liparidae,Paraliparis,Species,TL,fb-21.04,fam,3.143652941,0.014826471
+462,Bellottia apoda,Bythitidae,Bellottia,Species,TL,fb-21.04,fam,2.919,0.0148
+465,Cataetyx alleni,Bythitidae,Cataetyx,Species,TL,fb-21.04,fam,2.919,0.0148
+345,Pagellus bellottii,Sparidae,Pagellus,Species,TL,fb-21.04,spe,2.98,0.0146775
+417,Spicara smaris,Sparidae,Spicara,Species,TL,fb-21.04,spe,2.938056,0.01462
+105,Zoarces viviparus,Zoarcidae,Zoarces,Species,TL,fb-21.04,spe,2.831775,0.014575
+531,Valenciennellus tripunctulatus,Sternoptychidae,Valenciennellus,Species,TL,fb-21.04,fam,3.137625,0.01446625
+384,Monochirus hispidus,Soleidae,Monochirus,Species,TL,fb-21.04,gen,3.16,0.01439
+395,Diplodus annularis,Sparidae,Diplodus,Species,TL,fb-21.04,spe,3.12767013,0.014355844
+176,Somniosus microcephalus,Somniosidae,Somniosus,Species,TL,fb-21.04,spe,3.1902,0.01435
+416,Lepidotrigla cavillone,Triglidae,Lepidotrigla,Species,TL,fb-21.04,spe,3.015614286,0.014137143
+132,Diplecogaster bimaculata,Gobiesocidae,Diplecogaster,Subspecies,TL,fb-21.04,spe,2.737,0.01413
+206,Diplecogaster,Gobiesocidae,Diplecogaster,Genus,TL,fb-21.04,gen,2.737,0.01413
+209,Sarpa salpa,Sparidae,Sarpa,Species,TL,fb-21.04,spe,3.041944444,0.014033889
+101,Zeugopterus punctatus,Scophthalmidae,Zeugopterus,Species,TL,fb-21.04,spe,3.146,0.0139
+195,Blenniidae,Blenniidae,NA,Family,TL,fb-21.04,fam,2.979088333,0.013838333
+143,Arnoglossus,Bothidae,Arnoglossus,Genus,TL,fb-21.04,gen,3.0634,0.013815
+285,Pagellus bogaraveo,Sparidae,Pagellus,Species,TL,fb-21.04,spe,3.027590909,0.013808182
+74,Zeugopterus norvegicus,Scophthalmidae,Phrynorhombus,Species,TL,fb-21.04,fam,3.079314085,0.013797465
+409,Pontinus kuhlii,Scorpaenidae,Pontinus,Species,TL,fb-21.04,spe,3.0304,0.013784
+371,Lepidotrigla,Triglidae,Lepidotrigla,Genus,TL,fb-21.04,gen,3.002157143,0.013782857
+266,Lithognathus mormyrus,Sparidae,Lithognathus,Species,TL,fb-21.04,spe,3.002911111,0.013664444
+96,Liparis,Liparidae,Liparis,Genus,TL,fb-21.04,gen,3.07536,0.01364
+434,Chiasmodon,Chiasmodontidae,Chiasmodon,Genus,TL,fb-21.04,fam,2.898,0.0136
+292,Hexanchus griseus,Hexanchidae,Hexanchus,Species,TL,fb-21.04,spe,3,0.0135
+144,Dicentrarchus labrax,Moronidae,Dicentrarchus,Species,TL,fb-21.04,spe,2.992927778,0.013470556
+276,Arnoglossus thori,Bothidae,Arnoglossus,Species,TL,fb-21.04,spe,2.9863,0.013457143
+81,Zeugopterus regius,Scophthalmidae,Zeugopterus,Species,TL,fb-21.04,gen,3.035,0.013433333
+150,Zeugopterus,Scophthalmidae,Zeugopterus,Genus,TL,fb-21.04,gen,3.035,0.013433333
+304,Diaphus,Myctophidae,Diaphus,Genus,TL,fb-21.04,gen,2.945666667,0.013408333
+355,Epigonus telescopus,Epigonidae,Epigonus,Species,TL,fb-21.04,spe,3,0.01336
+112,Helicolenus dactylopterus,Sebastidae,Helicolenus,Species,TL,fb-21.04,spe,3.087594737,0.01334
+306,Argyropelecus,Sternoptychidae,Argyropelecus,Genus,TL,fb-21.04,gen,3.098333333,0.01322
+474,Argyropelecus gigas,Sternoptychidae,Argyropelecus,Species,TL,fb-21.04,gen,3.098333333,0.01322
+156,Labrus bergylta,Labridae,Labrus,Species,TL,fb-21.04,spe,3.0575,0.0132
+455,Zeugopterus norvegicus,Scophthalmidae,Zeugopterus,Species,TL,fb-21.04,spe,2.9795,0.0132
+243,Symphodus bailloni,Labridae,Symphodus,Species,TL,fb-21.04,spe,3.075666667,0.01311
+310,Serranus scriba,Serranidae,Serranus,Species,TL,fb-21.04,spe,3.051746154,0.013074615
+28,Agonus cataphractus,Agonidae,Agonus,Species,TL,fb-21.04,spe,2.7953,0.01302
+307,Centroscyllium fabricii,Etmopteridae,Centroscyllium,Species,TL,fb-21.04,gen,2.8685,0.013
+389,Microchirus boscanion,Soleidae,Microchirus,Species,TL,fb-21.04,spe,3.0155,0.01294
+80,Bothidae,Bothidae,NA,Family,TL,fb-21.04,fam,3.080323214,0.012866786
+182,Chelidonichthys lastoviza,Triglidae,Chelidonichthys,Species,TL,fb-21.04,spe,2.9918,0.012852667
+224,Labrus merula,Labridae,Labrus,Species,TL,fb-21.04,spe,3.055375,0.0126425
+70,Gobiidae,Gobiidae,NA,Family,TL,fb-21.04,fam,3.012300353,0.012588657
+126,Crystallogobius linearis,Gobiidae,Crystallogobius,Species,TL,fb-21.04,fam,3.012300353,0.012588657
+256,Pomatoschistus flavescens,Gobiidae,Gobiusculus,Species,TL,fb-21.04,fam,3.012300353,0.012588657
+26,Platichthys flesus,Pleuronectidae,Platichthys,Species,TL,fb-21.04,spe,3.02758,0.0125744
+512,Lesueurigobius suerii,Gobiidae,Lesueurigobius,Species,TL,fb-21.04,spe,2.747,0.01255
+406,Auxis rochei,Scombridae,Auxis,Subspecies,TL,fb-21.04,spe,3.069,0.012533333
+493,Auxis rochei,Scombridae,Auxis,Species,TL,fb-21.04,spe,3.069,0.012533333
+158,Dicentrarchus,Moronidae,Dicentrarchus,Genus,TL,fb-21.04,gen,3.025035,0.0124875
+316,Scymnodon ringens,Somniosidae,Scymnodon,Species,TL,fb-21.04,fam,3.182953333,0.01247
+188,Trigla,Triglidae,Trigla,Genus,TL,fb-21.04,gen,2.96925,0.012469
+213,Trigla lyra,Triglidae,Trigla,Species,TL,fb-21.04,spe,2.96925,0.012469
+472,Urophycis chuss,Phycidae,Urophycis,Species,TL,fb-21.04,spe,3,0.01245
+194,Gobiesocidae,Gobiesocidae,NA,Family,TL,fb-21.04,fam,3.0445,0.0124225
+430,Apletodon dentatus,Gobiesocidae,Apletodon,Species,TL,fb-21.04,fam,3.0445,0.0124225
+425,Schedophilus medusophagus,Centrolophidae,Schedophilus,Species,TL,fb-21.04,spe,3,0.01232
+172,Ctenolabrus rupestris,Labridae,Ctenolabrus,Species,TL,fb-21.04,spe,3,0.0123
+342,Trachyscorpia echinata,Sebastidae,Trachyscorpia,Species,TL,fb-21.04,gen,3.12925,0.01225
+393,Trachyscorpia cristulata,Sebastidae,Trachyscorpia,Subspecies,TL,fb-21.04,gen,3.12925,0.01225
+282,Macrourus berglax,Macrouridae,Macrourus,Species,TL,fb-21.04,spe,2.9385,0.01223
+527,Plectorhinchus mediterraneus,Haemulidae,Plectorhinchus,Species,TL,fb-21.04,spe,3.135,0.01215
+137,Soleidae,Soleidae,NA,Family,TL,fb-21.04,fam,3.060504651,0.012136163
+267,Bathysolea profundicola,Soleidae,Bathysolea,Species,TL,fb-21.04,fam,3.060504651,0.012136163
+23,Pollachius pollachius,Gadidae,Pollachius,Species,TL,fb-21.04,spe,2.998833333,0.01177
+302,Dalatias licha,Dalatiidae,Dalatias,Species,TL,fb-21.04,spe,3,0.0117
+149,Microchirus,Soleidae,Microchirus,Genus,TL,fb-21.04,gen,3.070415789,0.011673158
+318,Cyttopsis rosea,Parazenidae,Cyttopsis,Species,TL,fb-21.04,spe,3.044,0.01167
+215,Macroramphosus scolopax,Centriscidae,Macroramphosus,Species,TL,fb-21.04,spe,2.807818182,0.011597273
+369,Macroramphosus,Centriscidae,Macroramphosus,Genus,TL,fb-21.04,gen,2.807818182,0.011597273
+210,Clupeidae,Clupeidae,NA,Family,TL,fb-21.04,fam,3.046712139,0.011593389
+30,Triglidae,Triglidae,NA,Family,TL,fb-21.04,fam,3.026216,0.01159096
+211,Trigloporus,Triglidae,Trigloporus,Genus,TL,fb-21.04,fam,3.026216,0.01159096
+107,Gobius auratus,Gobiidae,Gobius,Species,TL,fb-21.04,gen,3.038620833,0.01159
+124,Gobius,Gobiidae,Gobius,Genus,TL,fb-21.04,gen,3.038620833,0.01159
+159,Chelon auratus,Mugilidae,Chelon,Species,TL,fb-21.04,spe,2.991705882,0.011574706
+388,Spicara maena,Sparidae,Spicara,Species,TL,fb-21.04,spe,3.100524242,0.011552121
+346,Myoxocephalus scorpioides,Cottidae,Myoxocephalus,Species,TL,fb-21.04,gen,3.15665,0.011545833
+27,Echiichthys vipera,Trachinidae,Echiichthys,Species,TL,fb-21.04,spe,2.9966,0.0115225
+187,Echiichthys,Trachinidae,Echiichthys,Genus,TL,fb-21.04,gen,2.9966,0.0115225
+463,Howella brodiei,Howellidae,Howella,Species,TL,fb-21.04,spe,3,0.0115
+500,Epigonus,Epigonidae,Epigonus,Genus,TL,fb-21.04,gen,3.13175,0.0115
+449,Melamphaes,Melamphaidae,Melamphaes,Genus,TL,fb-21.04,fam,3,0.01148
+450,Poromitra capito,Melamphaidae,Poromitra,Species,TL,fb-21.04,gen,3,0.01148
+481,Poromitra crassiceps,Melamphaidae,Poromitra,Species,TL,fb-21.04,spe,3,0.01148
+100,Gasterosteus aculeatus,Gasterosteidae,Gasterosteus,Subspecies,TL,fb-21.04,spe,3.116025,0.0114
+239,Gobius paganellus,Gobiidae,Gobius,Species,TL,fb-21.04,spe,3.07125,0.011375
+38,Lumpenus lampretaeformis,Stichaeidae,Lumpenus,Species,TL,fb-21.04,spe,2.26885,0.01135
+133,Chelidonichthys lucerna,Triglidae,Chelidonichthys,Species,TL,fb-21.04,spe,2.977595238,0.010981905
+254,Acantholabrus palloni,Labridae,Acantholabrus,Species,TL,fb-21.04,spe,3.074,0.0108
+199,Chelon,Mugilidae,Chelon,Genus,TL,fb-21.04,gen,3.000454717,0.010782264
+426,Physiculus dalwigki,Moridae,Physiculus,Species,TL,fb-21.04,spe,2,0.01074
+361,Mullidae,Mullidae,NA,Family,TL,fb-21.04,fam,3.119026345,0.010736954
+277,Pagellus acarne,Sparidae,Pagellus,Species,TL,fb-21.04,spe,3.116513793,0.010735862
+259,Trachurus mediterraneus,Carangidae,Trachurus,Species,TL,fb-21.04,spe,2.967825,0.01072875
+136,Salmo salar,Salmonidae,Salmo,Species,TL,fb-21.04,spe,2.99163,0.01072
+25,Buglossidium luteum,Soleidae,Buglossidium,Species,TL,fb-21.04,spe,3.0431,0.0107125
+142,Buglossidium,Soleidae,Buglossidium,Genus,TL,fb-21.04,gen,3.0431,0.0107125
+173,Salmo,Salmonidae,Salmo,Genus,TL,fb-21.04,gen,3.046875455,0.010669318
+189,Chelidonichthys,Triglidae,Chelidonichthys,Genus,TL,fb-21.04,gen,3.037423333,0.010661833
+13,Microstomus kitt,Pleuronectidae,Microstomus,Species,TL,fb-21.04,spe,3.023754545,0.010640909
+14,Gaidropsarus vulgaris,Lotidae,Gaidropsarus,Species,TL,fb-21.04,spe,2.905375,0.01055
+288,Myliobatis aquila,Myliobatidae,Myliobatis,Species,TL,fb-21.04,spe,3.17,0.01035
+524,Microchirus ocellatus,Soleidae,Microchirus,Species,TL,fb-21.04,spe,3.2835,0.0103
+396,Microchirus azevia,Soleidae,Microchirus,Species,TL,fb-21.04,spe,3.07525,0.010295
+247,Myoxocephalus quadricornis,Cottidae,Myoxocephalus,Species,TL,fb-21.04,spe,3.211066667,0.01029
+59,Sebastes viviparus,Sebastidae,Sebastes,Species,TL,fb-21.04,spe,3.143033333,0.010233333
+76,Microchirus variegatus,Soleidae,Microchirus,Species,TL,fb-21.04,spe,3.0936125,0.01017875
+69,Trachurus trachurus,Carangidae,Trachurus,Species,TL,fb-21.04,spe,2.960069643,0.01013375
+245,Gobius gasteveni,Gobiidae,Gobius,Species,TL,fb-21.04,spe,3.05,0.0101
+532,Setarches guentheri,Setarchidae,Setarches,Species,TL,fb-21.04,spe,3.1215,0.0099425
+3,Solea solea,Soleidae,Solea,Species,TL,fb-21.04,spe,3.059678261,0.009902609
+104,Salmo trutta,Salmonidae,Salmo,Subspecies,TL,fb-21.04,spe,3.062726757,0.009886216
+228,Parablennius gattorugine,Blenniidae,Parablennius,Species,TL,fb-21.04,spe,3.09225,0.00985
+332,Lepidotrigla dieuzeidei,Triglidae,Lepidotrigla,Species,TL,fb-21.04,spe,3.069466667,0.0098
+518,Callionymus risso,Callionymidae,Callionymus,Species,TL,fb-21.04,spe,2.793928571,0.009642857
+484,Evermannella balbo,Evermannellidae,Evermannella,Species,TL,fb-21.04,fam,3.009,0.0096
+381,Phycis phycis,Phycidae,Phycis,Species,TL,fb-21.04,spe,3.132375,0.00959375
+271,Scorpaena loppei,Scorpaenidae,Scorpaena,Species,TL,fb-21.04,spe,3.319,0.00945
+127,Osmerus eperlanus,Osmeridae,Osmerus,Species,TL,fb-21.04,spe,2.8535,0.0094
+55,Myoxocephalus scorpius,Cottidae,Myoxocephalus,Species,TL,fb-21.04,spe,3.205866667,0.009333333
+251,Lipophrys pholis,Blenniidae,Lipophrys,Species,TL,fb-21.04,spe,3,0.0093
+343,Diplodus cervinus,Sparidae,Diplodus,Subspecies,TL,fb-21.04,spe,3.21,0.0093
+410,Diplodus cervinus,Sparidae,Diplodus,Species,TL,fb-21.04,spe,3.21,0.0093
+233,Sarda sarda,Scombridae,Sarda,Species,TL,fb-21.04,spe,3.2645,0.00929
+94,Pomatoschistus,Gobiidae,Pomatoschistus,Genus,TL,fb-21.04,gen,3.042955,0.009242
+201,Pomatoschistus lozanoi,Gobiidae,Pomatoschistus,Species,TL,fb-21.04,gen,3.042955,0.009242
+372,Citharus linguatula,Citharidae,Citharus,Species,TL,fb-21.04,spe,3.0562,0.009182381
+402,Diplodus bellottii,Sparidae,Diplodus,Species,TL,fb-21.04,spe,3.233,0.009176
+240,Atherina,Atherinidae,Atherina,Genus,TL,fb-21.04,gen,3.004565625,0.009169688
+7,Merlangius merlangus,Gadidae,Merlangius,Species,TL,fb-21.04,spe,3.053036364,0.009085455
+8,Pleuronectes platessa,Pleuronectidae,Pleuronectes,Species,TL,fb-21.04,spe,3.050790909,0.009068182
+171,Symphodus melops,Labridae,Symphodus,Species,TL,fb-21.04,spe,3.135,0.00904
+525,Sardinella aurita,Dorosomatidae,Sardinella,Species,TL,fb-21.04,spe,3.039153846,0.008813846
+44,Triglops murrayi,Cottidae,Triglops,Species,TL,fb-21.04,spe,3,0.0088
+212,Triglops,Cottidae,Triglops,Genus,TL,fb-21.04,gen,3,0.0088
+92,Gasterosteidae,Gasterosteidae,NA,Family,TL,fb-21.04,fam,3.0297625,0.0087475
+258,Boops boops,Sparidae,Boops,Species,TL,fb-21.04,spe,3.057364516,0.00873
+198,Lepidorhombus boscii,Scophthalmidae,Lepidorhombus,Species,TL,fb-21.04,spe,3.12235,0.008721429
+272,Beryx splendens,Berycidae,Beryx,Species,TL,fb-21.04,spe,3.101,0.0087
+178,Acipenser sturio,Acipenseridae,Acipenser,Species,TL,fb-21.04,spe,2.991666667,0.008673333
+227,Mullus,Mullidae,Mullus,Genus,TL,fb-21.04,gen,3.144682269,0.008654958
+129,Mullus surmuletus,Mullidae,Mullus,Species,TL,fb-21.04,spe,3.173578871,0.008616774
+308,Hoplostethus mediterraneus,Trachichthyidae,Hoplostethus,Subspecies,TL,fb-21.04,spe,3.132875,0.0086075
+431,Hoplostethus mediterraneus,Trachichthyidae,Hoplostethus,Species,TL,fb-21.04,spe,3.132875,0.0086075
+184,Mullus barbatus,Mullidae,Mullus,Subspecies,TL,fb-21.04,spe,3.112396,0.00859
+52,Chelidonichthys cuculus,Triglidae,Chelidonichthys,Species,TL,fb-21.04,spe,3.070227273,0.008531818
+222,Pomatoschistus norvegicus,Gobiidae,Pomatoschistus,Species,TL,fb-21.04,spe,2.919,0.00853
+354,Centroscymnus coelolepis,Somniosidae,Centroscymnus,Species,TL,fb-21.04,spe,3.282266667,0.00847
+22,Pollachius virens,Gadidae,Pollachius,Species,TL,fb-21.04,spe,3.04306875,0.008445625
+278,Umbrina canariensis,Sciaenidae,Umbrina,Species,TL,fb-21.04,spe,3.21,0.0083
+287,Deania calceus,Centrophoridae,Deania,Species,TL,fb-21.04,spe,2.8175,0.00815
+17,Trisopterus luscus,Gadidae,Trisopterus,Species,TL,fb-21.04,spe,3.171427273,0.008128182
+66,Gadiculus argenteus,Gadidae,Gadiculus,Species,TL,fb-21.04,spe,3.10997,0.008087
+131,Gadiculus,Gadidae,Gadiculus,Genus,TL,fb-21.04,gen,3.10997,0.008087
+82,Arnoglossus laterna,Bothidae,Arnoglossus,Species,TL,fb-21.04,spe,3.0667,0.008084
+89,Ammodytes tobianus,Ammodytidae,Ammodytes,Species,TL,fb-21.04,spe,2.62635,0.00805
+314,Myctophum punctatum,Myctophidae,Myctophum,Species,TL,fb-21.04,spe,3,0.00804
+51,Trachinus draco,Trachinidae,Trachinus,Species,TL,fb-21.04,spe,3.055866667,0.0080325
+128,Galeorhinus galeus,Triakidae,Galeorhinus,Species,TL,fb-21.04,spe,2.970757143,0.008014286
+6,Limanda limanda,Pleuronectidae,Limanda,Species,TL,fb-21.04,spe,3.10485625,0.0079025
+290,Gaidropsarus biscayensis,Lotidae,Gaidropsarus,Species,TL,fb-21.04,spe,2.8801,0.0079
+289,Solea senegalensis,Soleidae,Solea,Species,TL,fb-21.04,spe,3.078333333,0.007743333
+521,Sphyraena sphyraena,Sphyraenidae,Sphyraena,Species,TL,fb-21.04,spe,2.9715,0.007625
+10,Trisopterus minutus,Gadidae,Trisopterus,Species,TL,fb-21.04,spe,3.132437037,0.00756
+35,Argentina,Argentinidae,Argentina,Genus,TL,fb-21.04,gen,3.10344,0.007504667
+234,Scomber japonicus,Scombridae,Scomber,Species,TL,fb-21.04,spe,3.197858824,0.007424706
+155,Chelon labrosus,Mugilidae,Chelon,Species,TL,fb-21.04,spe,3.1335,0.007366
+164,Pegusa lascaris,Soleidae,Pegusa,Species,TL,fb-21.04,spe,3.146666667,0.007333333
+39,Gaidropsarus,Lotidae,Gaidropsarus,Genus,TL,fb-21.04,gen,3.004661538,0.007261538
+208,Gaidropsarus argentatus,Lotidae,Gaidropsarus,Species,TL,fb-21.04,gen,3.004661538,0.007261538
+175,Zoarcidae,Zoarcidae,NA,Family,TL,fb-21.04,fam,3.119048148,0.007145556
+480,Melanostigma atlanticum,Zoarcidae,Melanostigma,Species,TL,fb-21.04,fam,3.119048148,0.007145556
+4,Gadus morhua,Gadidae,Gadus,Species,TL,fb-21.04,spe,3.105890909,0.007137879
+1,Eutrigla gurnardus,Triglidae,Eutrigla,Species,TL,fb-21.04,spe,3.08989,0.007081
+186,Eutrigla,Triglidae,Eutrigla,Genus,TL,fb-21.04,gen,3.08989,0.007081
+334,Prionace glauca,Carcharhinidae,Prionace,Species,TL,fb-21.04,spe,3.074275,0.007055
+339,Engraulis maeoticus,Engraulidae,Engraulis,Species,TL,fb-21.04,gen,3.077509524,0.007028333
+373,Engraulis,Engraulidae,Engraulis,Genus,TL,fb-21.04,gen,3.077509524,0.007028333
+50,Engraulis encrasicolus,Engraulidae,Engraulis,Species,TL,fb-21.04,spe,3.080098684,0.006971579
+102,Argentinidae,Argentinidae,NA,Family,TL,fb-21.04,fam,3.127476471,0.006921765
+451,Monomitopus metriostoma,Ophidiidae,Monomitopus,Species,TL,fb-21.04,fam,3.139837931,0.006885172
+12,Sprattus sprattus,Clupeidae,Sprattus,Species,TL,fb-21.04,spe,3.040663333,0.006827667
+404,Chaunax pictus,Chaunacidae,Chaunax,Species,TL,fb-21.04,spe,3.45,0.00676
+394,Lesueurigobius sanzi,Gobiidae,Lesueurigobius,Species,TL,fb-21.04,spe,3.121,0.0067
+181,Atherina presbyter,Atherinidae,Atherina,Species,TL,fb-21.04,spe,3.025,0.00665
+305,Halargyreus johnsonii,Moridae,Halargyreus,Species,TL,fb-21.04,fam,3.134365625,0.006641875
+423,Gadella maraldi,Moridae,Gadella,Species,TL,fb-21.04,fam,3.134365625,0.006641875
+454,Guttigadus latifrons,Moridae,Guttigadus,Species,TL,fb-21.04,fam,3.134365625,0.006641875
+84,Hyperoplus lanceolatus,Ammodytidae,Hyperoplus,Species,TL,fb-21.04,spe,2.6967,0.0066
+407,Vinciguerria poweriae,Phosichthyidae,Vinciguerria,Species,TL,fb-21.04,fam,2.7125,0.006565
+490,Ichthyococcus ovatus,Phosichthyidae,Ichthyococcus,Species,TL,fb-21.04,fam,2.7125,0.006565
+236,Cetorhinus maximus,Cetorhinidae,Cetorhinus,Species,TL,fb-21.04,spe,3,0.00655
+11,Clupea harengus,Clupeidae,Clupea,Species,TL,fb-21.04,spe,3.088371429,0.006361648
+196,Gaidropsarus macrophthalmus,Lotidae,Gaidropsarus,Species,TL,fb-21.04,spe,2.95,0.00634
+529,Ruvettus pretiosus,Gempylidae,Ruvettus,Species,TL,fb-21.04,spe,3.067,0.00633
+53,Lepidorhombus whiffiagonis,Scophthalmidae,Lepidorhombus,Species,TL,fb-21.04,spe,3.149369231,0.006323077
+168,Hyperoplus,Ammodytidae,Hyperoplus,Genus,TL,fb-21.04,gen,2.789233333,0.00632
+326,Spratelloides lewisi,Spratelloididae,Spratelloides,Species,TL,fb-21.04,gen,3.02,0.0063
+261,Chelidonichthys obscurus,Triglidae,Chelidonichthys,Species,TL,fb-21.04,spe,3.17364,0.006237
+123,Raniceps raninus,Gadidae,Raniceps,Species,TL,fb-21.04,spe,3.267,0.0062
+162,Hyperoplus immaculatus,Ammodytidae,Hyperoplus,Species,TL,fb-21.04,spe,2.8355,0.00618
+262,Dicologlossa cuneata,Soleidae,Dicologlossa,Species,TL,fb-21.04,spe,3.10683,0.006151
+270,Trachurus picturatus,Carangidae,Trachurus,Species,TL,fb-21.04,spe,3.08708,0.006062
+117,Lycenchelys sarsii,Zoarcidae,Lycenchelys,Species,TL,fb-21.04,gen,2.7229,0.00606
+280,Lampanyctus crocodilus,Myctophidae,Lampanyctus,Species,TL,fb-21.04,spe,3.0617,0.006
+16,Melanogrammus aeglefinus,Gadidae,Melanogrammus,Species,TL,fb-21.04,spe,3.141608696,0.005969565
+492,Diaphus dumerilii,Myctophidae,Diaphus,Species,TL,fb-21.04,spe,3.018,0.00595
+313,Chlorophthalmus agassizi,Chlorophthalmidae,Chlorophthalmus,Species,TL,fb-21.04,spe,3.072,0.005892857
+291,Xenodermichthys copei,Alepocephalidae,Xenodermichthys,Species,TL,fb-21.04,spe,3,0.00587
+114,Ciliata,Lotidae,Ciliata,Genus,TL,fb-21.04,gen,3.0845,0.0058
+21,Anarhichas lupus,Anarhichadidae,Anarhichas,Species,TL,fb-21.04,spe,3.13145,0.005775
+508,Cubiceps gracilis,Nomeidae,Cubiceps,Species,TL,fb-21.04,gen,2.9135,0.005772
+486,Gaidropsarus granti,Lotidae,Gaidropsarus,Species,TL,fb-21.04,spe,3,0.00575
+42,Micromesistius poutassou,Gadidae,Micromesistius,Species,TL,fb-21.04,spe,3.15159375,0.00571625
+221,Phycidae,Phycidae,NA,Family,TL,fb-21.04,fam,3.192071429,0.00564
+443,Deltentosteus quadrimaculatus,Gobiidae,Deltentosteus,Species,TL,fb-21.04,spe,3.209,0.0056
+297,Hymenocephalus italicus,Macrouridae,Hymenocephalus,Species,TL,fb-21.04,spe,2.6705,0.00555
+405,Peristedion cataphractum,Peristediidae,Peristedion,Species,TL,fb-21.04,spe,2.95765,0.00555
+79,Sardina pilchardus,Alosidae,Sardina,Species,TL,fb-21.04,spe,3.188888,0.0055008
+330,Nezumia aequalis,Macrouridae,Nezumia,Species,TL,fb-21.04,spe,2.826666667,0.005493333
+441,Nesiarchus nasutus,Gempylidae,Nesiarchus,Species,TL,fb-21.04,fam,3.054714286,0.005398571
+135,Gaidropsarus mediterraneus,Lotidae,Gaidropsarus,Species,TL,fb-21.04,spe,3.1015,0.005368333
+392,Arnoglossus rueppelii,Bothidae,Arnoglossus,Species,TL,fb-21.04,spe,3.038,0.00535
+15,Trisopterus esmarkii,Gadidae,Trisopterus,Species,TL,fb-21.04,spe,3.105569231,0.005333846
+514,Ophichthus rufus,Ophichthidae,Ophichthus,Species,TL,fb-21.04,gen,2.805666667,0.005266667
+522,Bathytoshia centroura,Dasyatidae,Bathytoshia,Species,TL,fb-21.04,spe,3,0.005265
+352,Lampanyctus,Myctophidae,Lampanyctus,Genus,TL,fb-21.04,gen,3.11868,0.00524
+466,Lampanyctus photonotus,Myctophidae,Lampanyctus,Species,TL,fb-21.04,gen,3.11868,0.00524
+489,Lampanyctus intricarius,Myctophidae,Lampanyctus,Species,TL,fb-21.04,gen,3.11868,0.00524
+160,Arnoglossus imperialis,Bothidae,Arnoglossus,Species,TL,fb-21.04,spe,3.168,0.0052375
+214,Buenia jeffreysii,Gobiidae,Buenia,Species,TL,fb-21.04,spe,3.271,0.00521
+217,Hippocampus hippocampus,Syngnathidae,Hippocampus,Species,TL,fb-21.04,spe,2.8395,0.0052
+485,Poecilopsetta beanii,Pleuronectidae,Poecilopsetta,Species,TL,fb-21.04,gen,3.04,0.0051
+91,Phycis blennoides,Phycidae,Phycis,Species,TL,fb-21.04,spe,3.223230769,0.005064615
+5,Hippoglossoides platessoides,Pleuronectidae,Hippoglossoides,Species,TL,fb-21.04,spe,3.1557,0.00495
+207,Raja microocellata,Rajidae,Raja,Species,TL,fb-21.04,spe,3.117,0.00494
+48,Rajidae,Rajidae,NA,Family,TL,fb-21.04,fam,3.227729114,0.004917215
+415,Neoraja iberica,Rajidae,Neoraja,Species,TL,fb-21.04,fam,3.227729114,0.004917215
+491,Neoraja caerulea,Rajidae,Neoraja,Species,TL,fb-21.04,fam,3.227729114,0.004917215
+507,Breviraja,Rajidae,Breviraja,Genus,TL,fb-21.04,fam,3.227729114,0.004917215
+220,Labrus mixtus,Labridae,Labrus,Species,TL,fb-21.04,spe,3.2875,0.0049
+205,Centrolabrus exoletus,Labridae,Centrolabrus,Species,TL,fb-21.04,spe,3.23,0.004885
+238,Rajella fyllae,Rajidae,Rajella,Species,TL,fb-21.04,gen,3,0.00487
+299,Rajella bathyphila,Rajidae,Rajella,Species,TL,fb-21.04,gen,3,0.00487
+505,Rajella,Rajidae,Rajella,Genus,TL,fb-21.04,gen,3,0.00487
+75,Anarhichas minor,Anarhichadidae,Anarhichas,Species,TL,fb-21.04,gen,3.09972,0.00484
+85,Anarhichadidae,Anarhichadidae,NA,Family,TL,fb-21.04,fam,3.09972,0.00484
+97,Anarhichas,Anarhichadidae,Anarhichas,Genus,TL,fb-21.04,gen,3.09972,0.00484
+399,Etmopterus pusillus,Etmopteridae,Etmopterus,Species,TL,fb-21.04,spe,2.998666667,0.004836667
+295,Mora moro,Moridae,Mora,Species,TL,fb-21.04,spe,3.2058,0.004824
+365,Hydrolagus mirabilis,Chimaeridae,Hydrolagus,Species,TL,fb-21.04,gen,3.088,0.004746667
+378,Gonostoma,Gonostomatidae,Gonostoma,Genus,TL,fb-21.04,fam,2.964,0.00473
+452,Sigmops bathyphilus,Gonostomatidae,Sigmops,Species,TL,fb-21.04,fam,2.964,0.00473
+461,Sigmops elongatus,Gonostomatidae,Sigmops,Species,TL,fb-21.04,fam,2.964,0.00473
+499,Gonostomatidae,Gonostomatidae,NA,Family,TL,fb-21.04,fam,2.964,0.00473
+503,Cyclothone,Gonostomatidae,Cyclothone,Genus,TL,fb-21.04,fam,2.964,0.00473
+20,Squalus acanthias,Squalidae,Squalus,Species,TL,fb-21.04,spe,3.057269231,0.004718462
+311,Hippocampus guttulatus,Syngnathidae,Hippocampus,Species,TL,fb-21.04,spe,2.838666667,0.004706667
+54,Ammodytidae,Ammodytidae,NA,Family,TL,fb-21.04,fam,2.990433333,0.004683333
+120,Raja undulata,Rajidae,Raja,Species,TL,fb-21.04,spe,3.13125,0.004635
+331,Etmopterus princeps,Etmopteridae,Etmopterus,Species,TL,fb-21.04,gen,3.010916667,0.004580833
+9,Scomber scombrus,Scombridae,Scomber,Species,TL,fb-21.04,spe,3.244322581,0.004545806
+56,Ammodytes,Ammodytidae,Ammodytes,Genus,TL,fb-21.04,gen,3.06005,0.0045225
+400,Epigonus denticulatus,Epigonidae,Epigonus,Species,TL,fb-21.04,spe,3.26,0.0045
+390,Symphurus nigrescens,Cynoglossidae,Symphurus,Species,TL,fb-21.04,spe,3.310333333,0.004433333
+244,Hippocampus,Syngnathidae,Hippocampus,Genus,TL,fb-21.04,gen,2.865833333,0.00433
+351,Rostroraja alba,Rajidae,Rostroraja,Species,TL,fb-21.04,spe,3.091333333,0.004226667
+248,Coregonus albula,Salmonidae,Coregonus,Species,TL,fb-21.04,spe,3.333333333,0.0042
+293,Argyropelecus hemigymnus,Sternoptychidae,Argyropelecus,Species,TL,fb-21.04,spe,3.59,0.0042
+488,Remora remora,Echeneidae,Remora,Species,TL,fb-21.04,spe,3,0.00418
+504,Remora brachyptera,Echeneidae,Remora,Species,TL,fb-21.04,gen,3,0.00418
+71,Etmopterus spinax,Etmopteridae,Etmopterus,Species,TL,fb-21.04,spe,3.025833333,0.004178333
+473,Alepocephalidae,Alepocephalidae,NA,Family,TL,fb-21.04,fam,3.112709091,0.004165455
+412,Squalus blainville,Squalidae,Squalus,Species,TL,fb-21.04,spe,3.045609091,0.004157273
+401,Nezumia bairdii,Macrouridae,Nezumia,Species,TL,fb-21.04,gen,2.929,0.004076
+446,Sagamichthys schnakenbecki,Platytroctidae,Sagamichthys,Species,NA,fb-Aug9-estimates-bayesian,NA,3.17,0.00407
+447,Searsia koefoedi,Platytroctidae,Searsia,Species,NA,fb-Aug9-estimates-bayesian,NA,3.17,0.00407
+140,Leucoraja circularis,Rajidae,Leucoraja,Species,TL,fb-21.04,spe,3.08,0.0039
+435,Alepocephalus rostratus,Alepocephalidae,Alepocephalus,Species,TL,fb-21.04,spe,3.145,0.0039
+453,Nansenia,Microstomatidae,Nansenia,Genus,NA,fb-Aug9-estimates-bayesian,Nansenia tenera,3.12,0.00389
+470,Nansenia tenera,Microstomatidae,Nansenia,Species,NA,fb-Aug9-estimates-bayesian,NA,3.12,0.00389
+464,Melanonus zugmayeri,Melanonidae,Melanonus,Species,NA,fb-Aug9-estimates-bayesian,NA,3.1,0.00372
+43,Enchelyopus cimbrius,Lotidae,Enchelyopus,Species,TL,fb-21.04,spe,3.0842,0.003713333
+286,Dicentrarchus punctatus,Moronidae,Dicentrarchus,Species,TL,fb-21.04,spe,3.314,0.00364
+68,Galeus melastomus,Pentanchidae,Galeus,Species,TL,fb-21.04,spe,2.970842105,0.003567368
+86,Chimaera monstrosa,Chimaeridae,Chimaera,Species,TL,fb-21.04,spe,3.120333333,0.003513333
+122,Pholis gunnellus,Pholidae,Pholis,Species,TL,fb-21.04,spe,3.0575,0.00351
+177,Leptagonus decagonus,Agonidae,Leptagonus,Species,TL,fb-21.04,spe,3,0.00349
+357,Chauliodus sloani,Stomiidae,Chauliodus,Species,TL,fb-21.04,spe,2.9,0.0034
+249,Pungitius pungitius,Gasterosteidae,Pungitius,Species,TL,fb-21.04,spe,3.08,0.00338
+296,Polymetme corythaeola,Phosichthyidae,Polymetme,Species,TL,fb-21.04,spe,3.116,0.00337
+325,Polymetme thaeocoryla,Phosichthyidae,Polymetme,Species,TL,fb-21.04,gen,3.116,0.00337
+350,Galeus murinus,Pentanchidae,Galeus,Species,TL,fb-21.04,gen,2.993404545,0.003367273
+367,Chimaera opalescens,Chimaeridae,Chimaera,Species,TL,fb-21.04,gen,3.09025,0.003085
+193,Arctozenus risso,Paralepididae,Arctozenus,Species,TL,fb-21.04,fam,2.976,0.003063333
+321,Macroparalepis affinis,Paralepididae,Macroparalepis,Species,TL,fb-21.04,fam,2.976,0.003063333
+366,Magnisudis atlantica,Paralepididae,Magnisudis,Species,TL,fb-21.04,fam,2.976,0.003063333
+432,Paralepis coregonoides,Paralepididae,Paralepis,Species,TL,fb-21.04,fam,2.976,0.003063333
+32,Molva molva,Lotidae,Molva,Species,TL,fb-21.04,spe,3.1799,0.0030075
+459,Alepocephalus bairdii,Alepocephalidae,Alepocephalus,Species,TL,fb-21.04,spe,3.2085,0.00296
+438,Notacanthus,Notacanthidae,Notacanthus,Genus,TL,fb-21.04,gen,3.058133333,0.002946667
+456,Parasudis fraserbrunneri,Chlorophthalmidae,Parasudis,Species,TL,fb-21.04,gen,3.239,0.00288
+90,Lycodes vahlii,Zoarcidae,Lycodes,Species,TL,fb-21.04,gen,3.323572727,0.002827273
+98,Lycodes,Zoarcidae,Lycodes,Genus,TL,fb-21.04,gen,3.323572727,0.002827273
+192,Lycodes gracilis,Zoarcidae,Lycodes,Species,TL,fb-21.04,gen,3.323572727,0.002827273
+204,Centrophorus granulosus,Centrophoridae,Centrophorus,Species,TL,fb-21.04,spe,3.261666667,0.002795
+274,Molva macrophthalma,Lotidae,Molva,Species,TL,fb-21.04,gen,3.17372,0.002788
+118,Anguillidae,Anguillidae,NA,Family,TL,fb-21.04,fam,3.092661364,0.002739205
+226,Anguilla,Anguillidae,Anguilla,Genus,TL,fb-21.04,gen,3.092661364,0.002739205
+440,Melanostomias bartonbeani,Stomiidae,Melanostomias,Species,TL,fb-21.04,fam,3.064727273,0.002734545
+442,Chirostomias pliopterus,Stomiidae,Chirostomias,Species,TL,fb-21.04,fam,3.064727273,0.002734545
+444,Echiostoma barbatum,Stomiidae,Echiostoma,Species,TL,fb-21.04,fam,3.064727273,0.002734545
+88,Raja,Rajidae,Raja,Genus,TL,fb-21.04,gen,3.262822222,0.002666852
+413,Raja asterias,Rajidae,Raja,Species,TL,fb-21.04,spe,3.256,0.002645
+29,Raja clavata,Rajidae,Raja,Species,TL,fb-21.04,spe,3.21474,0.002532
+353,Notacanthidae,Notacanthidae,NA,Family,TL,fb-21.04,fam,3.0436,0.0024925
+113,Leucoraja fullonica,Rajidae,Leucoraja,Species,TL,fb-21.04,gen,3.2352,0.002488889
+166,Leucoraja lentiginosa,Rajidae,Leucoraja,Species,TL,fb-21.04,gen,3.2352,0.002488889
+37,Dipturus,Rajidae,Dipturus,Genus,TL,fb-21.04,gen,3.31805,0.0024875
+241,Rajella lintea,Rajidae,Dipturus,Species,TL,fb-21.04,gen,3.31805,0.0024875
+427,Dipturus nidarosiensis,Rajidae,Dipturus,Species,TL,fb-21.04,gen,3.31805,0.0024875
+200,Brama brama,Bramidae,Brama,Species,TL,fb-21.04,spe,3.467666667,0.002436667
+73,Raja brachyura,Rajidae,Raja,Species,TL,fb-21.04,spe,3.295,0.0024075
+58,Raja montagui,Rajidae,Raja,Species,TL,fb-21.04,spe,3.25115,0.0024025
+223,Chirolophis ascanii,Stichaeidae,Chirolophis,Species,TL,fb-21.04,gen,3.423,0.0024
+358,Centrolophus niger,Centrolophidae,Centrolophus,Species,TL,fb-21.04,spe,3.346,0.0024
+418,Galeus atlanticus,Pentanchidae,Galeus,Species,TL,fb-21.04,spe,3.07,0.0023
+33,Leucoraja naevus,Rajidae,Leucoraja,Species,TL,fb-21.04,spe,3.2558,0.002291667
+36,Glyptocephalus cynoglossus,Pleuronectidae,Glyptocephalus,Species,TL,fb-21.04,spe,3.307785714,0.002272857
+108,Anguilla anguilla,Anguillidae,Anguilla,Species,TL,fb-21.04,spe,3.08382931,0.002269483
+359,Centrophorus squamosus,Centrophoridae,Centrophorus,Species,TL,fb-21.04,spe,3.263333333,0.002226667
+375,Conger,Congridae,Conger,Genus,TL,fb-21.04,gen,3.309278261,0.002218696
+34,Myxine glutinosa,Myxinidae,Myxine,Species,TL,fb-21.04,spe,2.8357,0.0022
+501,Synaphobranchidae,Synaphobranchidae,NA,Family,TL,fb-21.04,fam,3.186171429,0.00219
+511,Dysomma brevirostre,Synaphobranchidae,Dysomma,Species,TL,fb-21.04,fam,3.186171429,0.00219
+147,Spinachia spinachia,Gasterosteidae,Spinachia,Species,TL,fb-21.04,spe,3,0.0021
+360,Heptranchias perlo,Hexanchidae,Heptranchias,Species,TL,fb-21.04,spe,3.08,0.0021
+109,Petromyzon marinus,Petromyzontidae,Petromyzon,Species,TL,fb-21.04,spe,3,0.00208
+180,Petromyzon,Petromyzontidae,Petromyzon,Genus,TL,fb-21.04,gen,3,0.00208
+268,Lepidion eques,Moridae,Lepidion,Species,TL,fb-21.04,gen,3.4275,0.0020475
+125,Scyliorhinus stellaris,Scyliorhinidae,Scyliorhinus,Species,TL,fb-21.04,spe,3.167,0.002
+197,Bathyraja brachyurops,Arhynchobatidae,Bathyraja,Species,TL,fb-21.04,spe,3.303,0.002
+121,Molva dypterygia,Lotidae,Molva,Species,TL,fb-21.04,spe,3.149,0.00191
+510,Epigonus constanciae,Epigonidae,Epigonus,Species,TL,fb-21.04,spe,3.59,0.0019
+229,Trachipterus arcticus,Trachipteridae,Trachipterus,Species,TL,fb-21.04,spe,3,0.00183
+477,Trachipterus trachypterus,Trachipteridae,Trachipterus,Species,TL,fb-21.04,gen,3,0.00183
+368,Petromyzontidae,Petromyzontidae,NA,Family,TL,fb-21.04,fam,2.930647059,0.001800588
+497,Congridae,Congridae,NA,Family,TL,fb-21.04,fam,3.250930303,0.001788182
+379,Raja miraletus,Rajidae,Raja,Species,TL,fb-21.04,spe,3.44465,0.001745
+116,Scyliorhinus,Scyliorhinidae,Scyliorhinus,Genus,TL,fb-21.04,gen,3.192017391,0.001721304
+60,Scyliorhinus canicula,Scyliorhinidae,Scyliorhinus,Species,TL,fb-21.04,spe,3.193154545,0.001708636
+72,Maurolicus muelleri,Sternoptychidae,Maurolicus,Species,TL,fb-21.04,spe,3.961,0.00164
+327,Deania profundorum,Centrophoridae,Deania,Species,TL,fb-21.04,spe,3.205,0.00161
+130,Scomberesox saurus,Scomberesocidae,Scomberesox,Subspecies,TL,fb-21.04,spe,3.193,0.0015
+448,Scomberesox saurus,Scomberesocidae,Scomberesox,Species,TL,fb-21.04,spe,3.193,0.0015
+340,Carapus acus,Carapidae,Carapus,Species,TL,fb-21.04,gen,3,0.00144
+110,Belone belone,Belonidae,Belone,Species,TL,fb-21.04,spe,2.971006667,0.001436667
+161,Trachyrincus murrayi,Macrouridae,Trachyrincus,Species,TL,fb-21.04,gen,3.232,0.00129
+322,Trachyrincus scabrus,Macrouridae,Trachyrincus,Species,TL,fb-21.04,spe,3.232,0.00129
+328,Lestidiops jayakari,Paralepididae,Lestidiops,Subspecies,TL,fb-21.04,spe,2.928,0.00128
+95,Aphia minuta,Gobiidae,Aphia,Species,TL,fb-21.04,spe,3.549046154,0.001267692
+483,Astronesthes niger,Stomiidae,Astronesthes,Species,TL,fb-21.04,gen,3.106,0.00126
+408,Gnathophis mystax,Congridae,Gnathophis,Species,TL,fb-21.04,spe,2.9885,0.00125
+145,Gymnammodytes semisquamatus,Ammodytidae,Gymnammodytes,Species,TL,fb-21.04,gen,3.307,0.0012
+356,Notacanthus bonaparte,Notacanthidae,Notacanthus,Species,TL,fb-21.04,spe,3.06,0.0012
+146,Lampetra fluviatilis,Petromyzontidae,Lampetra,Species,TL,fb-21.04,spe,3.1659,0.001176667
+467,Polyacanthonotus rissoanus,Notacanthidae,Polyacanthonotus,Species,TL,fb-21.04,gen,3,0.00113
+253,Regalecus glesne,Regalecidae,Regalecus,Species,NA,fb-Aug9-estimates-bayesian,NA,3.06,0.00102
+468,Nessorhamphus ingolfianus,Derichthyidae,Nessorhamphus,Species,NA,fb-Aug9-estimates-bayesian,NA,3.06,0.00102
+338,Serrivomer beanii,Serrivomeridae,Serrivomer,Species,TL,fb-21.04,gen,3,0.00101
+103,Ammodytes marinus,Ammodytidae,Ammodytes,Species,TL,fb-21.04,spe,3.49375,0.000995
+309,Nezumia sclerorhynchus,Macrouridae,Nezumia,Species,TL,fb-21.04,spe,3.233,9.00E-04
+320,Stomias boa,Stomiidae,Stomias,Subspecies,TL,fb-21.04,gen,3.233,0.00088
+428,Stomias ferox,Stomiidae,Stomias,Subspecies,TL,fb-21.04,gen,3.233,0.00088
+433,Stomias boa,Stomiidae,Stomias,Species,TL,fb-21.04,gen,3.233,0.00088
+344,Aphanopus carbo,Trichiuridae,Aphanopus,Species,TL,fb-21.04,spe,3.186166667,0.000855
+99,Syngnathidae,Syngnathidae,NA,Family,TL,fb-21.04,fam,3.0830792,0.0008528
+380,Nettastoma melanura,Nettastomatidae,Nettastoma,Species,TL,fb-21.04,spe,3.343233333,0.000746667
+298,Synaphobranchus kaupii,Synaphobranchidae,Synaphobranchus,Species,TL,fb-21.04,spe,3.1775,0.000705
+111,Conger conger,Congridae,Conger,Species,TL,fb-21.04,spe,3.332026667,0.000671333
+494,Facciolella oxyrhynchus,Nettastomatidae,Facciolella,Species,TL,fb-21.04,fam,3.210675,0.0006575
+364,Centroselachus crepidater,Somniosidae,Centroscymnus,Species,TL,fb-21.04,spe,3.477,6.00E-04
+115,Echiodon drummondii,Carapidae,Echiodon,Species,TL,fb-21.04,spe,3,0.00059
+190,Dipturus oxyrinchus,Rajidae,Dipturus,Species,TL,fb-21.04,spe,3.4695,0.00059
+479,Echiodon dentatus,Carapidae,Echiodon,Species,TL,fb-21.04,gen,3,0.00059
+283,Xiphias gladius,Xiphiidae,Xiphias,Species,TL,fb-21.04,spe,3.64,0.00049
+153,Syngnathus,Syngnathidae,Nerophis,Genus,TL,fb-21.04,gen,2.5625,0.000433333
+231,Nerophis lumbriciformis,Syngnathidae,Nerophis,Species,TL,fb-21.04,spe,3,0.00042
+437,Nemichthys scolopaceus,Nemichthyidae,Nemichthys,Species,TL,fb-21.04,spe,3,0.00041
+300,Lepidopus caudatus,Trichiuridae,Lepidopus,Species,TL,fb-21.04,spe,3.1723,0.000354
+106,Syngnathus,Syngnathidae,Syngnathus,Genus,TL,fb-21.04,gen,3.227264138,0.000331379
+119,Entelurus aequoreus,Syngnathidae,Entelurus,Species,TL,fb-21.04,spe,2.89035,0.00026
+341,Ijimaia loppei,Ateleopodidae,Ijimaia,Species,TL,fb-21.04,gen,3.509,1.00E-04
+391,Benthodesmus elongatus,Trichiuridae,Benthodesmus,Species,TL,fb-21.04,spe,3.352333333,8.00E-05
+513,Benthodesmus simonyi,Trichiuridae,Benthodesmus,Species,TL,fb-21.04,spe,3.674,1.00E-05
