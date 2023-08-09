@@ -261,14 +261,21 @@ apply_trimming_per_survey_unit_method2 <- function(data){
       ggplot2::coord_fixed() +
       # ggplot2::scale_color_manual(values = c("TRUE" = "purple", "FALSE" = "grey10")) +
       ggplot2::scale_color_manual(values = c("red", "black"), labels = c("haul \nremoved", "haul \nretained"), name = "") +
-      ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5, size = 10),
+      ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5, size = 20),
                      legend.position = "right",
-                     legend.text = ggplot2::element_text(size = 8),
+                     legend.text = ggplot2::element_text(size = 10),
                      axis.title = ggplot2::element_blank(),
-                     axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust=1, size = 8),
-                     axis.text.y = ggplot2::element_text(size = 8))
+                     axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust=1, size = 10),
+                     axis.text.y = ggplot2::element_text(size = 10))
     
-    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method2", paste0(bt_years_max_loc[i,1],"_map_per_haul.png")), p)
+    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method2", 
+                               paste0(bt_years_max_loc[i,1],"_map_per_haul.png")), p,
+                    width = 16, height = 10)
+   
+    # png(here::here("outputs", "Flags", "trimming_method2", paste0(bt_years_max_loc[i,1],"_map_per_haul.png")),
+    #     width = 16*200, height = 10*200, res = 200)
+    # print()
+    # dev.off()
     
   }
   

@@ -1,0 +1,525 @@
+---
+title: "SP-NORTH: North of Spain Bottom Trawl survey data processing summary"
+author: "fishglob, Aurore A. Maureaud, Juliano Palacios-Abrantes, Daniel van Denderen, and Laurene Pecuchet"
+date: "`r format(Sys.time(), '%B, %Y')`"
+fontsize: 20pt
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+always_allow_html: true
+---
+---
+title: "SP-NORTH: North of Spain Bottom Trawl survey data processing summary"
+author: "fishglob, Aurore A. Maureaud, Juliano Palacios-Abrantes, Daniel van Denderen, and Laurene Pecuchet"
+date: "`r format(Sys.time(), '%B, %Y')`"
+fontsize: 20pt
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+always_allow_html: true
+---
+
+```{r setup, include=FALSE, results='hide'}
+
+library(readxl) # To load extra datasets
+library(tidyverse) # for data wrangling
+library(janitor) # for cleaning names
+library(lubridate) # for fixing dates
+library(rnaturalearth) # for removing points from land
+library(sf) # for removing points from land
+library(sp) # for removing points from land
+library(here) # for easy work around on multiple computers
+library(taxize) # for getting correct species names
+library(magrittr) # for names wrangling
+library(googledrive) # for interaction with the drive
+library(knitr) # for nice tables
+library(kableExtra)
+library(plotly) # for interactive plots
+library(leaflet) # for interactive map
+
+# Personal functions
+source(here("./functions/write_clean_data.r"))
+source(here("./functions/clean_taxa.r"))
+
+fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns.xlsx"))
+
+```
+
+
+## General info
+
+This document presents the cleaning code and summary of the Northern Spanish bottom trawl survey provided by DATRAS, ICES. It contains data from **1990** and up to **2019**.
+
+
+## Data cleaning in R
+
+
+```{r cleaning_code, code = readLines(here("./cleaning_codes/get_datras.R")), eval=FALSE}
+```
+
+
+```{r load_data, echo=F, results='hide', include=FALSE, eval=T}
+
+### Survey data
+
+load(here("outputs/Cleaned_data/SP-NORTH_clean.RData"))
+survey <- data
+rm(data)
+
+### Map data
+World_map <- rnaturalearth::ne_countries(scale = 'medium', returnclass = c("sf")) %>%
+  clean_names() %>% 
+  select(iso_a3,sovereignt,sov_a3,name,name_long,region_wb,continent,geometry) %>% 
+  # st_transform(crs = "+proj=eck4") %>%
+  st_transform(crs = 4326) %>% # 4326
+  mutate(iso_a3 = ifelse(sovereignt == "Norway","NOR",
+                         ifelse(name == "France","FRA",
+                                iso_a3)
+                         )
+         )
+
+```
+\clearpage
+
+## 1. Overview of the survey data table
+
+```{r head_survey, eval = T, echo = F}
+kable(survey[1:5,1:6], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+kable(survey[1:5,7:15], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+kable(survey[1:5,16:23], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+kable(survey[1:5,24:30], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+kable(survey[1:5,31:35], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+kable(survey[1:5,36:42], format = "latex", booktabs = T) %>%
+kable_styling(latex_options = c("striped","HOLD_position"))
+
+
+```
+
+
+\clearpage
+
+## 2. Summary of sampling intensity
+
+Number of hauls per year performed during the survey after data processing.
+
+```{r hauls_per_year, eval = T, echo = F, fig.width = 5, warning=F, message=F}
+
+survey %>% 
+  # head()
+  group_by(year,haul_id) %>% 
+  summarise(n =  n()) %>% 
+  group_by(year) %>% 
+  summarise(n_hauls = n()) %>% 
+  ggplot()  +
+  geom_line(aes(x = year,y = n_hauls)) +
+  geom_point(aes(x = year,y = n_hauls)) +
+  ylab("Number of hauls") + xlab("Year") + theme_bw()
+
+```
+
+
+
+\clearpage
+
+## 3. Summary of sampling variables from the survey
+
+Here we show the yearly total and average of the following variables reported in the survey data:
+
+- *area_swept*, swept area by the bottom trawl gear ${km^2}$
+- *depth*, sampling depth in ${m}$
+- *haul_dur*, haul sampling duration ${hours}$
+- *number of marine fish taxa*, taxa were cleaned following the last version of taxonomy from the World Register of Marine Species (https://www.marinespecies.org/, October 2021)
+
+
+```{r summary_tech_vars, eval = T, echo = F, fig.width=10, fig.height = 6, message =  F,warning =  F}
+
+var_plot <-  survey %>%
+  group_by(year, haul_id, haul_dur, area_swept, depth) %>%
+  summarize(nbr_taxa = length(accepted_name)) %>% 
+  gather("var","val",3:6) %>% 
+  ggplot() +
+  geom_boxplot(
+    aes(
+      x = as.factor(year),
+      y = val),
+    outlier.shape = NA,
+    size=0.5
+  )  +
+  # geom_line(
+  #   aes(
+  #     x = year,
+  #     y = val
+  #   )
+  # )  +
+  ylab("")  + xlab("Year") +
+  facet_wrap(~var, 
+             scales = "free_y",
+             ncol = 2) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90))
+  
+var_plot
+
+```
+
+\clearpage
+
+## 4. Summary of biological variables
+
+Here we display the yearly total and average across hauls of the following variables recorded in the data:
+
+- *num_cpua*, number of individuals (abundance) in $\frac{individuals}{km^2}$
+- *num_cpue*, number of individuals (abundance) in $\frac{individuals}{h}$
+- *num*, number of individuals (abundance)
+- *wgt_cpua*, weight in $\frac{kg}{km^2}$
+- *wgt_cpue*, weight in $\frac{kg}{h}$
+- *wgt*, weight in ${kg}$
+
+```{r summary_var_plot, eval = T, echo = F, message =  F,warning =  F}
+
+var_plot <-  survey %>%
+  group_by(year) %>% 
+  summarise_at(vars(num:wgt_cpua),
+               funs(sum,mean),na.rm=T) %>% 
+  # head()
+  gather("var","val",2:13) %>% 
+  # head()
+  ggplot() +
+  geom_point(
+    aes(
+      x = year,
+      y = val
+    ),
+    size=0.5
+  )  +
+  geom_line(
+    aes(
+      x = year,
+      y = val
+    ),
+    size=0.5
+  )  +
+  ylab("")  + xlab("Year") +
+  facet_wrap(~var, 
+             scales = "free_y",
+             ncol = 3) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90))
+  
+
+var_plot
+
+```
+
+
+\clearpage
+
+## 5. Extreme values
+
+Here we show a yearly total distribution of the biomass data to visualize outliers:
+
+- *num_cpue*, number of individuals (abundance) in $\frac{individuals}{km^2}$
+- *wgt_cpue*, weight in $\frac{kg}{km^2}$
+
+```{r extreme_biomass, eval = T, echo = F, message =  F,warning =  F}
+
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
+  var_plot <-  survey %>%
+  group_by(year, haul_id) %>% 
+  summarize(Weight = sum(wgt_cpua), Abundance = sum(num_cpua)) %>% 
+  gather("var","val",3:4) %>% 
+  ggplot() +
+  geom_boxplot(
+    aes(
+      x = as.factor(year),
+      y = val
+    ),
+    size.outlier = 0.5,
+    size = 0.5
+  )  +
+  facet_wrap(~var, scales = "free_y",ncol = 2) +
+  ylab("")  + xlab("Year") +
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90))
+}
+
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & is.na(mean(survey$wgt_cpua, na.rm=T))){
+var_plot <-  survey %>%
+  group_by(year, haul_id) %>% 
+  summarize(Abundance = sum(num_cpua)) %>% 
+  # head()
+  ggplot() +
+  geom_boxplot(
+    aes(
+      x = as.factor(year),
+      y = Abundance
+    ),
+    size.outlier = 0.5,
+    size = 0.5
+  )  +
+  ylab("Abundance")  + xlab("Year") +
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90))
+} 
+
+if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
+var_plot <-  survey %>%
+  group_by(year, haul_id) %>% 
+  summarize(Weight = sum(wgt_cpua)) %>% 
+  # head()
+  ggplot() +
+  geom_boxplot(
+    aes(
+      x = as.factor(year),
+      y = Weight
+    ),
+    size.outlier = 0.5,
+    size = 0.5
+  )  +
+  ylab("Weight")  + xlab("Year") +
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90))
+} 
+var_plot
+
+```
+
+
+\clearpage
+
+## 6. Summary of variables against swept area
+
+Here we show the total abundance and number of taxa relationships with the area swept:
+
+- *nbr_taxa*, number of marine fish taxa after taxonomic data cleaning
+- *num_cpua*, number of individuals (abundance) in $\frac{individuals}{km^2}$
+- *wgt_cpua*, weight in $\frac{kg}{km^2}$
+
+
+
+```{r summary_var_swept, eval = T, echo = F, message =  F,warning =  F}
+
+if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
+  var_plot <-  survey %>%
+  group_by(haul_id, haul_dur, area_swept) %>%
+  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpua),Weight = sum(wgt_cpua)) %>% 
+  gather("var","val",4:6) %>% 
+  # head()
+  ggplot() +
+  geom_point(aes(x = area_swept,y = val),size=0.5)  +
+  ylab("")  + xlab("Swept Area") +
+  facet_wrap(~var, scales = "free_y", ncol = 3) +
+  theme_bw()
+}
+
+if(!is.na(mean(survey$num_cpue, na.rm=T)) & mean(survey$wgt_cpue, na.rm=T)){
+  var_plot <-  survey %>%
+  group_by(haul_id, haul_dur, area_swept) %>%
+  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpue)) %>% 
+  gather("var","val",4:5) %>% 
+  # head()
+  ggplot() +
+  geom_point(aes(x = area_swept, y = val),size=0.5)  +
+  ylab("")  + xlab("Swept Area") +
+  facet_wrap(~var,  scales = "free_y", ncol = 2) +
+  theme_bw()
+}
+
+if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
+  var_plot <-  survey %>%
+  group_by(haul_id, haul_dur, area_swept) %>%
+  summarize(Number_Taxa = length(accepted_name), Weight = sum(wgt_cpua)) %>% 
+  gather("var","val",4:5) %>% 
+  # head()
+  ggplot() +
+  geom_point(aes(x = area_swept, y = val),size=0.5)  +
+  ylab("")  + xlab("Swept Area") +
+  facet_wrap(~var,  scales = "free_y", ncol = 2) +
+  theme_bw()
+}
+
+var_plot
+```
+
+\clearpage
+
+## 7. Abundance or Weight trends of the six most abundant species
+
+```{r abundant_spp, eval=T, echo=F, message=F, warning=F}
+
+if(!is.na(mean(survey$num_cpua, na.rm=T))){
+spp <- survey %>% 
+  group_by(year, accepted_name) %>% 
+  summarize(wgt = sum(wgt_cpua), nbr_years = length(year)) %>% 
+  filter(nbr_years>10) %>% 
+  group_by(accepted_name) %>% 
+  summarize(wgt = median(wgt)) %>% 
+  arrange(desc(wgt)) %>% 
+  top_n(n=6) %>% 
+  pull(accepted_name)
+
+spp_plot <- survey %>% 
+  filter(accepted_name %in% spp) %>% 
+  group_by(year, accepted_name) %>%
+  summarize(wgt = sum(wgt_cpua, na.rm=T)) %>% 
+  ggplot() +
+  geom_point( aes(x = year, y = wgt), size=0.5 ) +
+  geom_line(aes(x = year,y = wgt), size=0.5) +
+  facet_wrap(~accepted_name,  scales = "free_y",ncol = 2) +
+  theme_bw() +
+  ylab("Species Weight (kg)") + xlab("Year")
+}
+
+if(is.na(mean(survey$wgt_cpua, na.rm=T))){
+  spp <- survey %>% 
+  group_by(year, accepted_name) %>% 
+  summarize(num = sum(num_cpua), nbr_years = length(year)) %>% 
+  filter(nbr_years>10) %>% 
+  group_by(accepted_name) %>% 
+  summarize(num = median(num)) %>% 
+  arrange(desc(num)) %>% 
+  top_n(n=6) %>% 
+  pull(accepted_name)
+
+spp_plot <- survey %>% 
+  filter(accepted_name %in% spp) %>% 
+  group_by(year, accepted_name) %>%
+  summarize(num = sum(num_cpua, na.rm=T)) %>% 
+  ggplot() +
+  geom_point( aes(x = year, y = num), size=0.5 ) +
+  geom_line(aes(x = year,y = num), size=0.5) +
+  facet_wrap(~accepted_name,  scales = "free_y",ncol = 2) +
+  theme_bw() +
+  ylab("Species Abundance") + xlab("Year")
+}
+
+spp_plot
+```
+
+\clearpage
+
+## 8. Distribution mapping
+
+Map of the sampling distribution in space. Note that we only show one year per coordinate.
+
+```{r fixed_point_map, eval = T, echo = F, fig.width=10, fig.height= 5, message =  F,warning =  F}
+survey %>% 
+  select(longitude,latitude) %>% 
+  distinct() %>% 
+  ggplot() +
+  geom_point(
+    aes(
+      x = longitude,
+      y = latitude),
+    alpha = 0.5
+  ) +
+  geom_sf(data = World_map, aes(), alpha = 0.5) +
+  coord_sf(xlim = c(min(survey$longitude, na.rm=T), max(survey$longitude, na.rm=T)),
+           ylim = c(min(survey$latitude, na.rm=T), max(survey$latitude, na.rm=T))
+  ) +
+  theme_bw() +
+  theme(legend.position = "right")
+
+```
+
+\clearpage
+
+## 9. Taxonomic flagging
+
+This species flagging method was adapted from https://github.com/pinskylab/OceanAdapt/blob/master/R/add-spp-to-taxonomy.Rmd#L33
+
+Visualization of flagged taxa
+
+```{r, echo=FALSE, out.width = '80%'}
+knitr::include_graphics(here::here("outputs", "Flags","taxonomic_flagging", paste0(survey$survey[1],"_taxonomic_flagging.png")))
+```
+
+Statistics related to the taxonomic flagging outputs
+
+```{r, echo=FALSE}
+df <- read.csv(here::here("outputs", "Flags","taxonomic_flagging", paste0(survey$survey[1],'_stats.csv')))
+knitr::kable(df, col.names = NULL)
+```
+
+\clearpage 
+
+## 10. Spatio-temporal standardization
+
+### a. Standardization method 1
+
+This standardization method was adapted from https://github.com/zoekitchel/trawl_spatial_turnover/blob/master/data_prep_code/species/explore_NorthSea_trimming.Rmd
+\
+It was run for hex resolution 7 and 8.
+
+Plot of number of cells x years with overlaid flagging options
+
+```{r, echo=FALSE, out.width = '80%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7", paste0(survey$survey[1],"_hex_res_7_plot.png")))
+```
+```{r, echo=FALSE, out.width = '80%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8", paste0(survey$survey[1],"_hex_res_8_plot.png")))
+```
+
+Map of hauls retained and removed per flagging method and threshold
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7",  paste0(survey$survey[1],"_hex_res_7_map_per_haul.png")))
+```
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics(here::here("outputs", "Flags", "trimming_method1", "hex_res8", paste0(survey$survey[1],"_hex_res_8_map_per_haul.png")))
+```
+
+
+Map of numbers of years removed per grid cell and flagging method/threshold
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res7", paste0(survey$survey[1],"_hex_res_7_map_per_grid_nyears.png")))
+```
+
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method1", "hex_res8", paste0(survey$survey[1],"_hex_res_8_map_per_grid_nyears.png")))
+```
+
+
+### b. Standardization method 2
+
+This standardization method was adapted from BioTIME code from https://github.com/Wubing-Xu/Range_size_winners_losers 
+   
+Map of hauls retained and removed
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics(here::here("outputs", "Flags","trimming_method2", 
+                                   paste0(survey$survey[1],"_map_per_haul.png")))
+```
+
+### c. Standardization summary
+
+Statistics of hauls removed for each standardization method
+
+```{r, echo=FALSE}
+met1_7 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res7", paste0(survey$survey[1],"_hex_res_7_stats_hauls.csv")))
+met1_8 <- read.csv(here::here("outputs", "Flags","trimming_method1", "hex_res8", paste0(survey$survey[1],"_hex_res_8_stats_hauls.csv")))
+met2 <- read.csv(here::here("outputs", "Flags", "trimming_method2", 
+                            paste0(survey$survey[1],"_stats_hauls.csv")))
+knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]), 
+             col.names = c("summary", "grid cell 7, 0% threshold", "grid cell 7, 2% threshold", 
+                           "grid cell 8, 0% threshold", "grid cell 8, 2% threshold",
+                           "method 2 (biotime)")) %>% 
+  kable_styling(latex_options = "scale_down",
+                position = "float_left")
+```
+

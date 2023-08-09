@@ -105,12 +105,19 @@ flag_spp <- function(df, region){
       ggplot2::ggtitle(paste0("Region: ", region)) +
       ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5),
                      axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust=1, size = 9),
+                     text = element_text(size = 20),
                      legend.position = "bottom") +
       ggplot2::scale_fill_manual(values=c('black'), labels = c("presence"), name = "") +
       ggplot2::scale_colour_manual(values=c('black'), labels = c("absence"), name = "") +
       ggplot2::scale_x_continuous(breaks = allyears)
     
-    ggplot2::ggsave(p, filename = here::here("outputs", "Flags", "taxonomic_flagging", paste0(region, "_taxonomic_flagging.png")))
+    #ggplot2::ggsave(p, filename = here::here("outputs", "Flags", "taxonomic_flagging", paste0(region, "_taxonomic_flagging.png")))
+    
+    png(here::here("outputs", "Flags", "taxonomic_flagging", 
+                   paste0(region, "_taxonomic_flagging.png")),
+        width = 16*200, height = 10*200, res = 200)
+    print(p)
+    dev.off()
     
   }else{
     

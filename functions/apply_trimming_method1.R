@@ -409,7 +409,9 @@ apply_trimming_per_survey_unit_method1 <- function(data, hex_res){
                                    name = "Trimming")
     
     # save plot
-    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_plot.png")), plot_list[[surveyid]], width = 10, height = 10)
+    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+                               paste0(surveyid, "_hex_res_", hex_res, "_plot.png")), 
+                    plot_list[[surveyid]], width = 10, height = 10)
     
     
     
@@ -520,9 +522,15 @@ apply_trimming_per_survey_unit_method1 <- function(data, hex_res){
     
     map_hauls <- gridExtra::grid.arrange(map0_hauls, map02_hauls, ncol = 2)
     
-    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul.png")), map_hauls)
+    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+                               paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul.png")), map_hauls,
+                    width = 20, height = 10)
     
-    
+    # png(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+    #                paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul.png")),
+    #     width = 22*200, height = 10*200, res = 200)
+    # map_hauls
+    # dev.off()
     
     
     
@@ -636,9 +644,15 @@ apply_trimming_per_survey_unit_method1 <- function(data, hex_res){
     
     map_cells_nyears_multi <- gridExtra::grid.arrange(map0_cells_nyears, map02_cells_nyears, ncol = 2)
     
-    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_map_per_grid_nyears.png")), map_cells_nyears_multi, width = 15, height = 7)
+    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+                               paste0(surveyid, "_hex_res_", hex_res, "_map_per_grid_nyears.png")), 
+                    map_cells_nyears_multi, width = 15, height = 7)
     
-    
+    # png(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+    #                paste0(surveyid, "_hex_res_", hex_res, "_map_per_grid_nyears.png")),
+    #     width = 16*200, height = 10*200, res = 200)
+    # map_cells_nyears_multi
+    # dev.off()
     
     
     
@@ -647,9 +661,15 @@ apply_trimming_per_survey_unit_method1 <- function(data, hex_res){
     # combined map of hauls and cells
     
     map <- gridExtra::grid.arrange(map0_hauls, map02_hauls, map0_cells_nyears, map02_cells_nyears, ncol = 2, nrow = 2)
-    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul_grid_nyears.png")), map, width = 10, height =10)
+    ggplot2::ggsave(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+                               paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul_grid_nyears.png")), 
+                    map, width = 10, height =10)
     
-    
+    # png(here::here("outputs", "Flags", "trimming_method1", paste0("hex_res", hex_res), 
+    #                paste0(surveyid, "_hex_res_", hex_res, "_map_per_haul_grid_nyears.png")),
+    #     width = 16*200, height = 16*200, res = 200)
+    # print(map_cells_nyears_multi)
+    # dev.off()
     
   } #end of surveyid loop
   
