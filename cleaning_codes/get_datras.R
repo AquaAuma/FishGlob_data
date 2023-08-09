@@ -749,7 +749,7 @@ cor(x = xx$wtcpue, y = xx$wgtlencpue, method = 'pearson', use = "complete.obs")
 
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
 cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
-
+# these are extremely low for some reason, don't think it was like this before
 
 library(ggplot2)
 # no zeros
@@ -924,6 +924,7 @@ ggplot(subset(xx, Survey=='SP-PORC'), aes(x=wgth, y=wgtlenh)) + geom_point() +
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
 dev.off()
 
+
 # after check with original haul length data (HL) for some resc haulid, weight 
 # is clearly wrong factor 100 
 # and also a cluster of factor 10
@@ -998,7 +999,9 @@ survey4 <- survey3 %>%
                              survey=="IE-IGFS" ~ "ireland",
                              survey %in% c("ROCKALL","SWC-IBTS","NIGFS") ~ "uk",
                              survey=="FR-CGFS" ~ "france",
-                             survey %in% c("NS-IBTS","BITS") ~ "multi-countries"),
+                             survey %in% c("NS-IBTS","BITS") ~ "multi-countries",
+                             survey %in% c("SP-NORTH","SP-ARSA") ~ "spain",
+                             survey == "SP-PORC" ~ "multi-countries"),
          num = numlencpue*area_swept,
          num_cpue = numlenh,
          num_cpua = numlencpue,
@@ -1008,7 +1011,7 @@ survey4 <- survey3 %>%
          haul_dur = haul_dur/60,
          source = "DATRAS ICES",
          timestamp = "2021-07",
-         survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
+         survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS","SP-ARSA"),
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
@@ -1099,7 +1102,7 @@ survey_std <- survey4 %>%
 
 # integrate taxonomic flags
 for(i in 1:length(surveys)){
-  if(!surveys[i] %in% c("FALK","GSL-N","MRT","NZ-CHAT","SCS", "SWC-IBTS")){
+  if(!surveys[i] %in% c("FALK","GSL-N","MRT","NZ-CHAT","SCS", "SWC-IBTS", "SP-PORC")){
     xx <- data.frame(read_delim(paste0("outputs/Flags/taxonomic_flagging/",
                                        surveys[i],"_flagspp.txt"),
                                 delim=";", escape_double = FALSE, col_names = FALSE,
@@ -1167,3 +1170,4 @@ for(i in 1:length(surveys)){
   write_clean_data(data = xx, survey = paste0(surveys[i],"_std"), overwrite = T,
                    rdata = TRUE)
 }
+
