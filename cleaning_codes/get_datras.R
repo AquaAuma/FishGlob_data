@@ -739,7 +739,7 @@ survey3 <- full_join(survey1, survey2, by=c('Survey','HaulID','StatRec','Year','
 
 
 ##########################################################################################
-# CHECK ESTIMAATES PER SURVEY AND TAXA
+# CHECK ESTIMATES PER SURVEY AND TAXA
 ##########################################################################################
 
 # correlation between abundances to check calculations are right
@@ -758,6 +758,7 @@ cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
 surveys <- c(sort(unique(survey$Survey)),"all","all-SP")
 corrs <- data.frame(surveys)
 corrs$cor_num <- corrs$cor_wgt <- NA
+
 for (i in 1:length(surveys)){
   
   # survey-specific data
@@ -793,46 +794,34 @@ write.csv(corrs, file = "QAQC/DATRAS/correlations_weights.csv", row.names = F)
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
 
 # rockall looks OK
-png("QAQC/DATRAS/ROCKALL.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='ROCKALL'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 # IE-IGFS looks OK
-png("QAQC/DATRAS/IE-IGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='IE-IGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 # NIGFS looks OK
-png("QAQC/DATRAS/NIGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='NIGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 # PT-IBTS looks OK
-png("QAQC/DATRAS/PT-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='PT-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 # FR-CGFS looks OK
-png("QAQC/DATRAS/FR-CGFS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='FR-CGFS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 # SWC-IBTS issue
-png("QAQC/DATRAS/SWC-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='SWC-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
-dev.off()
 
 comp <- subset(xx, Survey=='SWC-IBTS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -858,11 +847,9 @@ survey3 <- survey3 %>%
          wgt = if_else(HaulID %in% resc , wgt*100,wgt))
 
 # BITS issue
-png("QAQC/DATRAS/BITS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='BITS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 comp <- subset(xx, Survey=='BITS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -888,11 +875,9 @@ survey3 <- survey3 %>%
          wgt = if_else(HaulID %in% resc , wgt*100,wgt))
 
 # EVHOE may have an issue, no changes as not very clear
-png("QAQC/DATRAS/EVHOE.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='EVHOE'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
-dev.off()
 
 comp <- subset(xx, Survey=='EVHOE') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -910,11 +895,9 @@ comp$factor <-   comp$wgtlenh / comp$wgth
 plot(comp$factor)
 
 # NS - IBTS issue
-png("QAQC/DATRAS/NS-IBTS.png", width = 16*200, height = 10*200, res = 200)
 ggplot(subset(xx, Survey=='NS-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 comp <- subset(xx, Survey=='NS-IBTS') %>% 
   select(HaulID,wgtlenh,wgth) %>% 
@@ -939,27 +922,20 @@ points(comp$factor[comp$factor > 8 & comp$factor <20]~
 resc <- comp$HaulID[comp$factor > 20] 
 resc2 <- comp$HaulID[comp$factor > 8 & comp$factor <20]
 
-# SP-NORTH
-png("QAQC/DATRAS/SP-NORTH.png", width = 16*200, height = 10*200, res = 200)
+# SP-NORTH - PROBLEMS!
 ggplot(subset(xx, Survey=='SP-NORTH'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
-
-# SP-ARSA
-png("QAQC/DATRAS/SP-ARSA.png", width = 16*200, height = 10*200, res = 200)
+# SP-ARSA - some outliers
 ggplot(subset(xx, Survey=='SP-ARSA'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
-# SP-PORC
-png("QAQC/DATRAS/SP-PORC.png", width = 16*200, height = 10*200, res = 200)
+# SP-PORC - PROBLEMS!
 ggplot(subset(xx, Survey=='SP-PORC'), aes(x=wgth, y=wgtlenh)) + geom_point() +
   geom_abline(intercept = 0, slope = 1, color="red", 
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
-dev.off()
 
 
 # after check with original haul length data (HL) for some resc haulid, weight 
