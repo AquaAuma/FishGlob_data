@@ -11,8 +11,9 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
     readme <- as.data.frame(read_excel(here("standard_formats/fishglob_data_columns_std.xlsx")))
     data <- data %>% 
       mutate(year = as.integer(year),
-             month = as.integer(month),
-             day = as.integer(day))
+             #month = as.integer(month),
+             #day = as.integer(day)
+             )
     save(data, readme, file = paste0("outputs/Cleaned_data/",survey,"_clean.RData"))
   }
   
@@ -20,8 +21,9 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
     readme <- as.data.frame(read_excel(here("standard_formats/fishglob_data_columns_std.xlsx")))
     data <- data %>% 
       mutate(year = as.integer(year),
-             month = as.integer(month),
-             day = as.integer(day))
+             #month = as.integer(month),
+             #day = as.integer(day)
+             )
     save(data, readme, file = paste0("outputs/Compiled_data/",survey,"_clean.RData"))
   }
   

@@ -1,6 +1,6 @@
 ################################################################################
 #### R code to merge all separate datasets
-#### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, January 2023
+#### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, August 2023
 ################################################################################
 
 rm(list=ls())
@@ -40,6 +40,9 @@ surveys <- c("AI",
              "QCS",
              "ROCKALL",
              "SCS",
+             "SP-ARSA",
+             "SP-NORTH",
+             "SP-PORC",
              "SWC-IBTS",
              "SOG",
              "SEUS",
@@ -61,6 +64,7 @@ write_clean_data(data = fishglob, survey = "FishGlob_public",
 #-------------------------------------------------------------------------------------------#
 
 fishglob_std <- read_clean_data(surveys, std = TRUE)
+
 # Just run this routine should be good for all
 write_clean_data(data = fishglob_std, survey = "FishGlob_public_std",
                  overwrite = T, compiled = TRUE)
