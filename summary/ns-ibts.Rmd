@@ -56,7 +56,7 @@ This document presents the cleaning code and summary of the North Sea bottom tra
 ## Data cleaning in R
 
 
-```{r cleaning_code, code = readLines(here("./cleaning.codes/get.datras.R")), eval=FALSE}
+```{r cleaning_code, code = readLines(here("./cleaning_codes/get_datras.R")), eval=FALSE}
 ```
 
 
@@ -71,9 +71,8 @@ This document presents the cleaning code and summary of the North Sea bottom tra
 # survey <- read.csv(here("./summary/DATRAS_v3_clean.csv")) %>% 
 #   filter(survey == "NS-IBTS")
 
-load(here("outputs/Cleaned_data/DATRAS_v3_clean.RData"))
-survey <- data %>% 
-  filter(survey == "NS-IBTS")
+load(here("outputs/Cleaned_data/NS-IBTS_clean.RData"))
+survey <- data 
 rm(data)
 
 ### Map data
