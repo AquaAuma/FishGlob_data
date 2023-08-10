@@ -22,6 +22,7 @@ library(taxize) # for getting correct species names
 library(googledrive)
 library(readxl)
 library(here)
+library(ggplot2)
 
 # load relevant functions
 source("functions/write_clean_data.r")
@@ -47,6 +48,9 @@ need_get_lw_rel <- FALSE
 
 # check length types for conversion to TL?
 check_TL_conversion <- FALSE
+
+# apply TL conversion?
+apply_TL_conversion <- TRUE
 
 
 ##########################################################################################
@@ -274,7 +278,7 @@ for (i in 1:length(hhn)){
  j <- which(hh$HaulID==hhn[i])
  if(length(j)>1){pb <- hhn[i]}
 }
-
+print(pb)
 rm(hhn)
 
 # problem with one haul in NS-IBTS
@@ -299,7 +303,7 @@ identical(haulidhh, haulidhl)
 rm(haulidhh, haulidhl)
 
 # remove some columns in hl
-hl$SweepLngt <- hl$SpecCodeType <- hl$SpecCode <- hl$Sex <- hl$DateofCalculation <- NULL
+hl$SweepLngt <- hl$SpecCodeType <- hl$SpecCode <- hl$DateofCalculation <- NULL
 hl$RecordType <- hl$GearEx <- NULL
 
 # remove some columns in hh
@@ -413,8 +417,8 @@ survey <- survey %>%
   # fix unit of length class
   dplyr::rename(Length = LngtClass) %>% 
   select(Survey, HaulID, StatRec, Year, Month, Quarter, Season, ShootLat, ShootLong, 
-         HaulDur, Area.swept, Gear, Depth, SBT, SST, AphiaID, CatIdentifier, numcpue, 
-         wtcpue, numh, wgth, num, wgt, Length, LenMeasType, numlencpue, numlenh)
+         HaulDur, Area.swept, Gear, Depth, SBT, SST, AphiaID, CatIdentifier, Sex, 
+         numcpue, wtcpue, numh, wgth, num, wgt, Length, LenMeasType, numlencpue, numlenh)
 survey <- data.frame(survey)
 
 
@@ -606,8 +610,6 @@ survey <- left_join(survey, clean_datras_taxa, by=c("AphiaID" = "query")) %>%
 ##########################################################################################
 #### RE-CALCULATE WEIGHTS
 ##########################################################################################
-detach(package:worms)
-detach(package:plyr)
 
 # 1. Check length measurement types
 if(check_TL_conversion == TRUE){
@@ -653,16 +655,18 @@ if(check_TL_conversion == TRUE){
 
 
 # 2. apply length conversion factors when necessary
-conversion_to_TL <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
+if(apply_TL_conversion == TRUE){
+  conversion_to_TL <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
   filter(is.na(LenMeasType)) %>% 
   select(taxa, conversion_to_TL)
 
-survey <- left_join(survey, conversion_to_TL, by = "taxa") %>% 
-  mutate(Length = ifelse(!is.na(conversion_to_TL), Length*conversion_to_TL, Length))
+  survey <- left_join(survey, conversion_to_TL, by = "taxa") %>% 
+    mutate(Length = ifelse(!is.na(conversion_to_TL), Length*conversion_to_TL, Length))
+}
 
 
 # 3. List of taxa for length-weight conversion coefficients
-if(need_get_lw_rel == FALSE){
+if(need_get_lw_rel == TRUE){
   list.taxa <- survey %>% 
     select(taxa, family, genus, rank) %>% 
     filter(!is.na(family)) %>% 
@@ -686,7 +690,7 @@ survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>
   select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
          HaulDur,Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,
          SpecCode,kingdom, class, order,phylum,rank,
-         CatIdentifier,numcpue,numh,num) %>% 
+         CatIdentifier,Sex,numcpue,numh,num) %>% 
   distinct() %>% 
   group_by(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
            HaulDur,Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,
@@ -698,7 +702,7 @@ survey.wgt <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>
   select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,HaulDur,
          Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,SpecCode,
          kingdom, class, order,phylum,rank,
-         CatIdentifier,wtcpue,wgth,wgt) %>% 
+         CatIdentifier,Sex,wtcpue,wgth,wgt) %>% 
   distinct() %>% 
   group_by(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
            HaulDur,Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,
@@ -735,7 +739,7 @@ survey3 <- full_join(survey1, survey2, by=c('Survey','HaulID','StatRec','Year','
 
 
 ##########################################################################################
-# CHECK PER SURVEY
+# CHECK ESTIMAATES PER SURVEY AND TAXA
 ##########################################################################################
 
 # correlation between abundances to check calculations are right
@@ -743,15 +747,48 @@ cor(x = survey3$numh, y = survey3$numlenh, method = 'pearson', use = "complete.o
 xx <- subset(survey3, !is.na(numcpue))
 cor(x = xx$numcpue, y = xx$numlencpue, method = 'pearson', use = "complete.obs")
 
-# check weights
+# correlation between weights to check calculations are right
 xx <- subset(survey3, wtcpue>0 & wgtlencpue>0)
 cor(x = xx$wtcpue, y = xx$wgtlencpue, method = 'pearson', use = "complete.obs")
 
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
 cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
-# these are extremely low for some reason, don't think it was like this before
 
-library(ggplot2)
+# make per survey correlation table
+surveys <- c(sort(unique(survey$Survey)),"all","all-SP")
+corrs <- data.frame(surveys)
+corrs$cor_num <- corrs$cor_wgt <- NA
+for (i in 1:length(surveys)){
+  
+  # survey-specific data
+  if(i==13){xx <- survey3
+  } else if (i==14){xx <- survey3 %>% filter(!Survey %in% c("SP-NORTH","SP-ARSA","SP-PORC"))
+  } else {xx <- subset(survey3, Survey == surveys[i])}
+  
+  # plots
+  plot_weights <- ggplot(xx[xx$wgth>0 & xx$wgtlenh>0,], aes(x=wgth, y=wgtlenh)) + geom_point() +
+    geom_abline(intercept = 0, slope = 1, color="red", 
+                linetype="dashed", size=1) + scale_x_log10() + scale_y_log10()  + 
+    theme_bw() + theme(text = element_text(size = 20)) + ggtitle("Weights per hour")
+  
+  plot_abundances <- ggplot(xx[xx$numlenh>0 & xx$num>0,], aes(x=numh, y=numlenh)) + geom_point() +
+    geom_abline(intercept = 0, slope = 1, color="red", 
+                linetype="dashed", size=1) + scale_x_log10() + scale_y_log10() + 
+    theme_bw() + theme(text = element_text(size = 20)) + ggtitle("Abundances per hour")
+  
+  png(paste0("QAQC/DATRAS/",surveys[i],"_per_hour.png"), width = 18*200, height = 10*200, res = 200)
+  gridExtra::grid.arrange(plot_weights, plot_abundances, ncol = 2)
+  dev.off()
+  
+  # compute and save correlations
+  corrs$cor_wgt[i] <- cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
+  corrs$cor_num[i] <- cor(x = xx$numh, y = xx$numlenh, method = 'pearson', use = "complete.obs")
+  
+  rm(xx, plot_weights, plot_abundances)
+}
+
+write.csv(corrs, file = "QAQC/DATRAS/correlations_weights.csv", row.names = F)
+
 # no zeros
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
 
