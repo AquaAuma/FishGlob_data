@@ -1,6 +1,6 @@
 ################################################################################
 #### R code to summarize the std process across surveys
-#### Coding: A. Maureaud, December 2022
+#### Coding: A. Maureaud, August 2023
 ################################################################################
 
 #########   Preliminary steps
@@ -29,14 +29,8 @@ required_packages <- c("data.table",
 not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
 if(length(not_installed)) install.packages(not_installed)
 
-#load pipe operator
-library(magrittr)
-
-#load all functions
-source(here::here("standardization_steps", "functions.R"))
-
 # read survey data
-load("outputs/Compiled_data/FishGlob_public_v1.7_clean.RData")
+load("outputs/Compiled_data/FishGlob_public_std_clean.RData")
 dat <- data
 rm(data)
 
@@ -52,8 +46,8 @@ dat_survey <- dat %>%
 
 std_taxa_all <- data.frame()
 for(i in 1:nrow(dat_survey)){
-  if(!dat_survey$survey[i] %in% c("SWC-IBTS","FALK","GSL-N","MRT","NZ-CHAT","SCS")){
-    df <- read.csv(here::here("standardization_steps", "outputs", "taxonomic_flagging", 
+  if(!dat_survey$survey[i] %in% c("SWC-IBTS","FALK","GSL-N","MRT","NZ-CHAT","SCS","SP-PORC")){
+    df <- read.csv(here::here("outputs", "Flags", "taxonomic_flagging", 
                               paste0(dat_survey$survey[i],'_stats.csv')))
     df$survey <- dat_survey$survey[i]
     df$percentage[1] <- df$nb[2]
@@ -73,7 +67,7 @@ std_taxa_all$number <- as.vector(as.numeric(std_taxa_all$number))
 
 # plot of the summary per survey
 library(ggplot2)
-png("sdata_descriptor_figures/outputs/taxa_per_survey_number_public.png", width = 8*500, height = 5*500, res=500)
+png("data_descriptor_figures/taxa_per_survey_number_public.png", width = 8*500, height = 5*500, res=500)
 std_taxa_all %>% 
   ggplot() + geom_point(aes(x = survey, y = number)) +
   theme_bw() +
@@ -106,15 +100,15 @@ dev.off()
 
 std_dat <- data.frame()
 for(i in 1:nrow(dat)){
-  met1_7 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1", 
+  met1_7 <- read.csv(here::here("outputs", "Flags","trimming_method1", 
                                 "hex_res7", paste0(dat$survey_unit[i],"_hex_res_7_stats_hauls.csv")),
                      sep = ",")
-  met1_8 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method1",
+  met1_8 <- read.csv(here::here("outputs", "Flags", "trimming_method1",
                                 "hex_res8", paste0(dat$survey_unit[i],"_hex_res_8_stats_hauls.csv")),
                      sep = ",")
   
   if(!dat$survey_unit[i] %in% c("WBLS","DFO-SOG","SCS-FALL","IS-TAU")){
-    met2 <- read.csv(here::here("standardization_steps", "outputs", "trimming_method2", 
+    met2 <- read.csv(here::here("outputs", "Flags", "trimming_method2", 
                                 paste0(dat$survey_unit[i],"_stats_hauls.csv")))
     met <- cbind(met1_7, met1_8[,2:3], met2[,2])
     names(met) <- c("percentage","hex7_0","hex7_2","hex8_0","hex8_2","biotime")

@@ -1,5 +1,5 @@
 #######################################################
-#### Coding: Aurore Maureaud, July 2023
+#### Coding: Aurore Maureaud, August 2023
 #### Public survey metadata
 #### Figures for data paper
 #######################################################
@@ -56,7 +56,9 @@ dev.off()
 ################################################################################
 #### Tile plot of time-series
 ################################################################################
-xx <- survey %>% 
+load("outputs/Compiled_data/FishGlob_public_std_clean.RData")
+
+xx <- data %>% 
   group_by(year, survey) %>% 
   summarize(nbr_haul = length(unique(haul_id)),
             nbr_taxa = length(unique(accepted_name)))
@@ -91,7 +93,9 @@ dev.off()
 ################################################################################
 #### Plots of survey flags for EVHOE
 ################################################################################
-evhoe <- read.csv("~/Documents/FISHGLOB/data/Compiled_data/public/FISHGLOB_public_v1.4.csv") %>% 
+load("outputs/Cleaned_data/EVHOE_std_clean.RData")
+
+evhoe <- data %>% 
   filter(survey == "EVHOE") %>% 
   select(haul_id, year, longitude, latitude, flag_trimming_hex7_0,
          flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2,
@@ -146,7 +150,7 @@ dev.off()
 #### Tile plots for EVHOE - method 1
 ################################################################################
 
-dat <- survey
+dat <- data
 
 dat %>%
   tidyr::drop_na(longitude) %>%
