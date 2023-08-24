@@ -51,7 +51,11 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 ## General info
 
-This document presents the cleaning code and summary of the West Coast US Annual bottom trawl survey provided by [Aimee Keller](smartt@dnr.sc.gov),	Fisheries Research Surveys Supervisor, NOAA, NMFS, NWFSC, FRAM and [John Buchanan](john.buchanan@noaa.gov)	Fisheries Biologist, Groundfish Ecology Program, Northwest Fisheries Science Center. It contains data from 2003 and up to 2018. Before 2003, a similar region is sampled in the West Coast  US Triennial Slope and Shelf Survey (WCTRI).
+This document presents the cleaning code and summary of the West Coast US Annual bottom trawl survey provided by [Aimee Keller](smartt@dnr.sc.gov),	Fisheries Research Surveys Supervisor, NOAA, NMFS, NWFSC, FRAM and [John Buchanan](john.buchanan@noaa.gov)	Fisheries Biologist, Groundfish Ecology Program, Northwest Fisheries Science Center. It contains data from 2003 and up to 2018. Before 2003, a similar region is sampled in the West Coast US Triennial Slope and Shelf Survey (WCTRI).
+
+### Note on gear
+
+In the original dataset, the gear type listed for this survey is the Four-panel Aberdeen 85/104' bottom-trawl equipped with net mensuration gear. Gear types definitions are available on NOAA's [The Northwest Fisheries Science Center's West Coast Groundfish Bottom Trawl Survey : history, design, and description](https://repository.library.noaa.gov/view/noaa/14179).
 
 
 ## Data cleaning in R
