@@ -53,6 +53,19 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 This document presents the cleaning code and summary of the West Coast US Triennial bottom trawl survey provided by [Aimee Keller](smartt@dnr.sc.gov) and [John Buchanan](john.buchanan@noaa.gov). It contains data from 1977 and up to 2004.
 
+### Note on gear
+
+In the original dataset, the gear types listed for this survey are 160, 162, 170 and 172. Gear types definitions are available on NOAA's [Groundfish survey data codes and forms
+](https://repository.library.noaa.gov/view/noaa/31570), page 24. Specifically for this survey: 
+
+- 160: Nor’eastern trawl, 90’ headrope, 105’ footrope. 22 13”Diameter plastic floats on headrope, 5” mesh in body, 3.5” Mesh in intermediate and codend. Mean effective path width = 13.44M, range 11.6M-16.5M. Mean vertical opening = 9.2M, range 8.2M-9.9M.
+
+- 162: Same as 160, but #72 thread mesh used in trawl belly section.
+
+- 170: Modified nor’eastern trawl, polyethylene with nylon codend. 92’ Headrope is 5/8” wire rope wrapped with 3/8” 3-strand polypropylene. 82.5’ Footrope is 1/2” wire rope wrapped with 1/2” 3-strand polypropylene. 21 12”Diameter floats on headrope. Approximate sampling dimensions: 64’ width, 18’ vertical opening when used with accessories 58. (Used on morning star cr.841.)
+
+- 172: Poly-nor’eastern, four seam, hard bottom, high rise rock-fish trawl constructed of polyethylene. 27.2M (89’1”) headrope is galvanized wire rope wrapped with 3-strand polypropylene. 37.4M (122’8”) footrope: 24.7M (81’7”) middle section is galvanized wire rope wrapped with polypropylene, connected to lower “flying wings” with 6.4M (19’6”) sections of wire rope with rubber disks. Codend is 8.9Cm (3 1/2”) stretch mesh poly, liner of 3.2Cm (1 1/4”) nylon, 315 meshes circumference and 200 meshes deep.
+
 
 ## Data cleaning in R
 
