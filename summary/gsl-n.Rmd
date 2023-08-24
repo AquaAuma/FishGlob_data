@@ -53,6 +53,18 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 This document presents the cleaning code and summary of the Gulf of St. Lawrence North (Canada) bottom trawl survey provided by Fisheries and [Oceans Canada](gddaiss-dmsaisb.XLAU@dfo-mpo.gc.ca). It contains data from 1980 and up to 2019.
 
+### Note on gear
+
+This survey has been conducted on four vessels with specific types of gear:
+
+1.- From 1978 to 1994 in the [MV Gadus Atlantica](https://open.canada.ca/data/en/dataset/4bbd03ce-ae48-4aaa-97ac-5594c2a3a6c2. The fishing gear was an Engel 145 Otter trawl. Standard trawling tows last 30 minutes, starting from the time the trawl touches the sea floor. Towing speed is 3.5 knots. 
+
+2.- From 1984 to 1990 the [MV Lady Hammond](https://open.canada.ca/data/en/dataset/86a9d0b0-fcce-48ed-a124-68061d7b7553). The fishing gear was a bottom trawl Western IIA. Standard trawling tows last 30 minutes, starting from the time the trawl touches the sea floor. Towing speed is 3.5 knots.
+
+3.- From 1990 and until 2005 it was the [CCGS Alfred Needler](https://open.canada.ca/data/en/dataset/4eaac443-24a8-4b37-9178-d7cce4eb7c7b. The fishing gear was a URI shrimp trawl (81'/114').
+
+4.- From 2004 to 2021 it was the [CCGS Teleost](https://open.canada.ca/data/en/dataset/40381c35-4849-4f17-a8f3-707aa6a53a9d). The fishing gear is a four-sided Campelen 1800 shrimp trawl equipped with a Rockhopper footgear (“bicycle”). The trawl lengthening and codend are equipped with a 12.7-mm knotless nylon lining. Standard trawling tows last 15 minutes, starting from the time the trawl touches the sea floor. The aimed towing speed is 3 knots.
+
 
 ## Data cleaning in R
 
