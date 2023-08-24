@@ -286,7 +286,9 @@ clean_auto_missing <- rbind(clean_auto, cae_cae, not_elo)
 #--------------------------------------------------------------------------------------#
 
 correct_taxa <- clean_auto_missing %>% 
-  select(-survey)
+  select(-survey) %>% 
+  # Manually remove EGG 
+  filter(!verbatim_name %in% c("HEMITRIPTERUS AMERICANUS, EGGS","RAJA EGGS"))
 
 clean_scs <- left_join(scs, correct_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% # query does not indicate taxa entry that were 
