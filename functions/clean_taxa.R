@@ -1,7 +1,10 @@
+taxon_list <- unique(GSLsouth$taxa2)[1:10]
 # ------------------------------------------ #
 # Function: clean taxa
 # Author: Juliano Palacios Abrantes | j.palacios@oceans.ubc
 # Last Updated: June 2021
+# Last Updated: August 2023
+# Update: worms package is outdated, using taxize or worrms packages instead
 # ------------------------------------------ #
 
 # ------------#
@@ -60,7 +63,9 @@
 clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, fishbase=TRUE){
   
   # Make sure you have all packages installed
-  packages_needed <- c("tidyverse","taxize","worrms","here","readr","worms","rfishbase")
+  packages_needed <- c("tidyverse","taxize","worrms","here","readr",
+                       # "worms",
+                       "rfishbase")
   install_me <- packages_needed[!(packages_needed %in% installed.packages()[,"Package"])]
   
   if(length(install_me) > 0){
@@ -153,34 +158,78 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       query = taxon_list) %>% 
       dplyr::filter(!query %in% fix_taxon$query)
     
+    # REMOVE ME LATTER
+    
+    # # Get Alphaid of taxon (Takes some time)
+    # alphaid <- tibble::tibble(
+    #   fix_taxon,
+    #   worms_id = cbind(worms::wormsbynames(fix_taxon$taxa,
+    #                                        verbose = FALSE)
+    #                    )
+    # )
+    
     # Get Alphaid of taxon (Takes some time)
+    # alphaid <- tibble::tibble(
+    #   fix_taxon,
+    #   worms_id = cbind(worms::wormsbynames(fix_taxon$taxa,
+    #                                        verbose = FALSE)
+    #   )
+    # )
     
+    
+    #---------- END REMOVE ME LATTER ---------------- #
+    
+    # Get Alphaid of taxon (Takes some time)
     alphaid <- tibble::tibble(
-      fix_taxon,
-      worms_id = cbind(worms::wormsbynames(fix_taxon$taxa,
-                                           verbose = FALSE)
-                       )
-    )
-    
+      fix_taxon
+    ) %>% 
+      # It comes as a list in the function, so need to convert to DF
+      mutate(worms_id = purrr::map(worrms::wm_name2id_(taxon_list), as.data.frame)) %>% 
+      tidyr::unnest(cols = worms_id) %>% 
+      select(1,2,worms_id=3)
     
     # Missing in AphiaIDs
     missing_alphaid <- alphaid %>% 
-      dplyr::filter(is.na(worms_id$AphiaID)) %>% 
+      dplyr::filter(is.na(worms_id) | worms_id == -999) %>% 
       dplyr::select(query)
     
+    alphaid <- anti_join(alphaid,missing_alphaid)
+    
+    
+    # REMOVE ME LATTER
+    
     # Get correct names and full classification
-    worms_db <-  worms::wormsbyid(as.numeric(alphaid$worms_id$AphiaID),
-                                  verbose = F) %>% 
-      dplyr::select(
-        taxa = valid_name, # selects valid name in case is synonym
-        worms_id = valid_AphiaID, # selects valid id in case is synonym
-        kingdom,phylum,class,order,family,genus,isMarine,rank
+    # worms_db <-  worms::wormsbyid(as.numeric(alphaid$worms_id),
+    #                               verbose = F) %>% 
+    #   dplyr::select(
+    #     taxa = valid_name, # selects valid name in case is synonym
+    #     worms_id = valid_AphiaID, # selects valid id in case is synonym
+    #     kingdom,phylum,class,order,family,genus,isMarine,rank
+    #   ) %>%
+    #   # Include originally supplied taxa
+    #   dplyr::mutate(
+    #     query = fix_taxon$query
+    #   )
+    
+    #---------- END REMOVE ME LATTER ---------------- #
+    
+    # Get correct names and full classification
+
+    worms_db <- worrms::wm_classification_(as.numeric(alphaid$worms_id)) %>% 
+      dplyr::select(-AphiaID) %>% 
+      dplyr::filter(rank %in% c("Species","Kingdom","Pphylum","Class","Order","Family","Genus")) %>% 
+      tidyr::pivot_wider(
+        names_from = rank,
+        values_from = scientificname
+      ) %>% 
+      dplyr::rename(
+        taxa = Species, # selects valid name in case is synonym
+        worms_id = id # selects valid id in case is synonym
       ) %>%
       # Include originally supplied taxa
       dplyr::mutate(
-        query = fix_taxon$query
+        query = alphaid$query
       )
-    
     
     # Get Missing information
     missing_data <- dplyr::bind_rows(missing_alphaid,missing_misspelling)
