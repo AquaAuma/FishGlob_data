@@ -1,10 +1,10 @@
-taxon_list <- unique(GSLsouth$taxa2)[1:10]
 # ------------------------------------------ #
 # Function: clean taxa
 # Author: Juliano Palacios Abrantes | j.palacios@oceans.ubc
 # Last Updated: June 2021
 # Last Updated: August 2023
-# Update: worms package is outdated, using taxize or worrms packages instead
+# Update task: worms package is outdated, updating functions to use
+# worrms package instead.
 # ------------------------------------------ #
 
 # ------------#
@@ -60,10 +60,12 @@ taxon_list <- unique(GSLsouth$taxa2)[1:10]
 # Function
 # ------------#
 
+clean_taxa(taxon_list)
+
 clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, fishbase=TRUE){
   
   # Make sure you have all packages installed
-  packages_needed <- c("tidyverse","taxize","worrms","here","readr",
+  packages_needed <- c("tidyverse","taxize","worrms","here","readr","janitor",
                        # "worms",
                        "rfishbase")
   install_me <- packages_needed[!(packages_needed %in% installed.packages()[,"Package"])]
@@ -115,15 +117,34 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
           query = as.character(taxon_id)
         )
     }else{
-      worms_db <-  worms::wormsbyid(taxon_id,verbose = F) %>% # works but takes time
-        dplyr::select(
-          taxa = valid_name,
-          worms_id = valid_AphiaID,
-          kingdom:genus,isMarine,rank) %>%
-      # Include originally supplied taxa
-      dplyr::mutate(
-        query = as.character(taxon_id) # so it matches cases when the query is a scientific name
-      )
+      
+      ### REMOVE LATTER
+      # worms_db <-  worms::wormsbyid(taxon_id,verbose = F) %>% # works but takes time
+      #   dplyr::select(
+      #     taxa = valid_name,
+      #     worms_id = valid_AphiaID,
+      #     kingdom:genus,isMarine,rank) %>%
+      # # Include originally supplied taxa
+      # dplyr::mutate(
+      #   query = as.character(taxon_id) # so it matches cases when the query is a scientific name
+      # )
+      ## ---------------------- 
+      
+      worms_db <- worrms::wm_classification_(taxon_id) %>% 
+        dplyr::select(-AphiaID) %>% 
+        dplyr::filter(rank %in% c("Species","Kingdom","Pphylum","Class","Order","Family","Genus")) %>% 
+        tidyr::pivot_wider(
+          names_from = rank,
+          values_from = scientificname
+        ) %>% 
+        dplyr::rename(
+          taxa = Species, # selects valid name in case is synonym
+          worms_id = id # selects valid id in case is synonym
+        ) %>%
+        # Include originally supplied taxa
+        dplyr::mutate(
+          query = alphaid$query
+        )
     }
     
     # Get list of taxa name from worms
@@ -184,17 +205,20 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       fix_taxon
     ) %>% 
       # It comes as a list in the function, so need to convert to DF
-      mutate(worms_id = purrr::map(worrms::wm_name2id_(taxon_list), as.data.frame)) %>% 
+      mutate(worms_id = purrr::map(worrms::wm_name2id_(taxa), as.data.frame)) %>% 
       tidyr::unnest(cols = worms_id) %>% 
-      select(1,2,worms_id=3)
+      select(1,2,worms_id=3) %>% 
+    # Remove duplicated taxa (egg problem Issue #17)
+    distinct(taxa,worms_id,.keep_all = T)
     
     # Missing in AphiaIDs
     missing_alphaid <- alphaid %>% 
       dplyr::filter(is.na(worms_id) | worms_id == -999) %>% 
       dplyr::select(query)
     
-    alphaid <- anti_join(alphaid,missing_alphaid)
-    
+    # Duplicated data
+    duplicated_query <- fix_taxon %>% 
+      filter(!query %in% alphaid$query)
     
     # REMOVE ME LATTER
     
@@ -235,6 +259,30 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     missing_data <- dplyr::bind_rows(missing_alphaid,missing_misspelling)
     
     
+    # Exclude non-marine species
+    suppressMessages(
+    salt_water <- rfishbase::species(worms_db$taxa) %>%
+      dplyr::select(taxa = Species,
+                    isMarine = Saltwater)
+    )
+    
+    # Fish base has some missing information
+    worms_db <- worms_db %>% 
+      dplyr::left_join(salt_water,
+                by ="taxa") %>% 
+      janitor::clean_names() %>% 
+      rename(isMarine = is_marine)
+    
+    # worms_db <- worms_db_salt %>% 
+    #   # Select only marine species (NOTE: These are not exclusively marine species)
+    #   dplyr::filter(is_marine > 0) %>% 
+    #   # remove non-fish species (a.k.a. invertebrates, mammals...)
+    #   dplyr::filter(class %in% c("Elasmobranchii","Actinopterygii","Holocephali","Myxini",
+    #                              "Petromyzonti", "Actinopteri", "Teleostei", "Holostei",
+    #                              "Chondrostei")
+    #   ) %>% 
+    #   dplyr::select(-is_marine) # we don't really need this information
+    
   } # close else of species names
   
   
@@ -244,16 +292,17 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
   
   worms_db_fish <- worms_db %>% 
     # Select only marine species (NOTE: These are not exclusively marine species)
-    dplyr::filter(isMarine == 1) %>% 
+    dplyr::filter(isMarine > 0) %>% 
     # remove non-fish species (a.k.a. invertebrates, mammals...)
     dplyr::filter(class %in% c("Elasmobranchii","Actinopterygii","Holocephali","Myxini",
                                "Petromyzonti", "Actinopteri", "Teleostei", "Holostei",
-                               "Chondrostei")) %>% 
+                               "Chondrostei")
+                  ) %>% 
     dplyr::select(-isMarine) # we don't really need this information
   
   # Feedback message
   if(nrow(worms_db) != nrow(worms_db_fish)){
-    n_dropped <- nrow(worms_db)- nrow(worms_db_fish)
+    n_dropped <- nrow(worms_db) - nrow(worms_db_fish)
     print(paste("Dropped",n_dropped,"non-fish/non-marine taxa"))
   }
   
@@ -262,9 +311,11 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
   ##---------------##
   
   if(fishbase==TRUE){
+    suppressMessages(
   fishbase_id <- rfishbase::species(worms_db_fish$taxa, server = "fishbase") %>% 
     dplyr::select(SpecCode,
                   taxa=Species)
+    )
   } else {
     fishbase_id <- data.frame(taxa = worms_db_fish$taxa) %>% 
       mutate(SpecCode = NA)
@@ -286,6 +337,14 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       everything()
     ) %>% 
     dplyr::mutate(survey = input_survey)
+  
+  
+  # Get Missing information
+  missing_data <- worms_db %>% 
+    dplyr::filter(is.na(isMarine)) %>% 
+    dplyr::select(query) %>% 
+    dplyr::bind_rows(missing_data)
+  
   
   ##---------------##
   # Save data
@@ -346,7 +405,6 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       
       print(paste(input_survey,"survey data saved!","The taxon list now contains information for the following surveys",c_list,"and",input_survey))
       
-      
       # Save Non cleaned data if there are any
       if(nrow(missing_data) > 0){
         
@@ -362,7 +420,8 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
 
 # Misc,
 if(exists("n_dropped")==FALSE){n_dropped <- 0}
-print(paste("Returned", nrow(output_df), "taxa, dropped",n_dropped,"and failed to identify",nrow(missing_data),". All taxa assessed =", nrow(output_df) + n_dropped  == length(taxon_list)))
+if(exists("missing_misspelling")==FALSE){n_misspell <- 0}else{n_misspell <- nrow(missing_misspelling)}
+print(paste("Returned", nrow(output_df), "taxa, dropped",n_dropped,"and failed to identify",n_misspell,"and",nrow(duplicated_query), "duplicated taxa"". All taxa assessed =", nrow(output_df) + n_dropped  == length(taxon_list)))
 e_time <- Sys.time()
 print(s_time-e_time)
 return(output_df)
