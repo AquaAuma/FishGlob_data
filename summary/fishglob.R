@@ -161,7 +161,7 @@ depth_plot <- survey %>%
         filter(!is.na(depth)) %>% 
         ggplot() +
         geom_boxplot(aes(x = as.factor(year),y = depth, color = survey),outlier.shape = NA,size=0.5)  +
-        ylab("")  + xlab("Year") +
+        ylab("") + xlab("Year") +
         facet_wrap(~survey, scales = "free_y")+
         scale_x_discrete("Year",
                          breaks = seq(1960,2020,10)) +
@@ -179,31 +179,51 @@ depth_plot <- survey %>%
 
 
 ### Summary of latitude
-png(filename = "summary/fishglob_summary/latitude.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>%
+
+      latitude_plot <- survey %>%
         select(survey, year, haul_id, latitude) %>%
         distinct() %>%  
         ggplot() +
         geom_boxplot(aes(x = as.factor(year),y = latitude, color = survey),outlier.shape = NA,size=0.5)  +
         ylab("")  + xlab("Year") +
-        facet_wrap(~survey, scales = "free_y") +
-        theme_bw()+ theme(legend.position = "none"))
-dev.off()
+        facet_wrap(~survey, scales = "free_y")+
+        scale_x_discrete("Year",
+                         breaks = seq(1960,2020,10)) +
+        theme_bw() + 
+        theme(legend.position = "none",
+              axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
+        )
+      
+      # Save figure
+      ggsave(filename = "summary/fishglob_summary/latitude.png",
+             plot = latitude_plot,
+             width = 10,
+             height = 9,
+             dpi = 200)
 
 
 ### Summary of longitude
-png(filename = "summary/fishglob_summary/longitude.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>%
+
+longitude_plot <- survey %>%
         select(survey, year, haul_id, longitude) %>%
         distinct() %>%  
         ggplot() +
         geom_boxplot(aes(x = as.factor(year),y = longitude, color = survey),outlier.shape = NA,size=0.5)  +
         ylab("")  + xlab("Year") +
-        facet_wrap(~survey, scales = "free_y") +
-        theme_bw()+ theme(legend.position = "none"))
-dev.off()
+        facet_wrap(~survey, scales = "free_y")+
+        scale_x_discrete("Year",
+                         breaks = seq(1960,2020,10)) +
+        theme_bw() + 
+        theme(legend.position = "none",
+              axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
+        )
+      
+      # Save figure
+      ggsave(filename = "summary/fishglob_summary/longitude.png",
+             plot = longitude_plot,
+             width = 10,
+             height = 9,
+             dpi = 200)
 
 
 ### Number of hauls per month
