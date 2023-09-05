@@ -10,6 +10,11 @@
 ####     from IMR NMDC is called "Barents Sea ecosystem survey fish diversity data export"
 ####     with one dataset per year. Only these surveys should be used.
 ################################################################################
+#### Updates
+####  Juliano Palacios
+####  Spetember 5, 2023
+#### Update in response to Issue #23
+# Note: I was not able to fix the code from the root as the data is not in the repo. See line 356 for a quick fix
 
 rm(list=ls())
 
@@ -348,7 +353,42 @@ clean_norw <- clean_norw %>%
 write_clean_data(data = clean_norw, survey = survey_code, overwrite = T)
 
 
+##### JEPA #####
+# Quick FIX for issue #23 #
 
+# Load data
+load("~/GitHub/FishGlob_data/outputs/Cleaned_data/NOR-BTS_clean.RData")
+
+# Get missing data 
+missing_aphia_id <- data %>% filter(is.na(aphia_id)) %>% pull(accepted_name) %>% unique()
+
+# Get ID for missing daata
+fix_missing_ids <- clean_taxa(missing_aphia_id) %>% 
+  select(accepted_name = query,
+         worms_id_new = worms_id)
+
+# double check they are all there
+fix_missing_ids %>% filter(is.na(worms_id_new)) # checked!
+
+# Joint data with new values
+fixed_ids_df <-
+  data %>% filter(is.na(aphia_id)) %>%  #filter data missing id
+    left_join(fix_missing_ids) %>% # include new ids
+    mutate(aphia_id = as.character(worms_id_new)) %>% 
+    select(-worms_id_new) %>% 
+    bind_rows(data) %>% # incorporate all data
+    filter(!is.na(aphia_id)) # remove blank-id duplicates
+
+# Double check no more na's
+fixed_ids_df %>% filter(is.na(aphia_id)) #check! 
+
+# double check all hauls are there 
+anti_join(data %>% select(haul_id),fixed_ids_df %>% select(haul_id)) #check!
+
+# Save new data
+write_clean_data(data = fixed_ids_df, survey = "Nor-BTS", overwrite = T)
+
+# ------- end fix --------- #
 
 # -------------------------------------------------------------------------------------#
 #### FLAGS ####
