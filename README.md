@@ -58,3 +58,7 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 ### :warning: Important updates :warning:
 
 > **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
+
+### Credit and citation
+
+We highly encourage users to cite the corresponding data descriptor paper along with primary sources corresponding to primary SBTS sources included in the FISHGLOB data files and appropriate citations. Approapriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
