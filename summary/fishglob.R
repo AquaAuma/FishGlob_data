@@ -131,18 +131,26 @@ nbr_taxa <-
              dpi = 200)
 
 ### Summary of swept area
-png(filename = "summary/fishglob_summary/area_swept.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>%
+      area_swept<- survey %>%
         select(survey, year, haul_id, area_swept) %>%
         distinct() %>%  
         ggplot() +
         geom_boxplot(aes(x = as.factor(year),y = area_swept, color = survey),outlier.shape = NA,size=0.5)  +
         ylab("")  + xlab("Year") +
         facet_wrap(~survey, scales = "free_y") +
-        theme_bw()+ theme(legend.position = "none"))
-dev.off()
-
+        scale_x_discrete("Year",
+                         breaks = seq(1960,2020,10)) +
+        theme_bw() + 
+        theme(legend.position = "none",
+              axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
+        )
+      
+      # Save figure
+      ggsave(filename = "summary/fishglob_summary/area_swept.png",
+             plot = area_swept,
+             width = 10,
+             height = 9,
+             dpi = 200)
 
 ### Summary of survey depth
 survey$depth <- as.numeric(as.vector(survey$depth))
