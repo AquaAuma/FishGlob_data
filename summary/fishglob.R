@@ -84,18 +84,29 @@ haul_summary <- survey %>%
   
 
 ### Summary of number of taxa
-png(filename = "summary/fishglob_summary/nbr_taxa.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>%
+
+nbr_taxa <-
+  survey %>%
   group_by(survey, year, haul_id) %>%
   summarize(nbr_taxa = length(accepted_name)) %>%  
   ggplot() +
   geom_boxplot(aes(x = as.factor(year),y = nbr_taxa,color = survey),outlier.shape = NA,size=0.5)  +
-  ylab("")  + xlab("Year") +
+  ylab("") + xlab("Year") +
   facet_wrap(~survey, scales = "free_y") +
-  theme_bw()+ theme(legend.position = "none"))
-dev.off()
+  scale_x_discrete("Year",
+                     breaks = seq(1960,2020,10)) +
+  theme_bw() + 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
+        )
 
+  # Save figure
+  ggsave(filename = "summary/fishglob_summary/nbr_taxab.png",
+         plot = nbr_taxa,
+         width = 10,
+         height = 9,
+         dpi = 200)
+  
 ### Summary of haul duration
 png(filename = "summary/fishglob_summary/haul_duration.png",
     width = 12*200, height = 10*200, res = 200)
