@@ -7,6 +7,11 @@
 ################################################################################
 #NB: there are multiple events at similar locations on the same day because 
 #there is more than one vessel sampling, keep an eye on vessel name and haul_id
+################################################################################
+#### Updates
+####  Juliano Palacios
+####  Spetember 5, 2023
+#### Update in response to Issue #21
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
@@ -100,15 +105,17 @@ GSLnor$verbatim_name <- trimws(as.character(GSLnor$Nom_Scient_Esp), which = "rig
 GSLnor <- GSLnor[!is.na(GSLnor$lat),] #only keep rows with latitude
 GSLnor <- GSLnor[!is.na(GSLnor$depth),] #only keep rows with depth
 
+
 GSLnor <- GSLnor %>%
   # Create a unique haul_id
   mutate(
     haul_id = paste(GSLnor$Nom_Navire, GSLnor$No_Releve,GSLnor$Trait,
                     GSLnor$Date_Deb_Trait,GSLnor$Hre_Deb, sep="-"),
     #area in km^2 = 
-#Dist_Chalute_Position (nautical miles) * 1852 m/1 nautical mile * 
-#                                               trawl width *(1km^2/1000000m^2)
+    #Dist_Chalute_Position (nautical miles) * 1852 m/1 nautical mile * 
+    #                                               trawl width *(1km^2/1000000m^2)
     area_swept = Dist_Chalute_Position * 1852 * 12.497 *(1/1000000),
+    area_swept = ifelse(area_swept == 0,NA,area_swept), # Fix for Issue #21
     wgt = Pds_Capture, #in kg
     num = Nb_Ind_Capture, #in pieces
     # (via Daniel Ricard) trawl width, 12.497 m. Hurlbut and Clay (1990)
