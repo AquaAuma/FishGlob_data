@@ -227,19 +227,27 @@ longitude_plot <- survey %>%
 
 
 ### Number of hauls per month
-png(filename = "summary/fishglob_summary/hauls_per_month.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>%
+
+hauls_month <- survey %>%
         group_by(survey, year, haul_id, month) %>%
         summarize(hauls = length(haul_id)) %>%
         filter(!is.na(month)) %>% 
         ggplot() +
         geom_boxplot(aes(x = as.factor(month),y = hauls, color = survey),outlier.shape = NA,size=0.5)  +
-        ylab("")  + xlab("Year") +
-        facet_wrap(~survey, scales = "free_y") +
-        theme_bw()+ theme(legend.position = "none"))
-dev.off()
-
+        facet_wrap(~survey, scales = "free_y")+
+        scale_x_discrete("Year",
+                         breaks = seq(1,12,1)) +
+        theme_bw() + 
+        theme(legend.position = "none",
+              axis.text.x = element_text(angle = 0, vjust =1)
+        )
+      
+      # Save figure
+      ggsave(filename = "summary/fishglob_summary/hauls_per_month.png",
+             plot = hauls_month,
+             width = 10,
+             height = 9,
+             dpi = 200)
 
 ### Number of spp per month
 png(filename = "summary/fishglob_summary/taxa_per_month.png",
