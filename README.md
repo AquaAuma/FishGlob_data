@@ -50,7 +50,15 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 ### Author contributions
 *Contributors to code*
 - **Cleaning taxonomy**: Juliano Palacios-Abrantes 
-- **Cleaning surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Dan Forrest, Daniel van Denderen
+- **Cleaning surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Dan Forrest, Daniel van Denderen, Laurene Pecuchet, Esther Beukhof
 - **Summary of surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Laura Mannocci
 - **Merge surveys**: Aurore Maureaud
 - **Standardize surveys**: Laura Mannocci, Malin Pinsky, Aurore Maureaud, Zoë Kitchel, Alexa Fredston
+
+### Credit and citation
+
+We highly encourage users to cite the corresponding data descriptor paper along with primary SBTS sources included in the FISHGLOB data files. Appropriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
+
+### :warning: Important updates :warning:
+
+> **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
