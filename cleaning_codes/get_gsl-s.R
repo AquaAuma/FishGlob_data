@@ -7,6 +7,11 @@
 ################################################################################
 #NB: there are multiple events at similar locations on the same day because there
 #is more than one vessel sampling, keep an eye on vessel name and haul_id
+################################################################################
+#### Updates
+####  Juliano Palacios
+####  September 5, 2023
+#### Update in response to Issue #12 and updated clean_taxon()
 
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
