@@ -8,7 +8,10 @@
 ####                 GIS Analyst/ Physical Scientist at Fisheries and Oceans Canada
 #### Coding: Michelle Stuart, Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
-
+#### Updates
+####  Juliano Palacios
+####  September 5, 2023
+#### Update in response to Issue #16
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
@@ -287,7 +290,7 @@ clean_auto_missing <- rbind(clean_auto, cae_cae, not_elo)
 
 correct_taxa <- clean_auto_missing %>% 
   select(-survey) %>% 
-  # Manually remove EGG 
+  # Manually remove EGG for issue #16 
   filter(!query %in% c("Hemitripterus americanus, eggs","Raja eggs"))
 
 clean_scs <- left_join(scs, correct_taxa, by=c("taxa2"="query")) %>% 
