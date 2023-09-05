@@ -2,6 +2,11 @@
 #### R code to merge all separate datasets
 #### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, December 2022
 ################################################################################
+#### Updates
+####  Juliano Palacios
+####  September 5, 2023
+#### Update in response to Issue #28 
+
 
 rm(list=ls())
 
@@ -59,9 +64,7 @@ print(survey %>%
 dev.off()
 
 ## Summary of hauls
-png(filename = "summary/fishglob_summary/hauls_time.png",
-    width = 12*200, height = 10*200, res = 200)
-print(survey %>% 
+haul_summary <- survey %>% 
   group_by(year,haul_id, survey) %>% 
   summarise(n =  n()) %>% 
   group_by(year, survey) %>% 
@@ -70,8 +73,15 @@ print(survey %>%
   geom_line(aes(x = year,y = n_hauls, group = survey, color = survey)) +
   geom_point(aes(x = year,y = n_hauls, group = survey, color = survey)) +
   ylab("Number of hauls") + xlab("Year") + theme_bw() +
-  facet_wrap(~ survey, scales = "free_y") + theme(legend.position = "none"))
-dev.off()
+  facet_wrap(~ survey, scales = "free_y") + theme(legend.position = "none") 
+
+# Save figure
+  ggsave(filename = "summary/fishglob_summary/hauls_time.png",
+         plot = haul_summary,
+         width = 10,
+         height = 8,
+         dpi = 200)
+  
 
 ### Summary of number of taxa
 png(filename = "summary/fishglob_summary/nbr_taxa.png",
