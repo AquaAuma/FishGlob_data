@@ -57,7 +57,7 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 
 ### Credit and citation
 
-We highly encourage users to cite the corresponding data descriptor paper along with primary sources corresponding to primary SBTS sources included in the FISHGLOB data files and appropriate citations. Approapriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
+We highly encourage users to cite the corresponding data descriptor paper along with primary SBTS sources included in the FISHGLOB data files. Appropriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
 
 ### :warning: Important updates :warning:
 
