@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.24)  24 AUG 2023 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.24)  5 SEP 2023 07:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,55 +587,55 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 179.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 316.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 323.
 (/Users/jepa88/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [4{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 
-Underfull \vbox (badness 10000) detected at line 550
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [8] [9] [10
@@ -644,19 +644,19 @@ Underfull \vbox (badness 10000) detected at line 550
 <gsl-n_files/figure-latex/hauls_per_year-1.pdf, id=149, 361.35pt x 325.215pt>
 File: gsl-n_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/hauls_per_year-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/hauls_per_year-1.pdf  used on input line 657.
+Package pdftex.def Info: gsl-n_files/figure-latex/hauls_per_year-1.pdf  used on input line 664.
 (pdftex.def)             Requested size: 361.34912pt x 325.2142pt.
 [11
 
  <./gsl-n_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 671.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 678.
 (/Users/jepa88/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <gsl-n_files/figure-latex/summary_tech_vars-1.pdf, id=162, 722.7pt x 433.62pt>
 File: gsl-n_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/summary_tech_vars-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/summary_tech_vars-1.pdf  used on input line 682.
+Package pdftex.def Info: gsl-n_files/figure-latex/summary_tech_vars-1.pdf  used on input line 689.
 (pdftex.def)             Requested size: 469.76045pt x 281.85628pt.
 [12
 
@@ -664,7 +664,7 @@ Package pdftex.def Info: gsl-n_files/figure-latex/summary_tech_vars-1.pdf  used 
 <gsl-n_files/figure-latex/summary_var_plot-1.pdf, id=177, 469.755pt x 325.215pt>
 File: gsl-n_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/summary_var_plot-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_plot-1.pdf  used on input line 711.
+Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_plot-1.pdf  used on input line 718.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [13
 
@@ -672,7 +672,7 @@ Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_plot-1.pdf  used o
 <gsl-n_files/figure-latex/extreme_biomass-1.pdf, id=191, 469.755pt x 325.215pt>
 File: gsl-n_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/extreme_biomass-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/extreme_biomass-1.pdf  used on input line 730.
+Package pdftex.def Info: gsl-n_files/figure-latex/extreme_biomass-1.pdf  used on input line 737.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [14
 
@@ -680,7 +680,7 @@ Package pdftex.def Info: gsl-n_files/figure-latex/extreme_biomass-1.pdf  used on
 <gsl-n_files/figure-latex/summary_var_swept-1.pdf, id=202, 469.755pt x 325.215pt>
 File: gsl-n_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/summary_var_swept-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_swept-1.pdf  used on input line 753.
+Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_swept-1.pdf  used on input line 760.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [15
 
@@ -688,7 +688,7 @@ Package pdftex.def Info: gsl-n_files/figure-latex/summary_var_swept-1.pdf  used 
 <gsl-n_files/figure-latex/abundant_spp-1.pdf, id=213, 469.755pt x 325.215pt>
 File: gsl-n_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/abundant_spp-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/abundant_spp-1.pdf  used on input line 761.
+Package pdftex.def Info: gsl-n_files/figure-latex/abundant_spp-1.pdf  used on input line 768.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [16
 
@@ -696,7 +696,7 @@ Package pdftex.def Info: gsl-n_files/figure-latex/abundant_spp-1.pdf  used on in
 <gsl-n_files/figure-latex/fixed_point_map-1.pdf, id=224, 722.7pt x 361.35pt>
 File: gsl-n_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use gsl-n_files/figure-latex/fixed_point_map-1.pdf>
-Package pdftex.def Info: gsl-n_files/figure-latex/fixed_point_map-1.pdf  used on input line 771.
+Package pdftex.def Info: gsl-n_files/figure-latex/fixed_point_map-1.pdf  used on input line 778.
 (pdftex.def)             Requested size: 469.76045pt x 234.88023pt.
 [17
 
@@ -706,12 +706,12 @@ Package pdftex.def Info: gsl-n_files/figure-latex/fixed_point_map-1.pdf  used on
 <../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_plot.png, id=246, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_plot.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_plot.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_plot.png  used on input line 796.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_plot.png  used on input line 803.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png, id=247, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png  used on input line 798.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png  used on input line 805.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 [19
 
@@ -719,33 +719,33 @@ Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_re
 <../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png, id=256, 902.1705pt x 424.4658pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png  used on input line 802.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png  used on input line 809.
 (pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png, id=257, 902.1705pt x 424.4658pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png  used on input line 804.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png  used on input line 811.
 (pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
 [20 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_plot.png> <../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_haul.png>]
 <../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png, id=262, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png  used on input line 809.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png  used on input line 816.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png, id=263, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png  used on input line 811.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png  used on input line 818.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 [21 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_haul.png> <../outputs/Flags/trimming_method1/hex_res7/GSL-N_hex_res_7_map_per_grid_nyears.png>]
-Underfull \hbox (badness 1859) in paragraph at lines 817--819
+Underfull \hbox (badness 1859) in paragraph at lines 824--826
 \T1/lmr/m/n/10 This stan-dard-iza-tion method was adapted from Bi-o-TIME code from []$https : / / github . com / Wubing -[]
  []
 
 <../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png, id=269, 902.1705pt x 424.4658pt>
 File: ../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png  used on input line 822.
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png  used on input line 829.
 (pdftex.def)             Requested size: 469.75084pt x 221.01494pt.
 [22 <../outputs/Flags/trimming_method1/hex_res8/GSL-N_hex_res_8_map_per_grid_nyears.png> <../outputs/Flags/trimming_method2/GSL-N_map_per_haul.png>] (./gsl-n.aux)
  ***********
@@ -758,13 +758,13 @@ Package rerunfilecheck Info: File `gsl-n.out' has not changed.
 Here is how much of TeX's memory you used:
  13180 strings out of 477149
  209855 string characters out of 5812293
- 1963254 words of memory out of 5000000
+ 1964254 words of memory out of 5000000
  33906 multiletter control sequences out of 15000+600000
  610739 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,428b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on gsl-n.pdf (22 pages, 8241515 bytes).
+Output written on gsl-n.pdf (22 pages, 8242537 bytes).
 PDF statistics:
  362 PDF objects out of 1000 (max. 8388607)
  283 compressed objects within 3 object streams
