@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.24)  24 AUG 2023 12:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.24)  5 SEP 2023 08:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,186 +587,194 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 162.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 264.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 268.
 (/Users/jepa88/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2]
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
-[3{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \vbox (badness 10000) detected at line 635
- []
-
-
-Underfull \vbox (badness 10000) detected at line 635
- []
-
-[4]
-Underfull \vbox (badness 10000) detected at line 635
+[3]
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
+ []
+
+[4{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \vbox (badness 10000) detected at line 648
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 [8]
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 648
  []
 
-[9] [10]
-Overfull \hbox (20.79901pt too wide) in paragraph at lines 720--731
+[9]
+Underfull \vbox (badness 10000) detected at line 648
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 648
+ []
+
+[10] [11]
+Overfull \hbox (20.79901pt too wide) in paragraph at lines 733--744
  [][] 
  []
 
-[11
-
-]
-<wcann_files/figure-latex/hauls_per_year-1.pdf, id=150, 361.35pt x 325.215pt>
-File: wcann_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/hauls_per_year-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/hauls_per_year-1.pdf  used on input line 742.
-(pdftex.def)             Requested size: 361.34912pt x 325.2142pt.
 [12
 
+]
+<wcann_files/figure-latex/hauls_per_year-1.pdf, id=154, 361.35pt x 325.215pt>
+File: wcann_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/hauls_per_year-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/hauls_per_year-1.pdf  used on input line 755.
+(pdftex.def)             Requested size: 361.34912pt x 325.2142pt.
+[13
+
  <./wcann_files/figure-latex/hauls_per_year-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 756.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 769.
 (/Users/jepa88/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<wcann_files/figure-latex/summary_tech_vars-1.pdf, id=163, 722.7pt x 433.62pt>
+<wcann_files/figure-latex/summary_tech_vars-1.pdf, id=168, 722.7pt x 433.62pt>
 File: wcann_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use wcann_files/figure-latex/summary_tech_vars-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/summary_tech_vars-1.pdf  used on input line 767.
+Package pdftex.def Info: wcann_files/figure-latex/summary_tech_vars-1.pdf  used on input line 780.
 (pdftex.def)             Requested size: 469.76045pt x 281.85628pt.
-[13
-
-{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./wcann_files/figure-latex/summary_tech_vars-1.pdf>]
-<wcann_files/figure-latex/summary_var_plot-1.pdf, id=179, 469.755pt x 325.215pt>
-File: wcann_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/summary_var_plot-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/summary_var_plot-1.pdf  used on input line 796.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [14
 
- <./wcann_files/figure-latex/summary_var_plot-1.pdf>]
-<wcann_files/figure-latex/extreme_biomass-1.pdf, id=192, 469.755pt x 325.215pt>
-File: wcann_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/extreme_biomass-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/extreme_biomass-1.pdf  used on input line 815.
+{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/jepa88/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./wcann_files/figure-latex/summary_tech_vars-1.pdf>]
+<wcann_files/figure-latex/summary_var_plot-1.pdf, id=183, 469.755pt x 325.215pt>
+File: wcann_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/summary_var_plot-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/summary_var_plot-1.pdf  used on input line 809.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [15
 
- <./wcann_files/figure-latex/extreme_biomass-1.pdf>]
-<wcann_files/figure-latex/summary_var_swept-1.pdf, id=203, 469.755pt x 325.215pt>
-File: wcann_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/summary_var_swept-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/summary_var_swept-1.pdf  used on input line 838.
+ <./wcann_files/figure-latex/summary_var_plot-1.pdf>]
+<wcann_files/figure-latex/extreme_biomass-1.pdf, id=196, 469.755pt x 325.215pt>
+File: wcann_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/extreme_biomass-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/extreme_biomass-1.pdf  used on input line 828.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [16
 
- <./wcann_files/figure-latex/summary_var_swept-1.pdf>]
-<wcann_files/figure-latex/abundant_spp-1.pdf, id=214, 469.755pt x 325.215pt>
-File: wcann_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/abundant_spp-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/abundant_spp-1.pdf  used on input line 846.
+ <./wcann_files/figure-latex/extreme_biomass-1.pdf>]
+<wcann_files/figure-latex/summary_var_swept-1.pdf, id=207, 469.755pt x 325.215pt>
+File: wcann_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/summary_var_swept-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/summary_var_swept-1.pdf  used on input line 851.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [17
 
- <./wcann_files/figure-latex/abundant_spp-1.pdf>]
-<wcann_files/figure-latex/fixed_point_map-1.pdf, id=225, 722.7pt x 361.35pt>
-File: wcann_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
-<use wcann_files/figure-latex/fixed_point_map-1.pdf>
-Package pdftex.def Info: wcann_files/figure-latex/fixed_point_map-1.pdf  used on input line 856.
-(pdftex.def)             Requested size: 469.76045pt x 234.88023pt.
+ <./wcann_files/figure-latex/summary_var_swept-1.pdf>]
+<wcann_files/figure-latex/abundant_spp-1.pdf, id=218, 469.755pt x 325.215pt>
+File: wcann_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/abundant_spp-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/abundant_spp-1.pdf  used on input line 859.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [18
 
- <./wcann_files/figure-latex/fixed_point_map-1.pdf>]
-<../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png, id=242, 902.1705pt x 431.4519pt>
-File: ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png Graphic file (type png)
-<use ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png>
-Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png  used on input line 868.
-(pdftex.def)             Requested size: 375.79791pt x 179.7207pt.
+ <./wcann_files/figure-latex/abundant_spp-1.pdf>]
+<wcann_files/figure-latex/fixed_point_map-1.pdf, id=229, 722.7pt x 361.35pt>
+File: wcann_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
+<use wcann_files/figure-latex/fixed_point_map-1.pdf>
+Package pdftex.def Info: wcann_files/figure-latex/fixed_point_map-1.pdf  used on input line 869.
+(pdftex.def)             Requested size: 469.76045pt x 234.88023pt.
 [19
 
- <../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png>]
-<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png, id=251, 722.7pt x 722.7pt>
-File: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png Graphic file (type png)
-<use ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png  used on input line 896.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png, id=252, 722.7pt x 722.7pt>
-File: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png Graphic file (type png)
-<use ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png  used on input line 898.
-(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+ <./wcann_files/figure-latex/fixed_point_map-1.pdf>]
+<../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png, id=247, 3212.0pt x 2007.5pt>
+File: ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png Graphic file (type png)
+<use ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png>
+Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png  used on input line 881.
+(pdftex.def)             Requested size: 375.76819pt x 234.85512pt.
 [20
 
+ <../outputs/Flags/taxonomic_flagging/WCANN_taxonomic_flagging.png>]
+<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png, id=257, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png  used on input line 909.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png, id=258, 722.7pt x 722.7pt>
+File: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png Graphic file (type png)
+<use ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png  used on input line 911.
+(pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
+[21
+
  <../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_plot.png>]
-<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png, id=260, 902.1705pt x 431.4519pt>
+<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png, id=266, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png  used on input line 902.
-(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
-<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png, id=261, 902.1705pt x 431.4519pt>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png  used on input line 915.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png, id=267, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png  used on input line 904.
-(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
-[21 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png> <../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png>]
-<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png, id=266, 1084.05pt x 505.89pt>
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png  used on input line 917.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+[22 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_plot.png> <../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_haul.png>]
+<../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png, id=272, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png  used on input line 909.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png  used on input line 922.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png, id=267, 1084.05pt x 505.89pt>
+<../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png, id=273, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png  used on input line 911.
+Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png  used on input line 924.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[22 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png> <../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png>]
-Underfull \hbox (badness 1859) in paragraph at lines 917--919
+[23 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_haul.png> <../outputs/Flags/trimming_method1/hex_res7/WCANN_hex_res_7_map_per_grid_nyears.png>]
+Underfull \hbox (badness 1859) in paragraph at lines 930--932
 \T1/lmr/m/n/10 This stan-dard-iza-tion method was adapted from Bi-o-TIME code from []$https : / / github . com / Wubing -[]
  []
 
-<../outputs/Flags/trimming_method2/WCANN_map_per_haul.png, id=273, 902.1705pt x 431.4519pt>
+<../outputs/Flags/trimming_method2/WCANN_map_per_haul.png, id=279, 1156.32pt x 722.7pt>
 File: ../outputs/Flags/trimming_method2/WCANN_map_per_haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method2/WCANN_map_per_haul.png>
-Package pdftex.def Info: ../outputs/Flags/trimming_method2/WCANN_map_per_haul.png  used on input line 922.
-(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
-[23 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png> <../outputs/Flags/trimming_method2/WCANN_map_per_haul.png>] (./wcann.aux)
+Package pdftex.def Info: ../outputs/Flags/trimming_method2/WCANN_map_per_haul.png  used on input line 935.
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[24 <../outputs/Flags/trimming_method1/hex_res8/WCANN_hex_res_8_map_per_grid_nyears.png> <../outputs/Flags/trimming_method2/WCANN_map_per_haul.png>] [25] (./wcann.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-11>
@@ -775,18 +783,18 @@ Package rerunfilecheck Info: File `wcann.out' has not changed.
 (rerunfilecheck)             Checksum: D834971862962F5A544B264B28B871AA;3299.
  ) 
 Here is how much of TeX's memory you used:
- 13192 strings out of 477149
- 210630 string characters out of 5812293
- 1970254 words of memory out of 5000000
+ 13194 strings out of 477149
+ 210644 string characters out of 5812293
+ 1971254 words of memory out of 5000000
  33917 multiletter control sequences out of 15000+600000
  610739 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,428b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/jepa88/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on wcann.pdf (23 pages, 5753344 bytes).
+Output written on wcann.pdf (25 pages, 7020688 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  204 words of extra memory for PDF output out of 10000 (max. 10000000)
 

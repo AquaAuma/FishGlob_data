@@ -7,6 +7,10 @@
 #####                     Groundfish Ecology Program, Northwest Fisheries Science Center
 #### Coding: Michelle Stuart, Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+#### Updates
+####  Juliano Palacios
+####  September 5, 2023
+#### Update in response to Issue #23. See line 277
 
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
@@ -263,6 +267,7 @@ clean_auto <- clean_taxa(unique(wcann$taxa2), input_survey = wcann_survey_code,
                          fishbase=T)
 # takes 4.5 mins
 
+
 #This cuts out the following species, one should be added
 
 #1 Nearchaster aciculosus
@@ -273,11 +278,19 @@ clean_auto <- clean_taxa(unique(wcann$taxa2), input_survey = wcann_survey_code,
 #6 Cancer branneri       
 #7 Cyclopterinae (fish, but only to genus)
 
-cyclop <- c("Cyclopterinae", NA, NA, "Cyclopterinae", "Animalia", "Chordata","Actinopteri",
+# ----- JEPA Fix missing aphia ID ------#
+clean_taxa("Cyclopterinae") # worrms Error: (204) No Content - AphiaRecordsByNames
+clean_taxa(125590) # from worms web page
+
+cyclop <- c("Cyclopterinae", 125590, 125590, "Cyclopterinae", "Animalia", "Chordata","Actinopteri",
             "Scorpaeniformes", "Cyclopteridae", "NA", "Family", "WCANN")
 
 clean_auto.missing <- rbind(clean_auto, cyclop)
 
+# Double check it worked
+clean_auto.missing %>% filter(worms_id == 125590) #check
+
+# ------ End fix #
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA in WCANN survey data ####
