@@ -54,9 +54,11 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 ## Canada Gulf of St Lawrence South - GSL-S
 ### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_gsl-s.R) 
-- See [here](https://publications.gc.ca/collections/collection_2012/mpo-dfo/Fs97-6-2505-eng.pdf) for helpful guidance on correction for gear and vessel changes in 1985 and 1992
+- The survey was conducted annually with the same vessel and gear until the mid 1980s. In 1985, the RV Lady Hammond replaced the RV EE Prince
+1970-1983 = random stratified, 1984-1987 = fixed station, 1988-present = random stratified.
+- There are three different types of trawl used, with different widths and surface area covered during a standard 30 minute tow (EE Princee = Yankee 36, Lady Hammond = Western IIA, Navicula = 50' Flounder)
+- See [here](https://publications.gc.ca/collections/collection_2012/mpo-dfo/Fs97-6-2505-eng.pdf) and [here](https://waves-vagues.dfo-mpo.gc.ca/Library/115732.pdf) for helpful guidance on differences in swept areas and corrections applied for gear and vessel changes in 1985 and 1992
 - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/GSLsouth)
-- Requires corrections. CHECK if these have been included
 
 
 
