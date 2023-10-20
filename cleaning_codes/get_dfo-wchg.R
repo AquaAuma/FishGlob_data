@@ -100,14 +100,14 @@ WCHG <- WCHG %>%
     stratum = paste(floor(Start.latitude), floor(Start.longitude),
                     floor(Bottom.depth..m./100)*100, sep= "-"), 
     # catch weight (kg.) per tow/
-    #                   (distance towed in m * trawl door spread m) * 1km^2/1000000m^2
-    wgt_cpue = Catch.weight..kg./(Distance.towed..m.*Trawl.door.spread..m.) /1000000,
+    #                   (distance towed in m * trawl door spread m) * (1000000m^2/1km^2)
+    wgt_cpue = Catch.weight..kg./(Distance.towed..m.*Trawl.door.spread..m.) *1000000,
     # catch weight (kg.) per tow/
     #                   time of tow in minutes*60 minutes/hour
     wgt_h = Catch.weight..kg./Tow.duration..min.*60,
     # catch abundance per tow/
-    #                   (distance towed in m * trawl door spread m) * 1km^2/1000000m^2
-    num_cpue = Catch.count..pieces./(Distance.towed..m.*Trawl.door.spread..m.) /1000000,
+    #                   (distance towed in m * trawl door spread m) * (1000000m^2/1km^2)
+    num_cpue = Catch.count..pieces./(Distance.towed..m.*Trawl.door.spread..m.) *1000000,
     # catch weight (kg.) per tow/
     #                   time of tow in minutes*60 minutes/hour
     num_h = Catch.count..pieces./Tow.duration..min.*60,
