@@ -5,7 +5,7 @@
 ####     Fishery & Assessment Data Section, Science Branch, DFO Canada
 ####           Maria Cornthwaite	Maria.Cornthwaite@dfo-mpo.gc.ca	Program Head,
 ####            Groundfish Data Unit, Science Branch, DFO Canada
-#### Coding: Dan Forrest, Zoë Kitchel November 2021
+#### Coding: Dan Forrest, Zoë Kitchel November 2021 + October 2023
 ################################################################################
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
@@ -20,6 +20,7 @@ library(readr)
 library(dplyr)
 library(PBSmapping)
 library(readxl)
+library(here)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
