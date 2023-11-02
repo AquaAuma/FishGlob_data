@@ -54,6 +54,11 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 This document presents the cleaning code and summary of the Northeast US bottom trawl survey provided by Sean Lucey	<sean.lucey@noaa.gov>. It contains data from 1963 and up to 2020.
 
 
+### Note on gear
+
+There was a gear change in 2009 in NEUS. This tech memo describes calibration factors for many (but not all) species, which we apply as part of the data processing: Miller, T. J., C. Das, P. J. Politis, A. S. Miller, S. M. Lucey, C. M. Legault, R. W. Brown, and P. J. Rago. “Estimation of Albatross IV to Henry B. Bigelow Calibration Factors. Northeast Fisheries Science Center Reference Document 10-05.” Woods Hole, MA: US. Department of Commerce, National Marine Fisheries Service, Northeast Fisheries Science Center, 2010.
+
+
 ## Data cleaning in R
 
 ```{r cleaning_code, code = readLines(here("./cleaning_codes/get_neus.R")), eval = FALSE}
