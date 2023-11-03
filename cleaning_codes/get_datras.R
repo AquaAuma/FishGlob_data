@@ -6,7 +6,7 @@
 #######################################################
 rm(list=ls())
 
-date <- "3August2023"
+date <- "3November2023"
 
 ##########################################################################################
 #### LOAD LIBRARIES & options to decide in the code
@@ -50,7 +50,13 @@ need_get_lw_rel <- FALSE
 check_TL_conversion <- FALSE
 
 # apply TL conversion?
-apply_TL_conversion <- TRUE
+apply_TL_conversion <- FALSE
+
+# plot length frequencies for deep sea fish with different length than TL?
+plot_length_frequencies <- FALSE
+
+# remove lengths based on issues identieid for SP-NORTH and SP-ARSA?
+remove_lengths_units_issue <- TRUE
 
 
 ##########################################################################################
@@ -631,8 +637,8 @@ if(check_TL_conversion == TRUE){
     summarize(n_obs = length(taxa),
               n_taxa = length(unique(taxa)))
   
-  write.csv(xx, file = "QAQC/DATRAS/lengthtypes.csv", row.names = F)
-  write.csv(xx_concern, file = "QAQC/DATRAS/lengthtypes_taxa_concern.csv", row.names = F)
+  write.csv(xx, file = "QAQC/DATRAS/Length Types/lengthtypes.csv", row.names = F)
+  write.csv(xx_concern, file = "QAQC/DATRAS/Length Types/lengthtypes_taxa_concern.csv", row.names = F)
   
   # according to ICES manuals
   family_concern <- survey %>% 
@@ -642,14 +648,14 @@ if(check_TL_conversion == TRUE){
     summarize(n_obs = length(taxa),
               n_taxa = length(unique(taxa)))
   
-  write.csv(family_concern, file = "QAQC/DATRAS/lengthtypes_family_concern.csv", row.names = F)
+  write.csv(family_concern, file = "QAQC/DATRAS/Length Types/lengthtypes_family_concern.csv", row.names = F)
   
   taxa_not_TL <- survey %>% 
     filter(family %in% c("Alepocephalidae","Platytroctidae","Macrouridae","Chimaeridae")) %>% 
     mutate(LenMeasType = ifelse(LenMeasType == -9, NA, LenMeasType)) %>% 
     group_by(worms_id, SpecCode, taxa, family, LenMeasType) %>% 
     summarize(n_obs = length(taxa))
-  write.csv(taxa_not_TL, file = "length_weight/DATRAS_taxa_not_TL.csv", row.names = F)
+  write.csv(taxa_not_TL, file = "length_weight/Length Types/DATRAS_taxa_not_TL.csv", row.names = F)
   
 }
 
@@ -665,7 +671,34 @@ if(apply_TL_conversion == TRUE){
 }
 
 
-# 3. List of taxa for length-weight conversion coefficients
+# 3. Check the need for TL conversion in all surveys and for all taxa
+if (plot_length_frequencies == TRUE){
+  xx_concern <- read.csv("QAQC/DATRAS/Length Types/lengthtypes_taxa_concern_fishbase.csv")
+  xx_conversions <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
+    select(taxa, conversion_to_TL) %>% 
+    distinct()
+  xx_concern <- left_join(xx_concern, xx_conversions, by="taxa")
+  
+  for(i in 1:nrow(xx_concern)){
+    xx_survey <- survey %>% 
+      filter(Survey == xx_concern$Survey[i],
+             taxa == xx_concern$taxa[i])
+    png(filename = paste0("QAQC/DATRAS/Length Types/",paste0(xx_survey$Survey[1],"-",xx_survey$taxa[1],".png")),
+        width = 480, height = 480)
+    hist(xx_survey$Length, main = paste0(xx_survey$Survey[1],"-",xx_survey$taxa[1]),
+         xlab = "Length", xlim = c(0, max(max(xx_survey$Length*xx_concern$conversion_to_TL[1], xx_concern$TL_fishbase[i]))))
+    hist(xx_survey$Length*xx_concern$conversion_to_TL[1], add=T, col = alpha("red", 0.2))
+    abline(v = xx_concern$TL_fishbase[i], col = "red", lwd = 3, lty = "dashed")
+    dev.off()
+    rm(xx_survey)
+  }
+  
+  rm(xx_concern, xx_conversions)
+  
+}
+
+
+# 4. List of taxa for length-weight conversion coefficients
 if(need_get_lw_rel == TRUE){
   list.taxa <- survey %>% 
     select(taxa, family, genus, rank) %>% 
@@ -680,7 +713,16 @@ if(need_get_lw_rel == TRUE){
 }
 
 
-# 4. re-calculate weights with length-weight relationships
+# 5. Remove the list of hauls from SP-NORTH and SP-ARSA that have wrong length units
+if (remove_lengths_units_issue == TRUE){
+  load("QAQC/DATRAS/Spanish_hauls_species_off.RData")
+  lengths.off <- unique(lengths.off$HaulID)
+  survey <- survey %>% 
+    filter(!HaulID %in% lengths.off)
+}
+
+
+# 6. re-calculate weights with length-weight relationships
 datalw <- read.csv('length_weight/length.weight_DATRAS_3August2023.csv') %>% 
   select(-X)
 
