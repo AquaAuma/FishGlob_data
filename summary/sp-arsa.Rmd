@@ -524,7 +524,7 @@ knitr::kable(cbind(met1_7, met1_8[,2:3], met2[,2]),
 ```
 
 \clearpage
-## 11. Spatio-temporal standardization: SWC-IBTS-4
+## 11. Spatio-temporal standardization SP-ARSA 4
 
 ### a. Standardization method 1
 
