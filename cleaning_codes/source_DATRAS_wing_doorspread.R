@@ -509,6 +509,6 @@ survey_save <- survey %>%
   select(Survey, HaulID, Area.swept, Area.doors) %>% 
   distinct()
 
-write.csv(survey_save, file = "QAQC/DATRAS/areas_swept_datras.csv", row.names = F)
+write.csv(survey_save, file = "QAQC/DATRAS/Swept Areas/areas_swept_datras.csv", row.names = F)
 
 rm(dist,gears,survey0,avgspeed,area2)
