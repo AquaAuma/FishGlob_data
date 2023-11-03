@@ -1,3 +1,8 @@
+#######################################################
+#### R code to re-estimate areas swept DATRAS
+#### Coding: Aurore Maureaud + Daniël van Denderen
+#######################################################
+
 survey <- survey %>% 
   mutate(WingSpread = replace(WingSpread, WingSpread==-9, NA),
          DoorSpread = replace(DoorSpread, DoorSpread==-9, NA),
@@ -331,7 +336,7 @@ spn <- survey %>%
   distinct()
 
 # doorspread
-lm0 <- lm(DoorSpread ~ log(Depth), data=spn)
+lm0 <- lm(DoorSpread ~ log(Depth) + SweepLngt, data=spn)
 pred0 <- predict.lm (object=lm0, newdata=spn, interval='confidence', level=0.95)
 spn$door_fit <- pred0[,1]
 
@@ -356,7 +361,7 @@ spa <- survey %>%
   distinct()
 
 # doorspread
-lm0 <- lm(DoorSpread ~ log(Depth) , data=spa)
+lm0 <- lm(DoorSpread ~ log(Depth) + SweepLngt , data=spa)
 pred0 <- predict.lm (object=lm0, newdata=spa, interval='confidence', level=0.95)
 spa$door_fit <- pred0[,1]
 
@@ -500,5 +505,10 @@ survey0 <- survey0 %>%
 
 survey <- cbind(survey, survey0[match(survey$HaulID,survey0$HaulID), c("Area.swept","Area.doors")])
 
+survey_save <- survey %>% 
+  select(Survey, HaulID, Area.swept, Area.doors) %>% 
+  distinct()
+
+write.csv(survey_save, file = "QAQC/DATRAS/areas_swept_datras.csv", row.names = F)
 
 rm(dist,gears,survey0,avgspeed,area2)
