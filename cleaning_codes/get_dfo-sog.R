@@ -402,8 +402,6 @@ for(i in 1:length(surveys)){
 
 # integrate spatio-temporal flags
 for(i in 1:length(survey_units)){
-  
-  if(!survey_units[i] %in% c("DFO-SOG","IS-TAU","SCS-FALL","WBLS")){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
@@ -425,9 +423,9 @@ for(i in 1:length(survey_units)){
                            sep = ";")
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
-    trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
-    trim_2 <- as.vector(trim_2[,1])
+    # trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
+    #                           survey_units[i],"_hauls_removed.csv"))
+    # trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
       mutate(flag_trimming_hex7_0 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res7_0,
@@ -438,11 +436,11 @@ for(i in 1:length(survey_units)){
                                            "TRUE",flag_trimming_hex8_0),
              flag_trimming_hex8_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% hex_res8_2,
                                            "TRUE",flag_trimming_hex8_2),
-             flag_trimming_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% trim_2,
-                                      "TRUE", flag_trimming_2)
+             # flag_trimming_2 = ifelse(survey_unit == survey_units[i] & haul_id %in% trim_2,
+             #                          "TRUE", flag_trimming_2)
       )
-    rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2, trim_2)
-  }
+    rm(hex_res7_0, hex_res7_2, hex_res8_0)
+#  }
 }
 
 

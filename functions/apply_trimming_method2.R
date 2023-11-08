@@ -44,6 +44,8 @@ apply_trimming_per_survey_unit_method2 <- function(data){
     dplyr::ungroup() %>%
     dplyr::filter(n_years >=2 & duration >=10)
   
+  if(nrow(meta_year)>0){
+  
   meta <- meta_year %>%
     dplyr::select(-c(year, n_loc)) %>%
     dplyr::distinct()
@@ -200,7 +202,9 @@ apply_trimming_per_survey_unit_method2 <- function(data){
   # full dataset with added column is_retained_biotime
   data_new <- data %>%
     dplyr::full_join(bt_4loc_10yr %>%
-                       dplyr::select(-c(location, cell)), by = c("survey_unit", "year", "latitude", "longitude")) %>%
+                       dplyr::select(-c(location, cell)), 
+                     #by = c("survey", "haul_id", "survey_unit", "year", "latitude", "longitude")
+                     ) %>%
     dplyr::mutate(is_retained_biotime = ifelse(is.na(is_retained_biotime), FALSE, is_retained_biotime))
   
   
@@ -213,7 +217,7 @@ apply_trimming_per_survey_unit_method2 <- function(data){
       dplyr::filter(survey_unit == meta_spat$survey_unit[i])
     
     #write list of hauls codes/locations removed per survey
-    haul_id_removed <- data_new_survey$haul_id[data_new_survey$is_retained_biotime == FALSE]
+    haul_id_removed <- unique(data_new_survey$haul_id[data_new_survey$is_retained_biotime == FALSE])
     readr::write_delim(as.data.frame(haul_id_removed),  file = here::here("outputs", "Flags", "trimming_method2", paste0(meta_spat$survey_unit[i],  "_hauls_removed.csv")), delim = ";")
     
     #write to csv file number and percentage of hauls/locations to remove per survey
@@ -282,5 +286,6 @@ apply_trimming_per_survey_unit_method2 <- function(data){
   #return full dataset
   return(data_new)
   
+  } else {print("Method cannot be applied because number of years is lower than 2 years and/or duration is lower than 10 years")}
   
 }
