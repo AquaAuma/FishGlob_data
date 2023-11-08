@@ -1,3 +1,7 @@
+#######################################################
+#### R code to compare ICES and FISHGLOB swept areas estimations
+#### Coding: Daniël van Denderen November 2023
+#######################################################
 
 setwd("....")
 tr <- read.table("SweptAreaAssessmentOutput_20213009.csv.txt",sep=",",header=T)
