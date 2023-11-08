@@ -8,10 +8,9 @@ Please add notes and descriptions about the surveys, with links to documentation
 ## ICES - DATRAS surveys
 
 ### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_datras.R) 
-- Swept area: re-estimated partly from linear model for EVHOE, NS-IBTS, NIGFS, IE-IGFS, EVHOE, SWC-IBTS, BITS, IE-IGFS, FR-CGFS, NIGFS, ROCKALL, PT-IBTS
+- Swept area: re-estimated partly from linear model for EVHOE, NS-IBTS, NIGFS, IE-IGFS, EVHOE, SWC-IBTS, BITS, IE-IGFS, FR-CGFS, NIGFS, ROCKALL, PT-IBTS, SP-ARSA, SP-PORC, SP-NORTH
 - Taxa: fixing temporal wrong identification with expert knowledge & grouping at genus level some species impossible to identify at the species level
 - Weight data are re-estimated from abundance at length data, and checked against the reported weight (when reported). Length-weight relationships come from FishBase
-- Only kept hauls where there is the length composition from the length database (10,178 hauls without length data). 
 - Hauls where not all species are recorded were removed
 - See specific surveys for details
 
@@ -100,7 +99,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 
 
 ## English Channel - FR-CGFS
-- There was a big change in 2015 when they switched to a new vessel, with subsequent changes in catchability
+- There was a change in 2015 when they switched to a new vessel, with subsequent changes in catchability, issue is not fixed at this point, see [issue #6](https://github.com/AquaAuma/FishGlob_data/issues/6)
 
 
 ## Gulf of Alaska - GOA
@@ -182,6 +181,7 @@ Please add notes and descriptions about the surveys, with links to documentation
 - Gear: removing one sampling gear
 - there is no sampling in 2012, 2018, 2019
 - PT-IBTS is surveyed annually, but missing 2012 data, and there is one year of data (2002) before the annual survey starts in 2005.
+- Taxa: the total number of taxa per year is low, likely not all taxa are included in this dataset
 
 
 
@@ -202,6 +202,24 @@ Please add notes and descriptions about the surveys, with links to documentation
 ### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_datras.R) 
 - Season: Data are collected from two different quarters: quarter 1 and 4
 - Gear: there have been some gear/design changes for that survey in the recent years (after after 2010), but it's minor enough we don't need to correct, unless we observe an important change 2010+
+
+
+
+## Northern Spanish Coast - SP-NORTH
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_datras.R) 
+- Hauls and length data: some hauls include length data that does not seem realistic and were removed from the dataset (872 hauls)
+
+
+
+## Spanish survey Gulf of Cadiz - SP-ARSA
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_datras.R) 
+- Taxa: total number of taxa seems low, maybe not all taxa are reported in this dataset
+- Hauls and length data: some hauls include length data that does not seem realistic and were removed from the dataset (14 hauls)
+
+
+
+## Spanish Porcupine Bank - SP-PORC
+### Data cleaning process [script](https://github.com/AquaAuma/FishGlob_data/blob/main/cleaning_codes/get_datras.R)
 
 
 
