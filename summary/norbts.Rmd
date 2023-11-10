@@ -50,7 +50,7 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 ## General info
 
-This document presents the cleaning code and summary of the Norwegian bottom trawl survey made available by IMR. It contains data from **1980** and up to **2017**.
+This document presents the cleaning code and summary of the Norwegian Barents Sea bottom trawl survey made available by IMR. It contains data from **2004** and up to **2019**.
 
 
 ## Data cleaning in R

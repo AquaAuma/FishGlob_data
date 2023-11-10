@@ -36,6 +36,7 @@ library(magrittr) # for names wrangling
 library(reshape2)
 library(googledrive)
 library(RODBC)
+library(here)
 
 # Get WoRM's id for sourcing
 wrm <- gnr_datasources() %>% 
@@ -64,13 +65,20 @@ files_ct = list.files('C:/Users/lpe116/OneDrive - UiT Office 365/FishGlob/IMR Su
 files_wg = list.files('C:/Users/lpe116/OneDrive - UiT Office 365/FishGlob/IMR Surveys/Weight/',
                       pattern="*.txt")
 
+# Aurore's path
+path_ct <- 'data/Publicly available/IMR Surveys/Count/'
+path_wg <- 'data/Publicly available/IMR Surveys/Weight/'
+
+files_ct = list.files(path_ct, pattern="*.txt")
+files_wg = list.files(path_wg, pattern="*.txt")
+
 ## For now remove 2021 and 2022 problem in format
 
 ct<-data.frame()
 
 for (i in files_ct){
   paste(i)
-  ct.yr<-read.delim(paste0("C:/Users/lpe116/OneDrive - UiT Office 365/FishGlob/IMR Surveys/Count/",i))
+  ct.yr<-read.delim(paste0(path_ct,i))
   ct.yr<-ct.yr %>% pivot_longer(cols = -c(Haul:samplequality), names_to="species", values_to = "Count")
   ct.yr<-ct.yr %>% filter(!Count==0)
   ct<-rbind(ct, ct.yr)                     
@@ -80,7 +88,7 @@ wg<-data.frame()
 
 for (i in files_wg){
   paste(i)
-  wg.yr<-read.delim(paste0("C:/Users/lpe116/OneDrive - UiT Office 365/FishGlob/IMR Surveys/Weight/",i))
+  wg.yr<-read.delim(paste0(path_wg,i))
   wg.yr<-wg.yr %>% pivot_longer(cols = -c(Haul:samplequality), names_to="species", values_to = "Weight")
   wg.yr<-wg.yr %>% filter(!Weight==0)
   wg<-rbind(wg, wg.yr)                     
@@ -90,17 +98,6 @@ common_col_names <- intersect(names(ct), names(wg))
 norw_dat = merge(ct, wg, by=common_col_names, all.x=T)
 
 rm(files_ct, files_wg, ct, ct.yr, wg, wg.yr)
-
-# change colnames from Norwegian to new names in English
-# setnames(norw_dat, old = c("Haul","CruiseKey","StationKey","HaulKey" ,"Cruise","Platform","Station","CatchPlatform","DateTime",  
-#                            "Latitude", "Longitude","BottomDepth","serialnumber","stationtype","Gear", "TowDistance","EffectiveTowDistance",
-#                            "MinHaulDepth", "MaxHaulDepth", "VerticalNetOpening","HorizontalNetOpening", "TrawlDoorSpread","gearcondition",
-#                            "samplequality", "species","Count","Weight" ),
-#          new = c("Year","Month","ShootLong","ShootLat","Gear","ShootTimeB","ShootTimeE",
-#                  "HaulDur","Depth","Netopening","Distance","quality_gear","quality_haul",
-#                  "SubSampleNr", "SpecCode","AkodeName","ScientificName","MeasureType",
-#                  "Weight","NoMeas","MeasureType2","LengthMethod",
-#                  "WeightSubSample","AbundanceSubSample","Interv","Sex"))
 
 
 ##########################################################################################
@@ -116,9 +113,6 @@ norw_dat$year<-format(as.Date(norw_dat$DateTime, format="%Y-%m-%d"),"%Y")
 norw_dat$month<-format(as.Date(norw_dat$DateTime, format="%Y-%m-%d"),"%m")
 ## Get the day
 norw_dat$day<-format(as.Date(norw_dat$DateTime, format="%Y-%m-%d"),"%d")
-
-
-# Haulid = norw_dat$Haul
 
 
 # Recalculate the haul duration from EffectiveTowDistance (in nm) knowing the ship go on average 3nm/h (=3 knots)
@@ -168,7 +162,8 @@ norw_dat$Distance <- norw_dat$EffectiveTowDistance*1.852/1
 norw_dat[norw_dat$Distance<0,]$Distance <- NA
 
 # Trawl opening in the Barents Sea ecosystem survey is 25m (small variations could occur)
-norw_dat$DoorSpread <- 0.025 #in km
+# Door spread is 50m (small variations could occur as well)
+norw_dat$DoorSpread <- 0.05 #in km
 
 
 ##########################################################################################
@@ -178,7 +173,7 @@ norw_dat$DoorSpread <- 0.025 #in km
 # Estimate missing swept areas in km2
 norw_dat <- norw_dat %>%
   mutate(Area.swept = DoorSpread*Distance) %>% 
-  filter(!is.na(HaulDur))
+  filter(!is.na(HaulDur)) # there is no missing haul duration
 
 nor <- norw_dat %>%
   select(Haul, year, Area.swept, HaulDur, Gear, BottomDepth, Distance) %>%
@@ -188,22 +183,7 @@ par(mfrow=c(1,2))
 plot(Area.swept ~ HaulDur, data=nor) # Ok
 plot(Area.swept ~ BottomDepth, data=nor)
 
-# nor$Dur2 <- (nor$HaulDur-mean(nor$HaulDur))^2
-# lm0 <- lm(Area.swept ~ HaulDur + Dur2, data=nor) # 68% of data variability explained
-# 
-# pred0 <- predict(lm0, newdata=nor, interval='confidence', level=0.95)
-# nor <- cbind(nor,pred0)
-# nor[is.na(nor$Area.swept),]$Area.swept <- nor[is.na(nor$Area.swept),]$fit
-# 
-# nor <- nor %>%
-#   select(HaulID, Area.swept) %>%
-#   dplyr::rename(Area2=Area.swept) %>%
-#   filter(Area2>=0)
-# 
-# nor2 <- left_join(norw_dat, nor, by='HaulID')
-# nor2 <- nor2 %>%
-#   mutate(Area.swept = coalesce(Area.swept,Area2))
-# norw_dat <- nor2  
+# no need to estimate missing swept areas with this dataset
 
 rm(nor)
 
@@ -282,7 +262,7 @@ clean_auto <- clean_taxa(norw_fish_names, input_survey = survey_code, save = F,
 #clean_auto<-output_df #done manually meanwhile
 
 ### Clean manual
-missing_taxa <- setdiff(norw_fish_names, clean_auto$query) # none
+missing_taxa <- setdiff(norw_fish_names, clean_auto$query) # they're all inverts
 
 #alphaid <- get_wormsid(missing_taxa)
 #alphaid <- tibble(taxa = missing_taxa,
@@ -357,36 +337,36 @@ write_clean_data(data = clean_norw, survey = survey_code, overwrite = T)
 # Quick FIX for issue #23 #
 
 # Load data
-load("~/GitHub/FishGlob_data/outputs/Cleaned_data/NOR-BTS_clean.RData")
-
-# Get missing data 
-missing_aphia_id <- data %>% filter(is.na(aphia_id)) %>% pull(accepted_name) %>% unique()
-
-# Get ID for missing daata
-fix_missing_ids <- clean_taxa(missing_aphia_id) %>% 
-  select(accepted_name = query,
-         worms_id_new = worms_id)
-
-# double check they are all there
-fix_missing_ids %>% filter(is.na(worms_id_new)) # checked!
-
-# Joint data with new values
-fixed_ids_df <-
-  data %>% filter(is.na(aphia_id)) %>%  #filter data missing id
-    left_join(fix_missing_ids) %>% # include new ids
-    mutate(aphia_id = as.character(worms_id_new)) %>% 
-    select(-worms_id_new) %>% 
-    bind_rows(data) %>% # incorporate all data
-    filter(!is.na(aphia_id)) # remove blank-id duplicates
-
-# Double check no more na's
-fixed_ids_df %>% filter(is.na(aphia_id)) #check! 
-
-# double check all hauls are there 
-anti_join(data %>% select(haul_id),fixed_ids_df %>% select(haul_id)) #check!
-
-# Save new data
-write_clean_data(data = fixed_ids_df, survey = "Nor-BTS", overwrite = T)
+# load("~/GitHub/FishGlob_data/outputs/Cleaned_data/NOR-BTS_clean.RData")
+# 
+# # Get missing data 
+# missing_aphia_id <- data %>% filter(is.na(aphia_id)) %>% pull(accepted_name) %>% unique()
+# 
+# # Get ID for missing daata
+# fix_missing_ids <- clean_taxa(missing_aphia_id) %>% 
+#   select(accepted_name = query,
+#          worms_id_new = worms_id)
+# 
+# # double check they are all there
+# fix_missing_ids %>% filter(is.na(worms_id_new)) # checked!
+# 
+# # Joint data with new values
+# fixed_ids_df <-
+#   data %>% filter(is.na(aphia_id)) %>%  #filter data missing id
+#     left_join(fix_missing_ids) %>% # include new ids
+#     mutate(aphia_id = as.character(worms_id_new)) %>% 
+#     select(-worms_id_new) %>% 
+#     bind_rows(data) %>% # incorporate all data
+#     filter(!is.na(aphia_id)) # remove blank-id duplicates
+# 
+# # Double check no more na's
+# fixed_ids_df %>% filter(is.na(aphia_id)) #check! 
+# 
+# # double check all hauls are there 
+# anti_join(data %>% select(haul_id),fixed_ids_df %>% select(haul_id)) #check!
+# 
+# # Save new data
+# write_clean_data(data = fixed_ids_df, survey = "Nor-BTS", overwrite = T)
 
 # ------- end fix --------- #
 
