@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 13:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,23 +828,23 @@ hex_res_8_plot.png  used on input line 871.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 [19 <../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_map_per_haul.p
-ng, id=233, 902.1705pt x 337.0191pt>
+ng, id=233, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_map_per_h
 aul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_map_per_ha
 ul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_
 hex_res_7_map_per_haul.png  used on input line 875.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_map_per_haul.p
-ng, id=234, 902.1705pt x 337.0191pt>
+ng, id=234, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_map_per_h
 aul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_map_per_ha
 ul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_
 hex_res_8_map_per_haul.png  used on input line 877.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 [20 <../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_plot.png> 
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_map_per_haul.p
 ng>]
@@ -868,18 +868,19 @@ hex_res_8_map_per_grid_nyears.png  used on input line 884.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 [21 <../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_map_per_ha
 ul.png> <../outputs/Flags/trimming_method1/hex_res7/SCS-SUMMER_hex_res_7_map_pe
-r_grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_r
-es_8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png, id=247, 902.170
-5pt x 431.4519pt>
+r_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png, id=246, 1156.32
+pt x 722.7pt>
 File: ../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png Graphic fil
 e (type png)
 <use ../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_h
 aul.png  used on input line 895.
-(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
-[22 <../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png>]
-<../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_plot.png, id=255
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[22 <../outputs/Flags/trimming_method1/hex_res8/SCS-SUMMER_hex_res_8_map_per_gr
+id_nyears.png> <../outputs/Flags/trimming_method2/SCS-SUMMER_map_per_haul.png>]
+[23]
+<../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_plot.png, id=259
 , 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_plot.png Gr
 aphic file (type png)
@@ -887,7 +888,7 @@ aphic file (type png)
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_he
 x_res_7_plot.png  used on input line 931.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_plot.png, id=256
+<../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_plot.png, id=260
 , 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_plot.png Gr
 aphic file (type png)
@@ -895,31 +896,31 @@ aphic file (type png)
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_he
 x_res_8_plot.png  used on input line 933.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[23
+[24
 
  <../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_haul.png
-, id=264, 902.1705pt x 337.0191pt>
+, id=268, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_hau
 l.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_haul
 .png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_he
 x_res_7_map_per_haul.png  used on input line 937.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_haul.png
-, id=265, 902.1705pt x 337.0191pt>
+, id=269, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_hau
 l.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_haul
 .png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_he
 x_res_8_map_per_haul.png  used on input line 939.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
-[24 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_plot.png> <.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+[25 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_plot.png> <.
 ./outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_haul.png>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_grid_nye
-ars.png, id=270, 1084.05pt x 505.89pt>
+ars.png, id=275, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_gri
 d_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_grid
@@ -928,7 +929,7 @@ Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_he
 x_res_7_map_per_grid_nyears.png  used on input line 944.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_grid_nye
-ars.png, id=271, 1084.05pt x 505.89pt>
+ars.png, id=276, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_gri
 d_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_grid
@@ -936,12 +937,12 @@ _nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_he
 x_res_8_map_per_grid_nyears.png  used on input line 946.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[25 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_haul
+[26 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_map_per_haul
 .png> <../outputs/Flags/trimming_method1/hex_res7/SCS-FALL_hex_res_7_map_per_gr
-id_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_res_8_m
-ap_per_grid_nyears.png>] [26]
+id_nyears.png>] [27 <../outputs/Flags/trimming_method1/hex_res8/SCS-FALL_hex_re
+s_8_map_per_grid_nyears.png>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_plot.png, id=2
-86, 722.7pt x 722.7pt>
+90, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_plot.png 
 Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_plot.png>
@@ -949,39 +950,39 @@ Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_
 hex_res_7_plot.png  used on input line 991.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_plot.png, id=2
-87, 722.7pt x 722.7pt>
+91, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_plot.png 
 Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_plot.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_
 hex_res_8_plot.png  used on input line 993.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[27
+[28
 
  <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_haul.p
-ng, id=296, 902.1705pt x 337.0191pt>
+ng, id=300, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_h
 aul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_ha
 ul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_
 hex_res_7_map_per_haul.png  used on input line 997.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_haul.p
-ng, id=297, 902.1705pt x 337.0191pt>
+ng, id=301, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_h
 aul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_ha
 ul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_
 hex_res_8_map_per_haul.png  used on input line 999.
-(pdftex.def)             Requested size: 469.75084pt x 175.48235pt.
-[28 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_plot.png> 
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+[29 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_plot.png> 
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_haul.p
 ng>]
 <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_grid_n
-years.png, id=302, 1084.05pt x 505.89pt>
+years.png, id=306, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_g
 rid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_per_gr
@@ -990,7 +991,7 @@ Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_
 hex_res_7_map_per_grid_nyears.png  used on input line 1004.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_grid_n
-years.png, id=303, 1084.05pt x 505.89pt>
+years.png, id=307, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_g
 rid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_gr
@@ -998,48 +999,48 @@ id_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_
 hex_res_8_map_per_grid_nyears.png  used on input line 1006.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[29 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_ha
+[30 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_ha
 ul.png> <../outputs/Flags/trimming_method1/hex_res7/SCS-SPRING_hex_res_7_map_pe
-r_grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_r
-es_8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png, id=310, 902.170
-5pt x 431.4519pt>
+r_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png, id=313, 1156.32
+pt x 722.7pt>
 File: ../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png Graphic fil
 e (type png)
 <use ../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/SCS-SPRING_map_per_h
 aul.png  used on input line 1017.
-(pdftex.def)             Requested size: 469.75084pt x 224.65253pt.
-[30 <../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png>] (./scs.aux
-) ) 
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[31 <../outputs/Flags/trimming_method1/hex_res8/SCS-SPRING_hex_res_8_map_per_gr
+id_nyears.png> <../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png>]
+[32] (./scs.aux) ) 
 Here is how much of TeX's memory you used:
- 15869 strings out of 478268
- 268408 string characters out of 5846346
+ 15871 strings out of 478268
+ 268422 string characters out of 5846346
  670569 words of memory out of 5000000
  33604 multiletter control sequences out of 15000+600000
  525029 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1000b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local
-/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/
-texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist
-/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
-lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on scs.pdf (30 pages, 17209540 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.
+enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
+ic/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk
+10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on scs.pdf (32 pages, 20854854 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  31040 words of extra memory for PDF output out of 35830 (max. 10000000)
 

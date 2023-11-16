@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,115 +673,115 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [8]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [9]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [10]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [11]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [12]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [13]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [14]
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 
-Underfull \vbox (badness 10000) detected at line 916
+Underfull \vbox (badness 10000) detected at line 917
  []
 
 [15] [16] [17
@@ -791,13 +791,13 @@ Underfull \vbox (badness 10000) detected at line 916
 File: neus_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/hauls_per_year-1.pdf  used on 
-input line 1023.
+input line 1024.
 (pdftex.def)             Requested size: 351.32234pt x 313.17877pt.
 [18
 
  <./neus_files/figure-latex/hauls_per_year-1.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-037.
+038.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -806,7 +806,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: neus_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/summary_tech_vars-1.pdf  used 
-on input line 1048.
+on input line 1049.
 (pdftex.def)             Requested size: 469.76996pt x 281.86197pt.
 [19
 
@@ -816,7 +816,7 @@ on input line 1048.
 File: neus_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/summary_var_plot-1.pdf  used o
-n input line 1077.
+n input line 1078.
 (pdftex.def)             Requested size: 448.68884pt x 313.17877pt.
 [20
 
@@ -825,7 +825,7 @@ n input line 1077.
 File: neus_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/extreme_biomass-1.pdf  used on
- input line 1096.
+ input line 1097.
 (pdftex.def)             Requested size: 451.70016pt x 313.17877pt.
 [21
 
@@ -835,7 +835,7 @@ Package pdftex.def Info: neus_files/figure-latex/extreme_biomass-1.pdf  used on
 File: neus_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/summary_var_swept-1.pdf  used 
-on input line 1119.
+on input line 1120.
 (pdftex.def)             Requested size: 446.67445pt x 315.18153pt.
 [22
 
@@ -844,7 +844,7 @@ on input line 1119.
 File: neus_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/abundant_spp-1.pdf  used on in
-put line 1127.
+put line 1128.
 (pdftex.def)             Requested size: 459.74442pt x 325.23404pt.
 [23
 
@@ -854,195 +854,196 @@ t>
 File: neus_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/fixed_point_map-1.pdf  used on
- input line 1137.
+ input line 1138.
 (pdftex.def)             Requested size: 332.2607pt x 351.33307pt.
 [24
 
  <./neus_files/figure-latex/fixed_point_map-1.pdf>]
-<../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_flagging.png, id=238, 505.8
-9pt x 505.89pt>
+<../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_flagging.png, id=238, 3212.
+0pt x 2007.5pt>
 File: ../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_flagging.png Graphic f
 ile (type png)
 <use ../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_flagging.png>
 Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_fla
-gging.png  used on input line 1149.
-(pdftex.def)             Requested size: 375.81166pt x 375.81166pt.
+gging.png  used on input line 1150.
+(pdftex.def)             Requested size: 375.76819pt x 234.85512pt.
 [25
 
  <../outputs/Flags/taxonomic_flagging/NEUS_taxonomic_flagging.png>]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_plot.png, id=24
-7, 722.7pt x 722.7pt>
+9, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_plot.png G
 raphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_plot.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_h
-ex_res_7_plot.png  used on input line 1177.
+ex_res_7_plot.png  used on input line 1178.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_plot.png, id=24
-8, 722.7pt x 722.7pt>
+<../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_plot.png, id=25
+0, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_plot.png G
 raphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_plot.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_h
-ex_res_8_plot.png  used on input line 1179.
+ex_res_8_plot.png  used on input line 1180.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 [26
 
  <../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_haul.pn
-g, id=256, 902.1705pt x 338.2236pt>
+g, id=258, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_ha
 ul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_hau
 l.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_h
-ex_res_7_map_per_haul.png  used on input line 1183.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
+ex_res_7_map_per_haul.png  used on input line 1184.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_haul.pn
-g, id=257, 902.1705pt x 338.2236pt>
+g, id=259, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_ha
 ul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_hau
 l.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_h
-ex_res_8_map_per_haul.png  used on input line 1185.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
+ex_res_8_map_per_haul.png  used on input line 1186.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 [27 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_plot.png> <
 ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_haul.png
 >]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_grid_ny
-ears.png, id=262, 1084.05pt x 505.89pt>
+ears.png, id=264, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_gr
 id_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_gri
 d_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_h
-ex_res_7_map_per_grid_nyears.png  used on input line 1190.
+ex_res_7_map_per_grid_nyears.png  used on input line 1191.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_grid_ny
-ears.png, id=263, 1084.05pt x 505.89pt>
+ears.png, id=265, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_gr
 id_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_gri
 d_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_h
-ex_res_8_map_per_grid_nyears.png  used on input line 1192.
+ex_res_8_map_per_grid_nyears.png  used on input line 1193.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 [28 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_hau
 l.png> <../outputs/Flags/trimming_method1/hex_res7/NEUS-Fall_hex_res_7_map_per_
-grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_
-8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png, id=270, 902.1705
-pt x 338.2236pt>
+grid_nyears.png>]
+<../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png, id=271, 1156.32p
+t x 722.7pt>
 File: ../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png Graphic file
  (type png)
 <use ../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/NEUS-Fall_map_per_ha
-ul.png  used on input line 1203.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
-[29 <../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png>]
+ul.png  used on input line 1204.
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[29 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Fall_hex_res_8_map_per_gri
+d_nyears.png> <../outputs/Flags/trimming_method2/NEUS-Fall_map_per_haul.png>] [
+30]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_plot.png, id=
-278, 722.7pt x 722.7pt>
+284, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_plot.png
  Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_plot.png>
 
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring
-_hex_res_7_plot.png  used on input line 1239.
+_hex_res_7_plot.png  used on input line 1240.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_plot.png, id=
-279, 722.7pt x 722.7pt>
+285, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_plot.png
  Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_plot.png>
 
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring
-_hex_res_8_plot.png  used on input line 1241.
+_hex_res_8_plot.png  used on input line 1242.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[30
+[31
 
  <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_haul.
-png, id=287, 902.1705pt x 338.2236pt>
+png, id=295, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_
 haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_h
 aul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring
-_hex_res_7_map_per_haul.png  used on input line 1245.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
+_hex_res_7_map_per_haul.png  used on input line 1246.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_haul.
-png, id=288, 902.1705pt x 338.2236pt>
+png, id=296, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_
 haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_h
 aul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring
-_hex_res_8_map_per_haul.png  used on input line 1247.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
-[31 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_plot.png>
+_hex_res_8_map_per_haul.png  used on input line 1248.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+[32 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_plot.png>
  <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_haul
 .png>]
 <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_grid_
-nyears.png, id=295, 1084.05pt x 505.89pt>
+nyears.png, id=301, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_
 grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_per_g
 rid_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring
-_hex_res_7_map_per_grid_nyears.png  used on input line 1252.
+_hex_res_7_map_per_grid_nyears.png  used on input line 1253.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_grid_
-nyears.png, id=296, 1084.05pt x 505.89pt>
+nyears.png, id=302, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_
 grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_g
 rid_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring
-_hex_res_8_map_per_grid_nyears.png  used on input line 1254.
+_hex_res_8_map_per_grid_nyears.png  used on input line 1255.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[32 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_h
+[33 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_h
 aul.png> <../outputs/Flags/trimming_method1/hex_res7/NEUS-Spring_hex_res_7_map_
-per_grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_he
-x_res_8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png, id=303, 902.17
-05pt x 338.2236pt>
+per_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png, id=308, 1156.3
+2pt x 722.7pt>
 File: ../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png Graphic fi
 le (type png)
 <use ../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/NEUS-Spring_map_per_
-haul.png  used on input line 1265.
-(pdftex.def)             Requested size: 469.75084pt x 176.10953pt.
-[33 <../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png>] (./neus.a
-ux) ) 
+haul.png  used on input line 1266.
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[34 <../outputs/Flags/trimming_method1/hex_res8/NEUS-Spring_hex_res_8_map_per_g
+rid_nyears.png> <../outputs/Flags/trimming_method2/NEUS-Spring_map_per_haul.png
+>] [35] (./neus.aux) ) 
 Here is how much of TeX's memory you used:
- 15814 strings out of 478268
- 263872 string characters out of 5846346
- 733654 words of memory out of 5000000
+ 15816 strings out of 478268
+ 263886 string characters out of 5846346
+ 733965 words of memory out of 5000000
  33548 multiletter control sequences out of 15000+600000
  525361 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1001b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loc
-al/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive
-/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-di
-st/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type
-1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/l
-m/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf
--dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
-c/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on neus.pdf (33 pages, 12495811 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm
+-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/
+usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texl
+ive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+mmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
+lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on neus.pdf (35 pages, 21210510 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 353 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
  30991 words of extra memory for PDF output out of 35830 (max. 10000000)
 
