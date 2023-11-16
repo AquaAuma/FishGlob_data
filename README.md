@@ -63,4 +63,6 @@ We highly encourage users to cite the corresponding data descriptor paper along 
 
 ### :warning: Important updates :warning:
 
+> **16/11/2023**: FishGlob_data v2.0 incoming
+
 > **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
