@@ -369,7 +369,8 @@ clean_auto.missing <- rbind(clean_auto, wph_oce, ast_ygr)
 #--------------------------------------------------------------------------------------#
 
 clean_taxa <- clean_auto.missing %>% 
-  select(-survey)
+  select(-survey) %>% 
+  filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 
 clean_seus <- left_join(seus, clean_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% # query does not indicate taxa entry that were 

@@ -275,7 +275,8 @@ clean_wctri <- left_join(wctri, clean_taxa, by=c("taxa2"="query")) %>%
          survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
-                              paste0(survey,"-",season),survey_unit)) %>% 
+                              paste0(survey,"-",season),survey_unit),
+         year = as.numeric(year)) %>% 
   select(fishglob_data_columns$`Column name fishglob`)
 
 #check for duplicates

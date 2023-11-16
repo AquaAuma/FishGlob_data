@@ -101,7 +101,7 @@ flag_spp <- function(df, region){
       #absences
       ggplot2::geom_point(data = abs, ggplot2::aes(x = year, y = accepted_name, color = "black"), alpha = 0.2) +
       #presences
-      ggplot2::geom_point(data = pres, ggplot2::aes(x = year, y = accepted_name, fill = "black")) +
+      ggplot2::geom_point(data = pres, ggplot2::aes(x = as.numeric(year), y = accepted_name, fill = "black")) +
       ggplot2::ggtitle(paste0("Region: ", region)) +
       ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5),
                      axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust=1, size = 9),

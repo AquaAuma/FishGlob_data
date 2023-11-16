@@ -365,10 +365,10 @@ var_plot
 if(!is.na(mean(survey$num_cpua, na.rm=T))){
 spp <- survey %>% 
   group_by(year, accepted_name) %>% 
-  summarize(wgt = sum(wgt_cpua), nbr_years = length(year)) %>% 
+  summarize(wgt = sum(wgt_cpua, na.rm=T), nbr_years = length(year)) %>% 
   filter(nbr_years>10) %>% 
   group_by(accepted_name) %>% 
-  summarize(wgt = median(wgt)) %>% 
+  summarize(wgt = median(wgt, na.rm=T)) %>% 
   arrange(desc(wgt)) %>% 
   top_n(n=6) %>% 
   pull(accepted_name)
@@ -388,10 +388,10 @@ spp_plot <- survey %>%
 if(is.na(mean(survey$wgt_cpua, na.rm=T))){
   spp <- survey %>% 
   group_by(year, accepted_name) %>% 
-  summarize(num = sum(num_cpua), nbr_years = length(year)) %>% 
+  summarize(num = sum(num_cpua, na.rm=T), nbr_years = length(year)) %>% 
   filter(nbr_years>10) %>% 
   group_by(accepted_name) %>% 
-  summarize(num = median(num)) %>% 
+  summarize(num = median(num, na.rm=T)) %>% 
   arrange(desc(num)) %>% 
   top_n(n=6) %>% 
   pull(accepted_name)
