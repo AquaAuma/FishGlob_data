@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 11:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  17 NOV 2023 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,103 +673,103 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [3]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [4]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [5]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [6]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [7]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [8]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [9]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [10]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [11]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [12]
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 
-Underfull \vbox (badness 10000) detected at line 824
+Underfull \vbox (badness 10000) detected at line 825
  []
 
 [13] [14]
-Overfull \hbox (66.82597pt too wide) in paragraph at lines 894--905
+Overfull \hbox (66.82597pt too wide) in paragraph at lines 895--906
  [][] 
  []
 
@@ -780,13 +780,13 @@ Overfull \hbox (66.82597pt too wide) in paragraph at lines 894--905
 File: gmex_files/figure-latex/hauls_per_year-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/hauls_per_year-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/hauls_per_year-1.pdf  used on 
-input line 931.
+input line 932.
 (pdftex.def)             Requested size: 351.32234pt x 313.17877pt.
 [16
 
  <./gmex_files/figure-latex/hauls_per_year-1.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-45.
+46.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -795,7 +795,7 @@ t>
 File: gmex_files/figure-latex/summary_tech_vars-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/summary_tech_vars-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/summary_tech_vars-1.pdf  used 
-on input line 956.
+on input line 957.
 (pdftex.def)             Requested size: 469.76407pt x 282.66605pt.
 [17
 
@@ -805,7 +805,7 @@ on input line 956.
 File: gmex_files/figure-latex/summary_var_plot-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/summary_var_plot-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/summary_var_plot-1.pdf  used o
-n input line 985.
+n input line 986.
 (pdftex.def)             Requested size: 448.68884pt x 313.17877pt.
 [18
 
@@ -814,7 +814,7 @@ n input line 985.
 File: gmex_files/figure-latex/extreme_biomass-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/extreme_biomass-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/extreme_biomass-1.pdf  used on
- input line 1004.
+ input line 1005.
 (pdftex.def)             Requested size: 449.69261pt x 313.17877pt.
 [19
 
@@ -824,7 +824,7 @@ Package pdftex.def Info: gmex_files/figure-latex/extreme_biomass-1.pdf  used on
 File: gmex_files/figure-latex/summary_var_swept-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/summary_var_swept-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/summary_var_swept-1.pdf  used 
-on input line 1027.
+on input line 1028.
 (pdftex.def)             Requested size: 448.68884pt x 315.18634pt.
 [20
 
@@ -833,7 +833,7 @@ on input line 1027.
 File: gmex_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/abundant_spp-1.pdf  used on in
-put line 1035.
+put line 1036.
 (pdftex.def)             Requested size: 460.72012pt x 313.16922pt.
 [21
 
@@ -843,195 +843,196 @@ put line 1035.
 File: gmex_files/figure-latex/fixed_point_map-1.pdf Graphic file (type pdf)
 <use gmex_files/figure-latex/fixed_point_map-1.pdf>
 Package pdftex.def Info: gmex_files/figure-latex/fixed_point_map-1.pdf  used on
- input line 1045.
+ input line 1046.
 (pdftex.def)             Requested size: 469.74974pt x 202.45552pt.
 [22
 
  <./gmex_files/figure-latex/fixed_point_map-1.pdf>]
-<../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_flagging.png, id=227, 902.1
-705pt x 317.0244pt>
+<../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_flagging.png, id=227, 3212.
+0pt x 2007.5pt>
 File: ../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_flagging.png Graphic f
 ile (type png)
 <use ../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_flagging.png>
 Package pdftex.def Info: ../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_fla
-gging.png  used on input line 1057.
-(pdftex.def)             Requested size: 375.79791pt x 132.05608pt.
+gging.png  used on input line 1058.
+(pdftex.def)             Requested size: 375.76819pt x 234.85512pt.
 [23
 
  <../outputs/Flags/taxonomic_flagging/GMEX_taxonomic_flagging.png>]
 <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_plot.png, id=
-235, 722.7pt x 722.7pt>
+237, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_plot.png
  Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_plot.png>
 
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer
-_hex_res_7_plot.png  used on input line 1085.
+_hex_res_7_plot.png  used on input line 1086.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_plot.png, id=
-236, 722.7pt x 722.7pt>
+238, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_plot.png
  Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_plot.png>
 
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer
-_hex_res_8_plot.png  used on input line 1087.
+_hex_res_8_plot.png  used on input line 1088.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
 [24
 
  <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_haul.
-png, id=245, 902.1705pt x 317.0244pt>
+png, id=247, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_
 haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_h
 aul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer
-_hex_res_7_map_per_haul.png  used on input line 1091.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+_hex_res_7_map_per_haul.png  used on input line 1092.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_haul.
-png, id=246, 902.1705pt x 317.0244pt>
+png, id=248, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_
 haul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_h
 aul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer
-_hex_res_8_map_per_haul.png  used on input line 1093.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+_hex_res_8_map_per_haul.png  used on input line 1094.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 [25 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_plot.png>
  <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_haul
 .png>]
 <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_grid_
-nyears.png, id=252, 1084.05pt x 505.89pt>
+nyears.png, id=254, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_
 grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_per_g
 rid_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer
-_hex_res_7_map_per_grid_nyears.png  used on input line 1098.
+_hex_res_7_map_per_grid_nyears.png  used on input line 1099.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_grid_
-nyears.png, id=253, 1084.05pt x 505.89pt>
+nyears.png, id=255, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_
 grid_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_g
 rid_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer
-_hex_res_8_map_per_grid_nyears.png  used on input line 1100.
+_hex_res_8_map_per_grid_nyears.png  used on input line 1101.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 [26 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_h
 aul.png> <../outputs/Flags/trimming_method1/hex_res7/GMEX-Summer_hex_res_7_map_
-per_grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_he
-x_res_8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png, id=260, 902.17
-05pt x 317.0244pt>
+per_grid_nyears.png>]
+<../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png, id=261, 1156.3
+2pt x 722.7pt>
 File: ../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png Graphic fi
 le (type png)
 <use ../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/GMEX-Summer_map_per_
-haul.png  used on input line 1111.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
-[27 <../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png>]
-<../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_plot.png, id=26
-8, 722.7pt x 722.7pt>
+haul.png  used on input line 1112.
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[27 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Summer_hex_res_8_map_per_g
+rid_nyears.png> <../outputs/Flags/trimming_method2/GMEX-Summer_map_per_haul.png
+>] [28]
+<../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_plot.png, id=27
+4, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_plot.png G
 raphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_plot.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_h
-ex_res_7_plot.png  used on input line 1147.
+ex_res_7_plot.png  used on input line 1148.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-<../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png, id=26
-9, 722.7pt x 722.7pt>
+<../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png, id=27
+5, 722.7pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png G
 raphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_h
-ex_res_8_plot.png  used on input line 1149.
+ex_res_8_plot.png  used on input line 1150.
 (pdftex.def)             Requested size: 375.80615pt x 375.80615pt.
-[28
+[29
 
  <../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_plot.png>]
 <../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_haul.pn
-g, id=277, 902.1705pt x 317.0244pt>
+g, id=283, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_ha
 ul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_hau
 l.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_h
-ex_res_7_map_per_haul.png  used on input line 1153.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
+ex_res_7_map_per_haul.png  used on input line 1154.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_haul.pn
-g, id=278, 902.1705pt x 317.0244pt>
+g, id=284, 1445.4pt x 722.7pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_ha
 ul.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_hau
 l.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_h
-ex_res_8_map_per_haul.png  used on input line 1155.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
-[29 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png> <
+ex_res_8_map_per_haul.png  used on input line 1156.
+(pdftex.def)             Requested size: 469.74944pt x 234.87471pt.
+[30 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_plot.png> <
 ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_haul.png
 >]
 <../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_grid_ny
-ears.png, id=283, 1084.05pt x 505.89pt>
+ears.png, id=289, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_gr
 id_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_gri
 d_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_h
-ex_res_7_map_per_grid_nyears.png  used on input line 1160.
+ex_res_7_map_per_grid_nyears.png  used on input line 1161.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_grid_ny
-ears.png, id=284, 1084.05pt x 505.89pt>
+ears.png, id=290, 1084.05pt x 505.89pt>
 File: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_gr
 id_nyears.png Graphic file (type png)
 <use ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_gri
 d_nyears.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_h
-ex_res_8_map_per_grid_nyears.png  used on input line 1162.
+ex_res_8_map_per_grid_nyears.png  used on input line 1163.
 (pdftex.def)             Requested size: 469.75496pt x 219.21896pt.
-[30 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_hau
+[31 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_hau
 l.png> <../outputs/Flags/trimming_method1/hex_res7/GMEX-Fall_hex_res_7_map_per_
-grid_nyears.png> <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_
-8_map_per_grid_nyears.png>]
-<../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png, id=291, 902.1705
-pt x 317.0244pt>
+grid_nyears.png>]
+<../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png, id=298, 1156.32p
+t x 722.7pt>
 File: ../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png Graphic file
  (type png)
 <use ../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png>
 Package pdftex.def Info: ../outputs/Flags/trimming_method2/GMEX-Fall_map_per_ha
-ul.png  used on input line 1173.
-(pdftex.def)             Requested size: 469.75084pt x 165.07132pt.
-[31 <../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png>] (./gmex.aux
-) ) 
+ul.png  used on input line 1174.
+(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+[32 <../outputs/Flags/trimming_method1/hex_res8/GMEX-Fall_hex_res_8_map_per_gri
+d_nyears.png> <../outputs/Flags/trimming_method2/GMEX-Fall_map_per_haul.png>] [
+33] (./gmex.aux) ) 
 Here is how much of TeX's memory you used:
- 15800 strings out of 478268
- 263735 string characters out of 5846346
- 725741 words of memory out of 5000000
+ 15802 strings out of 478268
+ 263749 string characters out of 5846346
+ 726053 words of memory out of 5000000
  33546 multiletter control sequences out of 15000+600000
  525029 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,10n,77p,1001b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local
-/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/
-texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist
-/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
-lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on gmex.pdf (31 pages, 11880642 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.
+enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi7
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
+ic/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk
+10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on gmex.pdf (33 pages, 16881591 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
  30983 words of extra memory for PDF output out of 35830 (max. 10000000)
 

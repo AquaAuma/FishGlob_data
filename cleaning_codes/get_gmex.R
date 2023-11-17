@@ -483,7 +483,8 @@ clean_auto.missing <- rbind(clean_auto, ast_ygr)
 #### INTEGRATE CLEAN TAXA in GMEX survey data ####
 #--------------------------------------------------------------------------------------#
 clean_taxa <- clean_auto.missing %>% 
-  select(-survey)
+  select(-survey) %>% 
+  filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 
 clean_gmex <- left_join(gmex, clean_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% 
@@ -539,7 +540,7 @@ write_clean_data(data = clean_gmex, survey = "GMEX", overwrite = T)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
