@@ -31,6 +31,8 @@ library(lubridate)
 library(googledrive)
 library(taxize) # for getting correct species names
 library(magrittr) # for names wrangling
+library(here)
+library(readxl)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
