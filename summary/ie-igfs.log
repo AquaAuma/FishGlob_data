@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  17 NOV 2023 22:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,7 +1009,7 @@ nyears.png> <../outputs/Flags/trimming_method2/IE-IGFS_map_per_haul.png>] [38]
 Here is how much of TeX's memory you used:
  15716 strings out of 478268
  257462 string characters out of 5846346
- 876653 words of memory out of 5000000
+ 876436 words of memory out of 5000000
  33468 multiletter control sequences out of 15000+600000
  525112 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1030,7 +1030,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk1
 0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/t
 exlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on ie-igfs.pdf (38 pages, 6859216 bytes).
+Output written on ie-igfs.pdf (38 pages, 6859035 bytes).
 PDF statistics:
  440 PDF objects out of 1000 (max. 8388607)
  335 compressed objects within 4 object streams

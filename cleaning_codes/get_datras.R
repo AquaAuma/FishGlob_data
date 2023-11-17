@@ -1157,7 +1157,7 @@ survey_std <- survey4 %>%
 
 # integrate taxonomic flags
 for(i in 1:length(surveys)){
-  if(!surveys[i] %in% c("FALK","GSL-N","MRT","NZ-CHAT","SCS", "SWC-IBTS", "SP-PORC")){
+  if(!surveys[i] %in% c("SWC-IBTS", "SP-PORC")){
     xx <- data.frame(read_delim(paste0("outputs/Flags/taxonomic_flagging/",
                                        surveys[i],"_flagspp.txt"),
                                 delim=";", escape_double = FALSE, col_names = FALSE,

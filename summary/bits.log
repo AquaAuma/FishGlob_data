@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  17 NOV 2023 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1073,7 +1073,7 @@ years.png> <../outputs/Flags/trimming_method2/BITS-4_map_per_haul.png>] [43] (.
 Here is how much of TeX's memory you used:
  15812 strings out of 478268
  263187 string characters out of 5846346
- 878331 words of memory out of 5000000
+ 878114 words of memory out of 5000000
  33546 multiletter control sequences out of 15000+600000
  525029 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1094,7 +1094,7 @@ lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/lo
 cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on bits.pdf (43 pages, 15885686 bytes).
+Output written on bits.pdf (43 pages, 15885507 bytes).
 PDF statistics:
  499 PDF objects out of 1000 (max. 8388607)
  382 compressed objects within 4 object streams

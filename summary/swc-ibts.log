@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  17 NOV 2023 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,7 +1076,7 @@ id_nyears.png> <../outputs/Flags/trimming_method2/SWC-IBTS-4_map_per_haul.png>]
 Here is how much of TeX's memory you used:
  15799 strings out of 478268
  263304 string characters out of 5846346
- 878231 words of memory out of 5000000
+ 878014 words of memory out of 5000000
  33536 multiletter control sequences out of 15000+600000
  525029 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1097,7 +1097,7 @@ texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/202
 /lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.p
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/l
 ocal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on swc-ibts.pdf (42 pages, 11178314 bytes).
+Output written on swc-ibts.pdf (42 pages, 11178060 bytes).
 PDF statistics:
  491 PDF objects out of 1000 (max. 8388607)
  377 compressed objects within 4 object streams
