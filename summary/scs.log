@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  17 NOV 2023 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ id_nyears.png> <../outputs/Flags/trimming_method2/SCS-SPRING_map_per_haul.png>]
 Here is how much of TeX's memory you used:
  15871 strings out of 478268
  268422 string characters out of 5846346
- 670569 words of memory out of 5000000
+ 670687 words of memory out of 5000000
  33604 multiletter control sequences out of 15000+600000
  525029 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1037,7 +1037,7 @@ ic/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk
 10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on scs.pdf (32 pages, 20854854 bytes).
+Output written on scs.pdf (32 pages, 20896675 bytes).
 PDF statistics:
  485 PDF objects out of 1000 (max. 8388607)
  375 compressed objects within 4 object streams
