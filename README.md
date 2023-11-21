@@ -27,7 +27,7 @@ All users are highly encouraged to read the [Fishglob_data disclaimer](https://d
 
 ### Survey data processing steps
 
-Data processing and cleaning is done on a per survey basis unless formats are similar across a group of surveys. The current repository can process 26 scientific bottom-trawl surveys, according to the following steps.
+Data processing and cleaning is done on a per survey basis unless formats are similar across a group of surveys. The current repository can process 29 scientific bottom-trawl surveys, according to the following steps.
 
 **Steps** 
 1. Merge the data files for one survey
