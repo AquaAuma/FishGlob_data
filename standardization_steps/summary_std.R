@@ -65,6 +65,9 @@ for(i in 1:nrow(dat_survey)){
 std_taxa_all$percentage <- as.vector(as.numeric(std_taxa_all$percentage))
 std_taxa_all$number <- as.vector(as.numeric(std_taxa_all$number))
 
+write.csv(std_taxa_all, file = "data_descriptor_figures/summary_std_taxa.csv", 
+          row.names = F)
+
 # plot of the summary per survey
 library(ggplot2)
 png("data_descriptor_figures/taxa_per_survey_number_public.png", width = 8*500, height = 5*500, res=500)
@@ -126,6 +129,9 @@ for(i in 1:nrow(dat)){
   }
   
 }
+
+write.csv(std_dat, file = "data_descriptor_figures/summary_std_spatio-temporal.csv",
+          row.names = F)
 
 # plot of the summary per survey
 library(ggplot2)
