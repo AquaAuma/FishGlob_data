@@ -17,9 +17,10 @@ table_1 <- data %>%
          number_of_years = length(unique(year)),
          month = as.numeric(month),
          months = paste(sort(unique(month)), collapse = ", "),
-         number_of_hauls = length(unique(haul_id))) %>% 
+         number_of_hauls = length(unique(haul_id)),
+         number_of_taxa = length(unique(accepted_name))) %>% 
   dplyr::select(survey, min_year, max_year, number_of_years,
-                months, number_of_hauls) %>% 
+                months, number_of_hauls, number_of_taxa) %>% 
   distinct()
 
 write.csv(table_1, file = "data_descriptor_figures/table_1.csv", 
