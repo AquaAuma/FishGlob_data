@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  16 NOV 2023 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.22)  21 NOV 2023 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -840,12 +840,12 @@ on input line 1120.
 [22
 
  <./neus_files/figure-latex/summary_var_swept-1.pdf>]
-<neus_files/figure-latex/abundant_spp-1.pdf, id=206, 459.7175pt x 325.215pt>
+<neus_files/figure-latex/abundant_spp-1.pdf, id=206, 460.72125pt x 313.17pt>
 File: neus_files/figure-latex/abundant_spp-1.pdf Graphic file (type pdf)
 <use neus_files/figure-latex/abundant_spp-1.pdf>
 Package pdftex.def Info: neus_files/figure-latex/abundant_spp-1.pdf  used on in
 put line 1128.
-(pdftex.def)             Requested size: 459.74442pt x 325.23404pt.
+(pdftex.def)             Requested size: 460.72012pt x 313.16922pt.
 [23
 
  <./neus_files/figure-latex/abundant_spp-1.pdf>]
@@ -1040,7 +1040,7 @@ public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmtk10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pf
 b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/lo
 cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on neus.pdf (35 pages, 21210510 bytes).
+Output written on neus.pdf (35 pages, 22312101 bytes).
 PDF statistics:
  469 PDF objects out of 1000 (max. 8388607)
  360 compressed objects within 4 object streams

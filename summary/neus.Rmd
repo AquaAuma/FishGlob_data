@@ -246,7 +246,7 @@ Here we show a yearly total distribution of the biomass data to visualize outlie
 if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Weight = sum(wgt_cpua), Abundance = sum(num_cpua)) %>% 
+  summarize(Weight = sum(wgt), Abundance = sum(num)) %>% 
   gather("var","val",3:4) %>% 
   ggplot() +
   geom_boxplot(
@@ -266,7 +266,7 @@ if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T
 if(!is.na(mean(survey$num_cpua, na.rm=T)) & is.na(mean(survey$wgt_cpua, na.rm=T))){
 var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Abundance = sum(num_cpua)) %>% 
+  summarize(Abundance = sum(num)) %>% 
   # head()
   ggplot() +
   geom_boxplot(
@@ -285,7 +285,7 @@ var_plot <-  survey %>%
 if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
 var_plot <-  survey %>%
   group_by(year, haul_id) %>% 
-  summarize(Weight = sum(wgt_cpua)) %>% 
+  summarize(Weight = sum(wgt)) %>% 
   # head()
   ggplot() +
   geom_boxplot(
@@ -322,7 +322,7 @@ Here we show the total abundance and number of taxa relationships with the area 
 if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
-  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpua),Weight = sum(wgt_cpua)) %>% 
+  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num),Weight = sum(wgt)) %>% 
   gather("var","val",4:6) %>% 
   # head()
   ggplot() +
@@ -335,7 +335,7 @@ if(!is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T
 if(!is.na(mean(survey$num_cpue, na.rm=T)) & mean(survey$wgt_cpue, na.rm=T)){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
-  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num_cpue)) %>% 
+  summarize(Number_Taxa = length(accepted_name), Abundance = sum(num)) %>% 
   gather("var","val",4:5) %>% 
   # head()
   ggplot() +
@@ -348,7 +348,7 @@ if(!is.na(mean(survey$num_cpue, na.rm=T)) & mean(survey$wgt_cpue, na.rm=T)){
 if(is.na(mean(survey$num_cpua, na.rm=T)) & !is.na(mean(survey$wgt_cpua, na.rm=T))){
   var_plot <-  survey %>%
   group_by(haul_id, haul_dur, area_swept) %>%
-  summarize(Number_Taxa = length(accepted_name), Weight = sum(wgt_cpua)) %>% 
+  summarize(Number_Taxa = length(accepted_name), Weight = sum(wgt)) %>% 
   gather("var","val",4:5) %>% 
   # head()
   ggplot() +
@@ -367,10 +367,9 @@ var_plot
 
 ```{r abundant_spp, eval=T, echo=F, message=F, warning=F}
 
-if(!is.na(mean(survey$num_cpua, na.rm=T))){
 spp <- survey %>% 
   group_by(year, accepted_name) %>% 
-  summarize(wgt = sum(wgt_cpua, na.rm=T), nbr_years = length(year)) %>% 
+  summarize(wgt = sum(wgt, na.rm=T), nbr_years = length(year)) %>% 
   filter(nbr_years>10) %>% 
   group_by(accepted_name) %>% 
   summarize(wgt = median(wgt, na.rm=T)) %>% 
@@ -381,37 +380,13 @@ spp <- survey %>%
 spp_plot <- survey %>% 
   filter(accepted_name %in% spp) %>% 
   group_by(year, accepted_name) %>%
-  summarize(wgt = sum(wgt_cpua, na.rm=T)) %>% 
+  summarize(wgt = sum(wgt, na.rm=T)) %>% 
   ggplot() +
   geom_point( aes(x = year, y = wgt), size=0.5 ) +
   geom_line(aes(x = year,y = wgt), size=0.5) +
   facet_wrap(~accepted_name,  scales = "free_y",ncol = 2) +
   theme_bw() +
   ylab("Species Weight (kg)") + xlab("Year")
-}
-
-if(is.na(mean(survey$wgt_cpua, na.rm=T))){
-  spp <- survey %>% 
-  group_by(year, accepted_name) %>% 
-  summarize(num = sum(num_cpua, na.rm=T), nbr_years = length(year)) %>% 
-  filter(nbr_years>10) %>% 
-  group_by(accepted_name) %>% 
-  summarize(num = median(num, na.rm=T)) %>% 
-  arrange(desc(num)) %>% 
-  top_n(n=6) %>% 
-  pull(accepted_name)
-
-spp_plot <- survey %>% 
-  filter(accepted_name %in% spp) %>% 
-  group_by(year, accepted_name) %>%
-  summarize(num = sum(num_cpua, na.rm=T)) %>% 
-  ggplot() +
-  geom_point( aes(x = year, y = num), size=0.5 ) +
-  geom_line(aes(x = year,y = num), size=0.5) +
-  facet_wrap(~accepted_name,  scales = "free_y",ncol = 2) +
-  theme_bw() +
-  ylab("Species Abundance") + xlab("Year")
-}
 
 spp_plot
 ```
