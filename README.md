@@ -20,6 +20,7 @@ All users are highly encouraged to read the [Fishglob_data disclaimer](https://d
 * **length_weight** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
 * **metadata_docs** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
 * **outputs** contains all survey data processed .RData files and flagging outputs
+* **QAQC** contains the additional QAQC performed on surveys that required supplementary checks (DATRAS-sourced surveys)
 * **standard_formats** includes definitions of file formats in the FishGlob database, including survey ID codes.
 * **standardization_steps** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
 * **summary** contains the quality check plots for each survey
@@ -33,7 +34,7 @@ Data processing and cleaning is done on a per survey basis unless formats are si
 2. Clean & homogenize column names following the format described in *standard_formats/fishglob_data_columns.xlsx*
 3. Create missing columns and standardize units using the standard format *standard_formats/fishglob_data_columns.xlsx*
 4. Integrate the cleaned taxonomy by applying the function *clean_taxa()* and apply expert knowledge on taxonomic treatments
-5. Perform quality checks, including the output in the *summary* folder
+5. Perform quality checks, including the output in the *summary* folder and specific QAQC for other surveys detailed in the QAQC folder
 
 ### Survey data standardization and flags
 
@@ -52,10 +53,13 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 ### Author contributions
 *Contributors to code*
 - **Cleaning taxonomy**: Juliano Palacios-Abrantes 
-- **Cleaning surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Dan Forrest, Daniel van Denderen, Laurene Pecuchet, Esther Beukhof
+- **Cleaning surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Dan Forrest, Daniël van Denderen, Laurene Pecuchet, Esther Beukhof
 - **Summary of surveys**: Juliano Palacios-Abrantes, Aurore Maureaud, Zoë Kitchel, Laura Mannocci
 - **Merge surveys**: Aurore Maureaud
 - **Standardize surveys**: Laura Mannocci, Malin Pinsky, Aurore Maureaud, Zoë Kitchel, Alexa Fredston
+- **QAQC of DATRAS surveys**: Aurore Maureaud, Daniël van Denderen, Esther Beukhof, Laurene Pecuchet
+- **QAQC of the Barents Sea surveys**: Laurene Pecuchet
+- **QAQC of North American surveys**: Zoë Kitchel, Malin Pinsky, 
 
 ### Credit and citation
 
