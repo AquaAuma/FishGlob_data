@@ -46,7 +46,7 @@ dat_survey <- dat %>%
 
 std_taxa_all <- data.frame()
 for(i in 1:nrow(dat_survey)){
-  if(!dat_survey$survey[i] %in% c("SWC-IBTS","FALK","GSL-N","MRT","NZ-CHAT","SCS","SP-PORC")){
+  if(!dat_survey$survey[i] %in% c("SWC-IBTS","GSL-N","SCS","SP-PORC")){
     df <- read.csv(here::here("outputs", "Flags", "taxonomic_flagging", 
                               paste0(dat_survey$survey[i],'_stats.csv')))
     df$survey <- dat_survey$survey[i]
