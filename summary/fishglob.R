@@ -1,6 +1,6 @@
 ################################################################################
 #### R code to merge all separate datasets
-#### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, December 2022
+#### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, November 2023
 ################################################################################
 #### Updates
 ####  Juliano Palacios
@@ -74,12 +74,14 @@ haul_summary <- survey %>%
   geom_line(aes(x = year,y = n_hauls, group = survey, color = survey)) +
   geom_point(aes(x = year,y = n_hauls, group = survey, color = survey)) +
   ylab("Number of hauls") + xlab("Year") + theme_bw() +
+  scale_x_continuous(breaks = seq(from=1960, to=2020, by=5)) +
+  theme(axis.text.x = element_text(angle = 45, vjust =1, hjust =1)) +
   facet_wrap(~ survey, scales = "free_y") + theme(legend.position = "none") 
 
 # Save figure
-  ggsave(filename = "summary/fishglob_summary/hauls_time.png",
+ggsave(filename = "summary/fishglob_summary/hauls_time.png",
          plot = haul_summary,
-         width = 10,
+         width = 15,
          height = 8,
          dpi = 200)
   
@@ -95,7 +97,7 @@ nbr_taxa <-
   ylab("") + xlab("Year") +
   facet_wrap(~survey, scales = "free_y") +
   scale_x_discrete("Year",
-                     breaks = seq(1960,2020,10)) +
+                     breaks = seq(1960,2020,5)) +
   theme_bw() + 
   theme(legend.position = "none",
         axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -104,8 +106,8 @@ nbr_taxa <-
   # Save figure
   ggsave(filename = "summary/fishglob_summary/nbr_taxab.png",
          plot = nbr_taxa,
-         width = 10,
-         height = 9,
+         width = 15,
+         height = 8,
          dpi = 200)
   
 ### Summary of haul duration
@@ -118,7 +120,7 @@ nbr_taxa <-
     ylab("")  + xlab("Year") +
     facet_wrap(~survey, scales = "free_y") +
     scale_x_discrete("Year",
-                     breaks = seq(1960,2020,10)) +
+                     breaks = seq(1960,2020,5)) +
     theme_bw() + 
     theme(legend.position = "none",
           axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -127,8 +129,8 @@ nbr_taxa <-
       # Save figure
       ggsave(filename = "summary/fishglob_summary/haul_duration.png",
              plot = haul_duration,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 ### Summary of swept area
@@ -140,7 +142,7 @@ nbr_taxa <-
         ylab("")  + xlab("Year") +
         facet_wrap(~survey, scales = "free_y") +
         scale_x_discrete("Year",
-                         breaks = seq(1960,2020,10)) +
+                         breaks = seq(1960,2020,5)) +
         theme_bw() + 
         theme(legend.position = "none",
               axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -149,8 +151,8 @@ nbr_taxa <-
       # Save figure
       ggsave(filename = "summary/fishglob_summary/area_swept.png",
              plot = area_swept,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 ### Summary of survey depth
@@ -165,7 +167,7 @@ depth_plot <- survey %>%
         ylab("") + xlab("Year") +
         facet_wrap(~survey, scales = "free_y")+
         scale_x_discrete("Year",
-                         breaks = seq(1960,2020,10)) +
+                         breaks = seq(1960,2020,5)) +
         theme_bw() + 
         theme(legend.position = "none",
               axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -174,8 +176,8 @@ depth_plot <- survey %>%
       # Save figure
       ggsave(filename = "summary/fishglob_summary/depth.png",
              plot = depth_plot,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 
@@ -189,7 +191,7 @@ depth_plot <- survey %>%
         ylab("")  + xlab("Year") +
         facet_wrap(~survey, scales = "free_y")+
         scale_x_discrete("Year",
-                         breaks = seq(1960,2020,10)) +
+                         breaks = seq(1960,2020,5)) +
         theme_bw() + 
         theme(legend.position = "none",
               axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -198,8 +200,8 @@ depth_plot <- survey %>%
       # Save figure
       ggsave(filename = "summary/fishglob_summary/latitude.png",
              plot = latitude_plot,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 
@@ -213,7 +215,7 @@ longitude_plot <- survey %>%
         ylab("")  + xlab("Year") +
         facet_wrap(~survey, scales = "free_y")+
         scale_x_discrete("Year",
-                         breaks = seq(1960,2020,10)) +
+                         breaks = seq(1960,2020,5)) +
         theme_bw() + 
         theme(legend.position = "none",
               axis.text.x = element_text(angle = 45, vjust =1, hjust =1)
@@ -222,8 +224,8 @@ longitude_plot <- survey %>%
       # Save figure
       ggsave(filename = "summary/fishglob_summary/longitude.png",
              plot = longitude_plot,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 
@@ -232,12 +234,15 @@ longitude_plot <- survey %>%
 hauls_month <- survey %>%
         group_by(survey, year, haul_id, month) %>%
         summarize(hauls = length(haul_id)) %>%
-        filter(!is.na(month)) %>% 
+        filter(!is.na(month)) %>%
+        mutate(month = as.numeric(month)) %>% 
+        arrange(month) %>% 
+        mutate(month = factor(month,
+                              levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))) %>% 
         ggplot() +
-        geom_boxplot(aes(x = as.factor(month),y = hauls, color = survey),outlier.shape = NA,size=0.5)  +
+        geom_boxplot(aes(x = month, y = hauls, color = survey),outlier.shape = NA,size=0.5)  +
         facet_wrap(~survey, scales = "free_y")+
-        scale_x_discrete("month",
-                         breaks = seq(1,12,1)) +
+        #scale_x_discrete("month", breaks = seq(1,12,1)) +
         theme_bw() + 
         theme(legend.position = "none",
               axis.text.x = element_text(angle = 0, vjust =1)
@@ -246,8 +251,8 @@ hauls_month <- survey %>%
       # Save figure
       ggsave(filename = "summary/fishglob_summary/hauls_per_month.png",
              plot = hauls_month,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 ### Number of spp per month
@@ -257,8 +262,12 @@ hauls_month <- survey %>%
         group_by(survey, year, month) %>%
         summarize(taxa = length(unique(accepted_name))) %>%
         filter(!is.na(month)) %>%
+        mutate(month = as.numeric(month)) %>% 
+        arrange(month) %>% 
+        mutate(month = factor(month,
+                              levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))) %>% 
         ggplot() +
-        geom_boxplot(aes(x = as.factor(month),y = taxa, color = survey),outlier.shape = NA,size=0.5)  +
+        geom_boxplot(aes(x = month,y = taxa, color = survey),outlier.shape = NA,size=0.5)  +
         ylab("")  + xlab("Year") +
         facet_wrap(~survey, scales = "free_y") +
         scale_x_discrete("month",
@@ -271,8 +280,8 @@ hauls_month <- survey %>%
       # Save figure
       ggsave(filename = "summary/fishglob_summary/taxa_per_month.png",
              plot = taxa_month,
-             width = 10,
-             height = 9,
+             width = 15,
+             height = 8,
              dpi = 200)
 
 
@@ -313,9 +322,9 @@ png(filename = "summary/fishglob_summary/num_per_depth.png",
     width = 12*200, height = 10*200, res = 200)
 print(survey %>%
         group_by(survey, year, haul_id, depth) %>%
-        summarize(num_cpue = sum(num_cpue, na.rm=T)) %>%
+        summarize(num_cpua = sum(num_cpua, na.rm=T)) %>%
         filter(!is.na(depth)) %>%
-        ggplot(aes(x = depth,y = num_cpue, color = survey)) +
+        ggplot(aes(x = depth,y = num_cpua, color = survey)) +
         geom_point()  +
         ylab("")  + xlab("Depth") +
         stat_smooth(method = "loess", formula = y ~ x) +
