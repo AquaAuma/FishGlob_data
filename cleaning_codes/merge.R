@@ -12,6 +12,8 @@ library(ggplot2)
 library(readr)
 library(here)
 library(readxl)
+library(data.table)
+library(R.utils)
 
 # Load relevant functions
 source(here("./functions/write_clean_data.r"))
@@ -56,7 +58,7 @@ fishglob <- read_clean_data(surveys)
 
 # survey compiled survey product
 write_clean_data(data = fishglob, survey = "FishGlob_public",
-                 overwrite = T, compiled = TRUE)
+                 overwrite = T, compiled = TRUE, gzip = TRUE)
 
 
 #-------------------------------------------------------------------------------------------#
@@ -67,7 +69,7 @@ fishglob_std <- read_clean_data(surveys, std = TRUE)
 
 # Just run this routine should be good for all
 write_clean_data(data = fishglob_std, survey = "FishGlob_public_std",
-                 overwrite = T, compiled = TRUE)
+                 overwrite = T, compiled = TRUE, gzip = TRUE)
 
 
 #-------------------------------------------------------------------------------------------#
@@ -80,4 +82,4 @@ fishglob_public_metadata <- fishglob %>%
 
 write_clean_data(data = fishglob_public_metadata,
                  survey = "FishGlob_public_metadata",
-                 overwrite = TRUE, compiled = TRUE)
+                 overwrite = TRUE, compiled = TRUE, gzip = TRUE)

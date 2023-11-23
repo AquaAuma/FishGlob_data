@@ -5,7 +5,7 @@
 
 write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "NA",
                              csv = FALSE, ggdrive = FALSE, rdata = TRUE,
-                             compiled = FALSE){
+                             compiled = FALSE, gzip = FALSE){
   
   if(rdata == TRUE & compiled == FALSE){
     readme <- as.data.frame(read_excel(here("standard_formats/fishglob_data_columns_std.xlsx")))
@@ -36,6 +36,13 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
     
   }
   
+  if(gzip == TRUE & compiled == TRUE){
+    name <- paste0("outputs/Compiled_data/",survey,"_clean.csv")
+    destname <- paste0("outputs/Compiled_data/",survey,"_clean.csv.gz")
+    fwrite(data, file = name)
+    gzip(name, destname = destname)
+  }
+  
   if(ggdrive == TRUE){
     # p <- drive_get("Compiled_data")
     # Gets path in google drive
@@ -44,7 +51,6 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
     } else {
       p <- drive_get("Cleaned_data")
     }
-
 
   # -------------------------------------------------------------- #
   # NOTE. JEPA YOU CAN REMOVE EVERYHTING (the if else) THAT IS COMMENTED OUT AFTER HERE
