@@ -819,7 +819,7 @@ for (i in 1:length(surveys)){
                 linetype="dashed", size=1) + scale_x_log10() + scale_y_log10() + 
     theme_bw() + theme(text = element_text(size = 20)) + ggtitle("Abundances per hour")
   
-  png(paste0("QAQC/DATRAS/",surveys[i],"_per_hour.png"), width = 18*200, height = 10*200, res = 200)
+  png(paste0("QAQC/DATRAS/Re-estimations of weights/",surveys[i],"_per_hour.png"), width = 18*200, height = 10*200, res = 200)
   gridExtra::grid.arrange(plot_weights, plot_abundances, ncol = 2)
   dev.off()
   
@@ -830,7 +830,7 @@ for (i in 1:length(surveys)){
   rm(xx, plot_weights, plot_abundances)
 }
 
-write.csv(corrs, file = "QAQC/DATRAS/correlations_weights.csv", row.names = F)
+write.csv(corrs, file = "QAQC/DATRAS/Re-estimations of weights/correlations_weights.csv", row.names = F)
 
 # no zeros
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
