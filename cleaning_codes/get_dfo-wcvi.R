@@ -6,8 +6,7 @@
 ####           Maria Cornthwaite	Maria.Cornthwaite@dfo-mpo.gc.ca	Program Head,
 ####           Groundfish Data Unit, Science Branch, DFO Canada
 #### Coding: Dan Forrest, Zoë Kitchel November 2021
-########################
-########################################################
+################################################################################
 
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
