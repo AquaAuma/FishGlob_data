@@ -316,7 +316,7 @@ write_clean_data(data = clean_ai, survey = "AI", overwrite = T,
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
