@@ -294,7 +294,7 @@ write_clean_data(data = clean_hs, survey = "HS", overwrite = T, rdata=TRUE)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
