@@ -231,7 +231,7 @@ write_clean_data(data = clean_ebs, survey = "EBS", type = F, overwrite = T)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
