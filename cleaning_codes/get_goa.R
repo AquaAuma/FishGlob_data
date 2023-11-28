@@ -293,7 +293,7 @@ write_clean_data(data = clean_goa, survey = "GOA", overwrite = T, type = F)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
