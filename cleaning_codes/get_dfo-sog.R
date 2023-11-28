@@ -319,7 +319,7 @@ write_clean_data(data = clean_sog, survey = "SOG", overwrite = T)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
