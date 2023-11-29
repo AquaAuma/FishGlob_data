@@ -8,7 +8,7 @@ This database is a product of the CESAB working group, [FishGlob: Fish biodivers
 
 <img src ="https://github.com/AquaAuma/FishGlob_data/blob/main/fishglob_logo.png" width ="200">
 
-Main contacts: Aurore A. Maureaud [aurore.aqua@gmail.com](mailto:aurore.aqua@gmail.com), Juliano Palacios-Abrantes [j.palacios@oceans.ubc.ca ](mailto:j.palacios@oceans.ubc.ca), Zoë Kitchel [zoe.kitchel@rutgers.edu](mailto:zoe.kitchel@rutgers.edu), and Malin L. Pinsky [malin.pinsky@rutgers.edu](mailto:malin.pinsky@rutgers.edu)
+Main contacts: [Aurore A. Maureaud](mailto:aurore.aqua@gmail.com),  [Juliano Palacios-Abrantes](mailto:j.palacios@oceans.ubc.ca), [Zoë J. Kitchel](mailto:zoe.j.kitchel@gmail.com), and [Malin L. Pinsky](mailto:mpinsky@ucsc.edu)
 
 All users are highly encouraged to read the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/) 
 
@@ -63,10 +63,10 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 
 ### Credit and citation
 
-We highly encourage users to cite the corresponding data descriptor paper along with primary SBTS sources included in the FISHGLOB data files. Appropriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
+We highly encourage users to cite the corresponding data descriptor paper along with primary SBTS sources included in the FISHGLOB data files and Table 1 of the data descriptor. Appropriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
 
 ### :warning: Important updates :warning:
 
-> **16/11/2023**: FishGlob_data v2.0 incoming
+> **23/11/2023**: FishGlob_data v2.0
 
 > **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
