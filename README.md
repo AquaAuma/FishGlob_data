@@ -59,7 +59,7 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 - **Standardize surveys**: Laura Mannocci, Malin Pinsky, Aurore Maureaud, Zoë Kitchel, Alexa Fredston
 - **QAQC of DATRAS surveys**: Aurore Maureaud, Daniël van Denderen, Esther Beukhof, Laurene Pecuchet
 - **QAQC of the Barents Sea surveys**: Laurene Pecuchet
-- **QAQC of North American surveys**: Zoë Kitchel, Malin Pinsky, 
+- **QAQC of North American surveys**: Zoë Kitchel, Malin Pinsky, Daniel Forrest
 
 ### Credit and citation
 
