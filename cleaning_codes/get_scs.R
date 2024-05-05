@@ -12,6 +12,11 @@
 ####  Juliano Palacios
 ####  September 5, 2023
 #### Update in response to Issue #16
+################################################################################
+#### Updates
+####  Zoe Kitchel
+####  May 4, 2023
+#### Update in response to Issue #48 (delete 9999 in total weight)
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
@@ -163,6 +168,9 @@ mar <- mar %>%
          day = day(as.Date(sdate)),
          haul_dur = dur/60) #minutes to hours
 
+#if any values are 9999, switch to NA
+mar <- mar %>%
+  filter(wgt != 9999)
 
 # Does the spp column contain any eggs or non-organism notes? 
 #As of 2021, only "UNIDENTIFIED" to be  removed
@@ -175,17 +183,17 @@ test <- mar %>%
 stopifnot(nrow(test)==0)
 
 #delete any rows with any of these 
-mar <- mar %>% #206202 to 205205 rows
+mar <- mar %>%
   filter(!grepl("UNIDENTIFIED",verbatim_name))
 
 #check that the number of unique haul_ids * spp combinations is the same as 
 #the number of rows in mar
 nrow(mar) == nrow(unique(mar[,c("haul_id","verbatim_name")]))
 
-#it's not, so let's see why we have extras
-#which(duplicated(mar[,c("haul_id","verbatim_name")]))
+#no duplicates!
 
-# combine the wtcpue for each species by haul
+
+# calculate effort values by time and space
 mar <- mar %>% 
   mutate(
     wgt_cpue = wgt/area_swept,
@@ -219,13 +227,13 @@ mutate(
          gear, depth, sbt, sst, verbatim_name, num, num_h, num_cpue,
          wgt, wgt_h, wgt_cpue, verbatim_name, verbatim_aphia_id)
 
-#check for duplicates, should not be any with more than 1 obs
+#check for duplicates again, should not be any with more than 1 obs
 #check for duplicates
 count_mar <- mar %>%
   group_by(haul_id, verbatim_name) %>%
   mutate(count = n())
 
-#none!
+#none! (all 1s)
 
 #which ones are duplicated?
 unique_name_match <- count_mar %>%
@@ -261,8 +269,7 @@ clean_auto <- clean_taxa(unique(scs$taxa2), input_survey = scs_survey_code,
                          save = F, output=NA, fishbase=T)
 #takes 3.9 minutes
 
-#This leaves out the following species, of which 2 are fish that need to be added back
-#Caelorinchus caelorinchus    #fish                                 
+#This leaves out the following species, of which 1 is a fish that need to be added back
 #Porania pulvillus                                             
 #Poraniomorpha borealis                                        
 #Notoscopelus elongatus kroyeri #fish, different fishbase record for Noto elon and
@@ -273,16 +280,12 @@ clean_auto <- clean_taxa(unique(scs$taxa2), input_survey = scs_survey_code,
 #Nereidae                                                      
 #Coelenterata   
 
-cae_cae <- c("Caelorinchus caelorinchus", "398381", "1726", "Coelorinchus caelorhincus",
-             "Animalia", "Chordata", "Actinopteri", "Gadiformes", "Macrouridae",
-             "Coelorinchus", "Species",
-             "SCS")
 not_elo <- c("Notoscopelus elogatus kroyeri", "272728", "27753", "Notoscopelus kroyeri",
              "Animalia", "Chordata", "Actinopteri", "Myctophiformes", "Myctophidae",
              "Notoscopelus", "Species",
              "SCS")
 
-clean_auto_missing <- rbind(clean_auto, cae_cae, not_elo)
+clean_auto_missing <- rbind(clean_auto, not_elo)
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA in SCS survey data ####
@@ -312,7 +315,7 @@ clean_scs <- left_join(scs, correct_taxa, by=c("taxa2"="query")) %>%
   select(fishglob_data_columns$`Column name fishglob`)
 
 
-#check for duplicates
+#check for duplicates again
 count_clean_scs <- clean_scs %>%
   group_by(haul_id, accepted_name) %>%
   mutate(count = n())
@@ -333,7 +336,7 @@ unique_name_match
 #### SAVE DATABASE IN GOOGLE DRIVE ####
 # -------------------------------------------------------------------------------------#
 # Just run this routine should be good for all
-write_clean_data(data = clean_scs, survey = "SCS", overwrite = T)
+write_clean_data(data = clean_scs, survey = "SCS", overwrite = T, csv = T)
 
 
 

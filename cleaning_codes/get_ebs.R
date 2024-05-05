@@ -226,7 +226,7 @@ count_clean_ebs <- clean_ebs %>% count(haul_id, accepted_name)
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_ebs, survey = "EBS", type = F, overwrite = T)
+write_clean_data(data = clean_ebs, survey = "EBS", type = F, overwrite = T, csv = T)
 
 
 

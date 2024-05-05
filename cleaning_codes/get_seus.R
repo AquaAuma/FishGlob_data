@@ -218,6 +218,17 @@ select("haul_id", "year", "lat", "lon", "stratum", "stratumarea",
 #for each side of the boat;
 #EFFORT is always the same for each COLLECTIONNUMBER
 # We sum the two tows in seus (port and starboard tows)
+
+#however, we want to use sum function where all NAs = NA
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 #this steps deletes any haul id x spp duplicates
 seus <- seus %>% 
   group_by(haul_id, year, lat, lon, stratum, stratumarea,
@@ -234,8 +245,8 @@ seus <- seus %>%
     #resolved to genus
     
   #now this accounts for both sides of the boat, and merging within specified genuses
-  summarise(biomass = sum(SPECIESTOTALWEIGHT,na.rm = T),
-            abundance = sum(NUMBERTOTAL,na.rm = T)) %>% 
+  summarise(biomass = my_sum(SPECIESTOTALWEIGHT),
+            abundance = my_sum(NUMBERTOTAL)) %>% 
   mutate(wgt_cpue = biomass/(EFFORT*2), num_cpue = abundance/(EFFORT*2),
          num_h = abundance/haul_dur,
          wgt_h = biomass/haul_dur) 
@@ -421,7 +432,7 @@ clean_seus <- clean_seus %>%
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_seus, survey = "SEUS", overwrite = T)
+write_clean_data(data = clean_seus, survey = "SEUS", overwrite = T, csv = T)
 
 
 

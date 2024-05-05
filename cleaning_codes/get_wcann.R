@@ -11,13 +11,19 @@
 ####  Juliano Palacios
 ####  September 5, 2023
 #### Update in response to Issue #23. See line 277
+################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
 
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
 
 library(rfishbase) #needs R 4.0 or more recent
-library(tidyverse)
+library(tidyverse) 
 library(lubridate)
 library(googledrive)
 library(taxize) # for getting correct species names
@@ -182,6 +188,17 @@ wcann <- wcann %>%
 #many rows with missing num_h, num_cpue, wgt_h, and wgt_cpue values 
 #due to missing haul_dur
 
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 #sum duplicates
 wcann <- wcann %>%
   group_by(survey, 
@@ -189,12 +206,12 @@ wcann <- wcann %>%
            haul_id, country, sub_area, continent, stat_rec, station, stratum,
            year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
            gear, depth, sbt, sst,verbatim_name) %>%
-  summarise(num = sum(num, na.rm = T),
-            num_h = sum(num_h, na.rm = T),
-            num_cpue = sum(num_cpue, na.rm = T),
-            wgt = sum(wgt, na.rm = T),
-            wgt_h = sum(wgt_h, na.rm = T),
-            wgt_cpue = sum(wgt_cpue, na.rm = T)) %>% ungroup()
+  summarise(num = my_sum(num),
+            num_h = my_sum(num_h),
+            num_cpue = my_sum(num_cpue),
+            wgt = my_sum(wgt),
+            wgt_h = my_sum(wgt_h),
+            wgt_cpue = my_sum(wgt_cpue)) %>% ungroup()
 
 #check for duplicates, should not be any with more than 1 obs
 #check for duplicates
@@ -348,7 +365,7 @@ unique_name_match
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_wcann, survey = "WCANN", overwrite = T)
+write_clean_data(data = clean_wcann, survey = "WCANN", overwrite = T, csv = T)
 
 
 

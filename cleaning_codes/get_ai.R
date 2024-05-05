@@ -7,6 +7,12 @@
 ####     Habitat and Ecological Processes Research, NOAA AFSC
 #### Coding: Michelle Stuart, Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
+
 #Alaska Fisheries Science Center - NOAA
 #https://www.afsc.noaa.gov/RACE/groundfish/survey_data/
 #metadata_template.php?fname=RACEweb.xml
@@ -25,6 +31,7 @@ library(googledrive)
 library(taxize) # for getting correct species names
 library(magrittr) # for names wrangling
 library(readxl)
+library(here)
 
 source("functions/clean_taxa.R")
 source("functions/write_clean_data.R")
@@ -186,6 +193,17 @@ num_cpue = 100*num_cpue.raw
          gear, depth, sbt, sst,
          num, num_h, num_cpue, wgt, wgt_h, wgt_cpue, verbatim_name)
 
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 #sum duplicates
 ai <- ai %>%
   group_by(survey, 
@@ -193,12 +211,12 @@ ai <- ai %>%
            haul_id, country, sub_area, continent, stat_rec, station, stratum,
            year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
            gear, depth, sbt, sst,verbatim_name) %>%
-  summarise(num = sum(num, na.rm = T),
-            num_h = sum(num_h, na.rm = T),
-            num_cpue = sum(num_cpue, na.rm = T),
-            wgt = sum(wgt, na.rm = T),
-            wgt_h = sum(wgt_h, na.rm = T),
-            wgt_cpue = sum(wgt_cpue, na.rm = T)) %>% ungroup()
+  summarise(num = my_sum(num),
+            num_h = my_sum(num_h),
+            num_cpue = my_sum(num_cpue),
+            wgt = my_sum(wgt),
+            wgt_h = my_sum(wgt_h),
+            wgt_cpue = my_sum(wgt_cpue)) %>% ungroup()
 
 #check for duplicates, should not be any with more than 1 obs
 #check for duplicates
@@ -312,7 +330,7 @@ unique_name_match
 
 # Just run this routine should be good for all if you're synced to Google Drive 
 write_clean_data(data = clean_ai, survey = "AI", overwrite = T,
-                 rdata = TRUE)
+                 rdata = TRUE, csv = T)
 
 
 # -------------------------------------------------------------------------------------#

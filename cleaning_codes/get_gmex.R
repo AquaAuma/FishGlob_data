@@ -7,6 +7,11 @@
 ####                National Marine Fisheries Service, Southeast Fisheries Science Center
 #### Coding: Michelle Stuart, Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
 #Relevant Organizations
 #Gulf States Marine Fisheries Commission: https://www.gsmfc.org/seamap-gomrs.php
 #Southeast Area Monitoring and Assessment Program Reports: 
@@ -309,13 +314,24 @@ gmex <- gmex %>%
 #these are indeed independent observations. we're not sure why this occurs
 #in the raw data files, but it was the recommended technique by Jeff in 2012)
 
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 gmex <- gmex %>% 
   group_by(haulid, stratum, year, latitude, longitude, depth, BIO_BGS, SOURCE, 
            MIN_FISH, GEAR_TYPE, SPEC_BGS,GENUS_BGS,
            STATIONID, TEMP_BOT, TEMP_SSURF, TAXONOMIC, VESSEL_SPD, GEAR_SIZE, 
            month, day, quarter, season) %>% 
-   summarise(SELECT_BGS = sum(SELECT_BGS, na.rm = T), #sum weights across duplicates
-             CNTEXP = sum(CNTEXP, na.rm = T)) #sum counts across duplicates
+   summarise(SELECT_BGS = my_sum(SELECT_BGS), #sum weights across duplicates
+             CNTEXP = my_sum(CNTEXP)) #sum counts across duplicates
 
 gmex <- gmex %>% 
   rename(sub_area = SOURCE,
@@ -535,7 +551,7 @@ unique_name_match <- count_clean_gmex %>%
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_gmex, survey = "GMEX", overwrite = T)
+write_clean_data(data = clean_gmex, survey = "GMEX", overwrite = T, csv = T)
 
 
 

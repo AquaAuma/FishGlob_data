@@ -7,6 +7,11 @@
 #### Groundfish Data Unit, Science Branch, DFO Canada
 #### Coding: Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
@@ -156,11 +161,29 @@ stopifnot(nrow(test)==0)
 #because sometimes there are multiple observations for a single genus or family
 #i.e.
 #HEXACTINELLIDA, GLASS SPONGES; WILLEMOES'S WHITE SEA PEN; CRANGONS
+
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
+#sum duplicates
+
 WCHG <- WCHG %>%
   group_by(haul_id,year, latitude, longitude, depth, verbatim_name, area_swept,
            num, wgt, wgt_cpue, wgt_h, num_cpue, num_h, date, haul_dur) %>%
-  summarise(wgt_cpue = sum(wgt_cpue, na.rm = T), wgt_h = sum(wgt_h, na.rm = T),
-            num_h = sum(num_h, na.rm = T), num_cpue = sum(num_cpue, na.rm = T)) %>%
+  summarise(num = my_sum(num),
+            num_h = my_sum(num_h),
+            num_cpue = my_sum(num_cpue),
+            wgt = my_sum(wgt),
+            wgt_h = my_sum(wgt_h),
+            wgt_cpue = my_sum(wgt_cpue)) %>%
   ungroup()
 
 WCHG <- WCHG %>%
@@ -184,18 +207,6 @@ WCHG <- WCHG %>%
          sbt = NA,
          sst = NA
   ) %>% 
-  group_by(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station, stratum,
-           year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
-           gear, depth, sbt, sst, verbatim_name, verbatim_aphia_id) %>%
-  #this step sums over matching haul_ids and species
-  summarise(num = sum(num, na.rm = T),
-            num_h = sum(num_h, na.rm = T),
-            num_cpue = sum(num_cpue, na.rm = T),
-            
-            wgt = sum(wgt, na.rm = T),
-            wgt_h = sum(wgt_h, na.rm = T),
-            wgt_cpue = sum(wgt_cpue, na.rm = T)) %>%
-  
     select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station, stratum,
            year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
            gear, depth, sbt, sst, num, num_h, num_cpue,
@@ -322,7 +333,7 @@ unique_name_match
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_wchg, survey = "WCHG", overwrite = T)
+write_clean_data(data = clean_wchg, survey = "WCHG", overwrite = T, csv = T)
 
 
 

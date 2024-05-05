@@ -5,6 +5,12 @@
 #### Northeast Fisheries Science Center, NOAA
 #### Coding: Michelle Stuart, Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
+
 
 #NB: Note that there was a gear and vessel swap in 2008-2009 (Albatross to Bigelow)
 #this code uses conversions from NEFSC to correct data post 2009 to pre 2009
@@ -471,16 +477,27 @@ rm(neus_catch_clean, neus_catch_raw, neus_spring_catch, neus_spring_haul)
 neus <- rbind(neus_fall, neus_spring)
 
 #sum abundance and wgt to fix duplicates (removes 21680 rows)
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 neus <- neus %>%
   group_by(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
                     stratum, year, month, day, quarter, season, latitude, longitude,
                     haul_dur, area_swept, gear, depth, sbt, sst,verbatim_name) %>%
-  summarise(num=sum(num, na.rm = T),
-         num_h=sum(num_h, na.rm = T),
-         num_cpue=sum(num_cpue, na.rm = T),
-         wgt=sum(wgt, na.rm = T),
-         wgt_h=sum(wgt_h, na.rm = T),
-         wgt_cpue=sum(wgt_cpue, na.rm = T)) %>%
+  summarise(num=my_sum(num),
+         num_h=my_sum(num_h),
+         num_cpue=my_sum(num_cpue),
+         wgt=my_sum(wgt),
+         wgt_h=my_sum(wgt_h),
+         wgt_cpue=my_sum(wgt_cpue)) %>%
 select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
        stratum, year, month, day, quarter, season, latitude, longitude,
        haul_dur, area_swept, gear, depth, sbt, sst,
@@ -556,22 +573,15 @@ clean_auto <- clean_taxa(unique(neus$taxa2), input_survey = neus_survey_code,
 
 #This leaves out the following species, of which 1 is a fish that needs to be added back
 #Geryon quinquedens                                   no match                                 
-#Astroscopus y-graecum                                no match      #FISH                           
 #Portunus spinimanus                                  no match                                 
 #Pandalus propinquus                                  no match   
-
-ast_ygr <- c("Astroscopus y-graecum", 159252,3704, "Astroscopus y-graecum",
-             "Animalia","Chordata","Actinopteri","Perciformes","Uranoscopidae",
-             "Astroscopus","Species","NEUS")
-
-clean_auto_missing <- rbind(clean_auto, ast_ygr)
 
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA in NEUS survey data ####
 #--------------------------------------------------------------------------------------#
 
-correct_taxa <- clean_auto_missing %>% 
+correct_taxa <- clean_auto %>% 
   select(-survey) %>% 
   filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 

@@ -8,6 +8,11 @@
 ####            Groundfish Data Unit, Science Branch, DFO Canada
 #### Coding: Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
 #--------------------------------------------------------------------------------------#
@@ -164,11 +169,24 @@ stopifnot(nrow(test)==0)
 #sometimes there are multiple observations for a single genus or family
 #i.e.
 #HEXACTINELLIDA, GLASS SPONGES; WILLEMOES'S WHITE SEA PEN; CRANGONS
+
+#function to make sum of NAs a NA, but some of NA, 1, 1
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
 SOG <- SOG %>%
   group_by(haul_id,year, latitude, longitude, depth, verbatim_name, area_swept,
-           num, wgt, wgt_cpue, wgt_h, num_cpue, num_h, date, haul_dur) %>%
-  summarise(wgt_cpue = sum(wgt_cpue, na.rm = T), wgt_h = sum(wgt_h, na.rm = T),
-            num_h = sum(num_h, na.rm = T), num_cpue = sum(num_cpue, na.rm = T)) %>%
+           date, haul_dur) %>%
+  summarise(wgt = my_sum(wgt), num = my_sum(num),
+    wgt_cpue = my_sum(wgt_cpue), wgt_h = my_sum(wgt_h),
+            num_h = my_sum(num_h), num_cpue = my_sum(num_cpue)) %>%
   ungroup()
 
 SOG <- SOG %>%
@@ -213,20 +231,6 @@ unique_name_match <- count_SOG %>%
 
 unique_name_match
 #check if empty
-
-#sum duplicates
-SOG <- SOG %>%
-  group_by(survey, 
-           source,timestamp,
-           haul_id, country, sub_area, continent, stat_rec, station, stratum,
-           year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
-           gear, depth, sbt, sst,verbatim_name) %>%
-  summarise(num = sum(num, na.rm = T),
-            num_h = sum(num_h, na.rm = T),
-            num_cpue = sum(num_cpue, na.rm = T),
-            wgt = sum(wgt, na.rm = T),
-            wgt_h = sum(wgt_h, na.rm = T),
-            wgt_cpue = sum(wgt_cpue, na.rm = T)) %>% ungroup()
 
 #duplicated before fix above
 
@@ -314,7 +318,7 @@ unique_name_match
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_sog, survey = "SOG", overwrite = T)
+write_clean_data(data = clean_sog, survey = "SOG", overwrite = T, csv = T)
 
 
 

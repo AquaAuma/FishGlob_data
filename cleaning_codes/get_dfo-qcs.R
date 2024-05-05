@@ -163,12 +163,28 @@ stopifnot(nrow(test)==0)
 #this should delete all duplicates
 #i.e.
 #HEXACTINELLIDA, GLASS SPONGES; WILLEMOES'S WHITE SEA PEN; CRANGONS
+
+#Define function to correctly sum across duplicates (sum(NA,NA,NA) = NA, while sum(1,NA,NA) = 1, which is not the default for na.rm parameter)
+
+my_sum <- function(x){
+  if(all(is.na(x))){
+    return(NA)
+  }
+  else{
+    return(sum(x, na.rm = TRUE))
+  }
+}
+
+
 QCS <- QCS %>%
   group_by(haul_id,year, latitude, longitude, depth, 
            verbatim_name, area_swept,date, haul_dur) %>%
-  summarise(wgt_cpue = sum(wgt_cpue, na.rm = T), wgt_h = sum(wgt_h, na.rm = T), 
-            num_h = sum(num_h, na.rm = T), num_cpue = sum(num_cpue, na.rm = T),
-            num = sum(num, na.rm = T), wgt = sum(wgt, na.rm = T)) %>%
+  summarise(num = my_sum(num),
+            num_h = my_sum(num_h),
+            num_cpue = my_sum(num_cpue),
+            wgt = my_sum(wgt),
+            wgt_h = my_sum(wgt_h),
+            wgt_cpue = my_sum(wgt_cpue)) %>%
   ungroup()
 
 QCS <- QCS %>%
