@@ -7,6 +7,11 @@
 #### Groundfish Data Unit, Science Branch, DFO Canada
 #### Coding: Dan Forrest, Zoë Kitchel November 2021
 ################################################################################
+####Update
+####Zoe Kitchel
+#### May 4, 2024
+####Following issue 47, need to update sum technique to remove duplicates
+################################################################################
 
 #--------------------------------------------------------------------------------------#
 #### LOAD LIBRARIES AND FUNCTIONS ####
@@ -308,7 +313,7 @@ unique_name_match
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_qcs, survey = "QCS", overwrite = T)
+write_clean_data(data = clean_qcs, survey = "QCS", overwrite = T, csv = T)
 
 
 
