@@ -12,7 +12,7 @@ Main contacts: [Aurore A. Maureaud](mailto:aurore.aqua@gmail.com),  [Juliano Pal
 
 All users are highly encouraged to read the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/) 
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
