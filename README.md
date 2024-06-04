@@ -61,6 +61,9 @@ Data standardization and flags are done on a per survey basis and per survey_uni
 **Options**
 Users can either use the single survey data products in **outputs/Cleaned_data/** and work with survey .RData files including flags or not (inclusion of flags is specified by XX_std_clean.RData), or generate their own compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **outputs/Compiled_data/**
 
+**A warning about CSVs**
+Datasets are available for download in **outputs/Cleaned_data/** as .Rdata files. *We do not recommend saving FishGlob data in .csv format.* For at least some surveys, the `haul_id` column is composed of a long string of numerics, which is incorrectly rounded if loaded from a .csv programmatically in R (with `read_csv()` or `read.csv()`). As documented in [issue #49](https://github.com/AquaAuma/FishGlob_data/issues/49), this leads to errors in the `haul_id` column, and may occur regardless of the "class" assigned to this column. The most robust way to prevent this error is to write to / read from other data types such as .Rdata or .rds. Packages exist for users to import these into Python and other programming languages. 
+
 ### Author contributions
 *Contributors to code*
 - **Cleaning taxonomy**: Juliano Palacios-Abrantes 
