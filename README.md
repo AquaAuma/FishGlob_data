@@ -10,7 +10,7 @@ This database is a product of the CESAB working group, [FishGlob: Fish biodivers
 
 Main contacts: [Aurore A. Maureaud](mailto:aurore.aqua@gmail.com),  [Juliano Palacios-Abrantes](mailto:j.palacios@oceans.ubc.ca), [Zoë J. Kitchel](mailto:zoe.j.kitchel@gmail.com), and [Malin L. Pinsky](mailto:mpinsky@ucsc.edu)
 
-All users are highly encouraged to read the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/) 
+**Anyone interested in reusing this data or its outputs should read this readme as well as our [Data Disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/edit) in full.**
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
@@ -74,7 +74,7 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 
 ### Credit and citation
 
-We highly encourage users to cite the corresponding data descriptor paper along with primary SBTS sources included in the FISHGLOB data files and Table 1 of the data descriptor. Appropriate credit includes citing primary datasets and/or the [data descriptor](https://osf.io/2bcjw/) for the integration methods developed to gather regional surveys together depending on usage.
+Our full citation policy is described in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/). Briefly, users should cite [Maureaud *et al.* 2021](https://doi.org/10.1111/gcb.15404), [Maureaud *et al.* 2024](https://www.nature.com/articles/s41597-023-02866-w), and relevant primary SBTS sources referenced in the FISHGLOB data files and source data tables of the two Maureaud *et al.* papers. Users integrating multiple surveys are encouraged to cite additional studies on data integration. 
 
 ### :warning: Important updates :warning:
 
