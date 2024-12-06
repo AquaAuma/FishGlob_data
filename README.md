@@ -81,6 +81,6 @@ Our full citation policy is described in the [Fishglob_data disclaimer](https://
 > **5/06/2024**: A warning about CSVs
 Datasets are available for download in **outputs/Cleaned_data/** as .Rdata files. *We do not recommend saving FishGlob data in .csv format.* For at least some surveys, the `haul_id` column is composed of a long string of numerics, which is incorrectly rounded if loaded from a .csv programmatically in R (with `read_csv()` or `read.csv()`). As documented in [issue #49](https://github.com/AquaAuma/FishGlob_data/issues/49), this leads to errors in the `haul_id` column, and may occur regardless of the "class" assigned to this column. The most robust way to prevent this error is to write to / read from other data types such as .Rdata or .rds. Packages exist for users to import these into Python and other programming languages. 
 
-> **23/11/2023**: FishGlob_data v2.0
+> **23/11/2023**: FishGlob_data v2.0. This fixes [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29).
 
 > **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
