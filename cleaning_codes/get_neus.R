@@ -30,9 +30,16 @@
 #reduced to 3.0 knots. The direction of the tows changed to follow the depth contour.
 
 #NB: haul_dur is raw, does not account for conversions in abundance and biomass,
-#and therefore should not be used 
-#as the denominator for CPUE calculations without careful consideration, therefore,
+#and therefore effort based metrics (per km^2 or per hour) should not be calculated without careful consideration, therefore,
 #wgt_cpue, wgt_h, num_cpue, and num_h are not calculated
+
+#Please note:
+#We intentionally do not calculate effort-based columns (cpua or cpue) for the NEUS dataset. These values should all be NA. 
+# The wgt and num values have been adjusted in order to account for the gear and methods change using conversion factors.
+#Additionally, the trawl footprint (area_swept) has been standardized at 0.0384 km^2. However, haul duration (haul_dur) has not been adjusted in the cleaned dataset. Therefore, we did not calculate wgt_cpua or wgt_cpue values,
+#as we want to make sure that care is taken to ensure a haul is a standard duration haul before calculating the effort based metrics. To calculate effort based metrics, we recommend:
+#1) removing hauls with haul_dur outside of a specified range (i.e., +/- 5 min of intended haul duration which was 0.5 hr before 2009 and 0.3 hr after 2009), and 
+#2) calculating effort metrics by dividing by 0.0384 km^2 or by 0.5 hr (all species observations calibrated to standard pre 2009 half hour tow).
 
 
 #Helpful documents discussing gear and  vessel transition for Northeast US
