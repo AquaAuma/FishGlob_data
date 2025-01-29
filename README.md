@@ -76,6 +76,9 @@ Users can either use the single survey data products in **outputs/Cleaned_data/*
 
 Our full citation policy is described in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/). Briefly, users should cite [Maureaud *et al.* 2021](https://doi.org/10.1111/gcb.15404), [Maureaud *et al.* 2024](https://www.nature.com/articles/s41597-023-02866-w), and relevant primary SBTS sources referenced in the FISHGLOB data files and source data tables of the two Maureaud *et al.* papers. Users integrating multiple surveys are encouraged to cite additional studies on data integration. 
 
+### Survey specific guidance
+- **NEUS**: We intentionally do not calculate effort-based columns (cpua or cpue) for the NEUS dataset. These values should all be NA. There was a change in gear and survey methods for the NEUS survey in 2008/2009. The wgt and num values have been adjusted in order to account for this change using conversion factors. Additionally, the trawl footprint (area_swept) has been standardized at 0.0384 km^2. However, haul duration (haul_dur) has not been adjusted. We did not calculate wgt_cpua or wgt_cpue values, as we want to make sure that care is taken to ensure a haul is a standard duration haul before calculating the effort based metrics. To calculate effort based metrics, we recommend: 1) removing hauls with haul_dur outside of a specified range (i.e., +/- 5 min of intended haul duration which was 30 min before 2009 and 20 minutes after 2009), and finally, 3) calculating effort metrics by dividing by 0.0384 km^2 or by 0.5 hr (all species observations calibrated to standard pre 2009 half hour tow).
+
 ### :warning: Important updates :warning:
 
 > **5/06/2024**: A warning about CSVs
