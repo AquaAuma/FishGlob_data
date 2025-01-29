@@ -81,6 +81,8 @@ For survey specific guidance, please see [meta data for bottom trawl surveys](ht
 
 ### :warning: Important updates :warning:
 
+> **1/29/2025**: We are aware that there are some surveys that currently have 0 values for wgt and num based columns where they should have NAs, as described in [issue 47](https://github.com/AquaAuma/FishGlob_data/issues/47). We recommend that you look closely at the metadata for surveys you're using to see whether a 0 value in a column means 0, or means NA. We are currently working to resolve this issue.
+
 > **5/06/2024**: A warning about CSVs
 Datasets are available for download in **outputs/Cleaned_data/** as .Rdata files. *We do not recommend saving FishGlob data in .csv format.* For at least some surveys, the `haul_id` column is composed of a long string of numerics, which is incorrectly rounded if loaded from a .csv programmatically in R (with `read_csv()` or `read.csv()`). As documented in [issue #49](https://github.com/AquaAuma/FishGlob_data/issues/49), this leads to errors in the `haul_id` column, and may occur regardless of the "class" assigned to this column. The most robust way to prevent this error is to write to / read from other data types such as .Rdata or .rds. Packages exist for users to import these into Python and other programming languages. 
 
