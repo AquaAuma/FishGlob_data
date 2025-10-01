@@ -12,6 +12,11 @@
 #### May 4, 2024
 ####Following issue 47, need to update sum technique to remove duplicates
 ################################################################################
+####Update
+####Alexa Fredston
+#### August / September 2025 
+#### Resolving issues 46 and 56 by updating biocodes table as per Melissa Karp and Claire Gonzales (NOAA DisMAP) and reorganizing the code to more closely match DisMAP 
+################################################################################
 #Relevant Organizations
 #Gulf States Marine Fisheries Commission: https://www.gsmfc.org/seamap-gomrs.php
 #Southeast Area Monitoring and Assessment Program Reports: 
@@ -140,24 +145,62 @@ problems <- problems(gmex_tow) %>%
   filter(!is.na(col)) 
 stopifnot(nrow(problems) == 0)
 
-gmex_spp <-read_csv(
-  "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_NEWBIOCODESBIG.csv",
-  col_types = cols(
-  Key1 = col_integer(),
-  TAXONOMIC = col_character(),
-  CODE = col_integer(),
-  TAXONSIZECODE = col_character(),
-  isactive = col_integer(),
-  common_name = col_character(),
-  tsn = col_integer(),
-  tsn_accepted = col_integer()
-)) %>% 
-  select(-tsn_accepted)
+####################################
+# # note by A. Fredston Sept 2025:
+# # the previous FishGlob / OceanAdapt code joined these two tables on the incorrect column, which introduced some duplications and some dropped data, as per David Hanisko via M. Karp / C. Gonzales at NOAA Office of Science & Technology 
+# # this is corrected below and now aligns with the DisMAP GMEX pipeline (currently on a dev branch: https://github.com/nmfs-ost/DisMAP/blob/dev-branch/data_processing_rcode/code/Compile_Dismap_Current.R)
+# # to make this change we had to update the source file for gmex_bio; the previous link this script pointed to was an OceanAdapt file which did not have the necessary "invrecid" column 
+####################################
 
-# problems should be 0 obs
-problems <- problems(gmex_spp) %>% 
-  filter(!is.na(col))
-stopifnot(nrow(problems) == 0)
+# temp <- tempfile()
+# download.file(
+#   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_BGSREC.csv.zip", temp)
+# gmex_bio_OLD <- read.csv(unz(temp, "gmex_BGSREC.csv")) %>% 
+#   select('CRUISEID', 'STATIONID', 'VESSEL', 'CRUISE_NO', 'P_STA_NO',
+#          'GENUS_BGS','CNT','CNTEXP', 'SPEC_BGS', 'BGSCODE', 'BIO_BGS', 'SELECT_BGS') %>%
+#   # trim out young of year records (only useful for count data) and those with 
+#   #UNKNOWN species
+#  # filter(BGSCODE != "T" | is.na(BGSCODE),
+#  #        GENUS_BGS != "UNKNOWN" | is.na(GENUS_BGS))  
+#   # A. Fredston Sept 2025: deleted this step; YOY records are not well-defined for this survey and are often just small fish, which are fine to keep in 
+#   # remove the few rows that are still duplicates
+#   distinct()
+# 
+# # problems should be 0 obs
+# problems <- problems(gmex_bio_OLD) %>% 
+#   filter(!is.na(col))
+# stopifnot(nrow(problems) == 0)
+# 
+# gmex_bio_OLD <- type_convert(gmex_bio_OLD, cols(
+#   CRUISEID = col_integer(),
+#   STATIONID = col_integer(),
+#   VESSEL = col_integer(),
+#   CRUISE_NO = col_integer(),
+#   P_STA_NO = col_integer(),
+#   GENUS_BGS = col_character(),
+#   SPEC_BGS = col_character(),
+#   BGSCODE = col_character(),
+#   BIO_BGS = col_integer(),
+#   SELECT_BGS = col_double()
+# ))
+
+
+gmex_bio <-readr::read_delim("bgsrec.csv",
+                             delim = ',', escape_backslash = T, escape_double = F)
+
+gmex_bio <- type_convert(gmex_bio, cols(
+  CRUISEID = col_integer(),
+  STATIONID = col_integer(),
+  VESSEL = col_integer(),
+  CRUISE_NO = col_integer(),
+  P_STA_NO = col_character(),
+  GENUS_BGS = col_character(),
+  SPEC_BGS = col_character(),
+  BGSCODE = col_character(),
+  BIO_BGS = col_integer(),
+  SELECT_BGS = col_double()
+))
+
 
 gmex_cruise <-read_csv(
   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_CRUISES.csv",
@@ -175,56 +218,181 @@ gmex_cruise <- type_convert(gmex_cruise,
                               VESSEL = col_integer(),
                               TITLE = col_character()))
 
-temp <- tempfile()
-download.file(
-  "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_BGSREC.csv.zip", temp)
-gmex_bio <- read.csv(unz(temp, "gmex_BGSREC.csv")) %>% 
-  select('CRUISEID', 'STATIONID', 'VESSEL', 'CRUISE_NO', 'P_STA_NO',
-         'GENUS_BGS','CNT','CNTEXP', 'SPEC_BGS', 'BGSCODE', 'BIO_BGS', 'SELECT_BGS') %>%
-  # trim out young of year records (only useful for count data) and those with 
-  #UNKNOWN species
-  filter(BGSCODE != "T" | is.na(BGSCODE),
-         GENUS_BGS != "UNKNOWN" | is.na(GENUS_BGS))  %>%
-  # remove the few rows that are still duplicates
-  distinct()
 
-# problems should be 0 obs
-problems <- problems(gmex_bio) %>% 
-  filter(!is.na(col))
-stopifnot(nrow(problems) == 0)
+# new code chunk A. Fredston, Sept 2025 
+# gmex_spp_OLD <-read_csv(
+#   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_NEWBIOCODESBIG.csv",
+#   col_types = cols(
+#   Key1 = col_integer(),
+#   TAXONOMIC = col_character(),
+#   CODE = col_integer(),
+#   TAXONSIZECODE = col_character(),
+#   isactive = col_integer(),
+#   common_name = col_character(),
+#   tsn = col_integer(),
+#   tsn_accepted = col_integer()
+# )) %>% 
+#   select(-tsn_accepted)
 
-gmex_bio <- type_convert(gmex_bio, cols(
-  CRUISEID = col_integer(),
-  STATIONID = col_integer(),
-  VESSEL = col_integer(),
-  CRUISE_NO = col_integer(),
-  P_STA_NO = col_integer(),
-  GENUS_BGS = col_character(),
-  SPEC_BGS = col_character(),
-  BGSCODE = col_character(),
-  BIO_BGS = col_integer(),
-  SELECT_BGS = col_double()
-))
+gmex_spp <-read_csv("gmex_BCT_NFR_01182023.csv") %>%
+  mutate_if(is.logical, as.character)
+problems(gmex_spp)
+gmex_spp_OLD <- gmex_spp
+
+gmex_spp<- gmex_spp %>%
+  dplyr::select(BIOCODE,CIU_BIOCODE,TAXON) 
+names(gmex_spp) <- tolower(names(gmex_spp))
+
+  
+
+# A. Fredston Sept 2025: 
+# we now have five data objects that need to be merged:
+# gmex_station, *tow, *bio, *spp, *cruise
+# first, we merge tow (haul data) with bio (catch data) 
+# these get joined on a shared identifier column, invrecid
+# but previously some rows of bio were dropped because this column was N |> ULL
+# below those are filled in correctly (code from D. Hanisko via C. Gonzales / M. Karp at NOAA) and then the tables are joined. code from DisMAP
+
+names(gmex_tow) <- tolower(names(gmex_tow))
+names(gmex_bio) <- tolower(names(gmex_bio))
+
+# get stationid and invrecid from gmex_tow
+get_stationid_invrecid <- gmex_tow %>%
+  dplyr::select(stationid, invrecid) %>%
+  rename(inv_invrecid = invrecid)
+
+# extract gmex_bio records with missing invrecid and update based on stationid from get_stationid_invrecid
+bgsrec_null_invrecid <- gmex_bio %>%
+  dplyr::filter(is.na(invrecid)) %>%
+  dplyr::left_join(get_stationid_invrecid, by = 'stationid') %>%
+  dplyr::mutate(invrecid = inv_invrecid) %>%
+  dplyr::select(-inv_invrecid)
+
+# extract bgsrec table records with valid invrecid
+bgsrec_with_invrecid <- gmex_bio %>%
+  dplyr::filter(!is.na(invrecid))
+
+# stack bgsrec_null_invrec now updated with valid invrecid and bgsrec_with_invrecid
+gmex_bio_mod <- bgsrec_null_invrecid %>%
+  dplyr::bind_rows(bgsrec_with_invrecid) %>%
+  # Remove null invrecids
+  dplyr::filter(!is.na(invrecid)) %>%
+  dplyr::arrange(bgsid)
+
+# drop unwanted data objects
+rm(bgsrec_null_invrecid,bgsrec_with_invrecid,get_stationid_invrecid, gmex_bio)
+
+### Resolve taxonomic coding - copied from DISMAP Sept 2025 ###
+
+# Gmex_bio_mod has a few instances of invalid bio_bgs (biocode) values.
+# Also, multiple code/taxonomic combinations may refer to the same organisms under different names.
+# Gmex_bio_mod reflects the code/taxonomic use at time of data ingest.
+# Gmex_spp will allow translation of cases where multiple code/taxonomic refer to the same organism.
+# Since multiple changes may have occurred, the ciu_biocode (currently in use biocode) value ties multiple records
+# that are now inactive to the current active biocode. Inactive biocodes have the variable inactive set to zero.
+
+# The following script updates biocode to ciu_biocode in gmex_bio_mod, using gmex_spp to merge.
+
+# starting with our gmex_bio_mod from above
+gmex_bio_utax1 <- gmex_bio_mod %>%
+  # convert bgsrec table bio_bgs varialbe to numeric integer
+  dplyr::mutate(bio_bgs = as.integer(bio_bgs)) %>%
+  # rename bio_bgs to biocode to allow for easier manipulation with master biocode table (mbt)
+  dplyr::rename(biocode = bio_bgs) %>%
+  # fix invalid zero code and make it the code (999999998) for unidentified specimen
+  dplyr::mutate(biocode = ifelse(biocode == 0,999999998,biocode)) %>%
+  # fix invalid unidentified fish code 100000001 to proper code
+  dplyr::mutate(biocode = ifelse(biocode == 100000001,100000000,biocode)) %>%
+  # fix invalid unidentified crustacean code 200000001 to proper code
+  dplyr::mutate(biocode = ifelse(biocode == 200000001,200000000,biocode)) %>%
+  # fix invalid unidentified crustacean code 300000001  and 300000001 to proper code
+  dplyr::mutate(biocode = ifelse(biocode == 300000001,300000000,biocode)) %>%
+  dplyr::mutate(biocode = ifelse(biocode == 300000002,300000000,biocode)) %>%
+  # update older inactive biocodes to those currently in use (ciu_biocode)
+  dplyr::left_join(dplyr::select(gmex_spp,biocode,taxon,ciu_biocode), by = "biocode") %>%
+  # rename taxon to bgs taxon to keep the original name associated with a biocode
+  dplyr::rename(bgs_taxon = taxon) %>%
+  # do a left join to bring in taxon associated with ciu_taxon
+  dplyr::left_join(dplyr::select(gmex_spp,biocode,taxon), by = c("ciu_biocode" = "biocode"))
 
 
-# make two combined records where 2 different species share the same species code
-newspp <- tibble(
-  Key1 = c(503,5770), 
-  TAXONOMIC = c('ANTHIAS TENUIS AND WOODSI', 'MOLLUSCA AND UNID.OTHER #01'), 
-  CODE = c(170026003, 300000000), 
-  TAXONSIZECODE = NA, 
-  isactive = -1, 
-  common_name = c('threadnose and swallowtail bass', 'molluscs or unknown'), 
-  tsn = NA) 
+# Collapse taxa with known identification issues and collapse all sponges to single category
+# These updates undergo a review with each updated version of gmex_spp.
 
-# remove the duplicates that were just combined  
-gmex_spp <- gmex_spp %>% 
-  distinct(CODE, .keep_all = T)
+gmex_bio_utax2 <- gmex_bio_utax1 %>%
+  # Update the squid genus Loligo and all species under genus Doryteuthis to the genus Doryteuthis
+  mutate(ciu_biocode = ifelse(ciu_biocode %in% c(347020200,347021001,347021002,347021003),347021000,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(347021000),'DORYTEUTHIS SP',taxon)) %>%
+  # Update batfish species to Halieutichthys
+  mutate(ciu_biocode = ifelse(ciu_biocode >= 195050401 & ciu_biocode <= 195050405,195050400,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(195050400),'HALIEUTICHTHYS SP',taxon)) %>%
+  # Update all jellyfish in the genus Aurelia to the genus Aurelia
+  mutate(ciu_biocode = ifelse(ciu_biocode >= 618010101 & ciu_biocode <= 618010105,618010100,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(618010100),'AURELIA',taxon)) %>%
+  # Update all lionfishes species to the genus Pterois
+  mutate(ciu_biocode = ifelse(ciu_biocode %in% c(168011901,168011902),168011900,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(168011900),'PTEROIS',taxon)) %>%
+  # Smoothhounds (Mustelus) managed as species complex, our ids are OK now but in the past assumptions made %>%
+  mutate(ciu_biocode = ifelse(ciu_biocode %in% c(108031101,108031102,108031103,108031104),108031100,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(108031100),'MUSTELUS SP',taxon)) %>%
+  # Update all sponge identifications to Porifera
+  mutate(ciu_biocode = ifelse(ciu_biocode >= 613000000 & ciu_biocode < 616000000,613000000,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(613000000),'PORIFERA',taxon)) %>%
+  # handle out of order Porifera  Demospngiae and Agelas and Agelas and Agelasidae in coral numbers
+  mutate(ciu_biocode = ifelse(ciu_biocode %in% c(999997000,999997020,617170000,617170100),613000000,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(613000000),'PORIFERA',taxon)) %>%
+  # Collapse all shrimp species in Rimnapenaeus as they are not consistently separated in the field
+  mutate(ciu_biocode = ifelse(ciu_biocode %in% c(228012001,228012002),228012000,ciu_biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(228012000),'RIMAPENAEUS',taxon)) %>%
+  # Astropecten species have changed, distribution overlap with major east west differences
+  mutate(biocode = ifelse(ciu_biocode >= 691010101 & ciu_biocode <= 691010112,691010100,biocode)) %>%
+  mutate(taxon = ifelse(ciu_biocode %in% c(691010100),'ASTROPECTEN',taxon))
 
-# add the combined records on to the end. trim out extra columns from gmexspp
-gmex_spp <- rbind(gmex_spp[,1:7], newspp) %>% 
-  select(CODE, TAXONOMIC) %>% 
-  rename(BIO_BGS = CODE)
+
+## Collapse gmex_bio_utax2 to have single entry for each taxa for a distinct invrecid (tow)
+gmex_bio_utax3 <- gmex_bio_utax2 %>%
+  group_by(cruiseid, stationid, invrecid, ciu_biocode, taxon) %>%
+  summarise(record_cnt = n(),
+            # Note: Extrapolated counts (cntexp) & weights (select_bgs) of a taxa for a tow is the sum of all records of that taxon.
+            tcntexp = sum(cntexp, na.rm=TRUE),
+            tselect_bgs = sum(select_bgs,na.rm=TRUE))
+
+
+## Determine which tows to keep initially from the original gmex_tow object
+## Adding additional variable from gmex_station and gmex_cruise
+gmex_tow <- gmex_tow %>%
+  # add station location and related data dropping duplicated variables cruise_no and p_sta_no
+  left_join(select(gmex_station,-c("cruise_no","p_sta_no")), by = c("cruiseid", "stationid")) %>%
+  # add cruise title and dropping duplicated variable vessel
+  left_join(select(gmex_cruise, -c("vessel")), by = c("cruiseid"))
+
+
+## filtering gmex_tow
+gmex_tow <- gmex_tow %>%
+  # Trim to high quality SEAMAP summer trawls
+  filter(grepl("Summer", title) &
+           # NOTE: gear_size is 42ft (width of trawl net) but recorded as 40ft #
+           gear_size == 40 &
+           mesh_size == 1.63 &
+           ## keeping only null/no operation code or water hauls op = "W"
+           ## This also removes op = 9 ("NOS,WTS,OR SPECIES LIST INCOMPLETE") which is undocumented in GSMFC metadata
+           (is.na(op) | op == "W")) %>%
+  mutate(
+    # Create a unique haulid
+    haulid = paste(formatC(vessel, width=3, flag=0), formatC(cruise_no, width=3, flag=0), formatC(p_sta_no, width=5, flag=0, format='d'), sep='-'),
+    # Extract year where needed
+    year = year(mo_day_yr),
+    # Calculate decimal lat and lon, depth in m, where needed
+    s_latd = ifelse(s_latd == 0, NA, s_latd),
+    s_lond = ifelse(s_lond == 0, NA, s_lond),
+    e_latd = ifelse(e_latd == 0, NA, e_latd),
+    e_lond = ifelse(e_lond == 0, NA, e_lond),
+    lat = rowMeans(cbind(s_latd + s_latm/60, e_latd + e_latm/60), na.rm=T),
+    lon = -rowMeans(cbind(s_lond + s_lonm/60, e_lond + e_lonm/60), na.rm=T),
+  ) %>%
+  ## filter for target years
+  filter(year >= 2010)
+
 
 #--------------------------------------------------------------------------------------#
 #### REFORMAT AND MERGE DATA FILES ####
