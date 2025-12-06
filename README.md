@@ -1,3 +1,4 @@
+
 # FishGlob_data
 
 [![DOI](https://zenodo.org/badge/580133169.svg)](https://zenodo.org/badge/latestdoi/580133169)
@@ -79,3 +80,10 @@ Datasets are available for download in **outputs/Cleaned_data/** as .Rdata files
 > **23/11/2023**: FishGlob_data v2.0. This fixes [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29).
 
 > **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
+
+### Community involvement 
+
+- *Do you want to connect with other members of our community?* Check out our [Discussion forum](https://github.com/fishglob/FishGlob_data/discussions/73) where you can share ideas, possible developments and collaborations, as well as any other topics related to FISHGLOB.
+- *Found a bug in the code?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can investigate. Contributions and suggested fixes are warmly encouraged!
+- *Want to request specific changes?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can concider it in our future updates.
+- *Want to learn more about FISHGLOB? Check out our [website](https://fishglob.sites.ucsc.edu/), https://fishglob.sites.ucsc.edu/
