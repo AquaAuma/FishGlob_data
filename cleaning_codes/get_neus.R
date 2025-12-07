@@ -133,7 +133,7 @@ neus_strata <- read.csv(
   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/neus_strata.csv")
 
 neus_strata <- neus_strata %>%
-    select(stratum, stratum_area) %>% 
+    dplyr::select(stratum, stratum_area) %>% 
     mutate(stratum = as.double(stratum)) %>%
     distinct()
 
@@ -329,7 +329,7 @@ neus_fall<- neus_fall %>%
     #but use caution because of 2008-2009 conversion
     wgt_cpue = wgt/area_swept
      ) %>%
-  select(survey, haul_id, source, timestamp, country, sub_area, continent, stat_rec, station,
+  dplyr::select(survey, haul_id, source, timestamp, country, sub_area, continent, stat_rec, station,
          stratum, year, month, day, quarter, season, latitude, longitude,
          haul_dur, area_swept, gear, depth, sbt, sst,
          num, num_h, num_cpue, wgt, wgt_h, wgt_cpue, verbatim_name)
@@ -509,7 +509,7 @@ neus_spring<- neus_spring %>%
     #but use caution because of 2008-2009 conversion
     wgt_cpue = wgt/area_swept
   ) %>%
-  select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
+  dplyr::select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
          stratum, year, month, day, quarter, season, latitude, longitude,
          haul_dur, area_swept, gear, depth, sbt, sst,
          num, num_h, num_cpue, wgt, wgt_h, wgt_cpue, verbatim_name)
@@ -543,7 +543,7 @@ neus <- neus %>%
          wgt=my_sum(wgt),
          wgt_h=my_sum(wgt_h),
          wgt_cpue=my_sum(wgt_cpue)) %>%
-select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
+dplyr::select(survey, haul_id,source, timestamp, country, sub_area, continent, stat_rec, station,
        stratum, year, month, day, quarter, season, latitude, longitude,
        haul_dur, area_swept, gear, depth, sbt, sst,
        num, num_h, num_cpue, wgt, wgt_h, wgt_cpue, verbatim_name)
@@ -627,7 +627,7 @@ clean_auto <- clean_taxa(unique(neus$taxa2), input_survey = neus_survey_code,
 #--------------------------------------------------------------------------------------#
 
 correct_taxa <- clean_auto %>% 
-  select(-survey) %>% 
+  dplyr::select(-survey) %>% 
   filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 
 clean_neus <- left_join(neus, correct_taxa, by=c("taxa2"="query")) %>% 
@@ -646,7 +646,7 @@ clean_neus <- left_join(neus, correct_taxa, by=c("taxa2"="query")) %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 #check for duplicates
 count_clean_neus <- clean_neus %>%
@@ -681,7 +681,7 @@ head(clean_neus_fixed_haul_id$haul_id)
 
 
 # -------------------------------------------------------------------------------------#
-#### SAVE DATABASE IN GOOGLE DRIVE ####
+#### SAVE DATABASE ####
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
@@ -690,7 +690,7 @@ write_clean_data(data = clean_neus_fixed_haul_id, survey = "NEUS", overwrite = T
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
@@ -778,26 +778,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 

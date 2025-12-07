@@ -165,7 +165,9 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     # NOTE: it takes longer because it goes trough a
     # series of checkpoints a taxon validation
     
-    fix_taxon <- taxize::gna_verifier(taxon_list,
+    # Process in batches of 50 (otherwise API throws an error)
+    for (i in seq(1, length(taxon_list), by = 50)) {
+      batch <- taxize::gna_verifier(taxon_list[i:min(i + 50 - 1, length(taxon_list))],
                                      data_source_ids = wrm,
                                      best_match_only = TRUE,
                                      canonical = TRUE,
@@ -175,6 +177,9 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
         query = submittedName,
         taxa = matchedCanonicalSimple
         )
+      if(i==1) fix_taxon <- batch
+      if(i>1) fix_taxon <- rbind(fix_taxon, batch)
+    }
     
     # # Missing in fix_taxon
     missing_misspelling <- tibble::tibble(
@@ -200,7 +205,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
                 by = "taxa",
                 relationship = "many-to-many") %>% 
       dplyr::mutate(query = ifelse(is.na(query),scientificname,query)) %>% 
-      select(-scientificname)
+      dplyr::select(-scientificname)
     
     # Missing in fix_taxon
     missing_misspelling_wrms <- alphaid %>% 
@@ -265,7 +270,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
   
   suppressMessages(
     missing_worms_db_selection <- anti_join(worms_db,worms_db_selection) %>% 
-      select(query, taxa)
+      dplyr::select(query, taxa)
   )
   
   
