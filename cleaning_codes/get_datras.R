@@ -3,8 +3,8 @@
 #### URL: https://datras.ices.dk/
 #### Coding: Aurore Maureaud + Juliano Palacios + Daniel van Denderen, December 2022
 #### Coding: + Laurene Pecuchet 2023
+#### Small bug fix: Malin Pinsky 2025-12-08. Started from Aurore's .RData files.
 #######################################################
-rm(list=ls())
 
 date <- "3November2023"
 
@@ -211,7 +211,7 @@ if(load_stored_datras == TRUE){
   hl.nigfs <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.nigfs.csv")
   hl.pt <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.pt.csv") %>% 
     dplyr::rename(Valid_Aphia = ValidAphiaID) %>% 
-    select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
+    dplyr::select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
            DoorType, StNo, HaulNo, Year, SpecCodeType, SpecCode, SpecVal, Sex,
            TotalNo, CatIdentifier, NoMeas, SubFactor, SubWgt, CatCatchWgt, LngtCode,
            LngtClass, HLNoAtLngt, DevStage, LenMeasType, DateofCalculation,
@@ -220,7 +220,7 @@ if(load_stored_datras == TRUE){
   hl.scorock <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.scorock.csv")
   hl.swc <- read.csv("/Volumes/Elements/fishglob data/Publicly available/DATRAS/hl.swc.csv")%>% 
     dplyr::rename(Valid_Aphia = ValidAphiaID) %>% 
-    select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
+    dplyr::select(RecordType, Survey, Quarter, Country, Ship, Gear, SweepLngt, GearEx,
            DoorType, StNo, HaulNo, Year, SpecCodeType, SpecCode, SpecVal, Sex,
            TotalNo, CatIdentifier, NoMeas, SubFactor, SubWgt, CatCatchWgt, LngtCode,
            LngtClass, HLNoAtLngt, DevStage, LenMeasType, DateofCalculation,
@@ -352,7 +352,7 @@ survey <- survey %>%
          SpecVal %in% c(1,10,4,5,6,7,8),
          DataType %in% c('S','R','C'))
 
-print(length(unique(survey$HaulID)))
+print(length(unique(survey$HaulID))) # 66086, 8 December 2025 Malin Pinsky
 
 
 ##########################################################################################
@@ -376,21 +376,21 @@ survey <- survey %>%
                              DataType %in% c('S','R') ~ TotalNo),
          CatCatchWgt = case_when(DataType=='C' ~ CatCatchWgt*HaulDur/60,
                                  DataType %in% c('S','R') ~ CatCatchWgt)) %>% 
-  select(-HaulVal, -DataType, -StdSpecRecCode, -SpecVal, -SubWgt, -SubFactor) %>% 
+  dplyr::select(-HaulVal, -DataType, -StdSpecRecCode, -SpecVal, -SubWgt, -SubFactor) %>% 
   mutate(Survey = if_else(Survey=='SCOWCGFS', 'SWC-IBTS', Survey)) %>% 
   mutate(Survey = if_else(Survey=='SCOROC','ROCKALL',Survey)) %>% 
   filter(!(Survey=="NS-IBTS" & BySpecRecCode %in% c(0,2,3,4,5)),  ### What is it doing here?
          # remove hauls where not all species are recorded
          !(Survey=="BITS" & BySpecRecCode==0))
 
-length(unique(survey$HaulID))
+length(unique(survey$HaulID)) # 63686, 8 December 2025, Malin Pinsky
 
 
 ##########################################################################################
 #### GET THE SWEPT AREA in km2
 ##########################################################################################
 
-source('cleaning_codes/source_DATRAS_wing_doorspread.R')
+source('cleaning_codes/source_DATRAS_wing_doorspread.R') # 8 December 2025 (Malin Pinsky): Warning message: In predict.lm(object = lm0, newdata = spn, interval = "confidence",  : prediction from rank-deficient fit; attr(*, "non-estim") has doubtful cases
 
 
 ##########################################################################################
@@ -400,7 +400,7 @@ source('cleaning_codes/source_DATRAS_wing_doorspread.R')
 # Assess size of data without length composition or negative values
 xx <- subset(survey, is.na(HLNoAtLngt) | is.na(LngtClass))
 no_length_hauls <- sort(unique(xx$HaulID)) # 11,113 hauls with missing length data
-print(length(no_length_hauls))
+print(length(no_length_hauls)) # 11113, 8 December 2025 Malin Pinsky
 rm(no_length_hauls)
 
 # Only keep abundances/weight
@@ -422,7 +422,7 @@ survey <- survey %>%
          LngtClass = ifelse(LngtCode %in% c('.','0'), LngtClass*0.1, LngtClass)) %>% 
   # fix unit of length class
   dplyr::rename(Length = LngtClass) %>% 
-  select(Survey, HaulID, StatRec, Year, Month, Quarter, Season, ShootLat, ShootLong, 
+  dplyr::select(Survey, HaulID, StatRec, Year, Month, Quarter, Season, ShootLat, ShootLong, 
          HaulDur, Area.swept, Gear, Depth, SBT, SST, AphiaID, CatIdentifier, Sex, 
          numcpue, wtcpue, numh, wgth, num, wgt, Length, LenMeasType, numlencpue, numlenh)
 survey <- data.frame(survey)
@@ -434,7 +434,7 @@ survey <- data.frame(survey)
 
 # Make AphiaID list per survey
 aphia_datras <- survey %>% 
-  select(Survey, AphiaID) %>% 
+  dplyr::select(Survey, AphiaID) %>% 
   dplyr::rename(survey = Survey,
                 worms_id_datras = AphiaID) %>% 
   distinct()
@@ -443,61 +443,97 @@ aphia_datras <- survey %>%
 ns_data <- aphia_datras %>% filter(survey=="NS-IBTS")
 clean_ns <- clean_taxa(ns_data$worms_id_datras, input_survey = "NS-IBTS", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 269 taxa and dropped 475. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 475; Non-marine taxa: 2 All taxa assessed =FALSE"
+# Time difference of -24.68543 secs
 
 # Clean taxa bay of biscay
 evhoe_data <- aphia_datras %>% filter(survey=="EVHOE")
 clean_evhoe <- clean_taxa(evhoe_data$worms_id_datras, input_survey = "EVHOE",
                           save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 238 taxa and dropped 47. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 47; Non-marine taxa: 2 All taxa assessed =FALSE"
+# Time difference of -11.29401 secs
 
 # Clean taxa english channel
 cgfs_data <- aphia_datras %>% filter(survey=="FR-CGFS")
 clean_cgfs <- clean_taxa(cgfs_data$worms_id_datras, input_survey = "FR-CGFS", 
                          save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 122 taxa and dropped 146. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 146; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -10.78069 secs
 
 # Clean taxa baltic sea
 bits_data <- aphia_datras %>% filter(survey=="BITS")
 clean_bits <- clean_taxa(bits_data$worms_id_datras, input_survey = "BITS", 
                          save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 137 taxa and dropped 19. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 19; Non-marine taxa: 11 All taxa assessed =FALSE"
+# Time difference of -8.721279 secs
 
 # Clean taxa scottish sea
 swc_data <- aphia_datras %>% filter(survey %in% c("SCOWCGFS","SWC-IBTS"))
 clean_swc <- clean_taxa(swc_data$worms_id_datras, input_survey = "SWC-IBTS", 
                         save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 160 taxa and dropped 28. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 28; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -9.087807 secs
 
 # Clean taxa rockall
 rock_data <- aphia_datras %>% filter(survey %in% c("SCOROC","ROCKALL"))
 clean_rock <- clean_taxa(rock_data$worms_id_datras, input_survey = "ROCKALL", 
                          save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 80 taxa and dropped 13. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 13; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -6.27001 secs
 
 # Clean taxa irish sea
 ir_data <- aphia_datras %>% filter(survey=="IE-IGFS")
 clean_ir <- clean_taxa(ir_data$worms_id_datras, input_survey = "IE-IGFS", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 205 taxa and dropped 17. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 17; Non-marine taxa: 2 All taxa assessed =FALSE"
+# Time difference of -11.71565 secs
 
 # Clean taxa northern ireland
 nigfs_data <- aphia_datras %>% filter(survey=="NIGFS")
 clean_nigfs <- clean_taxa(nigfs_data$worms_id_datras, input_survey = "NIGFS", 
                           save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 100 taxa and dropped 12. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 12; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -6.206907 secs
 
 # Clean taxa for portugal
 pt_data <- aphia_datras %>% filter(survey=="PT-IBTS")
 clean_pt <- clean_taxa(pt_data$worms_id_datras, input_survey = "PT-IBTS", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 195 taxa and dropped 151. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 151; Non-marine taxa: 2 All taxa assessed =FALSE"
+# Time difference of -13.63219 secs
 
 # Clean taxa for Spanish Cantabrian Sea
 spnorth_data <- aphia_datras %>% filter(survey=="SP-NORTH")
 clean_spnorth <- clean_taxa(spnorth_data$worms_id_datras, input_survey = "SP-NORTH", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 226 taxa and dropped 86. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 86; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -11.28517 secs
 
 # Clean taxa for Spanish Porcupine
 porc_data <- aphia_datras %>% filter(survey=="SP-PORC")
 clean_porc <- clean_taxa(porc_data$worms_id_datras, input_survey = "SP-PORC", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 189 taxa and dropped 28. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 28; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -9.529418 secs
 
 # Clean taxa for Spanish Gulf of Cadiz
 arsa_data <- aphia_datras %>% filter(survey=="SP-ARSA")
 clean_arsa <- clean_taxa(arsa_data$worms_id_datras, input_survey = "SP-ARSA", 
                        save=F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 182 taxa and dropped 18. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 18; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -8.782595 secs
 
 clean_datras_taxa <- rbind(clean_bits, clean_cgfs, clean_evhoe, clean_ir, clean_nigfs,
                     clean_pt, clean_rock, clean_swc, clean_ns, clean_spnorth, 
@@ -524,13 +560,23 @@ spp_to_recode <-c("Dipturus batis","Dipturus flossada","Dipturus batis-complex",
                   "Leusueurigobius friesii","Neogobius melanostomus")
 
 alphaid <- get_wormsid(recoded_taxa)
+# 8 December 2025 Malin Pinsky
+# Liparis: manually chose the accepted Liparis genus (1)
+# others selected automatically
+# • Total: 13 
+# • Found: 13 
+# • Not Found: 0
+
 alphaid <- tibble(taxa = recoded_taxa,
                   worms_id = alphaid[1:length(recoded_taxa)])
 clean_manual_recoded <- clean_taxa(alphaid$worms_id, input_survey = "recoded", 
                                    save = F, fishbase=TRUE)
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 13 taxa and dropped 0. Misspelled taxa: 0; No alphia id found: 0; Non-fish classes: 0; Non-marine taxa: 0 All taxa assessed =TRUE"
+# Time difference of -5.580673 secs
 
 clean_datras_taxa <- clean_datras_taxa %>% 
-  select(-survey) %>% 
+  dplyr::select(-survey) %>% 
   mutate(SpecCode = ifelse(taxa %in% spp_to_recode, NA, SpecCode),
          rank = ifelse(taxa %in% spp_to_recode, "Genus", rank),
          #dipturus
@@ -664,7 +710,7 @@ if(check_TL_conversion == TRUE){
 if(apply_TL_conversion == TRUE){
   conversion_to_TL <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
   filter(is.na(LenMeasType)) %>% 
-  select(taxa, conversion_to_TL)
+    dplyr::select(taxa, conversion_to_TL)
 
   survey <- left_join(survey, conversion_to_TL, by = "taxa") %>% 
     mutate(Length = ifelse(!is.na(conversion_to_TL), Length*conversion_to_TL, Length))
@@ -675,7 +721,7 @@ if(apply_TL_conversion == TRUE){
 if (plot_length_frequencies == TRUE){
   xx_concern <- read.csv("QAQC/DATRAS/Length Types/lengthtypes_taxa_concern_fishbase.csv")
   xx_conversions <- read.csv("length_weight/DATRAS_taxa_not_TL_conversions.csv") %>% 
-    select(taxa, conversion_to_TL) %>% 
+    dplyr::select(taxa, conversion_to_TL) %>% 
     distinct()
   xx_concern <- left_join(xx_concern, xx_conversions, by="taxa")
   
@@ -701,7 +747,7 @@ if (plot_length_frequencies == TRUE){
 # 4. List of taxa for length-weight conversion coefficients
 if(need_get_lw_rel == TRUE){
   list.taxa <- survey %>% 
-    select(taxa, family, genus, rank) %>% 
+    dplyr::select(taxa, family, genus, rank) %>% 
     filter(!is.na(family)) %>% 
     distinct()
   
@@ -724,12 +770,12 @@ if (remove_lengths_units_issue == TRUE){
 
 # 6. re-calculate weights with length-weight relationships
 datalw <- read.csv('length_weight/length.weight_DATRAS_3August2023.csv') %>% 
-  select(-X)
+  dplyr::select(-X)
 
 
 # summarize abundance/weight at the haul level
 survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>% 
-  select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
+  dplyr::select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,
          HaulDur,Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,
          SpecCode,kingdom, class, order,phylum,rank,
          CatIdentifier,Sex,numcpue,numh,num) %>% 
@@ -741,7 +787,7 @@ survey.num <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>
   ungroup()
 
 survey.wgt <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>% 
-  select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,HaulDur,
+  dplyr::select(Survey,HaulID,StatRec,Year,Month,Quarter,Season,ShootLat,ShootLong,HaulDur,
          Area.swept,Gear,Depth,SBT,SST,family,genus,taxa,AphiaID,worms_id,SpecCode,
          kingdom, class, order,phylum,rank,
          CatIdentifier,Sex,wtcpue,wgth,wgt) %>% 
@@ -771,7 +817,7 @@ survey2 <- left_join(survey, datalw, by=c("taxa","family","genus","rank")) %>%
   ungroup()
 
 # merge both and compare
-nrow(survey1)==nrow(survey2)
+nrow(survey1)==nrow(survey2) # TRUE
 survey3 <- full_join(survey1, survey2, by=c('Survey','HaulID','StatRec','Year','Month',
                                             'Quarter','Season','ShootLat','ShootLong',
                                             'HaulDur','Area.swept','Gear','Depth',
@@ -785,16 +831,16 @@ survey3 <- full_join(survey1, survey2, by=c('Survey','HaulID','StatRec','Year','
 ##########################################################################################
 
 # correlation between abundances to check calculations are right
-cor(x = survey3$numh, y = survey3$numlenh, method = 'pearson', use = "complete.obs")
+cor(x = survey3$numh, y = survey3$numlenh, method = 'pearson', use = "complete.obs") # 0.9999926
 xx <- subset(survey3, !is.na(numcpue))
-cor(x = xx$numcpue, y = xx$numlencpue, method = 'pearson', use = "complete.obs")
+cor(x = xx$numcpue, y = xx$numlencpue, method = 'pearson', use = "complete.obs") # 0.9999905
 
 # correlation between weights to check calculations are right
 xx <- subset(survey3, wtcpue>0 & wgtlencpue>0)
-cor(x = xx$wtcpue, y = xx$wgtlencpue, method = 'pearson', use = "complete.obs")
+cor(x = xx$wtcpue, y = xx$wgtlencpue, method = 'pearson', use = "complete.obs") # 0.1971739
 
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
-cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs")
+cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson', use = "complete.obs") # 0.1983561
 
 # make per survey correlation table
 surveys <- c(sort(unique(survey$Survey)),"all","all-SP")
@@ -866,7 +912,7 @@ ggplot(subset(xx, Survey=='SWC-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
 
 comp <- subset(xx, Survey=='SWC-IBTS') %>% 
-  select(HaulID,wgtlenh,wgth) %>% 
+  dplyr::select(HaulID,wgtlenh,wgth) %>% 
   distinct() %>% 
   group_by(HaulID) %>%
   summarize_at(.vars=c('wgtlenh', 'wgth'), .funs = function(x) sum(x)) %>% 
@@ -894,7 +940,7 @@ ggplot(subset(xx, Survey=='BITS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
 
 comp <- subset(xx, Survey=='BITS') %>% 
-  select(HaulID,wgtlenh,wgth) %>% 
+  dplyr::select(HaulID,wgtlenh,wgth) %>% 
   distinct() %>% 
   group_by(HaulID) %>%
   summarize_at(.vars=c('wgtlenh', 'wgth'), .funs = function(x) sum(x)) %>% 
@@ -922,7 +968,7 @@ ggplot(subset(xx, Survey=='EVHOE'), aes(x=wgth, y=wgtlenh)) + geom_point() +
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10()
 
 comp <- subset(xx, Survey=='EVHOE') %>% 
-  select(HaulID,wgtlenh,wgth) %>% 
+  dplyr::select(HaulID,wgtlenh,wgth) %>% 
   distinct() %>% 
   group_by(HaulID) %>%
   summarize_at(.vars=c('wgtlenh', 'wgth'), .funs = function(x) sum(x)) %>% 
@@ -942,7 +988,7 @@ ggplot(subset(xx, Survey=='NS-IBTS'), aes(x=wgth, y=wgtlenh)) + geom_point() +
               linetype="dashed", size=0.5) + scale_x_log10() + scale_y_log10() 
 
 comp <- subset(xx, Survey=='NS-IBTS') %>% 
-  select(HaulID,wgtlenh,wgth) %>% 
+  dplyr::select(HaulID,wgtlenh,wgth) %>% 
   distinct() %>% 
   group_by(HaulID) %>%
   summarize_at(.vars=c('wgtlenh', 'wgth'), .funs = function(x) sum(x)) %>% 
@@ -995,16 +1041,16 @@ survey3 <- survey3 %>%
 
 # check again correlations
 xx <- subset(survey3, wtcpue> 0 & wgtlencpue>0)
-cor(x = xx$wtcpue , y = xx$wgtlencpue, method = 'pearson') # looks better
+cor(x = xx$wtcpue , y = xx$wgtlencpue, method = 'pearson') # looks better. 0.202582
 
 xx <- subset(survey3, wgth>0 & wgtlenh>0)
-cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson') # looks better
+cor(x = xx$wgth, y = xx$wgtlenh, method = 'pearson') # looks better. 0.203069
 
 # now check per haul without zeros, NAs
-xx <- subset(survey3, wtcpue>0 & wgtlencpue>0)
+xx <- subset(survey3, wtcpue>0 & wgtlencpue>0) # 
 
 comp <- xx %>% 
-  select(HaulID,wgtlencpue,wtcpue) %>% 
+  dplyr::select(HaulID,wgtlencpue,wtcpue) %>% 
   distinct() %>% 
   group_by(HaulID) %>%
   summarize_at(.vars=c('wgtlencpue', 'wtcpue'), .funs = function(x) sum(x)) %>% 
@@ -1017,6 +1063,7 @@ ggplot(comp, aes(x=wtcpue, y=wgtlencpue)) + geom_point() +
 
 cor(x = xx$wtcpue , y = xx$wgtlencpue, method = 'pearson')
 # [1] 0.9635742
+# 8 December 2025 Malin Pinsky: 0.202582
 
 
 ##########################################################################################
@@ -1071,7 +1118,7 @@ survey4 <- survey3 %>%
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
   # Final format
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 
 
@@ -1179,26 +1226,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -1216,6 +1263,16 @@ for(i in 1:length(survey_units)){
     rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2, trim_2)
   }
 }
+
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  dplyr::summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 
 # Just run this routine should be good for all
