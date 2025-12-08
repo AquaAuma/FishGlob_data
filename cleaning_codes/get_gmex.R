@@ -441,49 +441,10 @@ gmex <- gmex %>%
 # Get clean taxa
 clean_auto <- clean_taxa(unique(gmex$taxa2),
                          input_survey = gmex_survey_code,
-                         save = F, output=NA, fishbase=T) # takes 10 mins
+                         save = F, output=NA, fishbase=T) # takes 2 mins. 8 December 2025 (Malin Pinsky)
 
-#Portunus spinimanus                                  no match                                 
-#Trachypeneus                                         no match                                 
-#Portunus spinicarpus                                 no match                                 
-#Podochela sidneyi                                    no match                                 
-#Parthenope granulata                                 no match                                 
-#Stenocionops furcata                                 no match                                 
-#Ventricolaria                                        no match                                 
-#Astroscopus y-graecum                                no match      ##fish                           
-#Actaea rufopunctata                                  no match                                 
-#Coelenterata                                         no match                                 
-#Ventricolaria                                        no match                                 
-#Panopeus bermudensis                                 no match                                 
-#Photichthyidae                                       no match                                 
-#Parthenope punctata                                  no match                                 
-#Enidae                                               no match                                 
-#Unionidae                                            no match                                 
-#Iliacantha intermedia                                no match                                 
-#Abisa                                                no match                                 
-#Mithrax acuticornis                                  no match                                 
-#Portunus floridanus                                  no match                                 
-#Nereidae                                             no match                                 
-#Macrobrachium ohione                                 no match                                 
-#Parthenope fraterculus                               no match                                 
-#Pinnotheres maculatum                                no match                                 
-#Portunus ordwayi                                     no match                                 
-#Podochela gracilipes                                 no match                                 
-#Portunus depressifrons                               no match                                 
-#Mithrax forceps                                      no match                                 
-#Mellita sexiesperforata                              no match                                 
-#Hypoconcha sabulosa                                  no match                                 
-#Calappa angusta                                      no match                                 
-#Processa tenuipes                                    no match                                 
-#Cyclois bairdii                                      no match                                 
-#Pecten tereinus                                      no match                                 
-#Lophopanopeus distinctus                             no match                                 
-#Helix                                                no match                                 
-#Cheiraster echinulatus                               no match                                 
-#Corillidae                                           no match                                 
-#Chirostylus spinifer                                 no match                                 
-#Pisidiidae                                           no match                                 
-#Pomacea                                              no match                              
+# [1] "Returned 813 taxa and dropped 1156. Misspelled taxa: 258; No alphia id found: 120; Non-fish classes: 1036; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -1.986862 mins. (8 December 2025, Malin Pinsky)
            
 
 #all invertebrates except for Astroscopus y-graecum
