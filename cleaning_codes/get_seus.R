@@ -56,7 +56,7 @@ seus_catch <- read_csv(unz(temp, "seus_catch.csv"),
 # problems should have 0 obs
 problems <- problems(seus_catch) %>% 
   filter(!is.na(col))
-stopifnot(nrow(problems) == 0)
+stopifnot(nrow(problems) == 0) # no error thrown
 
 # convert the columns to their correct formats
 seus_catch <- type_convert(seus_catch, col_types = cols(
@@ -118,7 +118,7 @@ seus_haul <- read_csv(
 # problems should have 0 obs
 problems <- problems(seus_haul) %>% 
   filter(!is.na(col))
-stopifnot(nrow(problems) == 0)
+stopifnot(nrow(problems) == 0) # no error thrown
 
 seus_haul <- type_convert(seus_haul, col_types = cols(
   EVENTNAME = col_character(),
@@ -207,7 +207,7 @@ seus <- seus %>%
     depth = DEPTHSTART, 
     spp = SPECIESSCIENTIFICNAME, 
     stratumarea = STRATAHECTARE) %>%
-select("haul_id", "year", "lat", "lon", "stratum", "stratumarea",
+dplyr::select("haul_id", "year", "lat", "lon", "stratum", "stratumarea",
 "depth", "spp",  "SEASON", "STATIONCODE",
        "MONTH", "DAY", "EFFORT",
        "TEMPSURFACE",
@@ -260,7 +260,7 @@ seus <- seus %>%
                 'PSEUDOMEDAEUS AGASSIZII')
   )  %>% 
   mutate(survey = "SEUS") %>% 
-  select(survey, haul_id, year, lat, lon, stratum, stratumarea, depth, spp, wgt_cpue, 
+  dplyr::select(survey, haul_id, year, lat, lon, stratum, stratumarea, depth, spp, wgt_cpue, 
          wgt_h, num_cpue, num_h,abundance, SEASON, STATIONCODE, MONTH, DAY, EFFORT,
          TEMPSURFACE,
          TEMPBOTTOM, biomass, haul_dur, GEARNAME) %>% 
@@ -301,7 +301,7 @@ seus <- seus %>%
          continent = "n_america",
          stat_rec = NA,
          verbatim_name = spp) %>% 
-  select(survey, haul_id, country, sub_area, continent, stat_rec, station, 
+  dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, 
          stratum, year, month,
          day, quarter, season, latitude, longitude, haul_dur, area_swept, 
          gear, depth, sbt, sst,
@@ -313,7 +313,7 @@ count_seus <- seus %>%
   group_by(haul_id, verbatim_name) %>%
   mutate(count = n())
 
-#none!
+unique(count_seus$count) #none! all 1s
 
 #which ones are duplicated?
 unique_name_match <- count_seus %>%
@@ -321,7 +321,7 @@ unique_name_match <- count_seus %>%
   filter(count>1) %>%
   distinct(verbatim_name)
 
-#empty
+unique_name_match #empty
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA FROM TAXA ANALYSIS ####
@@ -345,7 +345,9 @@ seus <- seus %>%
 # Get clean taxa (setting save = T means we will get an output of missing taxa)
 clean_auto <- clean_taxa(unique(seus$taxa2), input_survey = seus_survey_code,
                          fishbase=T) 
-# takes 1.57 mins!
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 250 taxa and dropped 100. Misspelled taxa: 21; No alphia id found: 0; Non-fish classes: 100; Non-marine taxa: 0 All taxa assessed =FALSE"
+# Time difference of -23.92144 secs
 
 #this function sometimes throws an error, but if you restart your computer, 
 #it typically resolves
@@ -380,7 +382,7 @@ clean_auto.missing <- rbind(clean_auto, wph_oce, ast_ygr)
 #--------------------------------------------------------------------------------------#
 
 clean_taxa <- clean_auto.missing %>% 
-  select(-survey) %>% 
+  dplyr::select(-survey) %>% 
   filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 
 clean_seus <- left_join(seus, clean_taxa, by=c("taxa2"="query")) %>% 
@@ -391,7 +393,7 @@ clean_seus <- left_join(seus, clean_taxa, by=c("taxa2"="query")) %>%
   rename(accepted_name = taxa,
          aphia_id = worms_id) %>% 
   mutate(verbatim_aphia_id = NA) %>% 
-  select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
+  dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
          year, month, day, quarter, season, latitude, longitude,
          haul_dur, area_swept, gear, depth, sbt, sst, num, num_h, num_cpue, wgt,
          wgt_h, wgt_cpue,
@@ -404,7 +406,7 @@ count_clean_seus <- clean_seus %>%
   group_by(haul_id, accepted_name) %>%
   mutate(count = n())
 
-#none!
+unique(count_clean_seus$count) #none! all 1s
 
 #which ones are duplicated?
 unique_name_match <- count_clean_seus %>%
@@ -412,6 +414,7 @@ unique_name_match <- count_clean_seus %>%
   filter(count>1) %>%
   distinct(accepted_name, verbatim_name)
 
+unique_name_match
 #add final columns
 
 clean_seus <- clean_seus %>%
@@ -425,7 +428,7 @@ clean_seus <- clean_seus %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 # -------------------------------------------------------------------------------------#
 #### SAVE DATABASE IN GOOGLE DRIVE ####
@@ -525,26 +528,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -563,6 +566,15 @@ for(i in 1:length(survey_units)){
   }
 }
 
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 # Just run this routine should be good for all
 write_clean_data(data = survey_std, survey = "SEUS_std",
