@@ -80,6 +80,7 @@ fishglob_public_metadata <- fishglob %>%
   select(survey, latitude, longitude, year, survey_unit) %>%
   distinct()
 
+# MLP 8 Dec 2025: had to delete outputs/Compiled_data/FishGlob_public_metadata_clean.csv.gz before running the next line
 write_clean_data(data = fishglob_public_metadata,
                  survey = "FishGlob_public_metadata",
                  overwrite = TRUE, compiled = TRUE, gzip = TRUE)
