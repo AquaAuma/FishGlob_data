@@ -168,7 +168,8 @@ mar <- mar %>%
          day = day(as.Date(sdate)),
          haul_dur = dur/60) #minutes to hours
 
-#if any values are 9999, switch to NA
+#if any values are 9999, switch to NA 
+# Malin Pinsky 8 December 2025: NOTE: this code appears to remove these lines, rather than switching to NA!
 mar <- mar %>%
   filter(wgt != 9999)
 
@@ -187,12 +188,12 @@ mar <- mar |>
 # Does the spp column contain any eggs or non-organism notes? 
 #As of 2021, only "UNIDENTIFIED" to be  removed
 test <- mar %>%
-  select(verbatim_name) %>%
+  dplyr::select(verbatim_name) %>%
   filter(!is.na(verbatim_name)) %>%
   distinct() %>%
   filter((grepl("egg", verbatim_name) & grepl("", verbatim_name)) | 
            grepl("UNIDENTIFIED", verbatim_name)) #does it contain egg or unidentified?
-stopifnot(nrow(test)==0)
+stopifnot(nrow(test)==0) # throws an error
 
 #delete any rows with any of these 
 mar <- mar %>%
@@ -200,7 +201,7 @@ mar <- mar %>%
 
 #check that the number of unique haul_ids * spp combinations is the same as 
 #the number of rows in mar
-nrow(mar) == nrow(unique(mar[,c("haul_id","verbatim_name")]))
+nrow(mar) == nrow(unique(mar[,c("haul_id","verbatim_name")])) # TRUE
 
 #no duplicates!
 
@@ -234,7 +235,7 @@ mar <- mar %>%
     ),
     verbatim_aphia_id = NA,
   ) %>%
-  select(survey, haul_id, source, timestamp, country, sub_area, continent, stat_rec, station, stratum,
+  dplyr::select(survey, haul_id, source, timestamp, country, sub_area, continent, stat_rec, station, stratum,
          year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
          gear, depth, sbt, sst, verbatim_name, num, num_h, num_cpue,
          wgt, wgt_h, wgt_cpue, verbatim_name, verbatim_aphia_id)
@@ -245,7 +246,7 @@ count_mar <- mar %>%
   group_by(haul_id, verbatim_name) %>%
   mutate(count = n())
 
-#none! (all 1s)
+unique(count_mar$count) #none! (all 1s)
 
 #which ones are duplicated?
 unique_name_match <- count_mar %>%
@@ -279,7 +280,9 @@ scs <- mar %>%
 # Get clean taxa
 clean_auto <- clean_taxa(unique(scs$taxa2), input_survey = scs_survey_code,
                          save = F, output=NA, fishbase=T)
-#takes 3.9 minutes
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 383 taxa and dropped 543. Misspelled taxa: 117; No alphia id found: 96; Non-fish classes: 447; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -47.78726 secs
 
 #This leaves out the following species, of which 1 is a fish that need to be added back
 #Porania pulvillus                                             
@@ -304,7 +307,7 @@ clean_auto_missing <- rbind(clean_auto, not_elo)
 #--------------------------------------------------------------------------------------#
 
 correct_taxa <- clean_auto_missing %>% 
-  select(-survey) %>% 
+  dplyr::select(-survey) %>% 
   # Manually remove EGG for issue #16 
   filter(!query %in% c("Hemitripterus americanus, eggs","Raja eggs"))
 
@@ -324,7 +327,7 @@ clean_scs <- left_join(scs, correct_taxa, by=c("taxa2"="query")) %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 
 #check for duplicates again
@@ -332,7 +335,7 @@ count_clean_scs <- clean_scs %>%
   group_by(haul_id, accepted_name) %>%
   mutate(count = n())
 
-#none!
+unique(count_clean_scs$count) #none! all are 1s
 
 #which ones are duplicated?
 unique_name_match <- count_clean_scs %>%
@@ -439,28 +442,28 @@ for(i in 1:length(survey_units)){
   
   hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                 survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                         sep = ";")
+                         sep = ";", colClasses=c(haul_id = "character"))
   hex_res7_0 <- as.vector(hex_res7_0[,1])
   
   hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                 survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                         sep = ";")
+                         sep = ";", colClasses=c(haul_id = "character"))
   hex_res7_2 <- as.vector(hex_res7_2[,1])
   
   hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                 survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                         sep= ";")
+                         sep= ";", colClasses=c(haul_id = "character"))
   hex_res8_0 <- as.vector(hex_res8_0[,1])
   
   hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                 survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                         sep = ";")
+                         sep = ";", colClasses=c(haul_id = "character"))
   hex_res8_2 <- as.vector(hex_res8_2[,1])
   
   if(!survey_units[i] %in% c("DFO-SOG","IS-TAU","SCS-FALL","WBLS")){
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
   } else {trim_2 <- c()}
   
@@ -479,6 +482,15 @@ for(i in 1:length(survey_units)){
   rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2)
 }
 
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 # Just run this routine should be good for all
 write_clean_data(data = survey_std, survey = "SCS_std",
