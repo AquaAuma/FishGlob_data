@@ -185,7 +185,7 @@ wctri <- wctri %>%
          continent = "n_america",
          sub_area = NA,
          stat_rec = NA) %>% 
-  select(survey, haul_id, source, timestamp,
+  dplyr::select(survey, haul_id, source, timestamp,
          country, sub_area, continent, stat_rec, station,
          stratum, year, month, day, quarter, season, latitude, longitude, 
          haul_dur, area_swept, gear, depth, sbt, sst,
@@ -222,7 +222,7 @@ count_wctri <- wctri %>%
   group_by(haul_id, verbatim_name) %>%
   mutate(count = n())
 
-#none!
+unique(count_wctri$count) #none! all 1s
 
 #which ones are duplicated?
 unique_name_match <- count_wctri %>%
@@ -262,7 +262,9 @@ wctri <- wctri %>%
 # Get clean taxa (setting save = T means we will get an output of missing taxa)
 clean_auto <- clean_taxa(unique(wctri$taxa2), input_survey = wctri_survey_code,
                          fishbase=T)
-# takes 20 mins!
+# 8 December 2025 Malin Pinsky
+# [1] "Returned 304 taxa and dropped 316. Misspelled taxa: 51; No alphia id found: 0; Non-fish classes: 316; Non-marine taxa: 0 All taxa assessed =FALSE"
+# Time difference of -37.63943 secs
 
 #This cuts out the following species which are all inverts
 
@@ -276,7 +278,7 @@ clean_auto <- clean_taxa(unique(wctri$taxa2), input_survey = wctri_survey_code,
 #--------------------------------------------------------------------------------------#
 
 clean_taxa <- clean_auto %>% 
-  select(-survey)
+  dplyr::select(-survey)
 
 clean_wctri <- left_join(wctri, clean_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% # query does not indicate taxa entry that were removed in the cleaning procedure
@@ -293,14 +295,14 @@ clean_wctri <- left_join(wctri, clean_taxa, by=c("taxa2"="query")) %>%
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit),
          year = as.numeric(year)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 #check for duplicates
 count_clean_wctri <- clean_wctri %>%
   group_by(haul_id, accepted_name) %>%
   mutate(count = n())
 
-#none!
+unique(count_clean_wctri$count) #none! all 1s
 
 #which ones are duplicated?
 unique_name_match <- count_clean_wctri %>%
@@ -323,7 +325,7 @@ write_clean_data(data = clean_wctri, survey = "WCTRI", overwrite = T, csv = T)
 
 
 # -------------------------------------------------------------------------------------#
-#### FAGS ####
+#### FLAGS ####
 # -------------------------------------------------------------------------------------#
 #install required packages that are not already installed
 required_packages <- c("data.table",
@@ -411,26 +413,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -448,6 +450,16 @@ for(i in 1:length(survey_units)){
     rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2, trim_2)
   }
 }
+
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 
 # Just run this routine should be good for all
