@@ -468,7 +468,7 @@ survey_std |>
             hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
             hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
             hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
-            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match AI_stats_hauls.csv but does match AI_hauls_removed.csv. Odd.
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 
 # Just run this routine should be good for all
