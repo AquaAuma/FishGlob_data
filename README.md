@@ -73,6 +73,8 @@ The FISHGLOB Steering Committee updates this database approximately once a year,
 
 #### :warning: Important updates :warning:
 
+> **1/12/2025**: Note that there has been a change in the number of flags from previous versions to the current compiled data. The change in flags is almost entirely for the spatiotemporal flags, which were almost entirely incorrect or missing for GMEX, NEUS, and WCANN. 
+
 > **29/01/2025**: We are aware that there are some surveys that currently have 0 values for wgt and num based columns where they should have NAs, as described in [issue 47](https://github.com/AquaAuma/FishGlob_data/issues/47). We recommend that you look closely at the metadata for surveys you're using to see whether a 0 value in a column means 0, or means NA. We are currently working to resolve this issue.
 
 > **06/05/2024**: A warning about CSVs
