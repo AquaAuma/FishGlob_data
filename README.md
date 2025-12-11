@@ -27,22 +27,22 @@ This work is licensed under a
 ### Accessing final data products
 
 Users can either:
-- Use the single survey data products in **[outputs/Cleaned_data/](/fishglob/FishGlob_data/tree/main/outputs/Cleaned_data)** and work with survey .RData files excluding standardization flags (SURVEYCODE.RData) or including standardization flags (SURVEYCODE_std_clean.RData; see **Survey data standardization and flags** below for more information on flagging); or
-- Generate a compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **[outputs/Compiled_data/](/fishglob/FishGlob_data/tree/main/outputs/Compiled_data)**
+- Use the single survey data products in **[outputs/Cleaned_data/](outputs/Cleaned_data)** and work with survey .RData files excluding standardization flags (SURVEYCODE.RData) or including standardization flags (SURVEYCODE_std_clean.RData; see **Survey data standardization and flags** below for more information on flagging); or
+- Generate a compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **[outputs/Compiled_data/](outputs/Compiled_data)**
 
 ### Structure of the FishGlob_data repository
 
-* **[cleaning_codes](/fishglob/FishGlob_data/tree/main/cleaning_codes)** includes all scripts to process and perform quality control on the trawl surveys.
-* **[data_descriptor_figures](/fishglob/FishGlob_data/tree/main/data_descriptor_figures)** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
-* **[functions](/fishglob/FishGlob_data/tree/main/functions)** contains useful functions used in other scripts
-* **[length_weight](/fishglob/FishGlob_data/tree/main/length_weight)** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
-* **[metadata_docs](/fishglob/FishGlob_data/tree/main/metadata_docs)** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
-* **[outputs](/fishglob/FishGlob_data/tree/main/outputs)** contains all survey data processed .RData files and flagging outputs
-* **[QAQC](/fishglob/FishGlob_data/tree/main/QAQC)** contains the additional QAQC performed on surveys that required supplementary checks (DATRAS-sourced surveys)
-* **[raw_data](/fishglob/FishGlob_data/tree/main/raw_data)** has some of the raw data files that are public but cannot be easily obtained elsewhere
-* **[standard_formats](/fishglob/FishGlob_data/tree/main/standard_formats)** includes definitions of file formats in the FishGlob database, including survey ID codes.
-* **[standardization_steps](/fishglob/FishGlob_data/tree/main/standardization_steps)** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
-* **[summary](/fishglob/FishGlob_data/tree/main/summary)** contains QAQC plots for each survey
+* **[cleaning_codes](cleaning_codes)** includes all scripts to process and perform quality control on the trawl surveys.
+* **[data_descriptor_figures](data_descriptor_figures)** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
+* **[functions](functions)** contains useful functions used in other scripts
+* **[length_weight](length_weight)** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
+* **[metadata_docs](metadata_docs)** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
+* **[outputs](outputs)** contains all survey data processed .RData files and flagging outputs
+* **[QAQC](QAQC)** contains the additional QAQC performed on surveys that required supplementary checks (DATRAS-sourced surveys)
+* **[raw_data](raw_data)** has some of the raw data files that are public but cannot be easily obtained elsewhere
+* **[standard_formats](standard_formats)** includes definitions of file formats in the FishGlob database, including survey ID codes.
+* **[standardization_steps](standardization_steps)** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
+* **[summary](summary)** contains QAQC plots for each survey
 
 ### Survey data processing steps
 
@@ -69,24 +69,13 @@ We thank (in alphabetical order) Esther Beukhof, Daniël van Denderen, Daniel Fo
 
 ### Updates policy
 
-The FISHGLOB Steering Committee updates this database approximately once a year, to incorporate additional data from included surveys, and to continually improve the data pipeline. Every year (large) update will represent a new “Release” (as listed on [our releases page](https://github.com/AquaAuma/FishGlob_data/releases) - currently #4.) If critical errors are discovered the Steering Committee will update the database as quickly as is logistically feasible. Anyone re-using the FISHGLOB database who wants to request specific changes in future updates is welcome to open a GitHub Issue. 
+The FISHGLOB Steering Committee aims to update this database approximately once a year to incorporate additional data from included surveys and to improve the data pipeline. [Releases](https://github.com/fishglob/FishGlob_data/releases) with major data updates (new survey regions, new data structure) will have a new version number. Smaller updates (e.g., new years in existing surveys) get a new minor version (1.1). Bug fixes get a new patch number (1.1.1). Updates are made on separate branches or forks, then a pull request with clear documentation is made to the main branch. A member of the Steering Committee (someone not involved in the original coding) will review, make sure nothing will get broken, and approve pull requests. The version number will get incremented (either major, minor, or patch). 
 
-#### :warning: Important updates :warning:
-
-> **1/12/2025**: Note that there has been a change in the number of flags from previous versions to the current compiled data. The change in flags is almost entirely for the spatiotemporal flags, which were almost entirely incorrect or missing for GMEX, NEUS, and WCANN. See pull request [75](https://github.com/fishglob/FishGlob_data/pull/75) for detailed information.
-
-> **29/01/2025**: We are aware that there are some surveys that currently have 0 values for wgt and num based columns where they should have NAs, as described in [issue 47](https://github.com/AquaAuma/FishGlob_data/issues/47). We recommend that you look closely at the metadata for surveys you're using to see whether a 0 value in a column means 0, or means NA. We are currently working to resolve this issue.
-
-> **06/05/2024**: A warning about CSVs
-Datasets are available for download in **outputs/Cleaned_data/** as .Rdata files. *We do not recommend saving FishGlob data in .csv format.* For at least some surveys, the `haul_id` column is composed of a long string of numerics, which is incorrectly rounded if loaded from a .csv programmatically in R (with `read_csv()` or `read.csv()`). As documented in [issue #49](https://github.com/AquaAuma/FishGlob_data/issues/49), this leads to errors in the `haul_id` column, and may occur regardless of the "class" assigned to this column. The most robust way to prevent this error is to write to / read from other data types such as .Rdata or .rds. Packages exist for users to import these into Python and other programming languages. 
-
-> **23/11/2023**: FishGlob_data v2.0. This fixes [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29).
-
-> **05/09/2023**: Norwegian survey is erroneous and will be replaced with a Barents Sea centered survey over 2004-onwards which will change the spatio-temporal coverage of the region (coordinated by Laurene Pecuchet with IMR), see [issue #29](https://github.com/AquaAuma/FishGlob_data/issues/29)
+See our [NEWS](NEWS.md) file.
 
 ### Community involvement 
 
-- *Do you want to connect with other members of our community?* Check out our [Discussion forum](https://github.com/fishglob/FishGlob_data/discussions/73) where you can share ideas, possible developments and collaborations, as well as any other topics related to FISHGLOB.
-- *Found a bug in the code?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can investigate. Contributions and suggested fixes are warmly encouraged!
-- *Want to request specific changes?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can concider it in our future updates.
-- *Want to learn more about FISHGLOB? Check out our [website](https://fishglob.sites.ucsc.edu/), https://fishglob.sites.ucsc.edu/
+- *Do you want to connect with other members of our community?* Check out our [Discussion forum](https://github.com/fishglob/FishGlob_data/discussions/) where you can share ideas, possible developments and collaborations, as well as any other topics related to FISHGLOB.
+- *Found a bug in the code?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can investigate. Clear descriptions and suggested solutions are helpful. Contributions and suggested fixes are warmly encouraged by forking this repo, making the change, and making a pull request.
+- *Want to request specific changes or enhancements?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we and the broader community can concider it in our future updates. Contributions are warmly encouraged by forking this repo, making the change, and making a pull request.
+- *Want to learn more about FISHGLOB?* Check out our [website](https://fishglob.sites.ucsc.edu/), https://fishglob.sites.ucsc.edu/
