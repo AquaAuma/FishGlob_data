@@ -27,21 +27,22 @@ This work is licensed under a
 ### Accessing final data products
 
 Users can either:
-- Use the single survey data products in **[outputs/Cleaned_data/](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/outputs/Cleaned_data)** and work with survey .RData files excluding standardization flags (SURVEYCODE.RData) or including standardization flags (SURVEYCODE_std_clean.RData; see **Survey data standardization and flags** below for more information on flagging); or
-- Generate a compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **[outputs/Compiled_data/](https://github.com/fishglob/FishGlob_data/blob/869626af0e7df5c9bb8688673c3a3eb2a016e720/cleaning_codes/merge.R)**
+- Use the single survey data products in **[outputs/Cleaned_data/](/fishglob/FishGlob_data/tree/main/outputs/Cleaned_data)** and work with survey .RData files excluding standardization flags (SURVEYCODE.RData) or including standardization flags (SURVEYCODE_std_clean.RData; see **Survey data standardization and flags** below for more information on flagging); or
+- Generate a compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **[outputs/Compiled_data/](/fishglob/FishGlob_data/tree/main/outputs/Compiled_data)**
 
 ### Structure of the FishGlob_data repository
 
-* **[cleaning_codes](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/cleaning_codes)** includes all scripts to process and perform quality control on the trawl surveys.
-* **[data_descriptor_figures](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/data_descriptor_figures)** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
-* **[functions](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/functions)** contains useful functions used in other scripts
-* **[length_weight](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/length_weight)** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
-* **[metadata_docs](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/metadata_docs)** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
-* **[outputs](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/outputs)** contains all survey data processed .RData files and flagging outputs
-* **[QAQC](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/QAQC)** contains the additional QAQC performed on surveys that required supplementary checks (DATRAS-sourced surveys)
-* **[standard_formats](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/standard_formats)** includes definitions of file formats in the FishGlob database, including survey ID codes.
-* **[standardization_steps](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/standardization_steps)** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
-* **[summary](https://github.com/fishglob/FishGlob_data/tree/869626af0e7df5c9bb8688673c3a3eb2a016e720/summary)** contains QAQC plots for each survey
+* **[cleaning_codes](/fishglob/FishGlob_data/tree/main/cleaning_codes)** includes all scripts to process and perform quality control on the trawl surveys.
+* **[data_descriptor_figures](/fishglob/FishGlob_data/tree/main/data_descriptor_figures)** contains the R script to construct figures 2-4 for the data descriptor manuscript. 
+* **[functions](/fishglob/FishGlob_data/tree/main/functions)** contains useful functions used in other scripts
+* **[length_weight](/fishglob/FishGlob_data/tree/main/length_weight)** contains the length-weight relationships for surveys where weights have to be calculated from abundance at length data (including NOR-BTS and DATRAS)
+* **[metadata_docs](/fishglob/FishGlob_data/tree/main/metadata_docs)** has a README with notes about each survey. This is a place to document changes in survey methods, quirks, etc. It is a growing list. If you have information to add, please open an Issue.
+* **[outputs](/fishglob/FishGlob_data/tree/main/outputs)** contains all survey data processed .RData files and flagging outputs
+* **[QAQC](/fishglob/FishGlob_data/tree/main/QAQC)** contains the additional QAQC performed on surveys that required supplementary checks (DATRAS-sourced surveys)
+* **[raw_data](/fishglob/FishGlob_data/tree/main/raw_data)** has some of the raw data files that are public but cannot be easily obtained elsewhere
+* **[standard_formats](/fishglob/FishGlob_data/tree/main/standard_formats)** includes definitions of file formats in the FishGlob database, including survey ID codes.
+* **[standardization_steps](/fishglob/FishGlob_data/tree/main/standardization_steps)** contains the R codes to run a full survey standardization and a cross-survey summary of flagging methods
+* **[summary](/fishglob/FishGlob_data/tree/main/summary)** contains QAQC plots for each survey
 
 ### Survey data processing steps
 

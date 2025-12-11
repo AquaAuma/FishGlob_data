@@ -86,7 +86,7 @@ QCS_effort <- read_csv(
                            Trawl.door.spread..m. = col_double(),
                            Trawl.mouth.opening.height..m. = col_double()
                          )) %>% 
-  select(Trip.identifier, Set.number,Survey.Year,Set.date, Trip.start.date,Trip.end.date,
+  dplyr::select(Trip.identifier, Set.number,Survey.Year,Set.date, Trip.start.date,Trip.end.date,
          GMA, PFMA,Set.date, Start.latitude,Start.longitude, End.latitude, End.longitude,
          Bottom.depth..m., Tow.duration..min.,Distance.towed..m., Trawl.door.spread..m.,
          Trawl.mouth.opening.height..m. )
@@ -155,7 +155,7 @@ QCS <- QCS %>%
 # Does the spp column contain any eggs or non-organism notes? 
 #As of fall 2021, nothing stuck out as needing to be removed
 test <- QCS %>%
-  select(verbatim_name) %>%
+  dplyr::select(verbatim_name) %>%
   filter(!is.na(verbatim_name)) %>%
   distinct() %>%
   mutate(verbatim_name = as.factor(verbatim_name)) %>%
@@ -211,7 +211,7 @@ QCS <- QCS %>%
          sbt = NA,
          sst = NA
   ) %>% 
-    select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
+  dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
            year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
            gear, depth, sbt, sst, verbatim_name, num, num_h, num_cpue,
            wgt, wgt_h, wgt_cpue, verbatim_name, verbatim_aphia_id)
@@ -271,7 +271,7 @@ clean_auto <- clean_taxa(unique(QCS$taxa2), input_survey = qcs_survey_code,
 #--------------------------------------------------------------------------------------#
 
 correct_taxa <- clean_auto %>% 
-  select(-survey)
+  dplyr::select(-survey)
 
 clean_qcs <- left_join(QCS, correct_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% # query does not indicate taxa entry that were removed in the cleaning procedure
@@ -289,7 +289,7 @@ clean_qcs <- left_join(QCS, correct_taxa, by=c("taxa2"="query")) %>%
                      paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                      paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 #check for duplicates
 count_clean_qcs <- clean_qcs %>%
@@ -407,26 +407,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -445,6 +445,15 @@ for(i in 1:length(survey_units)){
   }
 }
 
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match DFO-QCS_stats_hauls.csv but does match DFO-QCS_hauls_removed.csv. Odd.
 
 # Just run this routine should be good for all
 write_clean_data(data = survey_std, survey = "QCS_std",

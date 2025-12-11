@@ -76,13 +76,14 @@ write_clean_data <- function(data, survey, overwrite = NA, remove =  T, type = "
 
   # -------------------------------------------------------------- #
   # NOTE. JEPA YOU CAN REMOVE EVERYHTING (the if else) THAT IS COMMENTED OUT AFTER HERE
+  # Malin commented out the drive_upload() 8 December 2025 since we are not uploading to google now
   # -------------------------------------------------------------- #
   # if(overwrite == T){
     # Uploads data to google drive and overwrites previous files if they exist with same name
-    drive_upload(save_path_name,
-                 path=as_id(p),
-                 name = save_name,
-                 overwrite = overwrite)
+    #drive_upload(save_path_name,
+    #             path=as_id(p),
+    #             name = save_name,
+    #             overwrite = overwrite)
   # }else{
     # Uploads data to google drive and adds additional file with same name
     # drive_upload(save_path_name,

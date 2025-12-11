@@ -36,7 +36,7 @@ survey <- survey %>%
 ### EVHOE ###
 evhoe <- survey %>%
   filter(Survey=='EVHOE') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -56,7 +56,7 @@ evhoe[is.na(evhoe$WingSpread),]$WingSpread <- evhoe[is.na(evhoe$WingSpread),]$wi
 
 # combine
 evhoe <- evhoe %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- evhoe
 
@@ -65,7 +65,7 @@ area2 <- evhoe
 nsibts <- survey %>%
   filter(Survey=='NS-IBTS',
          !is.na(Depth)) %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -87,7 +87,7 @@ colnames(nsibts)[ncol(nsibts)] <- "door_fit2"
 
 nsibts <- nsibts %>%
   mutate(door_fit = coalesce(door_fit,door_fit2)) %>%
-  select(-door_fit2)  # merge into one, remove door_fit2
+  dplyr::select(-door_fit2)  # merge into one, remove door_fit2
 
 # wingpread
 nsibts <- nsibts %>% 
@@ -112,13 +112,13 @@ colnames(nsibts)[ncol(nsibts)] <- "wing_fit2"
 
 nsibts <- nsibts %>%
   mutate(wing_fit = coalesce(wing_fit,wing_fit2)) %>%
-  select(-wing_fit2) # merge into one, remove wing_fit2  
+  dplyr::select(-wing_fit2) # merge into one, remove wing_fit2  
 
 nsibts[is.na(nsibts$WingSpread),]$WingSpread <- nsibts[is.na(nsibts$WingSpread),]$wing_fit
 
 # combine
 nsibts <- nsibts %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(nsibts, area2)
 
@@ -126,7 +126,7 @@ area2 <- rbind(nsibts, area2)
 ### SWC-IBTS ###
 swc <- survey %>%
   filter(Survey=='SWC-IBTS') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread 
@@ -147,7 +147,7 @@ swc[is.na(swc$WingSpread),]$WingSpread <- swc[is.na(swc$WingSpread),]$wing_fit
 
 # combine
 swc <- swc %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(swc, area2)
 
@@ -155,7 +155,7 @@ area2 <- rbind(swc, area2)
 ### BITS ###
 bits <- survey %>%
   filter(Survey=='BITS') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -180,7 +180,7 @@ colnames(bits)[ncol(bits)] <- "door_fit2"
 
 bits <- bits %>%
   mutate(door_fit = coalesce(door_fit,door_fit2)) %>%
-  select(-door_fit2)  # merge into one, remove door_fit2  
+  dplyr::select(-door_fit2)  # merge into one, remove door_fit2  
 
 # wingspread
 lm0 <- lm(WingSpread ~ DoorSpread, data=bits) 
@@ -191,7 +191,7 @@ bits[is.na(bits$WingSpread),]$WingSpread <- bits[is.na(bits$WingSpread),]$wing_f
 
 # combine
 bits <- bits %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(bits, area2)
 
@@ -200,7 +200,7 @@ area2 <- rbind(bits, area2)
 ie <- survey %>%
   filter(Survey=='IE-IGFS',
          Year>1989) %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -217,7 +217,7 @@ ie[is.na(ie$WingSpread),]$WingSpread <- ie[is.na(ie$WingSpread),]$wing_fit
 
 # combine
 ie <- ie %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(ie, area2)
 
@@ -261,7 +261,7 @@ area2 <- rbind(cgfs, area2)
 ### NIGFS ###
 nigfs <- survey %>%
   filter(Survey=='NIGFS') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -278,7 +278,7 @@ nigfs[is.na(nigfs$WingSpread),]$WingSpread <- nigfs[is.na(nigfs$WingSpread),]$wi
 
 # combine
 nigfs <- nigfs %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(nigfs, area2)
 
@@ -286,7 +286,7 @@ area2 <- rbind(nigfs, area2)
 ### ROCKALL ###
 rock <- survey %>%
   filter(Survey=='ROCKALL') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -303,7 +303,7 @@ rock[is.na(rock$WingSpread),]$WingSpread <- rock[is.na(rock$WingSpread),]$wing_f
 
 # combine
 rock <- rock %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(rock, area2)
 
@@ -311,7 +311,7 @@ area2 <- rbind(rock, area2)
 ### PORTUGAL ###
 pt <- survey %>%
   filter(Survey=='PT-IBTS') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # no doorspread information
@@ -332,7 +332,7 @@ pt$DoorSpread <- pt$WingSpread / 0.3 # doorspread probably not needed, rough est
 
 # combine
 pt <- pt %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(pt, area2)
 
@@ -340,7 +340,7 @@ area2 <- rbind(pt, area2)
 ### SP-NORTH ###
 spn <- survey %>%
   filter(Survey=='SP-NORTH') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -357,7 +357,7 @@ spn[is.na(spn$WingSpread),]$WingSpread <- spn[is.na(spn$WingSpread),]$wing_fit
 
 # combine
 spn <- spn %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(spn, area2)
 
@@ -365,7 +365,7 @@ area2 <- rbind(spn, area2)
 ### SP-ARSA ###
 spa <- survey %>%
   filter(Survey=='SP-ARSA') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -382,7 +382,7 @@ spa[is.na(spa$WingSpread),]$WingSpread <- spa[is.na(spa$WingSpread),]$wing_fit
 
 # combine
 spa <- spa %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(spa, area2)
 
@@ -390,7 +390,7 @@ area2 <- rbind(spa, area2)
 ### SP-PORC ###
 spp <- survey %>%
   filter(Survey=='SP-PORC') %>%
-  select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+  dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
   distinct()
 
 # doorspread
@@ -407,7 +407,7 @@ spp[is.na(spp$WingSpread),]$WingSpread <- spp[is.na(spp$WingSpread),]$wing_fit
 
 # combine
 spp <- spp %>%
-  select(HaulID, DoorSpread, WingSpread) %>%
+  dplyr::select(HaulID, DoorSpread, WingSpread) %>%
   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 area2 <- rbind(spp, area2)
 
@@ -415,14 +415,14 @@ area2 <- rbind(spp, area2)
 ### Can-mar ###
 # cmar <- survey %>%
 #   filter(Survey=='Can-Mar') %>%
-#   select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
+#   dplyr::select(-TotalNo, -NoMeas, -CatCatchWgt, -LngtCode, -LngtClass, -HLNoAtLngt, -AphiaID) %>%
 #   distinct()
 # 
 # # doorspread, wingspread information fixed, no changes
 # 
 # # combine
 # cmar <- cmar %>%
-#   select(HaulID, DoorSpread, WingSpread) %>%
+#   dplyr::select(HaulID, DoorSpread, WingSpread) %>%
 #   dplyr::rename(DoorSpread2=DoorSpread, WingSpread2=WingSpread)
 # area2 <- rbind(cmar, area2)
 
@@ -441,11 +441,11 @@ survey0 <- left_join(survey, area2, by='HaulID')
 survey0 <- survey0 %>%
   mutate(DoorSpread = coalesce(DoorSpread, DoorSpread2),
          WingSpread = coalesce(WingSpread, WingSpread2)) %>%
-  select(-DoorSpread2, -WingSpread2)
+  dplyr::select(-DoorSpread2, -WingSpread2)
 
 # now get area.swept
 dist <- survey0 %>%
-  select(HaulID, Survey,Year,Ship, Country,Distance,Speed,HaulDur) %>%
+  dplyr::select(HaulID, Survey,Year,Ship, Country,Distance,Speed,HaulDur) %>%
   distinct()
 
 #plot(dist$Distance,dist$Speed*1.852*dist$HaulDur/60*1000)
@@ -456,7 +456,7 @@ dist$Distance2 <- dist$Speed*1.852*dist$HaulDur/60*1000 # calculate 2nd distance
 
 dist <- dist %>%
   mutate(Distance = coalesce(Distance, Distance2))%>%
-  select(-Distance2) 
+  dplyr::select(-Distance2) 
 
 # NAs remaining missing speeds  
 # take average speed per survey, year, ship
@@ -467,7 +467,7 @@ colnames(avgspeed) <- c("Survey", "Year", "Ship","Speed2")
 dist <- left_join(dist, avgspeed, by=c("Survey", "Year", "Ship"))
 dist <- dist %>%
   mutate(Speed = coalesce(Speed, Speed2))%>%
-  select(-Speed2) 
+  dplyr::select(-Speed2) 
 
 # take average speed per survey, year, country
 avgspeed <- aggregate(dist$Speed, by=list(dist$Survey, dist$Year, dist$Country), 
@@ -477,7 +477,7 @@ colnames(avgspeed) <- c("Survey", "Year", "Country","Speed2")
 dist <- left_join(dist, avgspeed, by=c("Survey", "Year", "Country"))
 dist <- dist %>%
   mutate(Speed = coalesce(Speed, Speed2))%>%
-  select(-Speed2) 
+  dplyr::select(-Speed2) 
 
 # take average speed per survey, country
 avgspeed <- aggregate(dist$Speed, by=list(dist$Survey, dist$Country), 
@@ -487,25 +487,25 @@ colnames(avgspeed) <- c("Survey", "Country", "Speed2")
 dist <- left_join(dist, avgspeed, by=c("Survey",  "Country"))
 dist <- dist %>%
   mutate(Speed = coalesce(Speed, Speed2))%>%
-  select(-Speed2) 
+  dplyr::select(-Speed2) 
 
 # take average speed
 dist$Speed2 <- mean(dist$Speed,na.rm=T)
 dist <- dist %>%
   mutate(Speed = coalesce(Speed, Speed2))%>%
-  select(-Speed2) 
+  dplyr::select(-Speed2) 
 
 dist$Distance2 <- dist$Speed*1.852*dist$HaulDur/60*1000 # calculate 2nd distance
 
 dist <- dist %>%
   mutate(Distance_pred = coalesce(Distance, Distance2))%>%
-  select(-Distance2,-Distance,-Speed,-HaulDur,-Survey,-Year,-Ship, -Country) 
+  dplyr::select(-Distance2,-Distance,-Speed,-HaulDur,-Survey,-Year,-Ship, -Country) 
 
 survey0 <- left_join(survey0, dist, by=c("HaulID"))
 
 survey0 <- survey0 %>%
   mutate(Distance = coalesce(Distance, Distance_pred)) %>%
-  select(-Distance_pred)
+  dplyr::select(-Distance_pred)
 
 survey0 <- survey0 %>% 
   mutate(Area.swept = Distance*0.001*WingSpread*0.001,
@@ -514,7 +514,7 @@ survey0 <- survey0 %>%
 survey <- cbind(survey, survey0[match(survey$HaulID,survey0$HaulID), c("Area.swept","Area.doors")])
 
 survey_save <- survey %>% 
-  select(Survey, HaulID, Area.swept, Area.doors) %>% 
+  dplyr::select(Survey, HaulID, Area.swept, Area.doors) %>% 
   distinct()
 
 write.csv(survey_save, file = "QAQC/DATRAS/Swept Areas/areas_swept_datras.csv", row.names = F)

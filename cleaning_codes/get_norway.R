@@ -12,11 +12,11 @@
 ################################################################################
 #### Updates
 ####  Juliano Palacios
-####  Spetember 5, 2023
+####  September 5, 2023
 #### Update in response to Issue #23
-# Note: I was not able to fix the code from the root as the data is not in the repo. See line 356 for a quick fix
-
-rm(list=ls())
+# Note: I was not able to fix the code from the root as the data is not in the repo. See line 335 for a quick fix
+####
+#### Malin Pinsky. Update in response to Issue #74. Start from clean data, like Juliano.
 
 #-------------------------------------------------------------------------------
 #### LOAD LIBRARIES & CODES ####
@@ -333,11 +333,12 @@ clean_norw <- clean_norw %>%
 write_clean_data(data = clean_norw, survey = survey_code, overwrite = T)
 
 
-##### JEPA #####
-# Quick FIX for issue #23 #
+##### JEPA and MLP #####
+# Quick FIX for issue #23 and #74#
 
 # Load data
-# load("~/GitHub/FishGlob_data/outputs/Cleaned_data/NOR-BTS_clean.RData")
+# load("outputs/Cleaned_data/NOR-BTS_clean.RData")
+# clean_norw <- data # for continuing with flagging scripts below. MLP 8 December 2025
 # 
 # # Get missing data 
 # missing_aphia_id <- data %>% filter(is.na(aphia_id)) %>% pull(accepted_name) %>% unique()
@@ -460,26 +461,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -498,6 +499,15 @@ for(i in 1:length(survey_units)){
   }
 }
 
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 # Just run this routine should be good for all
 write_clean_data(data = survey_std, survey = "NOR-BTS_std",

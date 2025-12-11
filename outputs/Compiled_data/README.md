@@ -10,3 +10,5 @@ Three versions of the compiled datasets are created:
 The formats generated are:
 * an .RData file easy to use on R
 * a csv.gz file easy to use outside of R (compressed .csv)
+
+Due to github file size limits, the .csv.gz file is no longer stored here as of 8 December 2025.

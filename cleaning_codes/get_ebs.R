@@ -144,7 +144,7 @@ ebs <- ebs %>%
          wgt_h = NA,
          area_swept = NA
   ) %>% 
-  select(survey, haul_id, country, sub_area, continent, stat_rec, station,
+  dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station,
          stratum, year, month, day, quarter, season, latitude, longitude,
          haul_dur, area_swept, gear, depth, sbt, sst,
          num, num_h, num_cpue, wgt, wgt_h, wgt_cpue, verbatim_name)
@@ -166,7 +166,7 @@ wrm <- gna_data_sources() %>%
 ebs_survey_code <- "EBS"
 
 ebs_taxa <- ebs %>% 
-  select(verbatim_name) %>% 
+  dplyr::select(verbatim_name) %>% 
   mutate(
     taxa = str_squish(verbatim_name),
     taxa = str_remove_all(taxa," spp.| sp.| spp| sp|NO "),
@@ -192,7 +192,7 @@ clean_auto <- clean_taxa(ebs_taxa, input_survey = ebs_survey_code, save = F,
 #--------------------------------------------------------------------------------------#
 
 clean_taxa <- clean_auto %>% 
-  select(-survey)
+  dplyr::select(-survey)
 
 clean_ebs <- left_join(ebs, clean_taxa, by=c("verbatim_name"="query")) %>% 
   filter(!is.na(taxa)) %>% # query does not indicate taxa entry that were 
@@ -212,21 +212,21 @@ clean_ebs <- left_join(ebs, clean_taxa, by=c("verbatim_name"="query")) %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 
 
 #check for duplicates
 count_clean_ebs <- clean_ebs %>% count(haul_id, accepted_name)
 
-#no duplicates
+count_clean_ebs |> filter(n>1) #no duplicates
 
 # -------------------------------------------------------------------------------------#
-#### SAVE DATABASE IN GOOGLE DRIVE ####
+#### SAVE DATABASE ####
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_ebs, survey = "EBS", type = F, overwrite = T, csv = T)
+write_clean_data(data = clean_ebs, survey = "EBS", overwrite = T, csv = T)
 
 
 
@@ -319,26 +319,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -357,6 +357,15 @@ for(i in 1:length(survey_units)){
   }
 }
 
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2))) # number of hauls doesn't match _stats_hauls.csv but does match _hauls_removed.csv. Odd.
 
 # Just run this routine should be good for all
 write_clean_data(data = survey_std, survey = "EBS_std",

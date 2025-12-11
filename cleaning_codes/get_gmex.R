@@ -63,7 +63,7 @@ gmex_station <- read_csv(file = "gmex_station_raw.txt",
                          col_types = cols(.default = col_character())) %>% 
   #output of new names...49 means The message is telling you that some of 
   #the columns have no names and it's giving them one
-  select('STATIONID', 'CRUISEID', 'CRUISE_NO', 'P_STA_NO', 'TIME_ZN',
+  dplyr::select('STATIONID', 'CRUISEID', 'CRUISE_NO', 'P_STA_NO', 'TIME_ZN',
          'TIME_MIL', 'S_LATD', 'S_LATM', 'S_LOND', 'S_LONM', 'E_LATD',
          'E_LATM', 'E_LOND', 'E_LONM', 'DEPTH_SSTA', 'MO_DAY_YR',
          'VESSEL_SPD', 'COMSTAT','TEMP_SSURF','TEMP_BOT')
@@ -131,7 +131,7 @@ gmex_tow <-read_csv(
 ))
 
 gmex_tow <- gmex_tow %>%
-  select('STATIONID', 'CRUISE_NO', 'P_STA_NO', 'INVRECID', 'GEAR_SIZE',
+  dplyr::select('STATIONID', 'CRUISE_NO', 'P_STA_NO', 'INVRECID', 'GEAR_SIZE',
          'GEAR_TYPE', 'MESH_SIZE', 'MIN_FISH', 'OP') %>%
   filter(GEAR_TYPE=='ST') #ST = shrimp trawl (this is what OceanAdapt does too,
                                                         #preserves 90% of tows)
@@ -152,7 +152,7 @@ gmex_spp <-read_csv(
   tsn = col_integer(),
   tsn_accepted = col_integer()
 )) %>% 
-  select(-tsn_accepted)
+  dplyr::select(-tsn_accepted)
 
 # problems should be 0 obs
 problems <- problems(gmex_spp) %>% 
@@ -162,7 +162,7 @@ stopifnot(nrow(problems) == 0)
 gmex_cruise <-read_csv(
   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_CRUISES.csv",
   col_types = cols(.default = col_character())) %>% 
-  select(CRUISEID, VESSEL, TITLE, SOURCE)
+  dplyr::select(CRUISEID, VESSEL, TITLE, SOURCE)
 
 # problems should be 0 obs
 problems <- problems(gmex_cruise) %>% 
@@ -179,7 +179,7 @@ temp <- tempfile()
 download.file(
   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_BGSREC.csv.zip", temp)
 gmex_bio <- read.csv(unz(temp, "gmex_BGSREC.csv")) %>% 
-  select('CRUISEID', 'STATIONID', 'VESSEL', 'CRUISE_NO', 'P_STA_NO',
+  dplyr::select('CRUISEID', 'STATIONID', 'VESSEL', 'CRUISE_NO', 'P_STA_NO',
          'GENUS_BGS','CNT','CNTEXP', 'SPEC_BGS', 'BGSCODE', 'BIO_BGS', 'SELECT_BGS') %>%
   # trim out young of year records (only useful for count data) and those with 
   #UNKNOWN species
@@ -223,7 +223,7 @@ gmex_spp <- gmex_spp %>%
 
 # add the combined records on to the end. trim out extra columns from gmexspp
 gmex_spp <- rbind(gmex_spp[,1:7], newspp) %>% 
-  select(CODE, TAXONOMIC) %>% 
+  dplyr::select(CODE, TAXONOMIC) %>% 
   rename(BIO_BGS = CODE)
 
 #--------------------------------------------------------------------------------------#
@@ -412,7 +412,7 @@ gmex <- gmex %>%
          haul_dur = haul_dur.min/60
   ) %>% 
   ungroup() %>%
-  select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
+  dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
          year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
          gear, depth, sbt, sst, verbatim_name, num, num_h, num_cpue,
          wgt, wgt_h, wgt_cpue, verbatim_aphia_id)
@@ -441,49 +441,10 @@ gmex <- gmex %>%
 # Get clean taxa
 clean_auto <- clean_taxa(unique(gmex$taxa2),
                          input_survey = gmex_survey_code,
-                         save = F, output=NA, fishbase=T) # takes 10 mins
+                         save = F, output=NA, fishbase=T) # takes 2 mins. 8 December 2025 (Malin Pinsky)
 
-#Portunus spinimanus                                  no match                                 
-#Trachypeneus                                         no match                                 
-#Portunus spinicarpus                                 no match                                 
-#Podochela sidneyi                                    no match                                 
-#Parthenope granulata                                 no match                                 
-#Stenocionops furcata                                 no match                                 
-#Ventricolaria                                        no match                                 
-#Astroscopus y-graecum                                no match      ##fish                           
-#Actaea rufopunctata                                  no match                                 
-#Coelenterata                                         no match                                 
-#Ventricolaria                                        no match                                 
-#Panopeus bermudensis                                 no match                                 
-#Photichthyidae                                       no match                                 
-#Parthenope punctata                                  no match                                 
-#Enidae                                               no match                                 
-#Unionidae                                            no match                                 
-#Iliacantha intermedia                                no match                                 
-#Abisa                                                no match                                 
-#Mithrax acuticornis                                  no match                                 
-#Portunus floridanus                                  no match                                 
-#Nereidae                                             no match                                 
-#Macrobrachium ohione                                 no match                                 
-#Parthenope fraterculus                               no match                                 
-#Pinnotheres maculatum                                no match                                 
-#Portunus ordwayi                                     no match                                 
-#Podochela gracilipes                                 no match                                 
-#Portunus depressifrons                               no match                                 
-#Mithrax forceps                                      no match                                 
-#Mellita sexiesperforata                              no match                                 
-#Hypoconcha sabulosa                                  no match                                 
-#Calappa angusta                                      no match                                 
-#Processa tenuipes                                    no match                                 
-#Cyclois bairdii                                      no match                                 
-#Pecten tereinus                                      no match                                 
-#Lophopanopeus distinctus                             no match                                 
-#Helix                                                no match                                 
-#Cheiraster echinulatus                               no match                                 
-#Corillidae                                           no match                                 
-#Chirostylus spinifer                                 no match                                 
-#Pisidiidae                                           no match                                 
-#Pomacea                                              no match                              
+# [1] "Returned 813 taxa and dropped 1156. Misspelled taxa: 258; No alphia id found: 120; Non-fish classes: 1036; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -1.986862 mins. (8 December 2025, Malin Pinsky)
            
 
 #all invertebrates except for Astroscopus y-graecum
@@ -499,7 +460,7 @@ clean_auto.missing <- rbind(clean_auto, ast_ygr)
 #### INTEGRATE CLEAN TAXA in GMEX survey data ####
 #--------------------------------------------------------------------------------------#
 clean_taxa <- clean_auto.missing %>% 
-  select(-survey) %>% 
+  dplyr::select(-survey) %>% 
   filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
 
 clean_gmex <- left_join(gmex, clean_taxa, by=c("taxa2"="query")) %>% 
@@ -520,7 +481,7 @@ clean_gmex <- left_join(gmex, clean_taxa, by=c("taxa2"="query")) %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 
 #check for duplicates
@@ -658,26 +619,26 @@ for(i in 1:length(survey_units)){
     
     hex_res7_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_0_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_0 <- as.vector(hex_res7_0[,1])
     
     hex_res7_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res7/",
                                   survey_units[i], "_hex_res_7_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res7_2 <- as.vector(hex_res7_2[,1])
     
     hex_res8_0 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_0_hauls_removed.csv"),
-                           sep= ";")
+                           sep= ";", colClasses=c(haul_id = "character"))
     hex_res8_0 <- as.vector(hex_res8_0[,1])
     
     hex_res8_2 <- read.csv(paste0("outputs/Flags/trimming_method1/hex_res8/",
                                   survey_units[i], "_hex_res_8_trimming_02_hauls_removed.csv"),
-                           sep = ";")
+                           sep = ";", colClasses=c(haul_id = "character"))
     hex_res8_2 <- as.vector(hex_res8_2[,1])
     
     trim_2 <- read.csv(paste0("outputs/Flags/trimming_method2/",
-                              survey_units[i],"_hauls_removed.csv"))
+                              survey_units[i],"_hauls_removed.csv"), colClasses=c(haul_id_removed = "character"))
     trim_2 <- as.vector(trim_2[,1])
     
     survey_std <- survey_std %>% 
@@ -695,6 +656,16 @@ for(i in 1:length(survey_units)){
     rm(hex_res7_0, hex_res7_2, hex_res8_0, hex_res8_2, trim_2)
   }
 }
+
+# verify that the flagging worked. these values should match the respective _stats_hauls.csv files in outputs/Flags/trimming_methods1 and 2
+survey_std |>
+  group_by(survey_unit) |>
+  distinct(haul_id, flag_trimming_hex7_0, flag_trimming_hex7_2, flag_trimming_hex8_0, flag_trimming_hex8_2, flag_trimming_2) |>
+  summarize(hex7_0 = sum(!is.na(flag_trimming_hex7_0)),
+            hex7_2 = sum(!is.na(flag_trimming_hex7_2)),
+            hex8_0 = sum(!is.na(flag_trimming_hex8_0)),
+            hex8_2 = sum(!is.na(flag_trimming_hex8_2)),
+            trim_2 = sum(!is.na(flag_trimming_2)))
 
 
 

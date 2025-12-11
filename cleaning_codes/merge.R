@@ -3,8 +3,6 @@
 #### Coding: Juliano Palacios Abrantes & Aurore A. Maureaud, November 2023
 ################################################################################
 
-rm(list=ls())
-
 # Load libraries
 library(googledrive)
 library(tidyverse)
@@ -57,6 +55,7 @@ surveys <- c("AI",
 fishglob <- read_clean_data(surveys)
 
 # survey compiled survey product
+# MLP 8 Dec 2025: had to delete outputs/Compiled_data/FishGlob_public_clean.csv.gz before running the next line
 write_clean_data(data = fishglob, survey = "FishGlob_public",
                  overwrite = T, compiled = TRUE, gzip = TRUE)
 
@@ -68,6 +67,7 @@ write_clean_data(data = fishglob, survey = "FishGlob_public",
 fishglob_std <- read_clean_data(surveys, std = TRUE)
 
 # Just run this routine should be good for all
+# MLP 8 Dec 2025: had to delete outputs/Compiled_data/FishGlob_public_std_clean.csv.gz before running the next line
 write_clean_data(data = fishglob_std, survey = "FishGlob_public_std",
                  overwrite = T, compiled = TRUE, gzip = TRUE)
 
@@ -80,6 +80,7 @@ fishglob_public_metadata <- fishglob %>%
   select(survey, latitude, longitude, year, survey_unit) %>%
   distinct()
 
+# MLP 8 Dec 2025: had to delete outputs/Compiled_data/FishGlob_public_metadata_clean.csv.gz before running the next line
 write_clean_data(data = fishglob_public_metadata,
                  survey = "FishGlob_public_metadata",
                  overwrite = TRUE, compiled = TRUE, gzip = TRUE)
