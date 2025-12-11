@@ -129,6 +129,7 @@ Please add notes and descriptions about the surveys, with links to documentation
   - Multiple genuses resolve together (Cynoscion, Bothus, Opsanus)
   -User decisions with what to do with repeats due to taxonomic classifications depend on goals of data use, and therefore are maintained in FishGlob data product
   - See OceanAdapt for more info: [OceanAdapt](https://github.com/pinskylab/OceanAdapt/tree/master/metadata/gmex)
+- [SEAMAP Data Manual](https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf) from [https://seamap.gsmfc.org](https://seamapdata.gsmfc.org/seamap.trawl.php)
 ### Related Issues
 
 
