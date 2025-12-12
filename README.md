@@ -5,13 +5,11 @@
 
 <img src ="https://github.com/FishGlob/FishGlob_data/blob/main/fishglob_logo.png" width ="200">
 
-This repository contains the FishGlob database, including the methods to load, clean, and process 29 publicly available bottom trawl surveys from Europe and North America. This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/). For more information, please contact [fishglobconsortium@gmail.com](fishglobconsortium@gmail.com).
+This repository contains the FishGlob database to understand the status and trends of marine ecosystems. The repo includes the methods to load, clean, and process 29 publicly available bottom trawl surveys from Europe and North America, plus the final database. This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/). For more information, please contact [fishglobconsortium@gmail.com](fishglobconsortium@gmail.com).
 
 ### Credit and citation
 
-Our full citation policy is described in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/). Briefly, users should cite [Maureaud *et al.* 2021](https://doi.org/10.1111/gcb.15404), [Maureaud *et al.* 2024](https://www.nature.com/articles/s41597-023-02866-w), and relevant primary SBTS sources referenced in the FISHGLOB data files and source data tables of the two Maureaud *et al.* papers. Users integrating multiple surveys are encouraged to cite additional studies on data integration. 
-
-***Anyone interested in reusing this data or its outputs should read this readme, our [Data Disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/edit), and [all survey specific metadata](https://github.com/FishGlob/FishGlob_data/tree/main/metadata_docs).***
+Our full citation policy is described in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/).
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
@@ -24,11 +22,16 @@ This work is licensed under a
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-### Accessing final data products
+### Using the data products
 
-Users can either:
-- Use the single survey data products in **[outputs/Cleaned_data/](outputs/Cleaned_data)** and work with survey .RData files excluding standardization flags (SURVEYCODE.RData) or including standardization flags (SURVEYCODE_std_clean.RData; see **Survey data standardization and flags** below for more information on flagging); or
-- Generate a compiled version of the data by running the **cleaning_codes/merge.R** which will write local versions of the database in **[outputs/Compiled_data/](outputs/Compiled_data)**
+To use these data, please:
+- Read about the dataset in [Maureaud *et al.* 2024](https://www.nature.com/articles/s41597-023-02866-w)
+- Read our data disclaimer and citation policy in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/)
+- Read the [survey-specific metadata](https://github.com/FishGlob/FishGlob_data/tree/main/metadata_docs)
+- Consider doing a [tutorial](https://fishglob.sites.ucsc.edu/training/)
+- Either:
+  - Use a compiled version of the data in **[outputs/Compiled_data/](outputs/Compiled_data)** or create your own by running the **cleaning_codes/merge.R**; or
+  - Use the single survey data products in **[outputs/Cleaned_data/](outputs/Cleaned_data)**.
 
 ### Structure of the FishGlob_data repository
 
