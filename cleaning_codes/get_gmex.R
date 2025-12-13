@@ -13,7 +13,16 @@
 ####Following issue 47, need to update sum technique to remove duplicates
 ####Malin Pinsky
 #### 10 December, 2025
-####Following issue #46, updating the GMEX data joins to follow DISMAP
+####Following issue #46, we are updating the GMEX data joins to follow DISMAP approach
+#### the previous FishGlob / OceanAdapt code joined these two tables on the incorrect column, which introduced some duplications and some dropped data, as per David Hanisko via M. Karp / C. Gonzales at NOAA Office of Science & Technology 
+### this is corrected below and now aligns with the DisMAP GMEX pipeline (currently on a dev branch: https://github.com/nmfs-ost/DisMAP/blob/dev-branch/data_processing_rcode/code/Compile_Dismap_Current.R)
+### to make this change we had to update the source file for gmex_bio; the previous link this script pointed to was an OceanAdapt file which did not have the necessary "invrecid" column
+#### we now have five data objects that need to be merged:
+#### gmex_station, *tow, *bio, *spp, *cruise
+#### first, we merge tow (haul data) with bio (catch data) 
+#### these get joined on a shared identifier column, invrecid
+#### but previously some rows of bio were dropped because this column was N |> ULL
+#### below those are filled in correctly (code from D. Hanisko via C. Gonzales / M. Karp at NOAA) and then the tables are joined. code from DisMAP
 ################################################################################
 #Relevant Organizations
 #Gulf States Marine Fisheries Commission: https://www.gsmfc.org/seamap-gomrs.php
@@ -74,79 +83,71 @@ sumna <- function(x){
 #### Click "Download" the SEAMAP Trawl/Plankton, Bottom Longline
 #### Fill in the form ("Scientific Research", "Educational Institution", "Trawl/Plankton Data (CSV)"
 #### Unzip the CSV in your downloads folder
-#### then copy them into the data folder with the script below
-#### (this folder is not tracked by git)
+#### then copy them into the data folder with the script below (this folder is not tracked by git)
 #-------------------------------------------------------------------------------#
 
 # station table
-gmex_station <- read_csv(here::here("data", "gmex_STAREC.csv"), col_types = cols(.default = col_character())) %>%
+gmex_station <- read_csv(here::here("data", "starec.csv"), col_types = cols(.default = col_character())) %>%
   dplyr::select('STATIONID', 'CRUISEID', 'CRUISE_NO', 'P_STA_NO', 'TIME_ZN', 'TIME_MIL', 'S_LATD', 'S_LATM', 'S_LOND', 'S_LONM', 'E_LATD', 'E_LATM', 'E_LOND', 'E_LONM', 'STAT_ZONE', 'DEPTH_SSTA', 'MO_DAY_YR', 'VESSEL_SPD', 'COMSTAT', 'TEMP_SSURF', 'TEMP_BOT')
 
-# old code to read in. remove this when done editing.
-# gmex_station <- read_csv(file = "gmex_station_raw.txt", col_types = cols(.default = col_character())) %>% dplyr::select('STATIONID', 'CRUISEID', 'CRUISE_NO', 'P_STA_NO', 'TIME_ZN',
-#                 'TIME_MIL', 'S_LATD', 'S_LATM', 'S_LOND', 'S_LONM', 'E_LATD',
-#                 'E_LATM', 'E_LOND', 'E_LONM', 'DEPTH_SSTA', 'MO_DAY_YR',
-#                 'VESSEL_SPD', 'COMSTAT','TEMP_SSURF','TEMP_BOT')
-
-
-# old step: remove oddly quoted characters
-#gmex_station_clean <- str_replace_all(gmex_station_raw, "\\\\\"", "")
-
 gmex_station <- type_convert(gmex_station, col_types = cols(
-  STATIONID = col_integer(),
-  CRUISEID = col_integer(),
-  CRUISE_NO = col_integer(),
-  P_STA_NO = col_character(),
-  TIME_ZN = col_integer(),
-  TIME_MIL = col_character(),
-  S_LATD = col_integer(),
-  S_LATM = col_double(),
-  S_LOND = col_integer(),
-  S_LONM = col_double(),
-  E_LATD = col_integer(),
-  E_LATM = col_double(),
-  E_LOND = col_integer(),
-  E_LONM = col_double(),
-  DEPTH_SSTA = col_double(),
-  STAT_ZONE = col_double(),
-  MO_DAY_YR = col_date(format = "%d/%m/%Y"),
-  VESSEL_SPD = col_double(),
-  COMSTAT = col_character()
+  # field definitions from SEAMAP Data Structures Version 2, Aug 28, 2014, Gulf States Marine Fisheries Commission, 2404 Government St, Ocean Springs, MS 39564
+  # https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf
+  STATIONID = col_double(), # a unique integer assigned for each entry in STAREC table.
+  CRUISEID = col_double(), # a unique integer assigned for each entry in CRUISES table.
+  CRUISE_NO = col_double(), # a four character string usually in the format YYXX. Such as 1304 for year 2013, fourth survey.
+  P_STA_NO = col_character(), # the Pascagoula Station Number. A five character string, using in the format of VVSSSS where VV is the vessel number and SSSS is a sequential count of the stations processed for that survey. The P_STA_NO entry should be unique for each STAREC entry per Cruise. P_STA_NO may repeat for different CRUISEIDS.
+  TIME_ZN = col_double(), # a one character field which is a code which represents the time zone of the station.
+  TIME_MIL = col_character(), # a four character field which must be numeric. This field represents station start time and should be in military format, HHMM, where HH represents hours and MM represents minutes.
+  S_LATD = col_double(), # a two character field which is a numeric positive integer and represents latitude degrees.
+  S_LATM = col_double(), # a five character field which is numeric and represents latitude minutes. Field format is MM.HH; Where MM represents minutes and HH represents hundreds of minutes.
+  S_LOND = col_double(), # a three character field which is numeric positive integer and represents starting longitude degrees.
+  S_LONM = col_double(), # a five character field which is numeric and represents starting longitude minutes. Field format is MM.HH; MM represents minutes and HH represents hundreds of minutes.
+  E_LATD = col_double(), # a two character field which is a numeric positive integer and represents ending latitude degrees.
+  E_LATM = col_double(), # a five character field which is numeric and represents latitude minutes. Field format is MM.HH; MM represents minutes and HH represents hundreds of minutes.
+  E_LOND = col_double(), # a three character field which is numeric positive integer and represents ending longitude degrees.
+  E_LONM = col_double(), # a five character field which is numeric and represents ending longitude minutes. Field format is MM.HH; MM represents minutes and HH represents hundreds of minutes.
+  DEPTH_SSTA = col_double(), # a six character field which must be numeric. This field represents the starting depth of the station in meters.
+  STAT_ZONE = col_double(), # a five character field which represents the shrimp statistical zone.
+  MO_DAY_YR = col_date(format = "%Y-%m-%d"), # a date field, which in MM-DD-YYYY format, MM represents Months; DD represents days; and YYYY represents year. Values should be zero padded, that is, January would be 01. # 13 Dec 2025 Malin Pinsky note: despite the name, the file is in YYYY-MM-DD format. 
+  VESSEL_SPD = col_double(), # in the field format XX.X and represents the speed of the vessel in knots.
+  COMSTAT = col_character() # a text comment field, up to 250 characters.
 ))
-
 names(gmex_station)<-tolower(names(gmex_station))
 
-# tow table
-gmex_tow <-readr::read_delim(here::here("data","gmex_INVREC.csv"),
+# tow table. Total counts and weights of finfish, crustaceans and other organisms at specific sample locations.
+gmex_tow <-readr::read_delim(here::here("data","invrec.csv"),
                              delim = ',', escape_backslash = T, escape_double = F)
 gmex_tow<-type_convert(gmex_tow, col_types = cols(
-  INVRECID = col_integer(),
-  STATIONID = col_integer(),
-  CRUISEID = col_integer(),
-  VESSEL = col_integer(),
-  CRUISE_NO = col_integer(),
-  P_STA_NO = col_character(),
-  GEAR_SIZE = col_integer(),
-  GEAR_TYPE = col_character(),
-  MESH_SIZE = col_double(),
-  OP = col_character(),
-  MIN_FISH = col_integer(),
-  WBCOLOR = col_character(),
-  BOT_TYPE = col_character(),
-  BOT_REG = col_character(),
-  TOT_LIVE = col_double(),
-  FIN_CATCH = col_double(),
-  CRUS_CATCH = col_double(),
-  OTHR_CATCH = col_double(),
-  T_SAMPLEWT = col_double(),
-  T_SELECTWT = col_double(),
-  FIN_SMP_WT = col_double(),
-  FIN_SEL_WT = col_double(),
-  CRU_SMP_WT = col_double(),
-  CRU_SEL_WT = col_double(),
-  OTH_SMP_WT = col_double(),
-  OTH_SEL_WT = col_double(),
-  COMBIO = col_character(),
+  # field definitions from SEAMAP Data Structures Version 2, Aug 28, 2014, Gulf States Marine Fisheries Commission, 2404 Government St, Ocean Springs, MS 39564
+  # https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf
+  INVRECID = col_integer(), # a unique integer assigned for each entry in the INVREC table.
+  STATIONID = col_integer(), # a unique integer assigned for each entry in the STAREC table.
+  CRUISEID = col_integer(), # a unique integer assigned for each entry in the CRUISES table.
+  VESSEL = col_integer(), # a unique integer representing the Vessel name, from the VESSELS table.
+  CRUISE_NO = col_integer(), # a four character string usually in the format YYXX. Such as 1304 for year 2013, fourth survey.
+  P_STA_NO = col_character(), #  the Pascagoula Station Number. A five character string, using in the format of VVSSSS where VV is the vessel number and SSSS is a sequential count of the stations processed for that survey. The P_STA_NO entry should be unique for each STAREC entry per Cruise. P_STA_NO may repeat for different CRUISEIDS.
+  GEAR_SIZE = col_integer(),# a three character field which is numeric. This field represents the net of feet or the number of hooks on the line. Valid range is 0 to 999. It may be blank or null.
+  GEAR_TYPE = col_character(), # a two character field which represents a gear code. It may be blank or null.
+  MESH_SIZE = col_double(), # a five character field which must be numeric. The field format is XX.XX and represents the inches or stretch of the net or the number of hooks. Valid range is 0 to 10. It may be blank or null.
+  OP = col_character(), # a one character field which is a code. This code may be blank.
+  MIN_FISH = col_integer(), # a four character field which is numeric and integer. The field format is XXXX and represents minutes. Value should represent difference between the Station start and end times.
+  WBCOLOR = col_character(), # a one character field which may be blank. This field represents the gross code for water color. Valid values are ‘B’,’G’,’T’,’Y’, or ‘M’. It may be blank or null.
+  BOT_TYPE = col_character(), # a two character field which may be blank. Valid values are: ‘B’,’CL’,’CO’,’G’,’GR’,’M’,’ML’,’OZ’,’RK’,’S’,’SH’, or ‘SP’.
+  BOT_REG = col_character(), # a two character field which may be blank. Valid values are: ‘S’,’L’,’O’,’P’,’E’,’M’.
+  TOT_LIVE = col_double(), # a seven character field which must be numeric. This field contains a number which must be in XXXXX.X format and represents total live catch in kilograms. Value must be between 0 and less than 100000. It may be blank or null.
+  FIN_CATCH = col_double(), # a seven character field which must be numeric. This field contains a number which must be in XXXXX.X format and represents finfish catch in kilograms. Value must be between 0 and less than 100000. It may be blank or null.
+  CRUS_CATCH = col_double(), # a seven character field which must be numeric. This field contains a number which must be in XXXXX.X format and represents the crustacean catch in kilograms. Value must be between 0 and less than 100000. It may be blank or null.
+  OTHR_CATCH = col_double(), # a seven character field which must be numeric. This field contains a number which must be in XXXXX.X format and represents other catch in kilograms. Value must be between 0 and less than 100000. It may be blank or null.
+  T_SAMPLEWT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents sample weight in kilograms. Value must lie between 0 and less than 10000. Value should equal the summed total of the biological detail sample weights.
+  T_SELECTWT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents select weight in kilograms. Value must lie between 0 and less than 10000.
+  FIN_SMP_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents finfish sample weight in kilograms. Value must lie between 0 and less than 10000. Value should equal the summed total of the biological detail sampled finfish weights.
+  FIN_SEL_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents finfish select weight in kilograms. Value must lie between 0 and less than 10000.
+  CRU_SMP_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents the crustacean sample weight in kilograms. Value must lie between 0 and less than 10000. Value should equal the summed total of the biological detail sampled crustacean weights.
+  CRU_SEL_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents the crustacean select weight in kilograms. Value must lie between 0 and less than 10000.
+  OTH_SMP_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents other sample weight in kilograms. Value must lie between 0 and less than 10000. Value should equal the summed total of the biological detail sampled other weights.
+  OTH_SEL_WT = col_double(), # an eight character field which must be numeric. This field contains a number which must be in XXXX.XXX format and represents other select weight in kilograms. Value must lie between 0 and less than 10000.
+  COMBIO = col_character(), # a two hundred character field used for comments, which may be blank.
   X28 = col_character()
 ))
 gmex_tow <- gmex_tow %>%
@@ -154,64 +155,52 @@ gmex_tow <- gmex_tow %>%
   filter(GEAR_TYPE=='ST') #ST = shrimp trawl (this is what OceanAdapt does too, preserves 90% of tows)
 
 
-# biology table
-gmex_bio <-readr::read_delim(here::here("data","gmex_BGSREC.csv"),
+# biology table. Count totals and weight totals of specific biological catch at a sample location.
+gmex_bio <-readr::read_delim(here::here("data","bgsrec.csv"),
                              delim = ',', escape_backslash = T, escape_double = F)
 
 gmex_bio <- type_convert(gmex_bio, cols(
-  CRUISEID = col_integer(),
-  STATIONID = col_integer(),
-  VESSEL = col_integer(),
-  CRUISE_NO = col_integer(),
-  P_STA_NO = col_character(),
-  GENUS_BGS = col_character(),
-  SPEC_BGS = col_character(),
-  BGSCODE = col_character(),
-  BIO_BGS = col_integer(),
-  SELECT_BGS = col_double()
+  # field definitions from SEAMAP Data Structures Version 2, Aug 28, 2014, Gulf States Marine Fisheries Commission, 2404 Government St, Ocean Springs, MS 39564
+  # https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf
+  CRUISEID = col_integer(), # a unique integer assigned for each entry in the CRUISES table.
+  STATIONID = col_integer(), # a unique integer assigned for each entry in the STAREC table.
+  VESSEL = col_integer(), # a unique integer representing the Vessel name, from the VESSELS table.
+  CRUISE_NO = col_integer(), # a four character string usually in the format YYXX. Such as 1304 for year 2013, fourth survey.
+  P_STA_NO = col_character(), # the Pascagoula Station Number. A five character string, using in the format of VVSSSS where VV is the vessel number and SSSS is a sequential count of the stations processed for that survey. The P_STA_NO entry should be unique for each STAREC entry per Cruise. P_STA_NO may repeat for different CRUISEIDS.
+  GENUS_BGS = col_character(), # a seven character field which contains the genus part of the genus/species name. This field may not be blank and should contain a valid genus name. It may NOT be blank or null.
+  SPEC_BGS = col_character(), # a six character field which contains the species part of the genus/species name.It may be blank or null.
+  BGSCODE = col_character(), # a one character field which contains a bgs code. Valid values are T,E,C,S,I. It may be blank or null.
+  BIO_BGS = col_integer(), # a 9 digit field containing a number (biocode) which is based on the genus/species name.
+  CNTEXP = col_double(), # CNTEXP is an eight digit numeric field which represents one of two possible values. If the genus/species is sampled, this value is the extrapolated count of the genus/species. If the genus/species is a select, this value is the actual number of the genus/species that was selected. It may not be blank or null.
+  SELECT_BGS = col_double() # a seven character field which must be numeric. This field contains a number which must be in XXX.XXX format and represents select weight in kilograms. It may be blank or null.
 ))
-
-# old code. remove when done.
-# gmex_bio <- read.csv(unz(temp, "gmex_BGSREC.csv")) %>% 
-#   dplyr::select('CRUISEID', 'STATIONID', 'VESSEL', 'CRUISE_NO', 'P_STA_NO',
-#                 'GENUS_BGS','CNT','CNTEXP', 'SPEC_BGS', 'BGSCODE', 'BIO_BGS', 'SELECT_BGS') %>%
-#   # trim out young of year records (only useful for count data) and those with 
-#   #UNKNOWN species
-#   filter(BGSCODE != "T" | is.na(BGSCODE),
-#          GENUS_BGS != "UNKNOWN" | is.na(GENUS_BGS))  %>%
-#   # remove the few rows that are still duplicates
-#   distinct()
-
 
 
 # cruise table
-gmex_cruise <-read_csv(here::here("data", "gmex_CRUISES.csv"), col_types = cols(.default = col_character())) %>%
+gmex_cruise <-read_csv(here::here("data", "cruises.csv"), col_types = cols(.default = col_character())) %>%
   dplyr::select(CRUISEID, VESSEL, TITLE, SOURCE)
-
-gmex_cruise <- type_convert(gmex_cruise, col_types = cols(CRUISEID = col_integer(), VESSEL = col_integer(), TITLE = col_character(), SOURCE = col_character()))
+gmex_cruise <- type_convert(gmex_cruise, col_types = cols(
+  # field definitions from SEAMAP Data Structures Version 2, Aug 28, 2014, Gulf States Marine Fisheries Commission, 2404 Government St, Ocean Springs, MS 39564
+  # https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf
+  CRUISEID = col_integer(), # a unique integer assigned for each entry.
+  VESSEL = col_integer(), 
+  TITLE = col_character(), # a descriptive title for the survey
+  SOURCE = col_character())) # a two digit code for the source (SEAMAP Partner) that collected the data.
 names(gmex_cruise)<-tolower(names(gmex_cruise))
 
 
 # species table
-gmex_spp <-read_csv(here::here("data","gmex_BCT_NFR_01182023.csv"))
-problems(gmex_spp)
+gmex_spp <-read_csv(here::here("data","biocodes_01182023_u1.csv"))
+problems(gmex_spp) # seems ok on visual inspection
 names(gmex_spp)<-tolower(names(gmex_spp))
-gmex_spp<-dplyr::select(gmex_spp,biocode,ciu_biocode,taxon)
-
-# old code. remove when done.
-# gmex_spp <-read_csv(
-#   "https://github.com/pinskylab/OceanAdapt/raw/master/data_raw/gmex_NEWBIOCODESBIG.csv",
-#   col_types = cols(
-#     Key1 = col_integer(),
-#     TAXONOMIC = col_character(),
-#     CODE = col_integer(),
-#     TAXONSIZECODE = col_character(),
-#     isactive = col_integer(),
-#     common_name = col_character(),
-#     tsn = col_integer(),
-#     tsn_accepted = col_integer()
-#   )) %>% 
-#   dplyr::select(-tsn_accepted)
+gmex_spp<-dplyr::select(gmex_spp,
+                        # field definitions from SEAMAP Data Structures Version 2, Aug 28, 2014, Gulf States Marine Fisheries Commission, 2404 Government St, Ocean Springs, MS 39564
+                        # https://seamapdata.gsmfc.org/trawl/04%20-%20SEAMAP%20Trawl%20Data%20Structures.pdf
+                        # note that this table is not actually defined in this publication
+                        biocode, # the NMFS assigned unique value for each entry. Referred to as “BIOCODE”.
+                        ciu_biocode, # from Melissa Karp, NMFS: Since multiple changes may have occurred, the ciu_biocode (currently in use biocode) value ties multiple records that are now inactive to the current active biocode. Inactive biocodes have the variable inactive set to zero.
+                        taxon, # 13 Dec 2025 Malin Pinsky note: this appears to be the full scientific name (genus species)
+                        taxonomic) #  the taxonomic or scientific name for each entry. 13 Dec 2025 Malin Pinsky note: this appears to be an abbreviated scientific name without spaces
 
 
 #--------------------------------------------------------------------------------------#
@@ -244,7 +233,7 @@ bgsrec_null_invrecid <- gmex_bio %>%
   dplyr::left_join(get_stationid_invrecid, by = 'stationid') %>%
   dplyr::mutate(invrecid = inv_invrecid) %>% dplyr::select(-inv_invrecid)
 
-#Extracts any remaining bgsrec table records with null invrecid. These should all be
+#Extract any remaining bgsrec table records with null invrecid. These should all be
 #associated with reef fish cruises at this point.
 bgsrec_null_check1 <- bgsrec_null_invrecid %>%
   dplyr::filter(is.na(invrecid))
@@ -263,12 +252,15 @@ gmex_bio_mod <- bgsrec_null_invrecid %>%
 #Check to make sure only records with invrecs are present - should have 0 rows
 bgsrec_null_check2 <- gmex_bio_mod %>% filter(is.na(invrecid))
 
-#drop unwanted data objects
-rm(bgsrec_null_invrecid,bgsrec_null_check1,bgsrec_null_check2,bgsrec_with_invrecid,get_stationid_invrecid, gmex_bio)
-# garbace collect to free up memory
-gc()
-
 #Issues 2: Taxonomic coding
+# Gmex_bio_mod has a few instances of invalid bio_bgs (biocode) values.
+# Also, multiple code/taxonomic combinations may refer to the same organisms under different names.
+# Gmex_bio_mod reflects the code/taxonomic use at time of data ingest.
+# Gmex_spp will allow translation of cases where multiple code/taxonomic refer to the same organism.
+# Since multiple changes may have occurred, the ciu_biocode (currently in use biocode) value ties multiple records
+# that are now inactive to the current active biocode. Inactive biocodes have the variable inactive set to zero.
+#
+# Notes below from DISMAP (December 2025):
 # (3-1) The newbiocodesbig table does not fully contain all code/taxonomic names found in the bgsrec table:
 # (3-2) the bgsrec table has a few instances of invalid bio_bgs (biocode) values; and
 # (3-3) multiple code/taxonomic combinations may refer to the same organisms under different names. For example,
@@ -306,7 +298,7 @@ gmex_bio_utax1 <- gmex_bio_mod %>%
   dplyr::mutate(biocode = ifelse(biocode == 300000002,300000000,biocode)) %>%
   ### take care of Issue 3-3 ###
   #update older inactive biocodes to those currently in use (ciu_biocode)
-  dplyr::left_join(dplyr::select(gmex_spp,biocode,taxon,ciu_biocode), by = "biocode") %>%
+  dplyr::left_join(dplyr::select(gmex_spp,biocode,taxon,ciu_biocode,taxonomic), by = "biocode") %>%
   #rename taxon to bgs taxon to keep the original name associated with a biocode
   dplyr::rename(bgs_taxon = taxon) %>%
   #do a left join to bring in taxon associated with ciu_taxon
@@ -316,7 +308,7 @@ gmex_bio_utax1 <- gmex_bio_mod %>%
 # Collapse taxa with known identification issues and collapse all sponge to single category
 # Note this process needs to be implemented after the ciu_biocode update as the statements
 # rely on the ciu_biocode. The statements undergo a review with each updated version of the
-# MBT
+# MBT (i.e., gmex_spp)
 gmex_bio_utax2 <- gmex_bio_utax1 %>%
   #Take care of squid and species complexes...
   #Update the squid genus Loligo and all species under genus Doryteuthis to the genus Doryteuthis
@@ -347,37 +339,54 @@ gmex_bio_utax2 <- gmex_bio_utax1 %>%
   mutate(biocode = ifelse(biocode >= 691010101 & biocode <= 691010112,691010100,biocode)) %>%
   mutate(taxon = ifelse(biocode %in% c(691010100),'ASTROPECTEN',taxon))
 
+## Collapse gmex_bio_utax2 to have single entry for each taxa for a distinct invrecid (tow)
+gmex_bio_utax3 <- gmex_bio_utax2 %>%
+  group_by(vessel, cruise_no, p_sta_no, cruiseid, stationid, invrecid, ciu_biocode, taxon, bgscode, taxonomic) %>%
+  summarise(record_cnt = n(),
+            # Note: Extrapolated counts (cntexp) & weights (select_bgs) of a taxa for a tow is the sum of all records of that taxon.
+            tcntexp = sum(cntexp, na.rm=TRUE),
+            tselect_bgs = sum(select_bgs,na.rm=TRUE))
+
+
 ## MERGE the corrected catch/tow/species information from above with cruise information, but only for shrimp trawl tows (ST)
-gmex <- left_join(gmex_bio_utax2, gmex_tow, by = c("cruiseid", "stationid","vessel", "cruise_no", "p_sta_no", "invrecid")) %>%
+gmex <- left_join(gmex_bio_utax3, gmex_tow, by = c("cruiseid", "stationid","vessel", "cruise_no", "p_sta_no", "invrecid")) %>%
   # add station location and related data
   left_join(gmex_station, by = c("cruiseid", "stationid", "cruise_no", "p_sta_no")) %>%
   # add cruise title
   left_join(gmex_cruise, by = c("cruiseid", "vessel")) %>%
-  #filter out YOY (denoted by BSGCODE=T) since they are useful for counts but not weights
+  #filter out YOY (denoted by BSGCODE=T)
   filter(bgscode != "T"| is.na(bgscode))
 
-# merge tow information with catch data, but only for shrimp trawl tows (ST)
-# gmex <- left_join(gmex_bio, gmex_tow, by = c("STATIONID", "CRUISE_NO", "P_STA_NO")) %>% 
-#   # add station location and related data
-#   left_join(gmex_station, by = c("CRUISEID", "STATIONID", "CRUISE_NO", "P_STA_NO")) %>% 
-#   # add scientific name
-#   left_join(gmex_spp, by = "BIO_BGS") %>% 
-#   # add cruise title
-#   left_join(gmex_cruise, by = c("CRUISEID", "VESSEL"))
 
-
-gmex <- gmex %>%
-  # Trim to high quality SEAMAP summer trawls, based off the subset used by Jeff Rester's GS_TRAWL_05232011.sas
-  filter(grepl("Summer", title) &
-           gear_size == 40 &
-           mesh_size == 1.63 &
-           # OP has no letter value
-           !grepl("[A-Z]", op)) %>%
+gmex <- gmex %>% # this takes a couple minutes
+  # Trim to high quality SEAMAP trawls, based off the subset used by Jeff Rester's GS_TRAWL_05232011.sas and also including fall
+  # DISMAP trims only to Summer trawls. In contrast, we retain two seasons (summer and fall)
+  # this leaves "Summer SEAMAP Groundfish Survey", "Fall SEAMAP Groundfish Survey", "Fall SEAMAP groundfish Survey" 
+  filter(
+    (grepl("Summer", title) | grepl("Fall", title)) &
+      grepl('groundfish|Groundfish', title) & # as opposed to plankton or comparative
+      # Melissa Karp said in 2025: The previous size of 40 feet wide has been updated to 42 feet wide. However, they now have us multiply this 42 ft value by 0.75, which is their estimate of the active-use portion of the net
+      # However, as of December 2025, the DISMAP code uses 40 ft, so we maintain that here and don't change it later.
+      gear_size == 40 &
+      mesh_size == 1.63 &
+      # OP has no letter value
+      !grepl("[A-Z]", op)
+  ) %>%
   mutate(
     # Create a unique haulid
     haulid = paste(formatC(vessel, width=3, flag=0), formatC(cruise_no, width=3, flag=0), formatC(p_sta_no, width=5, flag=0, format='d'), sep='-'),
     # Extract year where needed
     year = year(mo_day_yr),
+    month = month(mo_day_yr),
+    day = day(mo_day_yr),
+    quarter = case_when(month %in% c(1,2,3) ~ 1,
+                        month %in% c(4,5,6) ~ 2,
+                        month %in% c(7,8,9) ~ 3,
+                        month %in% c(10,11,12) ~ 4),
+    season = ifelse(
+      grepl("Summer", title), "Summer",
+      ifelse(grepl("Fall", title), "Fall", NA
+      )),
     # Calculate decimal lat and lon, depth in m, where needed
     s_latd = ifelse(s_latd == 0, NA, s_latd),
     s_lond = ifelse(s_lond == 0, NA, s_lond),
@@ -387,59 +396,12 @@ gmex <- gmex %>%
     lon = -rowMeans(cbind(s_lond + s_lonm/60, e_lond + e_lonm/60), na.rm=T),
   )
 
-#add stratum code defined by STAT_ZONE and depth bands (note depth in recorded as m, and depth bands based on 0-20 fathoms
+#add stratum code defined by STAT_ZONE and depth bands (note depth is recorded as m, and depth bands based on 0-20 fathoms
 # and 21-60 fathoms))
 gmex$depth_zone<-ifelse(gmex$depth_ssta<=36.576, "20",
                         ifelse(gmex$depth_ssta>36.576, "60", NA))
 gmex<-gmex %>%
   mutate(stratum = paste(stat_zone, depth_zone, sep= "-"))
-
-
-# old code. remove when done.
-# gmex <- gmex %>% 
-#   # Trim to high quality SEAMAP summer trawls (1987-on) and SEAMAP fall trawls (1988-on)
-#   #based off the subset used by Jeff Rester's GS_TRAWL_05232011.sas, but including fall 
-#   #Keeps Fall SEAMAP groundfish Survey,Fall SEAMAP Groundfish Survey,
-#   #Fall SEAMAP Groundfish Suvey, Summer SEAMAP Groundfish Survey, Summer SEAMAP 
-#   #Groundfish Suvey 
-#   filter(
-#     ((grepl("Summer", TITLE) & year(as.Date(MO_DAY_YR)) >= 1987) |
-#        (grepl("Fall", TITLE) & year(as.Date(MO_DAY_YR)) >= 1988)) &
-#       GEAR_SIZE == 40 & 
-#       MESH_SIZE == 1.63 &
-#       # OP has no letter value
-#       !grepl("[A-Z]", OP)) %>% 
-#   mutate(
-#     # Create a unique haulid
-#     haulid = paste(formatC(VESSEL, width=3, flag=0), formatC(CRUISE_NO, width=3, flag=0),
-#                    formatC(P_STA_NO, width=5, flag=0, format='d'), S_LATD, S_LOND,sep=''), 
-#     # Extract year where needed
-#     year = year(MO_DAY_YR),
-#     month = month(MO_DAY_YR),
-#     day = day(MO_DAY_YR),
-#     quarter = case_when(month %in% c(1,2,3) ~ 1,
-#                         month %in% c(4,5,6) ~ 2,
-#                         month %in% c(7,8,9) ~ 3,
-#                         month %in% c(10,11,12) ~ 4),
-#     season = ifelse(
-#       grepl("Summer", TITLE), "Summer",
-#       ifelse(grepl("Fall", TITLE), "Fall", NA
-#              
-#       )),
-#     # Calculate decimal lat and lon, depth in m, where needed
-#     S_LATD = ifelse(S_LATD == 0, NA, S_LATD), 
-#     S_LOND = ifelse(S_LOND == 0, NA, S_LOND), 
-#     E_LATD = ifelse(E_LATD == 0, NA, E_LATD), 
-#     E_LOND = ifelse(E_LOND == 0, NA, E_LOND),
-#     latitude = rowMeans(cbind(S_LATD + S_LATM/60, E_LATD + E_LATM/60), na.rm=T), 
-#     longitude = -rowMeans(cbind(S_LOND + S_LONM/60, E_LOND + E_LONM/60), na.rm=T), 
-#     # convert fathoms to meters
-#     depth = DEPTH_SSTA * 1.8288, 
-#     # Add "strata" (define by lat, lon and depth bands) where needed
-#     # degree bins, # degree bins, # 100 m bins
-#     stratum = paste(floor(latitude)+0.5, floor(longitude)+0.5, 
-#                     floor(depth/100)*100 + 50, sep= "-")
-#   )
 
 
 # # fix speed
@@ -453,10 +415,12 @@ gmex <- gmex %>%
   filter(vessel_spd <= 5 & vessel_spd > 0  & !is.na(vessel_spd))
 
 
+# calculate stratum areas
 gmex_strats <- gmex %>%
   group_by(stratum) %>%
   summarise(stratumarea = calcarea(lon, lat))
 gmex <- left_join(gmex, gmex_strats, by = "stratum")
+
 
 # while comsat is still present
 # Remove a tow when paired tows exist (same lat/lon/year but different haulid, only Gulf of Mexico)
@@ -467,155 +431,88 @@ dups <- gmex %>%
   group_by(haulid) %>%
   filter(n() == 1)
 
-# remove the identified tows from the dataset
+# check the comments
+dups %>% dplyr::select(p_sta_no, record_cnt, comstat) %>% print(n=100) 
+# 13 Dec 2025 Malin Pinsky: all 39 are the starboard net of paired trawls. This means we will remove one of the pair (the starboard net).
+
+# remove the duplicated tows from the dataset
+# 13 Dec 2025 Malin Pinsky: the DISMPAP code also removes 3166 rows that mention "PORT" in comstat. This doesn't seem correct based on examining the comments, so I have commented it out.
 gmex <- gmex %>%
-  filter(!haulid %in% dups$haulid & !grepl("PORT", comstat))
+  filter(!haulid %in% dups$haulid
+#         & !grepl("PORT", comstat)
+  )
 
 gmex <- gmex %>%
   rename(sub_area = source,
          gear = gear_type,
          haul_id = haulid,
          station = stationid,
-         verbatim_name = taxonomic,
-         spp = taxon,
+         verbatim_name = taxon,
+         #spp = taxon,
          depth = depth_ssta,
-         num = cnt_exp,
+         num = tcntexp,
+         wgt = tselect_bgs,
          haul_dur.min = min_fish,
+         latitude = lat,
+         longitude = lon,
+         sbt = temp_bot,
+         sst = temp_ssurf
   ) %>%
   # adjust for area towed
   mutate(
+    #haul duration in hours is haul duration minutes * 1 hour/60 minutes
+    haul_dur = haul_dur.min/60,
+    #area_swept in km^2: knots * 1.8 km/hr/knot * minutes * 1 hr/60 min * width of gear in feet * 0.0003 km/ft
+    area_swept = vessel_spd * 1.85200 * haul_dur.min / 60 * gear_size * 0.0003048,
+    # kg/km^2
+    wgt_cpua = wgt/area_swept,
+    # num/km^2
+    num_cpua = num/area_swept,
     # kg per 10000m2. calc area trawled in m2: knots * 1.8 km/hr/knot * 1000 m/km * minutes * 1 hr/60 min * width of gear in feet * 0.3 m/ft # biomass per standard tow
-    wtcpue = 10000*select_bgs/(vessel_spd * 1.85200 * 1000 * min_fish / 60 * gear_size * 0.3048),
-    num_cpue = 1000000*num/(VESSEL_SPD * 1.85200 * 1000 * haul_dur.min / 60 * GEAR_SIZE * 0.3048),
-    wgt_h = 60*wgt/haul_dur.min,
-    num_h  = 60*num/haul_dur.min,
+    #wtcpue = 10000*wgt/(vessel_spd * 1.85200 * 1000 * haul_dur.min / 60 * gear_size * 0.3048),
+    #num_cpue = 1000000*num/(vessel_spd * 1.85200 * 1000 * haul_dur.min / 60 * gear_size * 0.3048),
+    # kg per hour
+    wgt_cpue = wgt/haul_dur,
+    # number per hour
+    num_cpue  = num/haul_dur,
     # add survey column
     survey = "GMEX",
     country = "United States",
     continent = "n_america",
     stat_rec = NA,
     verbatim_aphia_id = NA,
-    #haul duration in hours is haul duration minutes * 1 hour/60 minutes
-    haul_dur = haul_dur.min/60
   ) %>%
   # remove non-fish
   filter(
-    spp != '' | !is.na(spp),
+    verbatim_name != '' | !is.na(verbatim_name),
     # remove unidentified spp
-    !spp %in% c('UNID CRUSTA', 'UNID OTHER', 'UNID.FISH', 'CRUSTACEA(INFRAORDER) BRACHYURA', 'MOLLUSCA AND UNID.OTHER #01', 'ALGAE', 'MISCELLANEOUS INVERTEBR', 'OTHER INVERTEBRATES')
+    !verbatim_name %in% c('UNID CRUSTA', 'UNID OTHER', 'UNID.FISH', 'CRUSTACEA(INFRAORDER) BRACHYURA', 'MOLLUSCA AND UNID.OTHER #01', 'ALGAE', 'MISCELLANEOUS INVERTEBR', 'OTHER INVERTEBRATES')
   ) %>%
-  group_by(haul_id, stratum, stratumarea, year, lat, lon, depth, spp) %>%
-  #sum wtcpue for duplicates (all columns the same except for BGSID which 
-  #we don't pull in, and doesn't  have any significance other than telling us that 
+  group_by(survey, country, continent, sub_area, stat_rec, verbatim_aphia_id, haul_id, stratum, stratumarea, station, year, quarter, season, month, day, latitude, longitude, depth, sst, sbt, haul_dur, area_swept, gear, verbatim_name) %>%
+  #sum duplicates (all columns the same except for BGSID which
+  #we don't pull in, and doesn't  have any significance other than telling us that
   #these are indeed independent observations. we're not sure why this occurs
   #in the raw data files, but it was the recommended technique by Jeff in 2012)
-  summarise(wtcpue = sumna(wtcpue)) %>%
-  # add region column
+  summarise(wgt = sumna(wgt),
+            num = sumna(num),
+            wgt_cpue = sumna(wgt_cpue),
+            wgt_cpua = sumna(wgt_cpua),
+            num_cpue = sumna(num_cpue),
+            num_cpua = sumna(num_cpua)
+            ) %>%
+  #add region column
   mutate(region = "Gulf of Mexico") %>%
   # note this doesn't retain sst or sbt columns
   dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
                 year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
-                gear, depth, verbatim_name, num, num_h, num_cpue, 
-                wgt, wgt_h, wgt_cpue, verbatim_aphia_id) %>%
+                gear, depth, sst, sbt, verbatim_name, num, num_cpua, num_cpue, 
+                wgt, wgt_cpua, wgt_cpue, verbatim_aphia_id) %>%
   ungroup()
 
-# old code. remove when done.
-# gmex <- gmex %>% 
-#   group_by(haulid, stratum, year, latitude, longitude, depth, BIO_BGS, SOURCE, 
-#            MIN_FISH, GEAR_TYPE, SPEC_BGS,GENUS_BGS,
-#            STATIONID, TEMP_BOT, TEMP_SSURF, TAXONOMIC, VESSEL_SPD, GEAR_SIZE, 
-#            month, day, quarter, season) %>% 
-#   summarise(SELECT_BGS = my_sum(SELECT_BGS), #sum weights across duplicates
-#             CNTEXP = my_sum(CNTEXP)) #sum counts across duplicates
-
-# gmex <- gmex %>% 
-#   rename(sub_area = SOURCE,
-#          haul_dur.min = MIN_FISH,
-#          gear = GEAR_TYPE, 
-#          haul_id = haulid,
-#          station = STATIONID,
-#          sbt = TEMP_BOT,
-#          sst = TEMP_SSURF,
-#          verbatim_name = TAXONOMIC,
-#          num = CNTEXP,
-#          wgt = SELECT_BGS
-#          ) %>% 
-#   mutate(
-#   # adjust for area towed
-# # kg per 1,000,000m2 (1km^2). calc area trawled in m2:
-#     #     knots * 1.8 km/hr/knot * 1000 m/km * minutes *
-#     #       1 hr/60 min * width of gear in feet * 0.3 m/ft # biomass per standard tow
-#     wgt_cpue = 1000000*wgt/
-#       (VESSEL_SPD * 1.85200 * 1000 * haul_dur.min / 60 * GEAR_SIZE * 0.3048), 
-# # count per 1,000,000m2 (1km^2). calc area trawled in m2: knots * 
-# #                  1.8 km/hr/knot * 1000 m/km * minutes * 1 hr/60 min *
-# #                  width of gear in feet * 0.3 m/ft # biomass per standard tow
-#     num_cpue = 1000000*num/
-#       (VESSEL_SPD * 1.85200 * 1000 * haul_dur.min / 60 * GEAR_SIZE * 0.3048),
-#    #area_swept in km^2: knots * 1.8 km/hr/knot * minutes * 
-# #                  1 hr/60 min * width of gear in feet * 0.0003 km/ft
-#    area_swept = VESSEL_SPD * 1.85200 * haul_dur.min / 60 * GEAR_SIZE * 0.0003048,
-#    #kg per hour: 60 minutes/hour * kg / minutes fished
-#    wgt_h = 60*wgt/haul_dur.min,
-#    #count per hour:  60 minutes/hour * abundance/minutes fished
-#    num_h  = 60*num/haul_dur.min
-#   ) %>% 
-#   # remove non-fish
-#   filter(
-#     verbatim_name != '' | !is.na(verbatim_name),
-#     # remove unidentified verbatim_name
-#     !verbatim_name %in% 
-#       c('UNID CRUSTA', 'UNID OTHER', 'UNID.FISH',
-#           'CRUSTACEA(INFRAORDER) BRACHYURA', 'MOLLUSCA AND UNID.OTHER #01',
-#           'ALGAE', 'MISCELLANEOUS INVERTEBR', 'OTHER INVERTEBRATES')
-#   ) %>% 
-#   mutate(
-#   # adjust verbatim_name names
-#     verbatim_name = ifelse(GENUS_BGS == 'PELAGIA' &
-#                              SPEC_BGS == 'NOCTUL', 'PELAGIA NOCTILUCA', verbatim_name), 
-#     BIO_BGS = ifelse(verbatim_name == "PELAGIA NOCTILUCA", 618030201, BIO_BGS), 
-#     verbatim_name = ifelse(GENUS_BGS == 'MURICAN' &
-#                              SPEC_BGS == 'FULVEN', 'MURICANTHUS FULVESCENS', verbatim_name), 
-#     BIO_BGS = ifelse(verbatim_name == "MURICANTHUS FULVESCENS", 308011501, BIO_BGS), 
-#     verbatim_name = ifelse(grepl("APLYSIA", verbatim_name), "APLYSIA", verbatim_name), 
-#     verbatim_name = ifelse(grepl("AURELIA", verbatim_name), "AURELIA", verbatim_name), 
-#     verbatim_name = ifelse(grepl("BOTHUS", verbatim_name), "BOTHUS", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "CLYPEASTER", verbatim_name), "CLYPEASTER", verbatim_name), 
-#     verbatim_name = ifelse(grepl("CONUS", verbatim_name), "CONUS", verbatim_name), 
-#     verbatim_name = ifelse(grepl("CYNOSCION", verbatim_name), "CYNOSCION", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "ECHINASTER", verbatim_name), "ECHINASTER", verbatim_name),
-#     verbatim_name = ifelse(grepl(
-#       "OPISTOGNATHUS", verbatim_name), "OPISTOGNATHUS", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "OPSANUS", verbatim_name), "OPSANUS", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "ROSSIA", verbatim_name), "ROSSIA", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "SOLENOCERA", verbatim_name), "SOLENOCERA", verbatim_name), 
-#     verbatim_name = ifelse(grepl(
-#       "TRACHYPENEUS", verbatim_name), "TRACHYPENEUS", verbatim_name)
-#   ) %>% 
-#   # add survey column
-#   mutate(survey = "GMEX",
-#          country = "United States",
-#          continent = "n_america",
-#          stat_rec = NA,
-#          verbatim_aphia_id = NA,
-#          #haul duration in hours is haul duration minutes * 1 hour/60 minutes
-#          haul_dur = haul_dur.min/60
-#   ) %>% 
-#   ungroup() %>%
-#   dplyr::select(survey, haul_id, country, sub_area, continent, stat_rec, station, stratum,
-#          year, month, day, quarter, season, latitude, longitude, haul_dur, area_swept,
-#          gear, depth, sbt, sst, verbatim_name, num, num_h, num_cpue,
-#          wgt, wgt_h, wgt_cpue, verbatim_aphia_id)
 
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA FROM TAXA ANALYSIS ####
-# MALIN START HERE December 2025
 #--------------------------------------------------------------------------------------#
 
 # Get WoRM's id for sourcing
@@ -637,72 +534,54 @@ gmex <- gmex %>%
 # Get clean taxa
 clean_auto <- clean_taxa(unique(gmex$taxa2),
                          input_survey = gmex_survey_code,
-                         save = F, output=NA, fishbase=T) # takes 2 mins. 8 December 2025 (Malin Pinsky)
-
-# [1] "Returned 813 taxa and dropped 1156. Misspelled taxa: 258; No alphia id found: 120; Non-fish classes: 1036; Non-marine taxa: 1 All taxa assessed =FALSE"
-# Time difference of -1.986862 mins. (8 December 2025, Malin Pinsky)
+                         save = F, output=NA, fishbase=T) 
+# [1] "Returned 911 taxa and dropped 1431. Misspelled taxa: 109; No alphia id found: 136; Non-fish classes: 1295; Non-marine taxa: 1 All taxa assessed =FALSE"
+# Time difference of -2.786229 mins (13 December 2025, Malin Pinsky)
            
 
-#all invertebrates except for Astroscopus y-graecum
-
-#add new row for this species
-ast_ygr <- c("Astroscopus y-graecum", 159252,3704,
-             "Astroscopus y-graecum","Animalia","Chordata",
-             "Actinopteri","Perciformes","Uranoscopidae","Astroscopus","Species","GMEX")
-
-clean_auto.missing <- rbind(clean_auto, ast_ygr)
+#previous queries missed Astroscopus y-graecum, but not now (13 Dec 2025). no longer need to add it manually.
+clean_auto.missing <- clean_auto
 
 #--------------------------------------------------------------------------------------#
 #### INTEGRATE CLEAN TAXA in GMEX survey data ####
 #--------------------------------------------------------------------------------------#
 clean_taxa <- clean_auto.missing %>% 
-  dplyr::select(-survey) %>% 
-  filter(!(query == "Astroscopus y-graecum" & is.na(SpecCode)))
+  dplyr::select(-survey)
 
 clean_gmex <- left_join(gmex, clean_taxa, by=c("taxa2"="query")) %>% 
   filter(!is.na(taxa)) %>% 
   # query does not indicate taxa entry that were removed in the cleaning procedure
   # so all NA taxa have to be removed from the surveys because:
-        #non-existing, non marine or non fish
+  #non-existing, non marine or non fish
   rename(accepted_name = taxa,
          aphia_id = worms_id) %>% 
   mutate(verbatim_aphia_id = NA,
          source = "NOAA",
-         timestamp = lubridate::my("03/2021"),
-         num_cpua = num_cpue,
-         num_cpue = num_h,
-         wgt_cpua = wgt_cpue,
-         wgt_cpue = wgt_h,
+         timestamp = lubridate::my("12/2025"), # date for this dataset creation
          survey_unit = ifelse(survey %in% c("BITS","NS-IBTS","SWC-IBTS"),
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
+  # trim to the FISHGLOB standard columns
   dplyr::select(fishglob_data_columns$`Column name fishglob`)
 
 
-#check for duplicates
+#check for duplicated accepted_names in the same haul_id
 count_clean_gmex <- clean_gmex %>%
   group_by(haul_id, accepted_name) %>%
   mutate(count = n())
 
-#which ones are duplicated?
+#which ones are duplicated? they will be multiple lines that have the same accepted_name
 unique_name_match <- count_clean_gmex %>%
   group_by(accepted_name, verbatim_name) %>%
   filter(count>1) %>%
   distinct(accepted_name, verbatim_name)
-
-#explanations for duplications of haulid x species
-  #Etropus crossotus and Etropus intermedius both fix to Etropus crossotus
-  #Monacanthus hispidus, Monacanthus setifer, and Stephanolepis hispida
-      #all fix to Stephanolepis hispida
-  #Ophidion beani and Ophidion holbrooki both fix to Ophidion holbrookii
-  #Anthias tenuis and Anthias tenuis and woodsi both fix to Choranthias tenuis
-  #Multiple genuses resolve together (Cynoscion, Bothus, Opsanus)
-
-#User decisions with what to do with repeats due to taxonomic classifications
-#depend on goals of data use, and therefore are maintained in FishGlob data product
-
-
+unique_name_match
+# 13 Dec 2025, Malin Pinsky: explanations for duplications of haulid x species
+# EUCINOSTOMUS ARGENTEUS/GULA, EUCINOSTOMUS HARENGULUS/JONESII, and EUCINOSTOMUS all fix to Eucinostomus (a genus record)
+# CYNOSCION and CYNOSCION ARENARIUS/NOTHUS both resolve to Cynoscion (a genus record)
+# We will leave it to users to decide what to do with these repeats due to taxonomic classifications
+# It will depend on goals of data use. We therefore maintain these as multiple entries in the FishGlob data product
 
 ########## A. Fredston, August 2025: resolving issue #49 where haul_id value is a numeric, see https://github.com/AquaAuma/FishGlob_data/issues/49 
 class(clean_gmex$haul_id) 
@@ -715,10 +594,8 @@ head(clean_gmex_fixed_haul_id$haul_id)
 ###########
 
 
-
-
 # -------------------------------------------------------------------------------------#
-#### SAVE DATABASE IN GOOGLE DRIVE ####
+#### SAVE DATABASE ####
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all

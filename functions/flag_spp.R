@@ -136,7 +136,26 @@ flag_spp <- function(df, region){
     dev.off()
     
   }else{
+    # write empty files
+    sink(here::here("outputs", "Flags", "taxonomic_flagging", paste0(region, "_flagspp.txt")))
+    cat()
+    sink()
     
+    #write stats of species flagged
+    data <- data.frame("name" = c("Total number of species", "Percentage of species flagged"),
+                       "nb" = c(length(df2$spp), 0))
+    write.csv(data, file = here::here("outputs", "Flags", "taxonomic_flagging", paste0(region, "_stats.csv")), row.names = FALSE)
+    
+    #make summary scatterplot for region
+    p <- ggplot2::ggplot() 
+    png(here::here("outputs", "Flags", "taxonomic_flagging", 
+                   paste0(region, "_taxonomic_flagging.png")),
+        width = 16*200, height = 10*200, res = 200)
+    print(p)
+    dev.off()
+
+    
+    # print result
     print("----- No species flagged for this region")
   }
   
