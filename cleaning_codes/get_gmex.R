@@ -583,6 +583,10 @@ unique_name_match
 # We will leave it to users to decide what to do with these repeats due to taxonomic classifications
 # It will depend on goals of data use. We therefore maintain these as multiple entries in the FishGlob data product
 
+# check for duplicate with the same species and the same data (wgt,num)
+clean_gmex %>% group_by(haul_id, accepted_name, wgt, num) %>% filter(n()>1)
+# 13 Dec 2025 Malin Pinsky: none. good!
+
 ########## A. Fredston, August 2025: resolving issue #49 where haul_id value is a numeric, see https://github.com/AquaAuma/FishGlob_data/issues/49 
 class(clean_gmex$haul_id) 
 head(clean_gmex$haul_id) 
