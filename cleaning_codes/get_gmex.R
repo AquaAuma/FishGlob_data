@@ -599,7 +599,7 @@ head(clean_gmex_fixed_haul_id$haul_id)
 # -------------------------------------------------------------------------------------#
 
 # Just run this routine should be good for all
-write_clean_data(data = clean_gmex, survey = "GMEX", overwrite = T, csv = T)
+write_clean_data(data = clean_gmex_fixed_haul_id, survey = "GMEX", overwrite = T, csv = T)
 
 
 
