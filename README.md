@@ -5,7 +5,7 @@
 
 <img src ="https://github.com/FishGlob/FishGlob_data/blob/main/fishglob_logo.png" width ="200">
 
-This repository contains the FishGlob database to understand the status and trends of marine ecosystems. The repo includes the methods to load, clean, and process 29 publicly available bottom trawl surveys from Europe and North America, plus the final database. This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/). For more information, please contact [fishglobconsortium@gmail.com](fishglobconsortium@gmail.com).
+This repository contains the FishGlob database. Its purpose is to understand the status and trends of marine ecosystems. The repository includes the methods to load, clean, and process 29 publicly available bottom trawl surveys from Europe and North America, plus the final database. This database is a product of the CESAB working group, [FishGlob: Fish biodiversity under global change – a worldwide assessment from scientific trawl surveys](https://www.fondationbiodiversite.fr/en/the-frb-in-action/programs-and-projects/le-cesab/fishglob/). For more information, please contact [fishglobconsortium@gmail.com](fishglobconsortium@gmail.com).
 
 ### Credit and citation
 
@@ -72,13 +72,13 @@ We thank (in alphabetical order) Esther Beukhof, Daniël van Denderen, Daniel Fo
 
 ### Updates policy
 
-The FISHGLOB Steering Committee aims to update this database approximately once a year to incorporate additional data from included surveys and to improve the data pipeline. [Releases](https://github.com/fishglob/FishGlob_data/releases) with major data updates (new survey regions, new data structure) will have a new version number. Smaller updates (e.g., new years in existing surveys) get a new minor version (1.1). Bug fixes get a new patch number (1.1.1). Updates are made on separate branches or forks, then a pull request with clear documentation is made to the dev branch. A member of the Steering Committee (someone not involved in the original coding) will review, make sure nothing will get broken, and approve pull requests. The version number will get incremented (either major, minor, or patch) when the dev branch is pulled to the main branch and a new relesae is made. 
+The FISHGLOB Steering Committee aims to update this database approximately once a year to incorporate additional data from included surveys and to improve the data pipeline. [Releases](https://github.com/fishglob/FishGlob_data/releases) with major data updates (new survey regions, new data structure) will have a new version number. Smaller updates (e.g., new years in existing surveys) get a new minor version (1.1). Bug fixes get a new patch number (1.1.1). Updates are made on separate branches or forks, then a pull request with clear documentation is made to the dev branch. A member of the Steering Committee (someone not involved in the original coding) will review the change and approve pull requests. The version number will get incremented (either major, minor, or patch) when the dev branch is pulled to the main branch and a new release is made. A major number indicates a breaking change (e.g., changes to column names), a minor number indicates the addition of new data, a patch number indicates a correction to existing data or data processing.
 
 See our [NEWS](NEWS.md) file.
 
 ### Community involvement 
 
 - *Do you want to connect with other members of our community?* Check out our [Discussion forum](https://github.com/fishglob/FishGlob_data/discussions/) where you can share ideas, possible developments and collaborations, as well as any other topics related to FISHGLOB.
-- *Found a bug in the code?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can investigate. Clear descriptions and suggested solutions are helpful. Contributions and suggested fixes are warmly encouraged by forking this repo, making the change, and making a pull request.
-- *Want to request specific changes or enhancements?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we and the broader community can concider it in our future updates. Contributions are warmly encouraged by forking this repo, making the change, and making a pull request.
+- *Found a bug in the code?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we can investigate. Clear descriptions and suggested solutions are helpful. Contributions and suggested fixes are warmly encouraged by forking this repository, making the change, and making a pull request.
+- *Want to request specific changes or enhancements?* Please open an [issue](https://github.com/fishglob/FishGlob_data/issues) so we and the broader community can concider it in our future updates. Contributions are warmly encouraged by forking this repository, making the change, and making a pull request.
 - *Want to learn more about FISHGLOB?* Check out our [website](https://fishglob.sites.ucsc.edu/), https://fishglob.sites.ucsc.edu/
