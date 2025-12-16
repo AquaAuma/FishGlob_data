@@ -12,7 +12,7 @@
 
 
 # Makes sure all packages are installed
-source("functions/check_pkg.R")
+source(here::here("functions/check_pkg.R"))
 check_pkg(
   c("readxl","here","tidyverse","readr","data.table","googledrive")
 )
