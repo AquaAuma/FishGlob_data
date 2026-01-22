@@ -1,6 +1,6 @@
 ---
 title: "GMEX: Gulf of Mexico US survey data processing summary"
-author: "fishglob, Aurore A. Maureaud, Juliano Palacios Abrantes, Zoë Kitchel, Dan Forrest, & Michelle Stuart"
+author: "fishglob, Malin L. Pinsky, Aurore A. Maureaud, Juliano Palacios Abrantes, Zoë Kitchel, Dan Forrest, & Michelle Stuart"
 date: "`r format(Sys.time(), '%B, %Y')`"
 fontsize: 20pt
 output:
@@ -39,10 +39,11 @@ library(knitr) # for nice tables
 library(kableExtra)
 library(plotly) # for interactive plots
 library(leaflet) # for interactive map
+library(here) # for navigating directories
 
 # Personal functions
-source(here("./functions/write_clean_data.r"))
-source(here("./functions/clean_taxa.r"))
+source(here("functions", "write_clean_data.R"))
+source(here("functions/clean_taxa.R"))
 
 fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns.xlsx"))
 
@@ -51,7 +52,7 @@ fishglob_data_columns <- read_excel(here("standard_formats/fishglob_data_columns
 
 ## General info
 
-This document presents the cleaning code and summary of the Gulf of Mexico (US) bottom trawl survey provided by [Jeff Rester](jrester@gsmfc.org), Coordinator - Gulf States Marine Fisheries Commission - Habitat Focus Team - Gulf of Mexico Program & [David Hanisko](david.s.hanisko@noaa.gov), Research Fisheries Biologist, National Marine Fisheries Service, Southeast Fisheries Science Center. It contains annual data from 1982 and up to 2019.
+This document presents the cleaning code and summary of the Gulf of Mexico (US) bottom trawl survey provided by [Jeff Rester](jrester@gsmfc.org), Coordinator - Gulf States Marine Fisheries Commission - Habitat Focus Team - Gulf of Mexico Program & [David Hanisko](david.s.hanisko@noaa.gov), Research Fisheries Biologist, National Marine Fisheries Service, Southeast Fisheries Science Center. It contains annual data from 1982 and up to 2024.
 
 
 ## Data cleaning in R
