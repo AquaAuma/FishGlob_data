@@ -336,27 +336,6 @@ write_clean_data(data = clean_ai, survey = "AI", overwrite = T,
 # -------------------------------------------------------------------------------------#
 #### FLAGS ####
 # -------------------------------------------------------------------------------------#
-#install required packages that are not already installed
-required_packages <- c("data.table",
-                       "devtools",
-                       "dggridR",
-                       "dplyr",
-                       "fields",
-                       "forcats",
-                       "ggplot2",
-                       "here",
-                       "magrittr",
-                       "maps",
-                       "maptools", # is this needed?
-                       "raster",
-                       "rcompendium",
-                       "readr",
-                       "remotes",
-                       "rrtools", # is this needed?
-                       "sf",
-                       "sp",
-                       "tidyr",
-                       "usethis")
 
 #load pipe operator
 library(magrittr)
