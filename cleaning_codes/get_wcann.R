@@ -334,7 +334,7 @@ clean_wcann <- left_join(wcann, clean_taxa, by=c("taxa2"="query")) %>%
                               paste0(survey,"-",quarter),survey),
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
-  dplyr::select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(dplyr::all_of(fishglob_data_columns$`Column name fishglob`))
 
 
 #check for duplicates

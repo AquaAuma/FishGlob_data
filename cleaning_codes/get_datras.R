@@ -1118,7 +1118,7 @@ survey4 <- survey3 %>%
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
   # Final format
-  dplyr::select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(dplyr::all_of(fishglob_data_columns$`Column name fishglob`))
 
 
 

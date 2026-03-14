@@ -563,7 +563,7 @@ clean_gmex <- left_join(gmex, clean_taxa, by=c("taxa2"="query")) %>%
          survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                               paste0(survey,"-",season),survey_unit)) %>% 
   # trim to the FISHGLOB standard columns
-  dplyr::select(fishglob_data_columns$`Column name fishglob`)
+  dplyr::select(dplyr::all_of(fishglob_data_columns$`Column name fishglob`))
 
 
 #check for duplicated accepted_names in the same haul_id

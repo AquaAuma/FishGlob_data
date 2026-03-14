@@ -323,7 +323,7 @@ clean_norw <- clean_norw %>%
     survey_unit = ifelse(survey %in% c("NEUS","SEUS","SCS","GMEX"),
                          paste0(survey,"-",season),survey_unit)
   ) %>% 
-  select(fishglob_data_columns$`Column name fishglob`)
+  select(dplyr::all_of(fishglob_data_columns$`Column name fishglob`))
 
 #### ---------------------------------------------------------------------------
 # Save database in Google drive

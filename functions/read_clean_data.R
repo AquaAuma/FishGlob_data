@@ -38,7 +38,7 @@ read_clean_data <- function(surveys, std=FALSE){
   fishglob <- data.frame()
   for(f in 1:length(surveys)){
     xx <- get(surveys[f]) %>% 
-      dplyr::select(columns)
+      dplyr::select(dplyr::all_of(columns))
     xx$timestamp <- as.character(xx$timestamp)
     assign(surveys[f], xx) 
     
