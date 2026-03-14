@@ -5,27 +5,6 @@
 
 #########   Preliminary steps
 
-#install required packages that are not already installed
-required_packages <- c("data.table",
-                       "devtools",
-                       "dggridR",
-                       "dplyr",
-                       "fields",
-                       "forcats",
-                       "ggplot2",
-                       "here",
-                       "magrittr",
-                       "maps",
-                       "maptools",
-                       "raster",
-                       "rcompendium",
-                       "readr",
-                       "remotes",
-                       "rrtools",
-                       "sf",
-                       "sp",
-                       "tidyr",
-                       "usethis")
 # read survey data
 load("outputs/Compiled_data/FishGlob_public_std_clean.RData")
 dat <- data

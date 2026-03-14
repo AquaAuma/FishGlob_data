@@ -358,28 +358,6 @@ write_clean_data(data = clean_scs, survey = "SCS", overwrite = T, csv = T)
 # -------------------------------------------------------------------------------------#
 #### FAGS ####
 # -------------------------------------------------------------------------------------#
-#install required packages that are not already installed
-required_packages <- c("data.table",
-                       "devtools",
-                       "dggridR",
-                       "dplyr",
-                       "fields",
-                       "forcats",
-                       "ggplot2",
-                       "here",
-                       "magrittr",
-                       "maps",
-                       "maptools",
-                       "raster",
-                       "rcompendium",
-                       "readr",
-                       "remotes",
-                       "rrtools",
-                       "sf",
-                       "sp",
-                       "tidyr",
-                       "usethis")
-
 #load pipe operator
 library(magrittr)
 
