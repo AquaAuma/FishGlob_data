@@ -40,6 +40,14 @@ count_na <- function(data, column) {
   as.character(sum(is.na(data[[column]])))
 }
 
+count_non_missing <- function(data, column) {
+  if (!column %in% names(data)) {
+    return("")
+  }
+
+  as.character(sum(!is.na(data[[column]])))
+}
+
 year_stat <- function(data, stat) {
   if (!"year" %in% names(data)) {
     return("")
@@ -67,7 +75,53 @@ mean_numeric <- function(data, column) {
     return("")
   }
 
-  format(mean(values), digits = 4L, trim = TRUE, scientific = FALSE, na.rm = TRUE)
+  format(mean(values), digits = 15L, trim = TRUE, scientific = FALSE)
+}
+
+sum_numeric <- function(data, column) {
+  if (!column %in% names(data)) {
+    return("")
+  }
+
+  values <- suppressWarnings(as.numeric(data[[column]]))
+  values <- values[!is.na(values)]
+
+  if (length(values) == 0L) {
+    return("")
+  }
+
+  format(sum(values), digits = 15L, trim = TRUE, scientific = FALSE)
+}
+
+median_numeric <- function(data, column) {
+  if (!column %in% names(data)) {
+    return("")
+  }
+
+  values <- suppressWarnings(as.numeric(data[[column]]))
+  values <- values[!is.na(values)]
+
+  if (length(values) == 0L) {
+    return("")
+  }
+
+  format(stats::median(values), digits = 15L, trim = TRUE, scientific = FALSE)
+}
+
+count_signature <- function(data, column) {
+  if (!column %in% names(data)) {
+    return("")
+  }
+
+  values <- data[[column]]
+  values <- values[!is.na(values)]
+
+  if (length(values) == 0L) {
+    return("")
+  }
+
+  counts <- sort(table(as.character(values)))
+  paste(paste0(names(counts), "=", as.integer(counts)), collapse = "|")
 }
 
 signature_for_file <- function(path) {
@@ -91,10 +145,27 @@ signature_for_file <- function(path) {
     distinct_aphia = count_distinct(data, aphia_col),
     year_min = year_stat(data, min),
     year_max = year_stat(data, max),
+    year_counts = count_signature(data, "year"),
+    quarter_counts = count_signature(data, "quarter"),
+    survey_unit_counts = count_signature(data, "survey_unit"),
     na_latitude = count_na(data, "latitude"),
     na_longitude = count_na(data, "longitude"),
     na_haul_id = count_na(data, "haul_id"),
     na_taxon = count_na(data, "taxon"),
+    non_missing_num_cpue = count_non_missing(data, "num_cpue"),
+    non_missing_num_cpua = count_non_missing(data, "num_cpua"),
+    non_missing_wgt = count_non_missing(data, "wgt"),
+    non_missing_wgt_cpue = count_non_missing(data, "wgt_cpue"),
+    non_missing_wgt_cpua = count_non_missing(data, "wgt_cpua"),
+    non_missing_area_swept = count_non_missing(data, "area_swept"),
+    non_missing_haul_dur = count_non_missing(data, "haul_dur"),
+    sum_num_cpue = sum_numeric(data, "num_cpue"),
+    sum_num_cpua = sum_numeric(data, "num_cpua"),
+    sum_wgt = sum_numeric(data, "wgt"),
+    sum_wgt_cpue = sum_numeric(data, "wgt_cpue"),
+    sum_wgt_cpua = sum_numeric(data, "wgt_cpua"),
+    sum_area_swept = sum_numeric(data, "area_swept"),
+    sum_haul_dur = sum_numeric(data, "haul_dur"),
     mean_num_cpue = mean_numeric(data, "num_cpue"),
     mean_num_cpua = mean_numeric(data, "num_cpua"),
     mean_wgt = mean_numeric(data, "wgt"),
@@ -102,6 +173,9 @@ signature_for_file <- function(path) {
     mean_wgt_cpua = mean_numeric(data, "wgt_cpua"),
     mean_area_swept = mean_numeric(data, "area_swept"),
     mean_haul_dur = mean_numeric(data, "haul_dur"),
+    median_depth = median_numeric(data, "depth"),
+    median_sbt = median_numeric(data, "sbt"),
+    median_sst = median_numeric(data, "sst"),
     stringsAsFactors = FALSE
   )
 }
