@@ -13,8 +13,7 @@ source("functions/check_pkg.R")
 check_pkg(
   c("here",
     "readxl",
-    "dplyr",
-    "prob")
+    "dplyr")
 )
 #'
 #'
