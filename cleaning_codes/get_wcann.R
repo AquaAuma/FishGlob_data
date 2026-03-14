@@ -411,10 +411,6 @@ required_packages <- c("data.table",
                        "tidyr",
                        "usethis")
 
-not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
-if(length(not_installed)) install.packages(not_installed)
-
-
 #load pipe operator
 library(magrittr)
 
@@ -539,5 +535,3 @@ head(survey_std_fixed_haul_id$haul_id)
 # Just run this routine should be good for all
 write_clean_data(data = survey_std_fixed_haul_id, survey = "WCANN_std",
                  overwrite = T, rdata=TRUE)
-
-

@@ -27,10 +27,6 @@ required_packages <- c("data.table",
                        "sp",
                        "tidyr",
                        "usethis")
-not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
-if(length(not_installed)) install.packages(not_installed)
-
-
 #load pipe operator
 library(magrittr)
 
@@ -68,5 +64,3 @@ dat_new_method1_hex8 <- apply_trimming_per_survey_unit_method1(dat, 8)
 
 ######### Apply trimming per survey_unit method 2
 dat_new_method2 <- apply_trimming_per_survey_unit_method2(dat)
-
-

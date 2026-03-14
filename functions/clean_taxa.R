@@ -42,8 +42,8 @@
 # Requires
 # ------------#
 # The following packages are needed for the function to run: "tidyverse","taxize","worrms","here", "worms"
-# Note that the function will automatically install any package you need. You do not need
-# to call any of the libraries neither.
+# Restore the project environment with renv before running this function. You do not need
+# to call any of the libraries manually.
 
 # ------------#
 # Example
@@ -70,18 +70,6 @@
 ##### 
 
 clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, fishbase=TRUE){
-  
-  # Make sure you have all packages installed
-  packages_needed <- c("tidyverse","taxize","worrms","here","readr","janitor",
-                       # "worms",
-                       "rfishbase")
-  install_me <- packages_needed[!(packages_needed %in% installed.packages()[,"Package"])]
-  
-  if(length(install_me) > 0){
-    print(paste("Installing package(s) <",install_me,"> before running the function"))
-    install.packages(install_me)
-  } 
-  
   # Start routine
   s_time <- Sys.time()
   
@@ -108,7 +96,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     # Get discarded aphias
     missing_aphiaid <- tibble::tibble(
       query = taxon_list) %>% 
-      filter(!query %in% taxon_id)
+      dplyr::filter(!query %in% taxon_id)
     
     
     # For some reason `wm_record)()` only works for 50 species, it is unfortunate 
@@ -134,7 +122,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       # Loop through the values in batches
       for (i in seq(1, length(taxon_id), by = 50)) {
         batch <- taxon_id[i:min(i + 50 - 1, length(taxon_id))]
-        batch_results <- wm_record(batch)
+        batch_results <- worrms::wm_record(batch)
         aphia_results <- c(aphia_results, list(batch_results))
       }
       
@@ -157,8 +145,8 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       dplyr::filter(!query %in% alphaid$query) 
     
     # No misspelling on id
-    missing_misspelling <- tibble()
-    missing_misspelling_wrms <- tibble()
+    missing_misspelling <- tibble::tibble()
+    missing_misspelling_wrms <- tibble::tibble()
     
   }else{ # close when taxon list is AphaiID
     # If scientific names are provided, check synonyms and get correct name and ID
@@ -201,16 +189,18 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     
     alphaid <- dplyr::bind_rows(all_results) %>%
       dplyr::select(scientificname,status,AphiaID = valid_AphiaID,taxa = valid_name,kingdom:genus, isMarine,rank) %>% 
-      left_join(fix_taxon,
-                by = "taxa",
-                relationship = "many-to-many") %>% 
+      dplyr::left_join(
+        fix_taxon,
+        by = "taxa",
+        relationship = "many-to-many"
+      ) %>% 
       dplyr::mutate(query = ifelse(is.na(query),scientificname,query)) %>% 
       dplyr::select(-scientificname)
     
     # Missing in fix_taxon
     missing_misspelling_wrms <- alphaid %>% 
       # For when the name has multiple wrong outputs
-      arrange(status) %>% 
+      dplyr::arrange(status) %>% 
       dplyr::filter(status == "unaccepted") %>% 
       dplyr::distinct(query,.keep_all = T) %>%
       dplyr::select(query)
@@ -231,7 +221,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
     # Select only marine species (NOTE: These are not exclusively marine species)
     dplyr::filter(
       isMarine > 0) %>% 
-    arrange(status) %>% 
+    dplyr::arrange(status) %>% 
     dplyr::select(-isMarine,
                   -status) %>% 
     dplyr::distinct(query,.keep_all = T) 
@@ -316,7 +306,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       
       # Load existing data
       suppressMessages(
-        old_data <- read_csv(here::here("taxa_analysis/results/clean_taxon.csv"))
+        old_data <- readr::read_csv(here::here("taxa_analysis/results/clean_taxon.csv"))
       )
       
       # Output options, overwrite, add or just create the table
@@ -354,8 +344,8 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
       
       
       # include new list 
-      bind_rows(old_data,output_df) %>% 
-        write_csv(here::here("taxa_analysis/results/clean_taxon.csv"))
+      dplyr::bind_rows(old_data,output_df) %>% 
+        readr::write_csv(here::here("taxa_analysis/results/clean_taxon.csv"))
       
       # Return a message with basic info
       c_list <- paste(unique(old_data$survey),collapse =",")
@@ -367,7 +357,7 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
         
         missing_name <- paste0(input_survey,"_missing.csv")
         # Missing taxa
-        write_csv(missing_data, paste0(here::here("taxa_analysis/results",missing_name)))
+        readr::write_csv(missing_data, paste0(here::here("taxa_analysis/results",missing_name)))
       }else{
         print("No missing taxa from worms, all good")
       }  
@@ -384,4 +374,3 @@ clean_taxa <- function(taxon_list, input_survey = "NA", save = F, output = NA, f
   return(output_df)
   
 }
-

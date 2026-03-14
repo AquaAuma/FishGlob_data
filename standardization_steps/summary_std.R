@@ -26,9 +26,6 @@ required_packages <- c("data.table",
                        "sp",
                        "tidyr",
                        "usethis")
-not_installed <- required_packages[!(required_packages %in% installed.packages()[ , "Package"])]
-if(length(not_installed)) install.packages(not_installed)
-
 # read survey data
 load("outputs/Compiled_data/FishGlob_public_std_clean.RData")
 dat <- data
@@ -156,5 +153,3 @@ std_dat %>%
         axis.text.y = element_text(size=12),
         axis.title = element_text(size=16))
 dev.off()
-
-

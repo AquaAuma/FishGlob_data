@@ -10,3 +10,4 @@ outputs/Cleaned_data/*.csv
 outputs/Compiled_data/*.csv
 outputs/Compiled_data/*.csv.gz
 data/*
+outputs/Cleaned_data/files.txt

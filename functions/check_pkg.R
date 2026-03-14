@@ -1,18 +1,17 @@
-#' Install and Load Multiple R Packages
+#' Check and Load Multiple R Packages
 #'
 #'Author: Juliano Palacios Abrantes
 #'Date: August, 2025
-#' This function checks whether the packages listed in the pkg_list are installed. 
-#' If any are missing, it installs them from CRAN (including dependencies) and then 
-#' loads all packages in the list into the current R session.
+#' This function loads the packages listed in `pkg_list` into the current R session.
+#' If any package cannot be loaded, it stops with an instruction to restore the
+#' project environment with `renv`.
 #' 
-#'@param pkg_list A character vector of package names to be installed (if missing) and loaded.
+#'@param pkg_list A character vector of package names to be checked and loaded.
 #' @details
 #' The function:
 #' \enumerate{
-#'   \item Compares \code{pkg_list} against the packages currently installed (via \code{installed.packages()}).
-#'   \item Installs any packages not already installed, including their dependencies, from the CRAN mirror at \code{http://cran.us.r-project.org}.
-#'   \item Loads all packages in \code{pkg_list} using \code{require()}.
+#'   \item Attempts to load all packages in \code{pkg_list} using \code{require()}.
+#'   \item Stops with a clear error if any package cannot be loaded.
 #' }
 #'
 #' @return 
@@ -20,33 +19,28 @@
 #'
 #' @examples
 #' \dontrun{
-#' my_load(c("dplyr", "ggplot2", "sf"))
+#' check_pkg(c("dplyr", "ggplot2", "sf"))
 #' }
 #'
-#' @seealso \code{\link[base]{installed.packages}}, \code{\link[base]{install.packages}}, \code{\link[base]{require}}
+#' @seealso \code{\link[base]{require}}
 #'
 #' @export
 
 check_pkg <- function(pkg_list){
-  
-  new.pkg <- pkg_list[!(pkg_list %in% installed.packages()[,"Package"])]
-  
-  if(length(new.pkg) >0){ 
-    
-    message(paste0("One moment, I am installing the following required package(s): ",new.pkg))
-    install.packages(new.pkg, dependencies = TRUE)
-  }
-  
   success <- suppressMessages(
     sapply(pkg_list, require, character.only = TRUE)
   )
-  
-  # Warn if any still failed
-  if (any(!success)) {
-    warning("These packages could not be loaded: ", 
-            paste(pkg_list[!success], collapse = ", "))
-  } else {
-    message("✅ All required packages loaded")
-  }
-}
 
+  if (any(!success)) {
+    stop(
+      paste0(
+        "Could not load required package(s): ",
+        paste(pkg_list[!success], collapse = ", "),
+        ". Restore the project environment with renv::restore() and rerun."
+      ),
+      call. = FALSE
+    )
+  }
+
+  invisible(success)
+}
