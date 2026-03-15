@@ -1,3 +1,20 @@
+# FishGlob_data 2.1.0
+
+## Overview
+This version contains:
+* Updated Gulf of Mexico dataset and cleaning code
+
+## New Data Additions
+* Gulf of Mexico now has data through 2024
+
+## Improvements
+* Fixed issues with Gulf of Mexico data merging and cleaning
+
+## Bug Fixes
+* Addresses gmex issue 46: BIOCODE table bug fixes for taxonomic errors
+* Fixed gmex issue 56: duplicated rows even after cleaning
+* Fixed gmex issue 76: updated the summary pdf
+
 # FishGlob_data 2.0.2
 
 ## Overview
