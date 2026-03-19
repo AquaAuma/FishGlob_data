@@ -26,7 +26,7 @@ This work is licensed under a
 
 To use these data, please:
 - Read about the dataset in [Maureaud *et al.* 2024](https://www.nature.com/articles/s41597-023-02866-w)
-- Read our data disclaimer and citation policy in the [Fishglob_data disclaimer](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/)
+- Read the [Fishglob_data disclaimer and citation policy](https://docs.google.com/document/d/1uiEIcUugCf-dOSvio6hB1r8xFf0sm1Ip2IzjbMu9I4o/)
 - Read the [survey-specific metadata](https://github.com/FishGlob/FishGlob_data/tree/main/metadata_docs)
 - Consider doing a [tutorial](https://fishglob.sites.ucsc.edu/training/)
 - Either:
